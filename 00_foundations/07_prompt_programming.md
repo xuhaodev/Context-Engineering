@@ -886,7 +886,7 @@ or more generally:
 }
 ```
 
-## Emergence Amplification Protocol 
+## Emergence Theory Amplification  
 ```python
 /recursive.field.anchor_attractor_shell{
     intent="Self-prompt and recursively ground the field in foundational theory anchors while surfacing and integrating emergent future attractors. Field adapts via recursive emergence, not fixed determinism.",
