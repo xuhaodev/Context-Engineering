@@ -29,7 +29,7 @@ prompt    shot     state    agent     prompt programs     persistence & resonanc
 > **TL;DR: A three-stage architecture is identified that supports abstract reasoning in LLMs via a set of emergent symbol-processing mechanisms**
 > 
 >
-> Can be leveraged for persistence and coherence by using symbols/syntax as structural attractors
+> Concept: Leverage symbols/syntax as structural attractors for context/reasoning/memory/persistence
 
 ## Under Construction
 
