@@ -20,8 +20,8 @@ This repository provides a progressive, first-principles approach to context eng
 ```
 atoms → molecules → cells → organs → dynamical systems
   │        │         │        │         │
-single    few-     memory   multi-    full
-prompt    shot     state    agent     apps
+single    few-     memory   multi-    ecosystem +
+prompt    shot     state    agent     programs
 ```
 
 
