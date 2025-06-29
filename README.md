@@ -48,9 +48,13 @@ prompt    shot     state    agent     prompt programs     persistence & resonanc
 Context-Engineering/
 ├── LICENSE                          # MIT license
 ├── README.md                        # Quick-start overview
-├── structure.md                     # This structural map
+├── structure.md                     # Original structural map
+├── STRUCTURE_v2.md                  # Enhanced structural map with field theory
 ├── context.json                     # Original schema configuration
 ├── context_v2.json                  # Extended schema with field protocols
+├── context_v3.json                  # Neural field extensions
+├── context_v3.5.json                # Symbolic mechanism integration
+├── CITATIONS.md                     # Research references and bridges
 │
 ├── 00_foundations/                  # First-principles theory
 │   ├── 01_atoms_prompting.md        # Atomic instruction units
@@ -62,17 +66,21 @@ Context-Engineering/
 │   ├── 07_prompt_programming.md     # Code-like reasoning patterns
 │   ├── 08_neural_fields_foundations.md # Context as continuous fields
 │   ├── 09_persistence_and_resonance.md # Field dynamics and attractors
-│   └── 10_field_orchestration.md    # Coordinating multiple fields
+│   ├── 10_field_orchestration.md    # Coordinating multiple fields
+│   ├── 11_emergence_and_attractor_dynamics.md # Emergent properties
+│   └── 12_symbolic_mechanisms.md    # Symbolic reasoning in LLMs
 │
 ├── 10_guides_zero_to_hero/          # Hands-on tutorials
 │   ├── 01_min_prompt.ipynb          # Minimal prompt experiments
 │   ├── 02_expand_context.ipynb      # Context expansion techniques
 │   ├── 03_control_loops.ipynb       # Flow control mechanisms
 │   ├── 04_rag_recipes.ipynb         # Retrieval-augmented patterns
-│   ├── 05_prompt_programs.ipynb     # Structured reasoning programs
-│   ├── 06_schema_design.ipynb       # Schema creation patterns
-│   ├── 07_recursive_patterns.ipynb  # Self-referential contexts
-│   └── 08_neural_fields.ipynb       # Working with field-based contexts
+│   ├── 05_protocol_bootstrap.ipynb  # Field protocol bootstrap
+│   ├── 06_protocol_token_budget.ipynb # Protocol efficiency
+│   ├── 07_streaming_context.ipynb   # Real-time context
+│   ├── 08_emergence_detection.ipynb # Detecting emergence
+│   ├── 09_residue_tracking.ipynb    # Tracking symbolic residue
+│   └── 10_attractor_formation.ipynb # Creating field attractors
 │
 ├── 20_templates/                    # Reusable components
 │   ├── minimal_context.yaml         # Base context structure
@@ -81,17 +89,26 @@ Context-Engineering/
 │   ├── prompt_program_template.py   # Program structure template
 │   ├── schema_template.yaml         # Schema definition template
 │   ├── recursive_framework.py       # Recursive context template
-│   ├── neural_field_context.yaml    # Field-based context template
-│   ├── field_resonance_measure.py   # Field property measurement
-│   └── context_audit.py             # Context analysis tool
+│   ├── field_protocol_shells.py     # Field protocol templates
+│   ├── symbolic_residue_tracker.py  # Residue tracking tools
+│   ├── context_audit.py             # Context analysis tool
+│   ├── shell_runner.py              # Protocol shell runner
+│   ├── resonance_measurement.py     # Field resonance metrics
+│   ├── attractor_detection.py       # Attractor analysis tools
+│   ├── boundary_dynamics.py         # Boundary operation tools
+│   └── emergence_metrics.py         # Emergence measurement
 │
 ├── 30_examples/                     # Practical implementations
 │   ├── 00_toy_chatbot/              # Simple conversation agent
 │   ├── 01_data_annotator/           # Data labeling system
 │   ├── 02_multi_agent_orchestrator/ # Agent collaboration system
-│   ├── 03_cognitive_assistant/      # Advanced reasoning assistant
+│   ├── 03_vscode_helper/            # IDE integration 
 │   ├── 04_rag_minimal/              # Minimal RAG implementation
-│   └── 05_neural_field_orchestrator/ # Field-based orchestration
+│   ├── 05_streaming_window/         # Real-time context demo
+│   ├── 06_residue_scanner/          # Symbolic residue demo
+│   ├── 07_attractor_visualizer/     # Field visualization
+│   ├── 08_field_protocol_demo/      # Protocol demonstration
+│   └── 09_emergence_lab/            # Emergence experimentation
 │
 ├── 40_reference/                    # Deep-dive documentation
 │   ├── token_budgeting.md           # Token optimization strategies
@@ -99,9 +116,12 @@ Context-Engineering/
 │   ├── eval_checklist.md            # PR evaluation criteria
 │   ├── cognitive_patterns.md        # Reasoning pattern catalog
 │   ├── schema_cookbook.md           # Schema pattern collection
-│   ├── neural_field_theory.md       # Comprehensive field theory
-│   ├── symbolic_residue_guide.md    # Guide to residue tracking
-│   └── protocol_reference.md        # Protocol shell reference
+│   ├── patterns.md                  # Context pattern library
+│   ├── field_mapping.md             # Field theory fundamentals
+│   ├── symbolic_residue_types.md    # Residue classification
+│   ├── attractor_dynamics.md        # Attractor theory and practice
+│   ├── emergence_signatures.md      # Detecting emergence
+│   └── boundary_operations.md       # Boundary management guide
 │
 ├── 50_contrib/                      # Community contributions
 │   └── README.md                    # Contribution guidelines
@@ -112,22 +132,32 @@ Context-Engineering/
 │   │   ├── attractor.co.emerge.shell      # Attractor co-emergence
 │   │   ├── recursive.emergence.shell      # Recursive field emergence
 │   │   ├── recursive.memory.attractor.shell # Memory persistence
-│   │   └── field.resonance.scaffold.shell  # Field resonance
+│   │   ├── field.resonance.scaffold.shell  # Field resonance
+│   │   ├── field.self_repair.shell        # Self-repair mechanisms
+│   │   └── context.memory.persistence.attractor.shell # Context persistence
 │   ├── digests/                     # Simplified protocol documentation
 │   └── schemas/                     # Protocol schemas
-│       ├── fractalRepoContext.v1.json     # Repository context
+│       ├── fractalRepoContext.v3.5.json    # Repository context
 │       ├── fractalConsciousnessField.v1.json # Field schema
-│       └── protocolShell.v1.json           # Shell schema
+│       ├── protocolShell.v1.json           # Shell schema
+│       ├── symbolicResidue.v1.json         # Residue schema
+│       └── attractorDynamics.v1.json       # Attractor schema
 │
 ├── 70_agents/                       # Agent demonstrations
 │   ├── README.md                    # Agent overview
 │   ├── 01_residue_scanner/          # Symbolic residue detection
-│   └── 02_self_repair_loop/         # Self-repair protocol
+│   ├── 02_self_repair_loop/         # Self-repair protocol
+│   ├── 03_attractor_modulator/      # Attractor dynamics
+│   ├── 04_boundary_adapter/         # Dynamic boundary tuning
+│   └── 05_field_resonance_tuner/    # Field resonance optimization
 │
 ├── 80_field_integration/            # Complete field projects
 │   ├── README.md                    # Integration overview
 │   ├── 00_protocol_ide_helper/      # Protocol development tools
-│   └── 01_context_engineering_assistant/ # Field-based assistant
+│   ├── 01_context_engineering_assistant/ # Field-based assistant
+│   ├── 02_recursive_reasoning_system/    # Recursive reasoning
+│   ├── 03_emergent_field_laboratory/     # Field experimentation
+│   └── 04_symbolic_reasoning_engine/     # Symbolic mechanisms
 │
 ├── cognitive-tools/                 # Advanced cognitive framework
 │   ├── README.md                    # Overview and quick-start guide
@@ -135,31 +165,36 @@ Context-Engineering/
 │   │   ├── understanding.md         # Comprehension operations
 │   │   ├── reasoning.md             # Analytical operations
 │   │   ├── verification.md          # Checking and validation
-│   │   └── composition.md           # Combining multiple tools
+│   │   ├── composition.md           # Combining multiple tools
+│   │   └── emergence.md             # Emergent reasoning patterns
 │   │
 │   ├── cognitive-programs/          # Structured prompt programs
 │   │   ├── basic-programs.md        # Fundamental program structures
 │   │   ├── advanced-programs.md     # Complex program architectures
 │   │   ├── program-library.py       # Python implementations
-│   │   └── program-examples.ipynb   # Interactive examples
+│   │   ├── program-examples.ipynb   # Interactive examples
+│   │   └── emergence-programs.md    # Emergent program patterns
 │   │
 │   ├── cognitive-schemas/           # Knowledge representations
 │   │   ├── user-schemas.md          # User information schemas
 │   │   ├── domain-schemas.md        # Domain knowledge schemas
 │   │   ├── task-schemas.md          # Reasoning task schemas
-│   │   └── schema-library.yaml      # Reusable schema library
+│   │   ├── schema-library.yaml      # Reusable schema library
+│   │   └── field-schemas.md         # Field representation schemas
 │   │
 │   ├── cognitive-architectures/     # Complete reasoning systems
 │   │   ├── solver-architecture.md   # Problem-solving systems
 │   │   ├── tutor-architecture.md    # Educational systems
 │   │   ├── research-architecture.md # Information synthesis
-│   │   └── architecture-examples.py # Implementation examples
+│   │   ├── architecture-examples.py # Implementation examples
+│   │   └── field-architecture.md    # Field-based architectures
 │   │
 │   └── integration/                 # Integration patterns
 │       ├── with-rag.md              # Integration with retrieval
 │       ├── with-memory.md           # Integration with memory
 │       ├── with-agents.md           # Integration with agents
-│       └── evaluation-metrics.md    # Effectiveness measurement
+│       ├── evaluation-metrics.md    # Effectiveness measurement
+│       └── with-fields.md           # Integration with field protocols
 │
 └── .github/                         # GitHub configuration
     ├── CONTRIBUTING.md              # Contribution guidelines
