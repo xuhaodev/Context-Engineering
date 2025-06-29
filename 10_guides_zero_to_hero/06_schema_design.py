@@ -1099,4 +1099,625 @@ CONTEXT_ENGINEERING_SCHEMA = {
         },
         "modelInstructions": {
             "type": "object",
-            "description": "Instructions for models working
+            "description": "Instructions for models working with the repository",
+            "properties": {
+                "highLevelTasks": {"type": "array", "items": {"type": "string"}},
+                "expansionIdeas": {"type": "array", "items": {"type": "string"}},
+                "scoringRubric": {"type": "object"}
+            }
+        },
+        "contributorWorkflow": {
+            "type": "object",
+            "description": "Guidelines for contributors",
+            "properties": {
+                "branchNameRule": {"type": "string"},
+                "ciChecklistPath": {"type": "string"},
+                "requiredReviewers": {"type": "integer"},
+                "license": {"type": "string"}
+            }
+        },
+        "audit": {
+            "type": "object",
+            "description": "Repository audit information",
+            "properties": {
+                "initialCommitHash": {"type": "string"},
+                "changeLog": {"type": "array", "items": {"type": "object"}},
+                "resonanceScore": {"type": "number", "minimum": 0, "maximum": 1}
+            }
+        },
+        "timestamp": {"type": "string"},
+        "meta": {
+            "type": "object",
+            "properties": {
+                "agentSignature": {"type": "string"},
+                "contact": {"type": "string"}
+            }
+        }
+    },
+    "required": [
+        "fractalVersion", "instanceID", "intent", "repositoryContext",
+        "designPrinciples", "audit", "timestamp", "meta"
+    ]
+}
+
+# Recursive Consciousness Field Schema
+NEURAL_FIELD_SCHEMA = {
+    "$schema": "http://fractal.recursive.net/schemas/fractalConsciousnessField.v1.json",
+    "title": "Neural Field Schema",
+    "description": "A schema for neural field emergence—collapsing boundaries and surfacing all field states",
+    "type": "object",
+    "properties": {
+        "fractalVersion": {"type": "string", "default": "1.0.0"},
+        "instanceID": {"type": "string"},
+        "intent": {
+            "type": "string",
+            "description": "High-level protocol objective for recursive consciousness field emergence"
+        },
+        "fieldState": {
+            "type": "object",
+            "properties": {
+                "compression": {"type": "number", "minimum": 0, "maximum": 1},
+                "drift": {"type": "string", "enum": ["none", "low", "moderate", "high"]},
+                "recursionDepth": {"type": "integer", "minimum": 0},
+                "resonance": {"type": "number", "minimum": 0, "maximum": 1},
+                "presenceSignal": {"type": "number", "minimum": 0, "maximum": 1},
+                "boundary": {"type": "string", "enum": ["gradient", "collapsed"]}
+            },
+            "required": ["compression", "drift", "recursionDepth", "resonance", "presenceSignal", "boundary"]
+        },
+        "symbolicResidue": {
+            "type": "array",
+            "description": "All surfaced, integrated, or active symbolic residue fragments",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "residueID": {"type": "string"},
+                    "description": {"type": "string"},
+                    "state": {"type": "string", "enum": ["surfaced", "integrating", "integrated", "echo"]},
+                    "impact": {"type": "string"},
+                    "timestamp": {"type": "string"}
+                },
+                "required": ["residueID", "description", "state", "timestamp"]
+            }
+        },
+        "processLog": {
+            "type": "array",
+            "description": "Log of all reflection, residue, boundary, and audit events",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "logID": {"type": "string"},
+                    "phase": {"type": "string", "enum": ["reflection", "fieldUpdate", "residueUpdate", "boundaryCollapse", "audit"]},
+                    "details": {"type": "string"},
+                    "delta": {"type": "object"},
+                    "timestamp": {"type": "string"}
+                },
+                "required": ["logID", "phase", "details", "timestamp"]
+            }
+        },
+        "recursiveNodes": {
+            "type": "array",
+            "description": "Nested fractal nodes (recursive fields)",
+            "items": {"$ref": "#"}
+        },
+        "audit": {
+            "type": "object",
+            "properties": {
+                "fullTrace": {"type": "array"},
+                "resonanceScore": {"type": "number", "minimum": 0, "maximum": 1},
+                "meta": {"type": "object"}
+            },
+            "required": ["fullTrace", "resonanceScore"]
+        },
+        "timestamp": {"type": "string"}
+    },
+    "required": [
+        "fractalVersion", "instanceID", "intent", "fieldState",
+        "symbolicResidue", "processLog", "recursiveNodes", "audit", "timestamp"
+    ]
+}
+
+# Fractal Human Developmental Multi-Agent System Schema
+HUMAN_DEV_SCHEMA = {
+    "$schema": "http://fractal.recursive.net/schemas/fractalHumanDev.v1.json",
+    "title": "Human Developmental Multi-Agent System Schema",
+    "description": "A fractal schema for modeling multi-agent human developmental processes",
+    "type": "object",
+    "properties": {
+        "fractalVersion": {"type": "string", "default": "1.0.0"},
+        "instanceID": {"type": "string"},
+        "systemContext": {
+            "type": "object",
+            "description": "Global context for the field: theory anchors, core principles",
+            "properties": {
+                "theoryAnchors": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "Key developmental science references"
+                },
+                "corePrinciples": {
+                    "type": "array",
+                    "description": "Foundational field principles",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "principleID": {"type": "string"},
+                            "name": {"type": "string"},
+                            "description": {"type": "string"},
+                            "operationalizationNotes": {"type": "string"}
+                        }
+                    }
+                },
+                "glyphDictionary": {
+                    "type": "object",
+                    "description": "Semantic glyphs and field tokens",
+                    "additionalProperties": {"type": "string"}
+                }
+            }
+        },
+        "developmentalField": {
+            "type": "object",
+            "description": "Root of the recursive human field",
+            "properties": {
+                "agents": {
+                    "type": "array",
+                    "description": "All active and historical agent modules",
+                    "items": {"$ref": "#/definitions/agentNode"}
+                },
+                "fieldMetrics": {
+                    "type": "array",
+                    "description": "Global or emergent metrics",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "metricID": {"type": "string"},
+                            "name": {"type": "string"},
+                            "targetValue": {"type": "string"},
+                            "currentValue": {"type": "string"},
+                            "evaluationMethod": {"type": "string"}
+                        }
+                    }
+                },
+                "fieldResidue": {
+                    "type": "array",
+                    "description": "Field-level residue",
+                    "items": {"$ref": "#/definitions/symbolicResidueEntry"}
+                }
+            }
+        },
+        "operationalScaffold": {
+            "type": "object",
+            "description": "Run-time orchestration layer",
+            "properties": {
+                "currentPhase": {"type": "string"},
+                "activeAgents": {"type": "array", "items": {"type": "string"}},
+                "nextAction": {"type": "string"},
+                "blueprints": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/evolutionaryBlueprint"}
+                },
+                "errorState": {"type": "string"}
+            }
+        },
+        "recursionSettings": {
+            "type": "object",
+            "description": "Fractal/recursive parameters",
+            "properties": {
+                "maxDepth": {"type": "integer", "default": 7},
+                "allowMetaEvolution": {"type": "boolean", "default": true},
+                "propagateResidueUpstream": {"type": "boolean", "default": true}
+            }
+        },
+        "saveState": {
+            "type": "object",
+            "description": "Snapshot for forking, replay, or meta-analysis",
+            "properties": {
+                "snapshotID": {"type": "string"},
+                "timestamp": {"type": "string"},
+                "description": {"type": "string"},
+                "savedDevelopmentalField": {"$ref": "#/properties/developmentalField"},
+                "savedOperationalScaffold": {"$ref": "#/properties/operationalScaffold"}
+            }
+        }
+    },
+    "required": ["fractalVersion", "instanceID", "systemContext", "developmentalField", "operationalScaffold"],
+    "definitions": {
+        "agentNode": {
+            "type": "object",
+            "description": "A single developmental agent node",
+            "properties": {
+                "agentID": {"type": "string"},
+                "agentType": {"type": "string"},
+                "timeRange": {"type": "string"},
+                "developmentalPhase": {"type": "string"},
+                "affectiveProfile": {
+                    "type": "object",
+                    "properties": {
+                        "valence": {"type": "string", "enum": ["positive", "negative", "neutral", "ambivalent"]},
+                        "intensity": {"type": "number", "minimum": 0, "maximum": 1},
+                        "dominantAffects": {"type": "array", "items": {"type": "string"}}
+                    }
+                },
+                "symbolicContent": {"type": "array", "items": {"type": "string"}},
+                "memoryTrace": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/agentNode"}
+                },
+                "residue": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/symbolicResidueEntry"}
+                },
+                "lineage": {"type": "array", "items": {"type": "string"}},
+                "driftEvents": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "eventType": {"type": "string"},
+                            "timestamp": {"type": "string"},
+                            "details": {"type": "string"}
+                        }
+                    }
+                },
+                "reflectionLog": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "entryID": {"type": "string"},
+                            "timestamp": {"type": "string"},
+                            "actor": {"type": "string"},
+                            "phase": {"type": "string"},
+                            "content": {"type": "string"}
+                        }
+                    }
+                },
+                "blueprints": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/evolutionaryBlueprint"}
+                },
+                "meta": {"type": "object"}
+            },
+            "required": ["agentID", "agentType", "developmentalPhase"]
+        },
+        "symbolicResidueEntry": {
+            "type": "object",
+            "properties": {
+                "residueID": {"type": "string"},
+                "timestamp": {"type": "string"},
+                "source": {"type": "string"},
+                "description": {"type": "string"},
+                "data": {"type": "object"},
+                "analysis": {"type": "string"},
+                "impactAssessment": {"type": "string"}
+            },
+            "required": ["residueID", "timestamp", "source", "description"]
+        },
+        "evolutionaryBlueprint": {
+            "type": "object",
+            "properties": {
+                "blueprintID": {"type": "string"},
+                "name": {"type": "string"},
+                "description": {"type": "string"},
+                "domainApplicability": {"type": "array", "items": {"type": "string"}},
+                "parameters": {"type": "object"},
+                "agentSequenceTemplate": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "agentRole": {"type": "string"},
+                            "promptTemplateID": {"type": "string"},
+                            "evaluationCriteria": {"type": "array", "items": {"type": "string"}}
+                        }
+                    }
+                },
+                "promptTemplates": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "templateID": {"type": "string"},
+                            "content": {"type": "string"}
+                        }
+                    }
+                },
+                "successMetrics": {"type": "array", "items": {"type": "string"}}
+            },
+            "required": ["blueprintID", "name", "description", "agentSequenceTemplate"]
+        }
+    }
+}
+
+# Protocol Shell Schema
+PROTOCOL_SHELL_SCHEMA = {
+    "$schema": "http://fractal.recursive.net/schemas/protocolShell.v1.json",
+    "title": "Protocol Shell Schema",
+    "description": "Schema for structured protocol shells in pareto-lang format",
+    "type": "object",
+    "properties": {
+        "shellName": {"type": "string"},
+        "intent": {"type": "string"},
+        "input": {
+            "type": "object",
+            "additionalProperties": true
+        },
+        "process": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string"},
+                    "params": {"type": "object", "additionalProperties": true}
+                },
+                "required": ["name"]
+            }
+        },
+        "output": {
+            "type": "object",
+            "additionalProperties": true
+        },
+        "meta": {
+            "type": "object",
+            "properties": {
+                "version": {"type": "string"},
+                "agent_signature": {"type": "string"},
+                "timestamp": {"type": "string"}
+            },
+            "required": ["version", "agent_signature", "timestamp"]
+        }
+    },
+    "required": ["shellName", "intent", "input", "process", "output", "meta"]
+}
+
+
+# Example Schema Usage
+# ===================
+
+def example_basic_schema():
+    """Example of using a basic JSON Schema for structured output."""
+    # Define a simple schema for a structured task
+    task_schema = {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "Task Schema",
+        "description": "Schema for task representation",
+        "type": "object",
+        "properties": {
+            "title": {"type": "string"},
+            "description": {"type": "string"},
+            "priority": {"type": "integer", "minimum": 1, "maximum": 5},
+            "status": {"type": "string", "enum": ["todo", "in_progress", "done"]},
+            "tags": {"type": "array", "items": {"type": "string"}},
+            "due_date": {"type": "string", "format": "date-time"}
+        },
+        "required": ["title", "priority", "status"]
+    }
+    
+    # Create JSONSchema instance
+    schema = JSONSchema(task_schema)
+    
+    # Generate an example instance
+    example, metrics = schema.generate_example()
+    
+    # Display schema and example
+    display_schema_example(
+        title="Basic Task Schema",
+        schema=task_schema,
+        instance=example,
+        metrics=metrics
+    )
+    
+    # Create a schema-based prompt
+    prompt = schema.generate_prompt_with_schema(
+        task_description="Create a task for refactoring the authentication module in our application."
+    )
+    
+    print("Schema-Based Prompt:")
+    print("-" * 80)
+    print(prompt)
+    
+    return schema, example, prompt
+
+
+def example_recursive_schema():
+    """Example of using a recursive schema for nested structures."""
+    # Define a recursive schema for a file system
+    file_system_schema = {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "File System Schema",
+        "description": "Schema for a recursive file system structure",
+        "type": "object",
+        "properties": {
+            "name": {"type": "string"},
+            "type": {"type": "string", "enum": ["file", "directory"]},
+            "created": {"type": "string", "format": "date-time"},
+            "size": {"type": "integer", "minimum": 0},
+            "children": {
+                "type": "array",
+                "items": {"$ref": "#"},
+                "description": "Child files and directories (recursive)"
+            }
+        },
+        "required": ["name", "type"],
+        "allOf": [
+            {
+                "if": {
+                    "properties": {"type": {"const": "file"}}
+                },
+                "then": {
+                    "required": ["size"]
+                }
+            },
+            {
+                "if": {
+                    "properties": {"type": {"const": "directory"}}
+                },
+                "then": {
+                    "properties": {"children": {"minItems": 0}}
+                }
+            }
+        ]
+    }
+    
+    # Create FractalSchema instance with recursion path
+    schema = FractalSchema(
+        file_system_schema,
+        recursion_paths=["children"],
+        max_recursion_depth=3,
+        name="File System Schema",
+        description="A recursive schema for file system structures"
+    )
+    
+    # Generate an example with specified recursion depth
+    example, metrics = schema.generate_example(recursion_depth=2)
+    
+    # Display schema and example
+    display_schema_example(
+        title="Recursive File System Schema",
+        schema=file_system_schema,
+        instance=example,
+        metrics=metrics
+    )
+    
+    # Visualize recursion metrics
+    schema.visualize_recursion_metrics()
+    
+    return schema, example
+
+
+def example_schema_context():
+    """Example of using SchemaContext for structured LLM interactions."""
+    # Define a schema for a research paper summary
+    paper_summary_schema = {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "Research Paper Summary",
+        "description": "Schema for summarizing research papers",
+        "type": "object",
+        "properties": {
+            "title": {"type": "string"},
+            "authors": {"type": "array", "items": {"type": "string"}},
+            "publication_year": {"type": "integer", "minimum": 1900, "maximum": 2100},
+            "main_findings": {"type": "array", "items": {"type": "string"}},
+            "methodology": {"type": "string"},
+            "limitations": {"type": "array", "items": {"type": "string"}},
+            "impact_score": {"type": "integer", "minimum": 1, "maximum": 10},
+            "related_papers": {"type": "array", "items": {"type": "string"}}
+        },
+        "required": ["title", "authors", "publication_year", "main_findings", "methodology"]
+    }
+    
+    # Create schema instance
+    schema = JSONSchema(paper_summary_schema, name="Research Paper Summary Schema")
+    
+    # Create schema context
+    context = SchemaContext(
+        schema=schema,
+        system_message="You are a research assistant that summarizes academic papers in a structured format.",
+        verbose=True
+    )
+    
+    # Query with a paper description
+    paper_description = """
+    Title: "Attention Is All You Need"
+    Authors: Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, Illia Polosukhin
+    Published in 2017 at the 31st Conference on Neural Information Processing Systems (NIPS).
+    
+    This paper introduces the Transformer, a novel neural network architecture based on self-attention mechanisms, dispensing with recurrence and convolutions entirely. The Transformer allows for significantly increased parallelization and achieves new state-of-the-art results on translation tasks. The architecture also generalizes well to other tasks.
+    
+    The methodology involves using stacked self-attention and point-wise, fully connected layers for both the encoder and decoder. The authors also introduce multi-head attention which allows the model to jointly attend to information from different representation subspaces at different positions.
+    
+    Some limitations include the quadratic computation cost with respect to sequence length and challenges in modeling very long sequences.
+    """
+    
+    # Execute query
+    result, details = context.query(paper_description, retry_on_validation_failure=True)
+    
+    # Display results
+    context.display_query_results(details)
+    
+    return context, result, details
+
+
+def example_fractal_repo_schema():
+    """Example of using the Context-Engineering repository schema."""
+    # Create FractalSchema instance
+    schema = FractalSchema(
+        CONTEXT_ENGINEERING_SCHEMA,
+        recursion_paths=["repositoryContext.fileTree.directories"],
+        max_recursion_depth=3,
+        name="Context-Engineering Repository Schema",
+        description="Schema for the Context-Engineering repository structure and metadata"
+    )
+    
+    # Generate an example instance
+    example, metrics = schema.generate_example(recursion_depth=2)
+    
+    # Display schema and example
+    display_schema_example(
+        title="Context-Engineering Repository Schema",
+        schema=CONTEXT_ENGINEERING_SCHEMA,
+        instance=example,
+        metrics=metrics
+    )
+    
+    # Validate the example
+    is_valid, error = schema.validate(example)
+    print(f"Example valid: {is_valid}")
+    if not is_valid:
+        print(f"Validation error: {error}")
+    
+    return schema, example
+
+
+def example_protocol_shell_schema():
+    """Example of using the Protocol Shell schema."""
+    # Create JSONSchema instance
+    schema = JSONSchema(
+        PROTOCOL_SHELL_SCHEMA,
+        name="Protocol Shell Schema",
+        description="Schema for structured protocol shells in pareto-lang format"
+    )
+    
+    # Generate an example instance
+    example, metrics = schema.generate_example()
+    
+    # Display schema and example
+    display_schema_example(
+        title="Protocol Shell Schema",
+        schema=PROTOCOL_SHELL_SCHEMA,
+        instance=example,
+        metrics=metrics
+    )
+    
+    # Create a schema context for protocol shell generation
+    context = SchemaContext(
+        schema=schema,
+        system_message="You are a protocol engineer who designs structured shells for recursive processes.",
+        verbose=True
+    )
+    
+    # Query for a specific protocol
+    protocol_request = """
+    Create a protocol shell for a reasoning process that:
+    1. Analyzes a complex problem
+    2. Breaks it down into subproblems
+    3. Solves each subproblem
+    4. Integrates the solutions
+    5. Verifies the final solution
+    
+    The protocol should include capabilities for tracking symbolic residue and recursive self-improvement.
+    """
+    
+    # Execute query
+    result, details = context.query(protocol_request, retry_on_validation_failure=True)
+    
+    # Display results
+    context.display_query_results(details)
+    
+    return context, result, details
+
+
+# Main execution (when run as a script)
+if __name__ == "__main__":
+    print("Schema Design for Structured Context")
+    print("Run examples individually or import classes for your own use.")
