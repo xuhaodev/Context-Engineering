@@ -181,7 +181,7 @@ We welcome contributions! Check out [CONTRIBUTING.md](.github/CONTRIBUTING.md) f
   title = {Context Engineering: Beyond Prompt Engineering},
   year = {2025},
   publisher = {GitHub},
-  url = {https://github.com/your-username/context-engineering}
+  url = {https://github.com/davidkimai/context-engineering}
 }
 ```
 
