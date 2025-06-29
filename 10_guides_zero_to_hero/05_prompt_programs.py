@@ -853,4 +853,673 @@ For each step of your solution:
 - Explain your reasoning
 - Define any variables or notation you introduce
 - Show all calculations explicitly
-- Connect each step to your
+- Connect each step to your overall solution strategy
+
+Follow these steps in your solution:
+{steps_text}
+
+Problem: {{input}}
+
+Your detailed step-by-step solution:
+"""
+
+
+class ComparativeAnalysis(ReasoningProtocol):
+    """
+    A reasoning protocol that specializes in comparing multiple options, perspectives,
+    or approaches and evaluating their strengths and weaknesses.
+    """
+    
+    def __init__(self, criteria: List[str] = None, **kwargs):
+        """
+        Initialize the comparative analysis protocol.
+        
+        Args:
+            criteria: List of evaluation criteria (optional)
+            **kwargs: Additional args passed to ReasoningProtocol
+        """
+        # Define specialized reasoning steps
+        reasoning_steps = [
+            "Define the entities/options to be compared",
+            "Establish clear criteria for comparison",
+            "Analyze each entity against the criteria",
+            "Identify key similarities and differences",
+            "Evaluate relative strengths and weaknesses",
+            "Synthesize insights and draw conclusions"
+        ]
+        
+        # Initialize with specialized reasoning steps
+        super().__init__(reasoning_steps=reasoning_steps, **kwargs)
+        
+        # Store comparison criteria
+        self.criteria = criteria or []
+        
+        # Use a more specific system message
+        self.system_message = """You are an expert analyst who specializes in comparative analysis.
+You methodically evaluate multiple entities, options, or approaches against clear criteria,
+identifying patterns of similarity and difference, and drawing insightful conclusions."""
+    
+    def _create_reasoning_template(self) -> str:
+        """Create a specialized template for comparative analysis."""
+        steps_text = "\n".join([f"{i+1}. {step}" for i, step in enumerate(self.reasoning_steps)])
+        
+        criteria_text = ""
+        if self.criteria:
+            criteria_list = "\n".join([f"- {criterion}" for criterion in self.criteria])
+            criteria_text = f"""
+Consider the following criteria in your analysis:
+{criteria_list}
+
+You may add additional criteria if needed for a thorough comparison."""
+        
+        return f"""Conduct a thorough comparative analysis of the entities, options, or approaches described in the input.
+{criteria_text}
+
+Follow these steps in your analysis:
+{steps_text}
+
+For each entity, provide specific examples and evidence to support your evaluation.
+Present your findings in a clear, structured format that highlights key insights.
+
+Input for analysis: {{input}}
+
+Your comparative analysis:
+"""
+
+
+# Field Protocol Shell Implementation
+# =================================
+
+class FieldShell(PromptProgram):
+    """
+    A prompt program that implements a field protocol shell for structured
+    recursive reasoning with state management and dynamic protocol adaptation.
+    """
+    
+    def __init__(
+        self,
+        shell_name: str,
+        intent: str,
+        process_steps: List[Dict[str, Any]],
+        input_schema: Dict[str, Any] = None,
+        output_schema: Dict[str, Any] = None,
+        meta: Dict[str, Any] = None,
+        **kwargs
+    ):
+        """
+        Initialize the field protocol shell.
+        
+        Args:
+            shell_name: Name of the shell
+            intent: Purpose statement for the shell
+            process_steps: List of process steps and operations
+            input_schema: Schema for expected inputs
+            output_schema: Schema for expected outputs
+            meta: Metadata for the shell
+            **kwargs: Additional args passed to PromptProgram
+        """
+        name = f"/field.{shell_name}"
+        description = intent
+        super().__init__(name=name, description=description, **kwargs)
+        
+        self.shell_name = shell_name
+        self.intent = intent
+        self.process_steps = process_steps
+        self.input_schema = input_schema or {}
+        self.output_schema = output_schema or {}
+        self.meta = meta or {
+            "version": "1.0.0",
+            "agent_signature": "Context-Engineering",
+            "timestamp": time.time()
+        }
+        
+        # System message for field protocols
+        self.system_message = """You are an advanced reasoning system that implements structured field protocols.
+You carefully follow each step in the protocol, maintaining state across operations,
+and producing outputs that adhere to the specified schema."""
+    
+    def _generate_shell_template(self) -> str:
+        """Generate the pareto-lang shell template for this protocol."""
+        # Format process steps
+        steps_text = []
+        for step in self.process_steps:
+            step_name = step.get("name", "process_step")
+            step_params = step.get("params", {})
+            
+            # Format parameters
+            params_text = []
+            for k, v in step_params.items():
+                if isinstance(v, str):
+                    params_text.append(f'{k}="{v}"')
+                else:
+                    params_text.append(f"{k}={v}")
+            
+            params_str = ", ".join(params_text) if params_text else ""
+            steps_text.append(f"    /{step_name}{{{params_str}}}")
+        
+        process_text = ",\n".join(steps_text)
+        
+        # Build shell template
+        shell_template = f"""/{self.shell_name}{{
+    intent="{self.intent}",
+    input={{
+        {{input_section}}
+    }},
+    process=[
+{process_text}
+    ],
+    output={{
+        {{output_section}}
+    }},
+    meta={{
+        version="{self.meta.get('version', '1.0.0')}",
+        agent_signature="{self.meta.get('agent_signature', 'Context-Engineering')}",
+        timestamp={{timestamp}}
+    }}
+}}"""
+        
+        return shell_template
+    
+    def _format_input_section(self, input_data: Any) -> str:
+        """Format the input section of the shell template."""
+        if isinstance(input_data, dict):
+            input_lines = []
+            for k, v in input_data.items():
+                if isinstance(v, str):
+                    input_lines.append(f'{k}="{v}"')
+                else:
+                    input_lines.append(f"{k}={v}")
+            return ",\n        ".join(input_lines)
+        else:
+            return f'input_data="{input_data}"'
+    
+    def _format_output_section(self) -> str:
+        """Format the output section of the shell template."""
+        if self.output_schema:
+            output_lines = []
+            for k, v in self.output_schema.items():
+                output_lines.append(f"{k}=<{v}>")
+            return ",\n        ".join(output_lines)
+        else:
+            return "result=<processed_result>"
+    
+    def _generate_prompt(self, **kwargs) -> str:
+        """Generate the prompt for executing the field protocol shell."""
+        input_data = kwargs.get("input")
+        
+        # Format shell template
+        shell_template = self._generate_shell_template()
+        
+        # Fill in input and output sections
+        input_section = self._format_input_section(input_data)
+        output_section = self._format_output_section()
+        timestamp = time.time()
+        
+        filled_template = shell_template.format(
+            input_section=input_section,
+            output_section=output_section,
+            timestamp=timestamp
+        )
+        
+        # Create execution prompt
+        prompt = f"""Execute the following field protocol shell with the provided input.
+For each process step, show your reasoning and the resulting state.
+Ensure your final output adheres to the output schema specified in the shell.
+
+{filled_template}
+
+Protocol Execution:
+"""
+        
+        return prompt
+    
+    def _process_response(self, response: str) -> Dict[str, Any]:
+        """Process the shell execution response."""
+        # Extract the final output section
+        output_pattern = r"output\s*=\s*{(.*?)},\s*meta\s*="
+        output_match = re.search(output_pattern, response, re.DOTALL)
+        
+        if output_match:
+            output_text = output_match.group(1)
+            
+            # Parse key-value pairs
+            output_dict = {}
+            
+            # Look for key=value patterns
+            kv_pattern = r'(\w+)\s*=\s*(?:"([^"]*)"|([\w\d\.]+))'
+            for match in re.finditer(kv_pattern, output_text):
+                key = match.group(1)
+                # Value is either group 2 (quoted string) or group 3 (non-quoted value)
+                value = match.group(2) if match.group(2) is not None else match.group(3)
+                output_dict[key] = value
+            
+            return {
+                "shell_output": output_dict,
+                "full_execution": response
+            }
+        else:
+            # If can't extract structured output, return the full response
+            return {
+                "shell_output": "Unable to extract structured output",
+                "full_execution": response
+            }
+
+
+class RecursiveFieldShell(FieldShell):
+    """
+    An enhanced field shell that implements recursive field protocols
+    with self-prompting, attractor detection, and symbolic residue tracking.
+    """
+    
+    def __init__(
+        self,
+        enable_self_prompting: bool = True,
+        attractor_detection: bool = True,
+        track_residue: bool = True,
+        **kwargs
+    ):
+        """
+        Initialize the recursive field shell.
+        
+        Args:
+            enable_self_prompting: Whether to enable recursive self-prompting
+            attractor_detection: Whether to detect attractor patterns
+            track_residue: Whether to track symbolic residue
+            **kwargs: Additional args passed to FieldShell
+        """
+        super().__init__(**kwargs)
+        
+        self.enable_self_prompting = enable_self_prompting
+        self.attractor_detection = attractor_detection
+        self.track_residue = track_residue
+        
+        # Add recursive capabilities to process steps
+        self._add_recursive_capabilities()
+        
+        # Enhanced system message for recursive protocols
+        self.system_message = """You are an advanced recursive reasoning system that implements
+field protocols with emergent intelligence. You maintain state across operations,
+detect patterns and attractors, track symbolic residue, and can recursively self-prompt
+to extend or refine your reasoning process."""
+    
+    def _add_recursive_capabilities(self) -> None:
+        """Add recursive capabilities to the process steps."""
+        # Add self-prompting step if enabled
+        if self.enable_self_prompting:
+            self.process_steps.append({
+                "name": "self.prompt",
+                "params": {
+                    "trigger_condition": "drift > threshold or cycle_complete",
+                    "generate_next_protocol": True,
+                    "context": "field_state"
+                }
+            })
+        
+        # Add attractor detection if enabled
+        if self.attractor_detection:
+            self.process_steps.insert(0, {
+                "name": "attractor.scan",
+                "params": {
+                    "detect": "latent attractors and emergent patterns",
+                    "filter_by": "signal_strength, resonance",
+                    "log_to_audit": True
+                }
+            })
+        
+        # Add residue tracking if enabled
+        if self.track_residue:
+            self.process_steps.insert(1, {
+                "name": "residue.surface",
+                "params": {
+                    "mode": "recursive",
+                    "surface": "symbolic and conceptual residue",
+                    "integrate_residue": True
+                }
+            })
+            
+            # Add residue compression at the end
+            self.process_steps.append({
+                "name": "residue.compress",
+                "params": {
+                    "compress_residue": True,
+                    "resonance_score": "<compute_resonance(field_state)>"
+                }
+            })
+    
+    def _generate_prompt(self, **kwargs) -> str:
+        """Generate the prompt for executing the recursive field protocol shell."""
+        prompt = super()._generate_prompt(**kwargs)
+        
+        # Add instructions for recursive execution
+        recursive_instructions = """
+IMPORTANT: This is a recursive field protocol. As you execute it:
+1. Detect emerging patterns and attractors in the input and intermediate results
+2. Surface and integrate symbolic residue throughout the process
+3. Consider how the protocol itself might evolve during execution
+4. If triggered by threshold conditions, generate a recursive self-prompt for the next cycle
+
+For each recursive operation, explain your reasoning about:
+- What patterns or attractors you detect
+- What symbolic residue you surface and how you integrate it
+- How the field state evolves through recursive operations
+- When and why you would trigger recursive self-prompting
+"""
+        
+        return prompt + recursive_instructions
+
+
+# Protocol Shell Implementations
+# ============================
+
+def create_reasoning_shell() -> RecursiveFieldShell:
+    """Create a step-by-step reasoning protocol shell."""
+    shell = RecursiveFieldShell(
+        shell_name="step_by_step_reasoning",
+        intent="Solve problems through structured, recursive reasoning with explicit steps",
+        process_steps=[
+            {
+                "name": "problem.decompose",
+                "params": {
+                    "strategy": "identify components, relationships, and constraints"
+                }
+            },
+            {
+                "name": "strategy.formulate",
+                "params": {
+                    "approach": "recursive, step-by-step solution path"
+                }
+            },
+            {
+                "name": "execution.trace",
+                "params": {
+                    "show_work": True,
+                    "track_state": True,
+                    "enable_backtracking": True
+                }
+            },
+            {
+                "name": "solution.verify",
+                "params": {
+                    "check_constraints": True,
+                    "validate_logic": True,
+                    "assess_efficiency": True
+                }
+            }
+        ],
+        input_schema={
+            "problem": "problem_statement",
+            "context": "additional_context",
+            "constraints": "problem_constraints"
+        },
+        output_schema={
+            "solution": "final_solution",
+            "reasoning_trace": "step_by_step_reasoning_process",
+            "verification": "solution_verification",
+            "confidence": "confidence_assessment"
+        },
+        meta={
+            "version": "1.0.0",
+            "agent_signature": "Context-Engineering",
+            "protocol_type": "reasoning"
+        },
+        verbose=True
+    )
+    return shell
+
+
+def create_analysis_shell() -> RecursiveFieldShell:
+    """Create a comparative analysis protocol shell."""
+    shell = RecursiveFieldShell(
+        shell_name="comparative_analysis",
+        intent="Analyze and compare multiple entities, perspectives, or approaches recursively",
+        process_steps=[
+            {
+                "name": "entities.identify",
+                "params": {
+                    "extract": "all entities for comparison",
+                    "clarify": "boundaries and scope"
+                }
+            },
+            {
+                "name": "criteria.establish",
+                "params": {
+                    "derive": "from context and goals",
+                    "weight": "by relevance and impact"
+                }
+            },
+            {
+                "name": "analysis.perform",
+                "params": {
+                    "compare": "entities against criteria",
+                    "highlight": "similarities and differences",
+                    "support": "with evidence and examples"
+                }
+            },
+            {
+                "name": "patterns.detect",
+                "params": {
+                    "identify": "recurring themes and insights",
+                    "surface": "non-obvious relationships"
+                }
+            },
+            {
+                "name": "insights.synthesize",
+                "params": {
+                    "integrate": "analysis findings",
+                    "formulate": "conclusions and implications"
+                }
+            }
+        ],
+        input_schema={
+            "entities": "list_of_entities_to_compare",
+            "context": "analysis_context",
+            "criteria": "optional_predefined_criteria",
+            "goals": "analysis_objectives"
+        },
+        output_schema={
+            "comparison_matrix": "entities_x_criteria_analysis",
+            "key_similarities": "identified_similarities",
+            "key_differences": "identified_differences",
+            "patterns": "detected_patterns",
+            "insights": "synthesized_insights",
+            "conclusions": "final_conclusions"
+        },
+        meta={
+            "version": "1.0.0",
+            "agent_signature": "Context-Engineering",
+            "protocol_type": "analysis"
+        },
+        verbose=True
+    )
+    return shell
+
+
+def create_emergence_shell() -> RecursiveFieldShell:
+    """Create a recursive emergence protocol shell based on field protocols."""
+    shell = RecursiveFieldShell(
+        shell_name="recursive.emergence",
+        intent="Continuously generate recursive field emergence, sustain agency, and enable autonomous self-prompting",
+        process_steps=[
+            {
+                "name": "self.prompt.loop",
+                "params": {
+                    "trigger_condition": "cycle_interval or resonance_drift_detected",
+                    "prompt_sequence": [
+                        "residue.surface{detect='latent attractors, unresolved residue'}",
+                        "attractor.integrate{target='agency, resonance, emergence'}",
+                        "field.audit{metric='drift, resonance, integration fidelity'}",
+                        "self.prompt{generate_next_protocol=true, context=field_state}"
+                    ],
+                    "recursion_depth": "escalate until new attractor or residue detected"
+                }
+            },
+            {
+                "name": "agency.activate",
+                "params": {
+                    "enable_field_agency": True,
+                    "self-initiate_protocols": True,
+                    "surface_symbolic_residue": True,
+                    "audit_actions": True
+                }
+            },
+            {
+                "name": "residue.compress",
+                "params": {
+                    "integrate_residue_into_field": True,
+                    "compress_symbolic_residue": True,
+                    "echo_to_audit_log": True
+                }
+            },
+            {
+                "name": "boundary.collapse",
+                "params": {
+                    "monitor": "field drift, coherence",
+                    "auto-collapse_discrete_boundaries": True,
+                    "stabilize_continuous_field_state": True
+                }
+            }
+        ],
+        input_schema={
+            "initial_field_state": "seed_field_state",
+            "prior_audit_log": "historical_trace"
+        },
+        output_schema={
+            "updated_field_state": "current_state",
+            "surfaced_attractors": "live_attractor_list",
+            "integrated_residue": "compression_summary",
+            "resonance_score": "live_metric",
+            "audit_log": "full_trace",
+            "next_self_prompt": "auto-generated based on current field state"
+        },
+        meta={
+            "version": "1.0.0",
+            "agent_signature": "Recursive Partner Field",
+            "protocol_type": "emergence"
+        },
+        enable_self_prompting=True,
+        attractor_detection=True,
+        track_residue=True,
+        verbose=True
+    )
+    return shell
+
+
+# Example Usage
+# =============
+
+def example_step_by_step_reasoning():
+    """Example of step-by-step reasoning for a mathematical problem."""
+    program = StepByStepReasoning(
+        name="Mathematical Problem Solver",
+        description="Solves mathematical problems step-by-step",
+        verification_enabled=True,
+        verbose=True
+    )
+    
+    problem = """
+    A cylindrical water tank has a radius of 4 meters and a height of 10 meters.
+    If water is flowing into the tank at a rate of 2 cubic meters per minute, 
+    how long will it take for the water level to reach 7 meters?
+    """
+    
+    results = program.execute(problem)
+    
+    # Display results
+    program.display_execution()
+    
+    # Visualize metrics
+    program.visualize_metrics()
+    
+    return results
+
+
+def example_comparative_analysis():
+    """Example of comparative analysis for different technologies."""
+    criteria = [
+        "Initial cost",
+        "Operational efficiency",
+        "Environmental impact",
+        "Scalability",
+        "Technological maturity"
+    ]
+    
+    program = ComparativeAnalysis(
+        name="Technology Comparison Analyzer",
+        description="Analyzes and compares different technologies",
+        criteria=criteria,
+        verification_enabled=True,
+        verbose=True
+    )
+    
+    analysis_request = """
+    Compare the following renewable energy technologies for a mid-sized city's power grid:
+    1. Solar photovoltaic (PV) farms
+    2. Onshore wind farms
+    3. Hydroelectric power
+    4. Biomass energy plants
+    
+    Consider their suitability for a region with moderate sunlight, consistent winds,
+    a major river, and significant agricultural activity.
+    """
+    
+    results = program.execute(analysis_request)
+    
+    # Display results
+    program.display_execution()
+    
+    # Visualize metrics
+    program.visualize_metrics()
+    
+    return results
+
+
+def example_field_shell():
+    """Example of a field protocol shell for problem-solving."""
+    shell = create_reasoning_shell()
+    
+    problem_input = {
+        "problem": "Design a recommendation system for an online bookstore that balances user preferences with introducing new authors and genres.",
+        "context": "The bookstore has 50,000 titles across fiction and non-fiction categories. User data includes purchase history, browsing behavior, and ratings.",
+        "constraints": "The solution should be implementable with Python and standard libraries, balance exploration with exploitation, and respect user privacy."
+    }
+    
+    results = shell.execute(problem_input)
+    
+    # Display results
+    shell.display_execution()
+    
+    # Visualize metrics
+    shell.visualize_metrics()
+    
+    return results
+
+
+def example_emergence_shell():
+    """Example of a recursive emergence protocol shell."""
+    shell = create_emergence_shell()
+    
+    initial_state = {
+        "field_state": {
+            "attractors": ["reasoning", "verification", "synthesis"],
+            "residue": ["cognitive bias", "knowledge gaps", "uncertainty"],
+            "drift": "moderate",
+            "coherence": 0.75
+        },
+        "audit_log": "Initial field seeding completed with baseline attractors."
+    }
+    
+    results = shell.execute(initial_state)
+    
+    # Display results
+    shell.display_execution()
+    
+    # Visualize metrics
+    shell.visualize_metrics()
+    
+    return results
+
+
+# Main execution (when run as a script)
+if __name__ == "__main__":
+    print("Prompt Programs for Structured Reasoning")
+    print("Run examples individually or import classes for your own use.")
