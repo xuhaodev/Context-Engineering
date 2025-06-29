@@ -12,7 +12,6 @@ A practical, first-principles handbook for moving beyond prompt engineering to t
                                         │     tools, state, control flow)
 ```
 
-> "Abstraction is the cost of generalization"— [**Grant Sanderson (3Blue1Brown)**](https://www.3blue1brown.com/)
 
 ## Why This Repository Exists
 
@@ -28,6 +27,12 @@ atoms → molecules → cells → organs → neurobiological systems → neural 
 single    few-     memory   multi-    cognitive tools +   context = neural fields +
 prompt    shot     state    agent     prompt programs     persistence & resonance
 ```
+> "Abstraction is the cost of generalization"— [**Grant Sanderson (3Blue1Brown)**](https://www.3blue1brown.com/)
+
+
+
+## Symbols? 
+
 > **[Emergent Symbolic Mechanisms Support Abstract Reasoning in Large Language Models - ICML 2025](https://openreview.net/forum?id=y1SnRPDWx4)**
 >
 > **TL;DR: A three-stage architecture is identified that supports abstract reasoning in LLMs via a set of emergent symbol-processing mechanisms**
