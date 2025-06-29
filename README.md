@@ -24,10 +24,10 @@ atoms → molecules → cells → organs → neurobiological systems → neural 
 single    few-     memory   multi-    cognitive tools +   context = neural fields +
 prompt    shot     state    agent     prompt programs     persistence & resonance
 ```
-> **Symbolic Layer**
+> **[Emergent Symbolic Mechanisms Support Abstract Reasoning in Large Language Models - ICML 2025](https://openreview.net/forum?id=y1SnRPDWx4)**
 >
->
-> A syntax/symbol pattern recognition layer present in all tested models and generalizes across languages
+> **TL;DR: A three-stage architecture is identified that supports abstract reasoning in LLMs via a set of emergent symbol-processing mechanisms**
+> 
 >
 > Can be leveraged for persistence and coherence by using symbols/syntax as structural attractors
 
