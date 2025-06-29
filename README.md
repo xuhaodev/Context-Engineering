@@ -11,8 +11,12 @@ A practical, first-principles handbook for moving beyond prompt engineering to t
              (Single instruction)       │    (Examples, memory, retrieval,
                                         │     tools, state, control flow)
 ```
-## Why This Repository Exists
+
 > "Abstraction is the cost of generalization"— [**Grant Sanderson (3Blue1Brown)**](https://www.3blue1brown.com/)
+
+## Why This Repository Exists
+
+> **We posit that meaning is instead actualized through an observer-dependent interpretive act [Indiana University - June 2025](https://arxiv.org/pdf/2506.10077)**
 
 Prompt engineering gets all the attention, but imagine what comes next. Once you've mastered prompts, the real power comes from engineering the **entire context window** that surrounds those prompts. Guiding thought, if you will. 
 
