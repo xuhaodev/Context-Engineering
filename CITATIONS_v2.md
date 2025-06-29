@@ -4,7 +4,7 @@ This document provides conceptual anchors, research bridges, and foundational re
 
 ## Core Conceptual Anchors
 
-### 1. Emergent Symbolic Mechanisms in LLMs
+### [1. Emergent Symbolic Mechanisms in LLMs](https://openreview.net/forum?id=y1SnRPDWx4)
 
 **Source:** Yang, Y., Campbell, D., Huang, K., Wang, M., Cohen, J., & Webb, T. (2025). "Emergent Symbolic Mechanisms Support Abstract Reasoning in Large Language Models." *Proceedings of the 42nd International Conference on Machine Learning*.
 
@@ -19,7 +19,7 @@ This document provides conceptual anchors, research bridges, and foundational re
 - Provides mechanistic understanding for `symbolic_residue_tracker.py` implementation
 - Validates our approach to treating context as continuous fields with emergent properties
 
-### 2. Cognitive Tools Framework
+### 2. [2. Cognitive Tools for Language Models](https://www.arxiv.org/pdf/2506.12115)
 
 **Source:** Brown Ebouky, Andrea Bartezzaghi, Mattia Rigotti (2025). "Eliciting Reasoning in Language Models with Cognitive Tools." arXiv preprint arXiv:2506.12115v1.
 
@@ -36,7 +36,7 @@ This document provides conceptual anchors, research bridges, and foundational re
 - Supports our approach in `05_cognitive_tools.md` foundations
 - Provides framework for `cognitive_tool_framework.py` implementation
 
-### 3. Quantum Semantic Framework
+### [3. Quantum Semantic Framework](https://arxiv.org/pdf/2506.10077)
 
 **Source:** Agostino, C., Thien, Q.L., Apsel, M., Pak, D., Lesyk, E., & Majumdar, A. (2025). "A quantum semantic framework for natural language processing." arXiv preprint arXiv:2506.10077v1.
 
