@@ -3,7 +3,7 @@
 _Understanding how meaning crystallizes in context fields_
 
 > “The essence of a system lies not in the elements themselves, but in the interrelations between them.”
-— Norbert Wiener
+— Norbert Wiener, Father of Cybernetics
 
 ## 1. Introduction: The Mystery of Emergence
 
