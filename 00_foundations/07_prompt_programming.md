@@ -29,7 +29,7 @@ In our journey through context engineering, we've progressed from atoms to cogni
 └──────────────────────────────────────────────────────────────────────────┘
 ```
 
-As highlighted in recent research by Brown et al. (2025), prompt programming leverages the power of both worlds: the structured reasoning of programming and the flexible natural language of prompting.
+As highlighted in recent research by Brown et al. (2025), cognitive templates and "prompt programs" significantly enhance reasoning. Prompt programming leverages the power of both worlds: the structured reasoning of programming and the flexible natural language of prompting.
 
 ## Why Prompt Programming Works
 
