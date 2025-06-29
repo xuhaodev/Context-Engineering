@@ -21,7 +21,7 @@ This repository provides a progressive, first-principles approach to context eng
 ```
 atoms → molecules → cells → organs → neurobiological systems → neural field theory
   │        │         │        │         │                         │        
-single    few-     memory   multi-    cognitive tools +   context as continuous neural fields +
+single    few-     memory   multi-    cognitive tools +   context = neural fields +
 prompt    shot     state    agent     prompt programs     persistence & resonance
 ```
 > **Symbolic Layer**
