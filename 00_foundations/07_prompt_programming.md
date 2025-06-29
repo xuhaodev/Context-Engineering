@@ -29,7 +29,7 @@ In our journey through context engineering, we've progressed from atoms to cogni
 └──────────────────────────────────────────────────────────────────────────┘
 ```
 
-As highlighted in recent research by Brown et al. (2025), cognitive templates and prompts can act as tools and "prompt programs" that significantly enhance reasoning. Prompt programming leverages the power of both worlds: the structured reasoning of programming and the flexible natural language of prompting.
+As highlighted in recent research by Brown et al. [(2025)](https://www.arxiv.org/pdf/2506.12115), prompt templates can act as cognitive tools and "prompt programs" that significantly enhance reasoning, similar to human heuristics (mental shortcuts). Prompt programming leverages the power of both worlds: the structured reasoning of programming and the flexible natural language of prompting.
 
 ## Why Prompt Programming Works
 
