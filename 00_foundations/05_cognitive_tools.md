@@ -20,6 +20,8 @@ Our journey through context engineering has followed a biological metaphor:
 │          │     │          │     │          │     │          │
 └──────────┘     └──────────┘     └──────────┘     └──────────┘
 ```
+## Cognitive Tools? 
+> “Cognitive tools” encapsulate reasoning operations within the LLM itself — [IBM June 2025](https://www.arxiv.org/pdf/2506.12115)
 
 Now, we'll extend this framework by drawing parallels to human cognition. Just as human minds use cognitive tools to process information efficiently, we can create similar structures for LLMs:
 
