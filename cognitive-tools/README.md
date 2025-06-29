@@ -4,7 +4,7 @@
 
 ## What Are Cognitive Tools?
 > "Providing our “cognitive tools” to GPT-4.1
-increases its pass@1 performance on AIME2024 from 26.7% to 43.3%, bringing it very close to the performance of o1-preview." — [Brown et al](https://www.arxiv.org/pdf/2506.12115)
+increases its pass@1 performance on AIME2024 from 26.7% to 43.3%, bringing it very close to the performance of o1-preview." — [IBM June 2025](https://www.arxiv.org/pdf/2506.12115)
 
 Cognitive tools are structured prompt patterns that guide language models through specific reasoning operations. Like mental tools that humans use to solve problems (analogies, mental models, heuristics), these tools provide models with scaffolding for complex reasoning tasks.
 
