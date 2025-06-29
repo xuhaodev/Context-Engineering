@@ -146,6 +146,7 @@ Context-Engineering/
 | **Control Flow** | Breaking complex tasks into steps | Solve harder problems with simpler prompts |
 | **Context Pruning** | Removing irrelevant information | Keep only what's necessary for performance |
 | **Metrics & Evaluation** | Measuring context effectiveness | Iterative optimization of token use vs. quality |
+| **Cognitive Tools & Prompt Programming** | Learm to build custom tools and templates | Prompt programming enables new layers for context engineering |
 
 ## Karpathy Inspired Style
 
