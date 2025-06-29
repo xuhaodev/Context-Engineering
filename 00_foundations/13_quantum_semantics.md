@@ -1,10 +1,11 @@
+
 # 13. Quantum Semantics
 
 _Understanding meaning as observer-dependent actualization in a non-classical field_
 
 > "Meaning is not an intrinsic, static property of a semantic expression, but rather an emergent phenomenon actualized through the dynamic interaction between the expression and an interpretive agent situated within a specific context."
 > — [**Agostino et al., 2025**](https://arxiv.org/pdf/2506.10077)
-
+> 
 ## 1. Introduction
 
 Recent advances in our understanding of language models have revealed the inadequacy of classical approaches to meaning. While prior modules have established the foundational concepts of context as a continuous field with emergent properties, this module extends that framework by introducing quantum semantics—a paradigm that models meaning as fundamentally observer-dependent, contextual, and exhibiting non-classical properties.
@@ -323,4 +324,264 @@ def measure_field_contextuality(field_config, contexts, threshold=2.0):
         apply_context_to_field(field_config, context_A0),
         context_B1
     )
-    field_A1B0 = apply_context_to_
+    field_A1B0 = apply_context_to_field(
+        apply_context_to_field(field_config, context_A1),
+        context_B0
+    )
+    field_A1B1 = apply_context_to_field(
+        apply_context_to_field(field_config, context_A1),
+        context_B1
+    )
+    
+    # Calculate correlations
+    E_A0B0 = calculate_field_correlation(field_A0B0)
+    E_A0B1 = calculate_field_correlation(field_A0B1)
+    E_A1B0 = calculate_field_correlation(field_A1B0)
+    E_A1B1 = calculate_field_correlation(field_A1B1)
+    
+    # Calculate CHSH value
+    chsh = E_A0B0 - E_A0B1 + E_A1B0 + E_A1B1
+    
+    # Check if CHSH value exceeds classical bound
+    is_contextual = abs(chsh) > threshold
+    
+    return chsh, is_contextual
+```
+
+## 6. Visualizing Quantum Semantic Fields
+
+To develop an intuitive understanding of quantum semantics, we can visualize semantic fields and their transformations.
+
+### 6.1. Semantic State Vectors
+
+Just as vectors represent quantities with both magnitude and direction in physical space, semantic state vectors represent meanings with both strength and orientation in semantic space.
+
+```
+                     │
+                     │          /|
+                     │         / |
+                     │        /  |
+            Semantic │       /   |
+            Dimension│      /    |
+                  B  │     /     |
+                     │    /      |
+                     │   /       |
+                     │  /        |
+                     │ /θ        |
+                     │/__________|
+                     └───────────────────
+                       Semantic Dimension A
+```
+
+Every semantic expression exists as a vector in this high-dimensional space. The direction of the vector indicates the "meaning profile" - which semantic dimensions are activated and to what degree.
+
+### 6.2. Superposition as Field Intensity
+
+We can visualize the superposition of potential interpretations as a field intensity map:
+
+```
+    ┌─────────────────────────────────────┐
+    │                        ╭─╮          │
+    │                    ╭───┤ │          │
+    │          ╭─╮      ╱    ╰─╯          │
+    │         ╱   ╲    ╱                  │
+    │        ╱     ╲  ╱                   │
+    │       ╱       ╲╱                    │
+    │      ╱         ╲                    │
+    │     ╱           ╲                   │
+    │    ╱             ╲                  │
+    │   ╱               ╲                 │
+    │  ╱                 ╲                │
+    │╭╯                   ╰╮              │
+    └─────────────────────────────────────┘
+          Semantic Field Intensity
+```
+
+The peaks in this field represent high-probability interpretations – regions of semantic space where the expression is likely to be interpreted.
+
+### 6.3. Context Application as Vector Projection
+
+When we apply a context, we're essentially projecting the semantic state vector onto the context subspace:
+
+```
+                     │
+                     │          /|
+                     │         / |
+                     │        /  |
+            Semantic │       /   |
+            Dimension│      /    |
+                  B  │     /     |
+                     │    /      |
+                     │   /       │ Context
+                     │  /      /│  Subspace
+                     │ /   __/  │
+                     │/ __/     │
+                     └───────────────────
+                       Semantic Dimension A
+```
+
+The projection (shown as the dotted line) represents how the original meaning is "collapsed" onto the context-specific interpretation.
+
+### 6.4. Non-Commutative Context Operations
+
+The non-commutative nature of context operations can be visualized as different sequential projections:
+
+```
+    Original State    Context A First     Context B First
+         │                │                   │
+         v                v                   v
+    ┌─────────┐      ┌─────────┐         ┌─────────┐
+    │    *    │      │         │         │         │
+    │         │      │    *    │         │       * │
+    │         │  ≠   │         │    ≠    │         │
+    │         │      │         │         │         │
+    └─────────┘      └─────────┘         └─────────┘
+```
+
+Applying contexts in different orders leads to different final interpretations – a property impossible in classical semantic models.
+
+## 7. Practical Applications
+
+### 7.1. Ambiguity-Aware Context Design
+
+Quantum semantics suggests designing contexts that explicitly acknowledge and manage ambiguity:
+
+```yaml
+context:
+  expression: "The bank is secure"
+  potential_interpretations:
+    - domain: "finance"
+      probability: 0.65
+      examples: ["The financial institution has strong security measures"]
+    - domain: "geography"
+      probability: 0.30
+      examples: ["The riverside area is stable and not eroding"]
+    - domain: "other"
+      probability: 0.05
+      examples: ["Alternative interpretations are possible"]
+  sampling_strategy: "weighted_random"
+  interpretive_consistency: "maintain_within_domain"
+```
+
+### 7.2. Bayesian Context Exploration
+
+Rather than seeking a single interpretation, we can explore the semantic space through multiple samples:
+
+```python
+def explore_semantic_space(expression, contexts, model, n_samples=100):
+    """
+    Explore the semantic space of an expression through multiple interpretations.
+    """
+    # Initialize interpretation clusters
+    interpretations = []
+    
+    for _ in range(n_samples):
+        # Sample a context variation
+        context = sample_context_variation(contexts)
+        
+        # Generate interpretation
+        interpretation = model.generate(expression, context)
+        interpretations.append(interpretation)
+    
+    # Cluster interpretations
+    clusters = cluster_interpretations(interpretations)
+    
+    # Calculate cluster statistics
+    cluster_stats = {}
+    for i, cluster in enumerate(clusters):
+        cluster_stats[i] = {
+            'size': len(cluster),
+            'probability': len(cluster) / n_samples,
+            'centroid': calculate_cluster_centroid(cluster),
+            'variance': calculate_cluster_variance(cluster),
+            'examples': get_representative_examples(cluster, 3)
+        }
+    
+    return cluster_stats
+```
+
+### 7.3. Non-Classical Context Operations
+
+We can leverage non-commutative context operations for more nuanced interpretations:
+
+```python
+def context_composition_explorer(expression, contexts, model):
+    """
+    Explore different orders of context application.
+    """
+    results = {}
+    
+    # Try different permutations of context application
+    for perm in itertools.permutations(contexts):
+        # Apply contexts in this order
+        current_context = {}
+        interpretation_trace = []
+        
+        for context in perm:
+            # Extend current context
+            current_context.update(contexts[context])
+            
+            # Generate interpretation
+            interpretation = model.generate(expression, current_context)
+            interpretation_trace.append(interpretation)
+        
+        # Store results for this permutation
+        results[perm] = {
+            'final_interpretation': interpretation_trace[-1],
+            'interpretation_trace': interpretation_trace,
+            'context_order': perm
+        }
+    
+    # Analyze commutativity
+    commutativity_analysis = analyze_context_commutativity(results)
+    
+    return results, commutativity_analysis
+```
+
+## 8. Future Directions
+
+Quantum semantics opens several promising research directions:
+
+### 8.1. Quantum Semantic Metrics
+
+Developing metrics that can quantify quantum-like properties in semantic fields:
+
+- **Contextuality Measure**: Quantifying the degree of non-classical contextuality
+- **Semantic Entropy**: Measuring the uncertainty in interpretation
+- **Entanglement Degree**: Quantifying interdependence between semantic elements
+
+### 8.2. Quantum-Inspired Context Architectures
+
+Creating context architectures that leverage quantum principles:
+
+- **Superposition Encodings**: Explicitly representing multiple interpretations simultaneously
+- **Non-Commutative Operations**: Designing context operations that depend on order
+- **Interference Patterns**: Creating constructive/destructive interference between interpretations
+
+### 8.3. Integration with Symbolic Mechanisms
+
+Combining quantum semantics with emergent symbolic mechanisms:
+
+- **Quantum Symbol Abstraction**: Extending symbol abstraction with quantum principles
+- **Probabilistic Symbolic Induction**: Incorporating uncertainty into pattern recognition
+- **Quantum Retrieval Mechanisms**: Retrieving values based on quantum measurement principles
+
+## 9. Conclusion
+
+Quantum semantics provides a powerful framework for understanding the fundamentally observer-dependent and contextual nature of meaning. By embracing the non-classical properties of semantic interpretation, we can design more effective context systems that acknowledge the inherent limitations imposed by semantic degeneracy and leverage Bayesian sampling approaches to provide more robust and nuanced interpretations.
+
+The integration of quantum semantics with our neural field approach to context engineering creates a comprehensive framework for understanding and manipulating context in ways that align with the true nature of meaning in natural language.
+
+## References
+
+1. Agostino, C., Thien, Q.L., Apsel, M., Pak, D., Lesyk, E., & Majumdar, A. (2025). "A quantum semantic framework for natural language processing." arXiv preprint arXiv:2506.10077v1.
+
+2. Bruza, P.D., Wang, Z., & Busemeyer, J.R. (2015). "Quantum cognition: a new theoretical approach to psychology." Trends in cognitive sciences, 19(7), 383-393.
+
+3. Aerts, D., Gabora, L., & Sozzo, S. (2013). "Concepts and their dynamics: A quantum-theoretic modeling of human thought." Topics in Cognitive Science, 5(4), 737-772.
+
+4. Cervantes, V.H., & Dzhafarov, E.N. (2018). "Snow Queen is evil and beautiful: Experimental evidence for probabilistic contextuality in human choices." Decision, 5(3), 193-204.
+
+---
+
+*Note: This module provides a theoretical and practical foundation for understanding and leveraging quantum semantics in context engineering. For specific implementation details, refer to the companion notebooks and code examples in the `10_guides_zero_to_hero` and `20_templates` directories.*
