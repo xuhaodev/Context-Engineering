@@ -19,7 +19,7 @@ This document provides conceptual anchors, research bridges, and foundational re
 - Provides mechanistic understanding for `symbolic_residue_tracker.py` implementation
 - Validates our approach to treating context as continuous fields with emergent properties
 
-### 2. [2. Cognitive Tools for Language Models](https://www.arxiv.org/pdf/2506.12115)
+### [2. Cognitive Tools for Language Models](https://www.arxiv.org/pdf/2506.12115)
 
 **Source:** Brown Ebouky, Andrea Bartezzaghi, Mattia Rigotti (2025). "Eliciting Reasoning in Language Models with Cognitive Tools." arXiv preprint arXiv:2506.12115v1.
 
