@@ -252,3 +252,851 @@ class JSONSchema:
     """
     A class for creating, validating, and applying JSON Schema
     to LLM contexts.
+    """
+    
+    def __init__(
+        self,
+        schema: Dict[str, Any],
+        name: str = None,
+        description: str = None,
+        version: str = "1.0.0"
+    ):
+        """
+        Initialize the JSON Schema.
+        
+        Args:
+            schema: JSON Schema definition
+            name: Optional schema name
+            description: Optional schema description
+            version: Schema version
+        """
+        self.schema = schema
+        self.name = name or schema.get("title", "Unnamed Schema")
+        self.description = description or schema.get("description", "")
+        self.version = version
+        
+        # Initialize validation stats
+        self.validation_stats = {
+            "validations": 0,
+            "successes": 0,
+            "failures": 0,
+            "error_types": {}
+        }
+    
+    def validate(self, instance: Dict[str, Any]) -> Tuple[bool, Optional[str]]:
+        """
+        Validate an instance against the schema.
+        
+        Args:
+            instance: Instance to validate
+            
+        Returns:
+            tuple: (is_valid, error_message)
+        """
+        if not JSONSCHEMA_AVAILABLE:
+            logger.warning("jsonschema package required for validation")
+            return False, "jsonschema package required for validation"
+        
+        try:
+            jsonschema.validate(instance=instance, schema=self.schema)
+            
+            # Update validation stats
+            self.validation_stats["validations"] += 1
+            self.validation_stats["successes"] += 1
+            
+            return True, None
+        
+        except jsonschema.exceptions.ValidationError as e:
+            # Update validation stats
+            self.validation_stats["validations"] += 1
+            self.validation_stats["failures"] += 1
+            
+            # Track error type
+            error_path = str(e.path) if e.path else "root"
+            self.validation_stats["error_types"][error_path] = self.validation_stats["error_types"].get(error_path, 0) + 1
+            
+            return False, str(e)
+    
+    def generate_example(
+        self,
+        client=None,
+        model: str = DEFAULT_MODEL,
+        temperature: float = 0.7,
+        max_tokens: int = 1000
+    ) -> Tuple[Dict[str, Any], Dict[str, Any]]:
+        """
+        Generate an example instance that conforms to the schema.
+        
+        Args:
+            client: API client (if None, will create one)
+            model: Model name to use
+            temperature: Temperature parameter
+            max_tokens: Maximum tokens to generate
+            
+        Returns:
+            tuple: (example_instance, metadata)
+        """
+        if client is None:
+            client, model = setup_client(model=model)
+            if client is None:
+                return {}, {"error": "No API client available"}
+        
+        # Create the prompt
+        schema_json = json.dumps(self.schema, indent=2)
+        prompt = f"""Generate a valid example instance that conforms to the following JSON Schema:
+
+```json
+{schema_json}
+```
+
+Your response should be a single, valid JSON object that satisfies all constraints in the schema.
+Do not include explanations or comments, just return the JSON object.
+"""
+        
+        # Use a system message focused on schema validation
+        system_message = "You are a precise JSON Schema expert who generates valid example instances that conform to specified schemas."
+        
+        # Generate the example
+        response, metadata = generate_response(
+            prompt=prompt,
+            client=client,
+            model=model,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            system_message=system_message
+        )
+        
+        # Extract JSON from response
+        try:
+            # Try to parse the entire response as JSON
+            example = json.loads(response)
+        except json.JSONDecodeError:
+            # If that fails, try to extract JSON using regex
+            json_pattern = r'```(?:json)?\s*([\s\S]*?)\s*```'
+            matches = re.findall(json_pattern, response)
+            
+            if matches:
+                try:
+                    example = json.loads(matches[0])
+                except json.JSONDecodeError:
+                    example = {"error": "Failed to parse generated example as JSON"}
+            else:
+                example = {"error": "No JSON found in response"}
+        
+        return example, metadata
+    
+    def generate_prompt_with_schema(
+        self,
+        task_description: str,
+        output_format_description: str = None
+    ) -> str:
+        """
+        Generate a prompt that includes the schema for structured output.
+        
+        Args:
+            task_description: Description of the task
+            output_format_description: Optional description of the output format
+            
+        Returns:
+            str: Formatted prompt with schema
+        """
+        schema_json = json.dumps(self.schema, indent=2)
+        
+        output_desc = output_format_description or f"""Your response must conform to the following JSON Schema:
+
+```json
+{schema_json}
+```
+
+Ensure that your response is a valid JSON object that satisfies all constraints specified in the schema."""
+        
+        prompt = f"""{task_description}
+
+{output_desc}
+
+Respond with a single, valid JSON object and nothing else."""
+        
+        return prompt
+    
+    def get_validation_stats(self) -> Dict[str, Any]:
+        """
+        Get statistics about schema validations.
+        
+        Returns:
+            dict: Validation statistics
+        """
+        stats = self.validation_stats.copy()
+        
+        # Add derived statistics
+        if stats["validations"] > 0:
+            stats["success_rate"] = stats["successes"] / stats["validations"]
+        else:
+            stats["success_rate"] = 0.0
+        
+        return stats
+    
+    def visualize_validation_stats(self) -> None:
+        """
+        Visualize schema validation statistics.
+        """
+        stats = self.get_validation_stats()
+        
+        if stats["validations"] == 0:
+            logger.warning("No validation statistics to visualize")
+            return
+        
+        # Create figure
+        fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+        fig.suptitle(f"Schema Validation Statistics: {self.name}", fontsize=16)
+        
+        # Plot 1: Success vs. Failure
+        labels = ['Success', 'Failure']
+        sizes = [stats["successes"], stats["failures"]]
+        colors = ['green', 'red']
+        
+        axes[0].pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
+        axes[0].set_title("Validation Results")
+        axes[0].axis('equal')
+        
+        # Plot 2: Error Types
+        if stats["failures"] > 0:
+            error_types = list(stats["error_types"].keys())
+            error_counts = list(stats["error_types"].values())
+            
+            axes[1].bar(error_types, error_counts, color='red', alpha=0.7)
+            axes[1].set_title("Error Types")
+            axes[1].set_xlabel("Error Path")
+            axes[1].set_ylabel("Count")
+            plt.xticks(rotation=45, ha='right')
+        else:
+            axes[1].text(0.5, 0.5, "No errors to display", 
+                         horizontalalignment='center', verticalalignment='center',
+                         transform=axes[1].transAxes)
+            axes[1].set_title("Error Types")
+        
+        plt.tight_layout()
+        plt.subplots_adjust(top=0.9)
+        plt.show()
+
+
+class SchemaContext:
+    """
+    A class for creating structured LLM contexts based on schemas,
+    ensuring consistent, validatable interactions.
+    """
+    
+    def __init__(
+        self,
+        schema: JSONSchema,
+        client=None,
+        model: str = DEFAULT_MODEL,
+        system_message: str = "You are a helpful assistant that provides structured responses.",
+        max_tokens: int = DEFAULT_MAX_TOKENS,
+        temperature: float = DEFAULT_TEMPERATURE,
+        verbose: bool = False
+    ):
+        """
+        Initialize the schema context.
+        
+        Args:
+            schema: JSONSchema to use
+            client: API client (if None, will create one)
+            model: Model name to use
+            system_message: System message to use
+            max_tokens: Maximum tokens to generate
+            temperature: Temperature parameter
+            verbose: Whether to print debug information
+        """
+        self.schema = schema
+        self.client, self.model = setup_client(model=model) if client is None else (client, model)
+        self.system_message = system_message
+        self.max_tokens = max_tokens
+        self.temperature = temperature
+        self.verbose = verbose
+        
+        # Initialize history and metrics tracking
+        self.history = []
+        self.metrics = {
+            "total_prompt_tokens": 0,
+            "total_response_tokens": 0,
+            "total_tokens": 0,
+            "total_latency": 0,
+            "queries": 0,
+            "validation_successes": 0,
+            "validation_failures": 0
+        }
+    
+    def _log(self, message: str) -> None:
+        """
+        Log a message if verbose mode is enabled.
+        
+        Args:
+            message: Message to log
+        """
+        if self.verbose:
+            logger.info(message)
+    
+    def query(
+        self,
+        prompt: str,
+        retry_on_validation_failure: bool = True,
+        max_retries: int = 3
+    ) -> Tuple[Dict[str, Any], Dict[str, Any]]:
+        """
+        Query the LLM with a schema-structured prompt.
+        
+        Args:
+            prompt: User prompt
+            retry_on_validation_failure: Whether to retry if validation fails
+            max_retries: Maximum number of retries
+            
+        Returns:
+            tuple: (structured_response, details)
+        """
+        self._log(f"Processing query with schema: {self.schema.name}")
+        
+        # Add schema to prompt
+        schema_prompt = self.schema.generate_prompt_with_schema(prompt)
+        
+        # Initialize tracking
+        attempts = 0
+        best_response = None
+        best_score = -1
+        validation_results = []
+        
+        while attempts < max_retries:
+            attempts += 1
+            self._log(f"Attempt {attempts}/{max_retries}")
+            
+            # Generate response
+            response_text, metadata = generate_response(
+                prompt=schema_prompt,
+                client=self.client,
+                model=self.model,
+                temperature=self.temperature,
+                max_tokens=self.max_tokens,
+                system_message=self.system_message
+            )
+            
+            # Update metrics
+            self.metrics["total_prompt_tokens"] += metadata.get("prompt_tokens", 0)
+            self.metrics["total_response_tokens"] += metadata.get("response_tokens", 0)
+            self.metrics["total_tokens"] += metadata.get("total_tokens", 0)
+            self.metrics["total_latency"] += metadata.get("latency", 0)
+            
+            # Parse response
+            try:
+                # Try to parse the entire response as JSON
+                parsed_response = json.loads(response_text)
+            except json.JSONDecodeError:
+                # If that fails, try to extract JSON using regex
+                json_pattern = r'```(?:json)?\s*([\s\S]*?)\s*```'
+                matches = re.findall(json_pattern, response_text)
+                
+                if matches:
+                    try:
+                        parsed_response = json.loads(matches[0])
+                    except json.JSONDecodeError:
+                        parsed_response = {"error": "Failed to parse response as JSON"}
+                else:
+                    parsed_response = {"error": "No JSON found in response"}
+            
+            # Validate against schema
+            is_valid, error_message = self.schema.validate(parsed_response)
+            
+            # Record validation result
+            validation_result = {
+                "attempt": attempts,
+                "is_valid": is_valid,
+                "error_message": error_message,
+                "response": parsed_response,
+                "raw_response": response_text,
+                "metrics": metadata
+            }
+            validation_results.append(validation_result)
+            
+            # Update metrics based on validation
+            if is_valid:
+                self.metrics["validation_successes"] += 1
+            else:
+                self.metrics["validation_failures"] += 1
+            
+            # Determine whether to keep this response
+            current_score = 1 if is_valid else 0
+            
+            if current_score > best_score:
+                best_score = current_score
+                best_response = parsed_response
+            
+            # Stop if valid or not retrying
+            if is_valid or not retry_on_validation_failure:
+                break
+            
+            # If not valid and retrying, add error information to prompt
+            if not is_valid:
+                error_prompt = f"""Your previous response did not conform to the required schema.
+Error: {error_message}
+
+Please try again and ensure your response strictly follows the schema."""
+                
+                schema_prompt = f"{schema_prompt}\n\n{error_prompt}"
+        
+        # Increment query count
+        self.metrics["queries"] += 1
+        
+        # Add to history
+        query_record = {
+            "prompt": prompt,
+            "schema_prompt": schema_prompt,
+            "validation_results": validation_results,
+            "best_response": best_response,
+            "attempts": attempts,
+            "timestamp": time.time()
+        }
+        self.history.append(query_record)
+        
+        # Create details dictionary
+        details = {
+            "prompt": prompt,
+            "schema_prompt": schema_prompt,
+            "validation_results": validation_results,
+            "attempts": attempts,
+            "metrics": {
+                "prompt_tokens": metadata.get("prompt_tokens", 0),
+                "response_tokens": metadata.get("response_tokens", 0),
+                "total_tokens": metadata.get("total_tokens", 0),
+                "latency": metadata.get("latency", 0)
+            }
+        }
+        
+        return best_response, details
+    
+    def get_summary_metrics(self) -> Dict[str, Any]:
+        """
+        Get summary metrics for all queries.
+        
+        Returns:
+            dict: Summary metrics
+        """
+        summary = self.metrics.copy()
+        
+        # Add derived metrics
+        if summary["queries"] > 0:
+            summary["avg_latency_per_query"] = summary["total_latency"] / summary["queries"]
+            summary["validation_success_rate"] = (
+                summary["validation_successes"] / 
+                (summary["validation_successes"] + summary["validation_failures"])
+            ) if (summary["validation_successes"] + summary["validation_failures"]) > 0 else 0
+            
+        if summary["total_prompt_tokens"] > 0:
+            summary["overall_efficiency"] = (
+                summary["total_response_tokens"] / summary["total_prompt_tokens"]
+            )
+        
+        return summary
+    
+    def display_query_results(self, details: Dict[str, Any], show_prompt: bool = True) -> None:
+        """
+        Display the query results in a notebook.
+        
+        Args:
+            details: Query details from query()
+            show_prompt: Whether to show the prompt
+        """
+        display(HTML("<h2>Schema-Structured Query Results</h2>"))
+        
+        # Display schema
+        display(HTML("<h3>Schema</h3>"))
+        display(JSON(self.schema.schema))
+        
+        # Display prompt if requested
+        if show_prompt:
+            display(HTML("<h3>Original Prompt</h3>"))
+            display(Markdown(details["prompt"]))
+            
+            display(HTML("<h3>Schema-Augmented Prompt</h3>"))
+            display(Markdown(f"```\n{details['schema_prompt']}\n```"))
+        
+        # Display validation results
+        display(HTML("<h3>Validation Results</h3>"))
+        
+        for i, result in enumerate(details["validation_results"]):
+            display(HTML(f"<h4>Attempt {result['attempt']}</h4>"))
+            
+            # Display validation status
+            if result["is_valid"]:
+                display(HTML("<p style='color: green; font-weight: bold;'>✓ Valid</p>"))
+            else:
+                display(HTML("<p style='color: red; font-weight: bold;'>✗ Invalid</p>"))
+                display(HTML("<p><em>Error:</em></p>"))
+                display(Markdown(f"```\n{result['error_message']}\n```"))
+            
+            # Display response
+            display(HTML("<p><em>Parsed Response:</em></p>"))
+            display(JSON(result["response"]))
+            
+            # Display metrics
+            display(HTML("<p><em>Metrics:</em></p>"))
+            display(Markdown(f"```\n{format_metrics(result['metrics'])}\n```"))
+        
+        # Display summary
+        display(HTML("<h3>Summary</h3>"))
+        display(Markdown(f"""
+        - Total attempts: {details['attempts']}
+        - Final response valid: {details['validation_results'][-1]['is_valid']}
+        - Total tokens: {details['metrics']['total_tokens']}
+        - Total latency: {details['metrics']['latency']:.2f}s
+        """))
+    
+    def visualize_metrics(self) -> None:
+        """
+        Create visualization of metrics across queries.
+        """
+        if not self.history:
+            logger.warning("No history to visualize")
+            return
+        
+        # Extract data for plotting
+        queries = list(range(1, len(self.history) + 1))
+        prompt_tokens = [h["validation_results"][-1]["metrics"].get("prompt_tokens", 0) for h in self.history]
+        response_tokens = [h["validation_results"][-1]["metrics"].get("response_tokens", 0) for h in self.history]
+        latencies = [h["validation_results"][-1]["metrics"].get("latency", 0) for h in self.history]
+        attempts_per_query = [h["attempts"] for h in self.history]
+        validation_success = [h["validation_results"][-1]["is_valid"] for h in self.history]
+        
+        # Create figure
+        fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+        fig.suptitle("Schema Context Metrics by Query", fontsize=16)
+        
+        # Plot 1: Token usage
+        axes[0, 0].bar(queries, prompt_tokens, label="Prompt Tokens", color="blue", alpha=0.7)
+        axes[0, 0].bar(queries, response_tokens, bottom=prompt_tokens, 
+                       label="Response Tokens", color="green", alpha=0.7)
+        axes[0, 0].set_title("Token Usage")
+        axes[0, 0].set_xlabel("Query")
+        axes[0, 0].set_ylabel("Tokens")
+        axes[0, 0].legend()
+        axes[0, 0].grid(alpha=0.3)
+        
+        # Plot 2: Latency
+        axes[0, 1].plot(queries, latencies, marker='o', color="red", alpha=0.7)
+        axes[0, 1].set_title("Latency")
+        axes[0, 1].set_xlabel("Query")
+        axes[0, 1].set_ylabel("Seconds")
+        axes[0, 1].grid(alpha=0.3)
+        
+        # Plot 3: Attempts per query
+        axes[1, 0].bar(queries, attempts_per_query, color="purple", alpha=0.7)
+        axes[1, 0].set_title("Attempts per Query")
+        axes[1, 0].set_xlabel("Query")
+        axes[1, 0].set_ylabel("Count")
+        axes[1, 0].grid(alpha=0.3)
+        
+        # Plot 4: Validation success rate
+        success_rate = [int(success) for success in validation_success]
+        cumulative_success_rate = np.cumsum(success_rate) / np.arange(1, len(success_rate) + 1)
+        
+        axes[1, 1].plot(queries, cumulative_success_rate, marker='^', color="orange", alpha=0.7)
+        axes[1, 1].set_title("Cumulative Validation Success Rate")
+        axes[1, 1].set_xlabel("Query")
+        axes[1, 1].set_ylabel("Rate")
+        axes[1, 1].set_ylim(0, 1.05)
+        axes[1, 1].grid(alpha=0.3)
+        
+        plt.tight_layout()
+        plt.subplots_adjust(top=0.9)
+        plt.show()
+
+
+# Recursive and Fractal Schema Implementation
+# ==========================================
+
+class FractalSchema(JSONSchema):
+    """
+    A schema that implements recursive, fractal patterns with
+    self-similar structure at multiple scales.
+    """
+    
+    def __init__(
+        self,
+        schema: Dict[str, Any],
+        recursion_paths: List[str] = None,
+        max_recursion_depth: int = 5,
+        **kwargs
+    ):
+        """
+        Initialize the fractal schema.
+        
+        Args:
+            schema: JSON Schema definition
+            recursion_paths: JSON paths where recursion occurs
+            max_recursion_depth: Maximum recursion depth
+            **kwargs: Additional args passed to JSONSchema
+        """
+        super().__init__(schema, **kwargs)
+        
+        self.recursion_paths = recursion_paths or []
+        self.max_recursion_depth = max_recursion_depth
+        
+        # Track recursion metrics
+        self.recursion_metrics = {
+            "observed_max_depth": 0,
+            "recursive_instances": 0,
+            "recursion_by_path": {}
+        }
+    
+    def validate(self, instance: Dict[str, Any]) -> Tuple[bool, Optional[str]]:
+        """
+        Validate an instance against the schema, with special handling for recursion.
+        
+        Args:
+            instance: Instance to validate
+            
+        Returns:
+            tuple: (is_valid, error_message)
+        """
+        # Standard validation
+        is_valid, error_message = super().validate(instance)
+        
+        if is_valid:
+            # Check recursion depth
+            self._analyze_recursion_depth(instance)
+        
+        return is_valid, error_message
+    
+    def _analyze_recursion_depth(self, instance: Dict[str, Any], path: str = "", depth: int = 0) -> int:
+        """
+        Analyze the recursion depth in an instance.
+        
+        Args:
+            instance: Instance to analyze
+            path: Current JSON path
+            depth: Current recursion depth
+            
+        Returns:
+            int: Maximum recursion depth found
+        """
+        if not isinstance(instance, dict):
+            return depth
+        
+        max_depth = depth
+        
+        # Check if current path is in recursion paths
+        if path in self.recursion_paths:
+            # This is a recursive node
+            self.recursion_metrics["recursive_instances"] += 1
+            
+            # Track recursion by path
+            if path not in self.recursion_metrics["recursion_by_path"]:
+                self.recursion_metrics["recursion_by_path"][path] = 0
+            self.recursion_metrics["recursion_by_path"][path] += 1
+            
+            # Increment depth for recursive nodes
+            depth += 1
+        
+        # Recursively check all dictionary fields
+        for key, value in instance.items():
+            current_path = f"{path}.{key}" if path else key
+            
+            if isinstance(value, dict):
+                # Recursive call for nested dictionaries
+                sub_depth = self._analyze_recursion_depth(value, current_path, depth)
+                max_depth = max(max_depth, sub_depth)
+            elif isinstance(value, list):
+                # Check recursion in list items
+                for i, item in enumerate(value):
+                    if isinstance(item, dict):
+                        sub_path = f"{current_path}[{i}]"
+                        sub_depth = self._analyze_recursion_depth(item, sub_path, depth)
+                        max_depth = max(max_depth, sub_depth)
+        
+        # Update observed max depth
+        if max_depth > self.recursion_metrics["observed_max_depth"]:
+            self.recursion_metrics["observed_max_depth"] = max_depth
+        
+        return max_depth
+    
+    def generate_example(
+        self,
+        recursion_depth: int = 2,
+        **kwargs
+    ) -> Tuple[Dict[str, Any], Dict[str, Any]]:
+        """
+        Generate an example instance with controlled recursion depth.
+        
+        Args:
+            recursion_depth: Target recursion depth (capped by max_recursion_depth)
+            **kwargs: Additional args passed to JSONSchema.generate_example
+            
+        Returns:
+            tuple: (example_instance, metadata)
+        """
+        # Cap recursion depth
+        actual_depth = min(recursion_depth, self.max_recursion_depth)
+        
+        # Modify the schema prompt to include recursion guidance
+        recursion_instructions = f"""
+Generate an example that demonstrates recursive structure at these paths: {self.recursion_paths}.
+Use a recursion depth of {actual_depth} levels (a node containing itself or a similar pattern).
+"""
+        
+        # Create the prompt
+        schema_json = json.dumps(self.schema, indent=2)
+        prompt = f"""Generate a valid example instance that conforms to the following JSON Schema:
+
+```json
+{schema_json}
+```
+
+{recursion_instructions}
+
+Your response should be a single, valid JSON object that satisfies all constraints in the schema.
+Do not include explanations or comments, just return the JSON object.
+"""
+        
+        # Use a system message focused on schema validation
+        system_message = "You are a precise JSON Schema expert who generates valid example instances with recursive structures."
+        
+        # Generate the example
+        client = kwargs.get("client")
+        if client is None:
+            client, model = setup_client(model=kwargs.get("model", DEFAULT_MODEL))
+        else:
+            model = kwargs.get("model", DEFAULT_MODEL)
+        
+        # Generate response
+        response, metadata = generate_response(
+            prompt=prompt,
+            client=client,
+            model=model,
+            temperature=kwargs.get("temperature", 0.7),
+            max_tokens=kwargs.get("max_tokens", 1000),
+            system_message=system_message
+        )
+        
+        # Extract JSON from response
+        try:
+            # Try to parse the entire response as JSON
+            example = json.loads(response)
+        except json.JSONDecodeError:
+            # If that fails, try to extract JSON using regex
+            json_pattern = r'```(?:json)?\s*([\s\S]*?)\s*```'
+            matches = re.findall(json_pattern, response)
+            
+            if matches:
+                try:
+                    example = json.loads(matches[0])
+                except json.JSONDecodeError:
+                    example = {"error": "Failed to parse generated example as JSON"}
+            else:
+                example = {"error": "No JSON found in response"}
+        
+        # Analyze recursion depth
+        if isinstance(example, dict):
+            self._analyze_recursion_depth(example)
+        
+        return example, metadata
+    
+    def get_recursion_metrics(self) -> Dict[str, Any]:
+        """
+        Get metrics about schema recursion.
+        
+        Returns:
+            dict: Recursion metrics
+        """
+        return self.recursion_metrics.copy()
+    
+    def visualize_recursion_metrics(self) -> None:
+        """
+        Visualize schema recursion metrics.
+        """
+        metrics = self.get_recursion_metrics()
+        
+        if metrics["recursive_instances"] == 0:
+            logger.warning("No recursion metrics to visualize")
+            return
+        
+        # Create figure
+        fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+        fig.suptitle(f"Schema Recursion Metrics: {self.name}", fontsize=16)
+        
+        # Plot 1: Recursion by path
+        paths = list(metrics["recursion_by_path"].keys())
+        counts = list(metrics["recursion_by_path"].values())
+        
+        axes[0].bar(paths, counts, color='blue', alpha=0.7)
+        axes[0].set_title("Recursion by Path")
+        axes[0].set_xlabel("JSON Path")
+        axes[0].set_ylabel("Count")
+        plt.setp(axes[0].get_xticklabels(), rotation=45, ha='right')
+        
+        # Plot 2: Observed max depth vs. configured max depth
+        depth_labels = ['Observed Max Depth', 'Configured Max Depth']
+        depth_values = [metrics["observed_max_depth"], self.max_recursion_depth]
+        
+        axes[1].bar(depth_labels, depth_values, color='green', alpha=0.7)
+        axes[1].set_title("Recursion Depth")
+        axes[1].set_ylabel("Depth")
+        
+        plt.tight_layout()
+        plt.subplots_adjust(top=0.9)
+        plt.show()
+
+
+# Example Schema Definitions
+# =========================
+
+# Context-Engineering Repository Schema (fractalRepoContext.v1.json)
+CONTEXT_ENGINEERING_SCHEMA = {
+    "$schema": "http://fractal.recursive.net/schemas/fractalRepoContext.v1.json",
+    "title": "Context-Engineering Repository Schema",
+    "description": "Schema for structuring the Context-Engineering repository content and metadata",
+    "type": "object",
+    "properties": {
+        "fractalVersion": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+$",
+            "description": "Version of the fractal schema"
+        },
+        "instanceID": {
+            "type": "string",
+            "description": "Unique identifier for this instance"
+        },
+        "intent": {
+            "type": "string",
+            "description": "High-level purpose of the repository"
+        },
+        "repositoryContext": {
+            "type": "object",
+            "description": "Core structure and organization of the repository",
+            "properties": {
+                "name": {"type": "string"},
+                "elevatorPitch": {"type": "string"},
+                "learningPath": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "Progression of learning stages"
+                },
+                "fileTree": {
+                    "type": "object",
+                    "properties": {
+                        "rootFiles": {"type": "array", "items": {"type": "string"}},
+                        "directories": {"type": "object"}
+                    }
+                }
+            },
+            "required": ["name", "elevatorPitch", "learningPath", "fileTree"]
+        },
+        "designPrinciples": {
+            "type": "object",
+            "description": "Core design and style principles",
+            "properties": {
+                "karpathyDNA": {"type": "array", "items": {"type": "string"}},
+                "implicitHumility": {"type": "string"},
+                "firstPrinciplesMetaphor": {"type": "string"},
+                "styleGuide": {"type": "object"}
+            }
+        },
+        "modelInstructions": {
+            "type": "object",
+            "description": "Instructions for models working
