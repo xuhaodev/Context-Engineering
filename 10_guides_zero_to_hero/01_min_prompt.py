@@ -1,15 +1,31 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-01_min_prompt.py - Minimal Prompt Exploration Notebook
+Minimal Prompt Exploration: Fundamentals of Context Engineering
+==============================================================
 
-This notebook demonstrates the fundamentals of context engineering, starting with
-the simplest atomic prompts and measuring their effectiveness.
+This notebook introduces the core principles of context engineering by exploring minimal, atomic prompts and their direct impact on LLM output and behavior.
 
-If you're viewing this in a Jupyter environment, each section is meant to be
-run and modified independently to observe the effects on token count and
-model output quality.
+Key concepts covered:
+1. Constructing atomic prompts for maximum clarity and control
+2. Measuring effectiveness through token count and model response quality
+3. Iterative prompt modification for rapid feedback cycles
+4. Observing context drift and minimal prompt boundaries
+5. Foundations for scaling from atomic prompts to protocolized shells
+
+Usage:
+    # In Jupyter or Colab:
+    %run 01_min_prompt.py
+    # or
+    # Edit and run each section independently to experiment with prompt effects
+
+Notes:
+    - Each section of this notebook is designed for hands-on experimentation.
+    - Modify prompts and observe changes in tokenization and output fidelity.
+    - Use this as a foundation for building up to advanced context engineering workflows.
+
 """
+
 
 import os
 import time
