@@ -11,7 +11,49 @@ A practical, first-principles handbook for moving beyond prompt engineering to t
              (Single instruction)       │    (Examples, memory, retrieval,
                                         │     tools, state, control flow)
 ```
+## Under Construction
 
+```
+Context-Engineering/
+├── LICENSE
+├── README.md                  # 2-minute overview + quick-start links
+├── structure.md               # *← copy the markdown content provided below*
+│
+├── 00_foundations/            # first-principles theory (atoms → molecules → cells)
+│   ├── 01_atoms_prompting.md
+│   ├── 02_molecules_context.md
+│   ├── 03_cells_memory.md
+│   └── 04_organs_applications.md
+│
+├── 10_guides_zero_to_hero/     # hands-on walkthroughs
+│   ├── 01_min_prompt.ipynb
+│   ├── 02_expand_context.ipynb
+│   ├── 03_control_loops.ipynb
+│   └── 04_rag_recipes.ipynb
+│
+├── 20_templates/              # reusable boilerplate
+│   ├── minimal_context.yaml
+│   ├── control_loop.py
+│   └── scoring_functions.py
+│
+├── 30_examples/               # real projects, progressively complex
+│   ├── 00_toy_chatbot/
+│   ├── 01_data_annotator/
+│   └── 02_multi_agent_orchestrator/
+│
+├── 40_reference/              # “Karpathy-style” deep dives
+│   ├── token_budgeting.md
+│   ├── retrieval_indexing.md
+│   └── eval_checklist.md
+│
+├── 50_contrib/                # community PRs live here
+│   └── README.md
+│
+└── .github/
+    ├── CONTRIBUTING.md
+    └── workflows/ci.yml
+
+```
 ## Why This Repository Exists
 
 Prompt engineering gets all the attention, but imagine what comes next. Once you've mastered prompts, the real power comes from engineering the **entire context window** that surrounds those prompts.
