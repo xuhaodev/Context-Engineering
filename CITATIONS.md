@@ -4,7 +4,7 @@ This document provides conceptual anchors, research bridges, foundational refere
 
 ## Core Conceptual Anchors
 
-### 1. Emergent Symbolic Mechanisms in LLMs
+### 1. [Emergent Symbolic Mechanisms in LLMs](https://openreview.net/forum?id=y1SnRPDWx4)
 
 **Source:** Yang, Y., Campbell, D., Huang, K., Wang, M., Cohen, J., & Webb, T. (2025). "Emergent Symbolic Mechanisms Support Abstract Reasoning in Large Language Models." *Proceedings of the 42nd International Conference on Machine Learning*.
 
