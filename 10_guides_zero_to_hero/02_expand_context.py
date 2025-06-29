@@ -6,7 +6,6 @@ This notebook demonstrates practical approaches to expand basic prompts into ric
 
 Let's first import the necessary libraries:
 
-
 ```python
 import os
 import json
