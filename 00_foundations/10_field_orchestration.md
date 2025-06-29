@@ -2,7 +2,7 @@
 
 _Coordinating multiple fields for emergent capabilities_
 
-> "The whole is greater than the sum of its parts."
+> "The whole is greater than the sum of its parts, but it is the parts that allow the whole to emerge."
 > — Aristotle
 
 ## 1. Introduction: What Are We Really Talking About?
