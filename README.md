@@ -14,7 +14,7 @@ A practical, first-principles handbook for moving beyond prompt engineering to t
 
 ## Why This Repository Exists
 
-Prompt engineering gets all the attention, but it's just the beginning. Once you've mastered prompts, the real power comes from engineering the **entire context window** that surrounds those prompts.
+Prompt engineering gets all the attention, but imagine what comes next. Once you've mastered prompts, the real power comes from engineering the **entire context window** that surrounds those prompts.
 
 This repository provides a progressive, first-principles approach to context engineering, built around a biological metaphor:
 
