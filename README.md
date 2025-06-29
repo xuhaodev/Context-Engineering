@@ -29,44 +29,65 @@ prompt    shot     state    agent     programs
 
 ```
 Context-Engineering/
-├── LICENSE
-├── README.md                  # 2-minute overview + quick-start links
-├── structure.md               # *← copy the markdown content provided below*
+├── LICENSE                          # MIT license
+├── README.md                        # Quick-start overview
+├── structure.md                     # Core structural map
+├── context.json                     # Schema configuration
 │
-├── 00_foundations/            # first-principles theory (atoms → molecules → cells)
-│   ├── 01_atoms_prompting.md
-│   ├── 02_molecules_context.md
-│   ├── 03_cells_memory.md
-│   └── 04_organs_applications.md
+├── 00_foundations/                  # First-principles theory
+│   ├── 01_atoms_prompting.md        # Atomic instruction units
+│   ├── 02_molecules_context.md      # Few-shot examples/context
+│   ├── 03_cells_memory.md           # Stateful conversation layers
+│   ├── 04_organs_applications.md    # Multi-step control flows
+│   ├── 05_cognitive_tools.md        # Mental model extensions
+│   ├── 06_advanced_applications.md  # Real-world implementations
+│   └── 07_prompt_programming.md     # Code-like reasoning patterns
 │
-├── 10_guides_zero_to_hero/     # hands-on walkthroughs
-│   ├── 01_min_prompt.ipynb
-│   ├── 02_expand_context.ipynb
-│   ├── 03_control_loops.ipynb
-│   └── 04_rag_recipes.ipynb
+├── 10_guides_zero_to_one/           # Hands-on tutorials
+│   ├── 01_min_prompt.ipynb          # Minimal prompt experiments
+│   ├── 02_expand_context.ipynb      # Context expansion techniques
+│   ├── 03_control_loops.ipynb       # Flow control mechanisms
+│   ├── 04_rag_recipes.ipynb         # Retrieval-augmented patterns
+│   ├── 05_prompt_programs.ipynb     # Structured reasoning programs
+│   ├── 06_schema_design.ipynb       # Schema creation patterns
+│   └── 07_recursive_patterns.ipynb  # Self-referential contexts
 │
-├── 20_templates/              # reusable boilerplate
-│   ├── minimal_context.yaml
-│   ├── control_loop.py
-│   └── scoring_functions.py
+├── 20_templates/                    # Reusable components
+│   ├── minimal_context.yaml         # Base context structure
+│   ├── control_loop.py              # Orchestration template
+│   ├── scoring_functions.py         # Evaluation metrics
+│   ├── prompt_program_template.py   # Program structure template
+│   ├── schema_template.yaml         # Schema definition template
+│   └── recursive_framework.py       # Recursive context template
 │
-├── 30_examples/               # real projects, progressively complex
-│   ├── 00_toy_chatbot/
-│   ├── 01_data_annotator/
-│   └── 02_multi_agent_orchestrator/
+├── 30_examples/                     # Practical implementations
+│   ├── 00_toy_chatbot/              # Simple conversation agent
+│   ├── 01_data_annotator/           # Data labeling system
+│   ├── 02_multi_agent_orchestrator/ # Agent collaboration system
+│   ├── 03_cognitive_assistant/      # Advanced reasoning assistant
+│   └── 04_rag_minimal/              # Minimal RAG implementation
 │
-├── 40_reference/              # “Karpathy-style” deep dives
-│   ├── token_budgeting.md
-│   ├── retrieval_indexing.md
-│   └── eval_checklist.md
+├── 40_reference/                    # Deep-dive documentation
+│   ├── token_budgeting.md           # Token optimization strategies
+│   ├── retrieval_indexing.md        # Retrieval system design
+│   ├── eval_checklist.md            # PR evaluation criteria
+│   ├── cognitive_patterns.md        # Reasoning pattern catalog
+│   └── schema_cookbook.md           # Schema pattern collection
 │
-├── 50_contrib/                # community PRs live here
-│   └── README.md
+├── 50_contrib/                      # Community contributions
+│   └── README.md                    # Contribution guidelines
 │
-└── .github/
-    ├── CONTRIBUTING.md
-    └── workflows/ci.yml
-
+├── cognitive-tools/                 # Advanced cognitive framework
+│   ├── README.md                    # Overview
+│   ├── cognitive-templates/         # Templates for reasoning
+│   ├── cognitive-programs/          # Program implementations
+│   ├── cognitive-schemas/           # Schema definitions
+│   ├── cognitive-architectures/     # Full system designs
+│   └── integration/                 # Integration patterns
+│
+└── .github/                         # GitHub configuration
+    ├── CONTRIBUTING.md              # Contribution guidelines
+    └── workflows/ci.yml             # CI pipeline configuration
 ```
 
 ## Quick Start
