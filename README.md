@@ -16,7 +16,7 @@ A practical, first-principles handbook for moving beyond prompt engineering to t
 
 ## Why This Repository Exists
 
-> **We posit that meaning is instead actualized through an observer-dependent interpretive act [Indiana University - June 2025](https://arxiv.org/pdf/2506.10077)**
+> **We posit that meaning is instead actualized through an observer-dependent interpretive act - [Indiana University June 2025](https://arxiv.org/pdf/2506.10077)**
 
 Prompt engineering gets all the attention, but imagine what comes next. Once you've mastered prompts, the real power comes from engineering the **entire context window** that surrounds those prompts. Guiding thought, if you will. 
 
