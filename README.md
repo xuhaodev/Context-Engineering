@@ -43,7 +43,7 @@ Context-Engineering/
 │   ├── 06_advanced_applications.md  # Real-world implementations
 │   └── 07_prompt_programming.md     # Code-like reasoning patterns
 │
-├── 10_guides_zero_to_one/           # Hands-on tutorials
+├── 10_guides_zero_to_hero/           # Hands-on tutorials
 │   ├── 01_min_prompt.ipynb          # Minimal prompt experiments
 │   ├── 02_expand_context.ipynb      # Context expansion techniques
 │   ├── 03_control_loops.ipynb       # Flow control mechanisms
