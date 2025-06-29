@@ -23,7 +23,7 @@ atoms → molecules → cells → organs → neurobiological systems → neural 
 single    few-     memory   multi-    cognitive tools +   context as continuous neural fields +
 prompt    shot     state    agent     prompt programs     persistence & resonance
 ```
-
+> Symbolic layer = model/language agnostic syntax/symbol pattern recognition layer 
 
 ## Under Construction
 
