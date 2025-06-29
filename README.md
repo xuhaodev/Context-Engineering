@@ -73,7 +73,7 @@ Context-Engineering/
 │   ├── scoring_functions.py         # Evaluation metrics
 │   ├── prompt_program_template.py   # Program structure template
 │   ├── schema_template.yaml         # Schema definition template
-│   └── recursive_framework.py       # Recursive context template
+│   └── recursive_context.py       # Recursive context template
 │
 ├── 30_examples/                     # Practical implementations
 │   ├── 00_toy_chatbot/              # Simple conversation agent
