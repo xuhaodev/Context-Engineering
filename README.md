@@ -1,5 +1,5 @@
 # Context Engineering
-
+## [Cognitive Tools](https://www.arxiv.org/pdf/2506.12115)
 > "Context engineering is the delicate art and science of filling the context window with just the right information for the next step." — [Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626)
 
 A practical, first-principles handbook for moving beyond prompt engineering to the wider discipline of context design, orchestration, and optimization.
@@ -18,7 +18,7 @@ Prompt engineering gets all the attention, but imagine what comes next. Once you
 This repository provides a progressive, first-principles approach to context engineering, built around a biological metaphor:
 
 ```
-atoms → molecules → cells → organs → systems
+atoms → molecules → cells → organs → dynamical systems
   │        │         │        │         │
 single    few-     memory   multi-    full
 prompt    shot     state    agent     apps
