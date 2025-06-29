@@ -19,6 +19,40 @@ Cognitive tools are structured prompt patterns that guide language models throug
 └──────────────────────────────────────────────────────────────┘
 ```
 
+## Structure
+```
+cognitive-tools/
+├── README.md                  # Overview and quick-start guide
+├── cognitive-templates/       # Reusable templates for different reasoning patterns
+│   ├── understanding.md       # Templates for comprehension operations
+│   ├── reasoning.md           # Templates for analytical operations
+│   ├── verification.md        # Templates for checking and validation
+│   └── composition.md         # Templates for combining multiple tools
+│
+├── cognitive-programs/        # Structured prompt programs with code-like patterns
+│   ├── basic-programs.md      # Fundamental program structures (conditionals, loops)
+│   ├── advanced-programs.md   # Complex program architectures (meta-programming)
+│   ├── program-library.py     # Python implementation of common prompt programs
+│   └── program-examples.ipynb # Interactive examples showing programs in action
+│
+├── cognitive-schemas/         # Structured knowledge representation formats
+│   ├── user-schemas.md        # Schemas for representing user information
+│   ├── domain-schemas.md      # Schemas for different knowledge domains
+│   ├── task-schemas.md        # Schemas for different reasoning tasks
+│   └── schema-library.yaml    # YAML library of reusable schemas
+│
+├── cognitive-architectures/   # Complete reasoning systems combining multiple tools
+│   ├── solver-architecture.md # Architecture for problem-solving applications
+│   ├── tutor-architecture.md  # Architecture for educational applications
+│   ├── research-architecture.md # Architecture for information synthesis
+│   └── architecture-examples.py # Implementation examples of complete architectures
+│
+└── integration/               # Guides for integrating with other components
+    ├── with-rag.md            # Combining cognitive tools with retrieval
+    ├── with-memory.md         # Integrating with memory systems
+    ├── with-agents.md         # Using in multi-agent architectures
+    └── evaluation-metrics.md  # Measuring cognitive tool effectiveness
+```
 ## Why Cognitive Tools Matter
 
 Research has shown that structuring reasoning with cognitive tools can dramatically improve model performance:
