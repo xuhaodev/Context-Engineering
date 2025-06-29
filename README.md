@@ -184,5 +184,5 @@ We welcome contributions! Check out [CONTRIBUTING.md](.github/CONTRIBUTING.md) f
 ## Acknowledgements
 > I've been looking forward to this being conceptualized and formalized as there wasn't a prior established field. Prompt engineering receives quite the stigma and doesn't quite cover what most researchers and I do.
 
-- [Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) for coining "context engineering" and inspiring the approach 
+- [Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) for coining "context engineering" and inspiring this repo 
 - All contributors and the open source community
