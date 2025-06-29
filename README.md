@@ -156,7 +156,9 @@ Context-Engineering/
 
 ## Karpathy + 3Blue1Brown Inspired Style
 
-1. **Minimal first pass** – start with the smallest viable context
+> For learners of all experience levels
+
+1. **First principles** – start with the fundamental context
 2. **Iterative add-on** – add only what the model demonstrably lacks
 3. **Measure everything** – token cost, latency, quality score
 4. **Delete ruthlessly** – pruning beats padding
