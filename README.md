@@ -18,10 +18,10 @@ Prompt engineering gets all the attention, but imagine what comes next. Once you
 This repository provides a progressive, first-principles approach to context engineering, built around a biological metaphor:
 
 ```
-atoms → molecules → cells → organs → dynamical systems
-  │        │         │        │         │
-single    few-     memory   multi-    ecosystem +
-prompt    shot     state    agent     prompt programs
+atoms → molecules → cells → organs → neurobiological systems → neural field theory
+  │        │         │        │         │                         │        
+single    few-     memory   multi-    cognitive tools +   context as continuous neural fields +
+prompt    shot     state    agent     prompt programs     symbolic persistence
 ```
 
 
