@@ -6,6 +6,7 @@ This notebook demonstrates practical approaches to expand basic prompts into ric
 
 Let's first import the necessary libraries:
 
+
 ```python
 import os
 import json
@@ -542,4 +543,317 @@ Sometimes adding context layers doesn't improve performance. Let's implement a m
 ```python
 def evaluate_response_quality(prompt: str, response: str, criteria: List[str]) -> float:
     """
-    Use the
+    Use the LLM to evaluate the quality of a response based on specific criteria.
+    
+    Args:
+        prompt: The prompt that generated the response
+        response: The response to evaluate
+        criteria: List of criteria to evaluate against
+        
+    Returns:
+        Quality score from 0.0 to 1.0
+    """
+    criteria_list = "\n".join([f"- {c}" for c in criteria])
+    eval_prompt = f"""Rate the quality of the following response to a prompt. 
+    
+Prompt: 
+{prompt}
+
+Response:
+{response}
+
+Please evaluate based on these criteria:
+{criteria_list}
+
+For each criterion, rate from 0-10, then provide an overall score from 0.0 to 1.0 where 
+1.0 is perfect and 0.0 is completely inadequate. Format your response as:
+
+Criterion 1: [score] - [brief comment]
+Criterion 2: [score] - [brief comment]
+...
+Overall Score: [0.0-1.0]
+"""
+    
+    evaluation, _ = generate_response(eval_prompt)
+    
+    # Extract overall score
+    try:
+        # Find the last occurrence of a decimal number following "Overall Score:"
+        import re
+        score_match = re.findall(r"Overall Score:\s*([0-9]*\.?[0-9]+)", evaluation)
+        if score_match:
+            return float(score_match[-1])
+        else:
+            return 0.5  # Default if parsing fails
+    except:
+        return 0.5  # Default if parsing fails
+
+def prune_context_layers(base_prompt: str, layers: Dict[str, str], criteria: List[str]) -> Tuple[str, Dict]:
+    """
+    Systematically test and prune context layers that don't improve response quality.
+    
+    Args:
+        base_prompt: Core instruction
+        layers: Dictionary of context layer name -> content
+        criteria: Evaluation criteria for responses
+        
+    Returns:
+        Tuple of (optimized prompt, results dictionary)
+    """
+    print("Testing baseline...")
+    base_response, base_latency = generate_response(base_prompt)
+    base_quality = evaluate_response_quality(base_prompt, base_response, criteria)
+    
+    results = {
+        "base": {
+            "prompt": base_prompt,
+            "response": base_response,
+            "quality": base_quality,
+            "tokens": count_tokens(base_prompt),
+            "latency": base_latency
+        }
+    }
+    
+    # Add all layers
+    all_layers_text = "\n\n".join(layers.values())
+    full_prompt = f"{base_prompt}\n\n{all_layers_text}"
+    print("Testing all layers...")
+    full_response, full_latency = generate_response(full_prompt)
+    full_quality = evaluate_response_quality(full_prompt, full_response, criteria)
+    
+    results["all_layers"] = {
+        "prompt": full_prompt,
+        "response": full_response,
+        "quality": full_quality,
+        "tokens": count_tokens(full_prompt),
+        "latency": full_latency
+    }
+    
+    # Test removing one layer at a time
+    best_quality = full_quality
+    best_config = "all_layers"
+    
+    for layer_to_remove in layers.keys():
+        remaining_layers = {k: v for k, v in layers.items() if k != layer_to_remove}
+        remaining_text = "\n\n".join(remaining_layers.values())
+        test_prompt = f"{base_prompt}\n\n{remaining_text}"
+        
+        print(f"Testing without '{layer_to_remove}'...")
+        test_response, test_latency = generate_response(test_prompt)
+        test_quality = evaluate_response_quality(test_prompt, test_response, criteria)
+        
+        config_name = f"without_{layer_to_remove}"
+        results[config_name] = {
+            "prompt": test_prompt,
+            "response": test_response,
+            "quality": test_quality,
+            "tokens": count_tokens(test_prompt),
+            "latency": test_latency
+        }
+        
+        # If removing a layer improves or maintains quality, update best config
+        if test_quality >= best_quality:
+            best_quality = test_quality
+            best_config = config_name
+    
+    # If the best config is "all_layers", return the full prompt
+    if best_config == "all_layers":
+        return full_prompt, results
+    
+    # If removing a layer improved quality, recursively prune more
+    if best_config.startswith("without_"):
+        removed_layer = best_config.replace("without_", "")
+        remaining_layers = {k: v for k, v in layers.items() if k != removed_layer}
+        print(f"Layer '{removed_layer}' can be removed. Testing further pruning...")
+        return prune_context_layers(base_prompt, remaining_layers, criteria)
+    
+    return results[best_config]["prompt"], results
+
+# Test context pruning
+pruning_test_prompt = "Write a tutorial on how to use pandas for data analysis."
+
+pruning_layers = {
+    "role": "You are a data science instructor with 10+ years of experience teaching Python libraries.",
+    
+    "audience": "Your audience consists of beginner Python programmers who understand basic programming concepts but have no prior experience with data analysis.",
+    
+    "structure": "Structure the tutorial with these sections: Introduction, Installation, Loading Data, Basic Operations, Data Cleaning, Data Visualization, and a Practical Example.",
+    
+    "style": "Use a friendly, conversational tone. Include code snippets with comments explaining each line. Break down complex concepts into simple explanations.",
+    
+    "unnecessary": "Include details about the history of pandas and its development team. Mention that pandas was created by Wes McKinney in 2008 while he was at AQR Capital Management."
+}
+
+evaluation_criteria = [
+    "Completeness - covers all essential concepts",
+    "Clarity - explains concepts in an easy-to-understand way",
+    "Code quality - provides useful, correct code examples",
+    "Beginner-friendliness - assumes no prior knowledge of pandas",
+    "Practicality - includes real-world applications"
+]
+
+# Uncomment to run the pruning test (takes time to run)
+# optimized_prompt, pruning_results = prune_context_layers(pruning_test_prompt, pruning_layers, evaluation_criteria)
+# 
+# print("\nOPTIMIZED PROMPT:")
+# print("-" * 80)
+# print(optimized_prompt)
+# print("-" * 80)
+# 
+# # Show quality scores for each configuration
+# for config, data in pruning_results.items():
+#     print(f"{config}: Quality = {data['quality']:.2f}, Tokens = {data['tokens']}")
+```
+
+## 9. Context Expansion with Retrieval
+
+For real-world applications, we often need to expand context with relevant information retrieved from external sources. Let's implement a simple retrieval-augmented context expansion:
+
+
+```python
+def retrieve_relevant_info(query: str, knowledge_base: List[Dict[str, str]]) -> List[str]:
+    """
+    Retrieve relevant information from a knowledge base based on a query.
+    
+    Args:
+        query: The search query
+        knowledge_base: List of dictionaries with 'title' and 'content' keys
+        
+    Returns:
+        List of relevant information snippets
+    """
+    # In a real application, you would use vector embeddings and similarity search
+    # For this example, we'll use simple keyword matching
+    relevant_info = []
+    
+    query_terms = set(query.lower().split())
+    
+    for item in knowledge_base:
+        content = item['content'].lower()
+        title = item['title'].lower()
+        
+        # Count matching terms
+        matches = sum(1 for term in query_terms if term in content or term in title)
+        
+        if matches > 0:
+            relevant_info.append(item['content'])
+    
+    return relevant_info[:3]  # Return top 3 matches
+
+# Example knowledge base (in a real application, this would be much larger)
+sample_knowledge_base = [
+    {
+        "title": "Pandas Introduction",
+        "content": "Pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language. Key features include DataFrame objects, handling of missing data, and data alignment."
+    },
+    {
+        "title": "Pandas Installation",
+        "content": "To install pandas, run: pip install pandas. For Anaconda users, pandas comes pre-installed. You can import pandas with: import pandas as pd"
+    },
+    {
+        "title": "Loading Data in Pandas",
+        "content": "Pandas can read data from various sources including CSV, Excel, SQL databases, and JSON. Example: df = pd.read_csv('data.csv')"
+    },
+    {
+        "title": "Data Cleaning with Pandas",
+        "content": "Pandas provides functions for handling missing data, such as dropna() and fillna(). It also offers methods for removing duplicates and transforming data."
+    },
+    {
+        "title": "Data Visualization with Pandas",
+        "content": "Pandas integrates with matplotlib to provide plotting capabilities. Simple plots can be created with df.plot(). For more complex visualizations, use: import matplotlib.pyplot as plt"
+    }
+]
+
+def create_rag_context(base_prompt: str, query: str, knowledge_base: List[Dict[str, str]]) -> str:
+    """
+    Create a retrieval-augmented context by combining a base prompt with relevant information.
+    
+    Args:
+        base_prompt: Core instruction
+        query: The query to search for relevant information
+        knowledge_base: Knowledge base to search
+        
+    Returns:
+        Expanded context with retrieved information
+    """
+    relevant_info = retrieve_relevant_info(query, knowledge_base)
+    
+    if not relevant_info:
+        return base_prompt
+    
+    # Add retrieved information as context
+    context_block = "Relevant information:\n\n" + "\n\n".join(relevant_info)
+    
+    # Combine with base prompt
+    rag_context = f"{base_prompt}\n\n{context_block}"
+    
+    return rag_context
+
+# Test retrieval-augmented context expansion
+rag_test_prompt = "Write a brief tutorial on how to load data in pandas and handle missing values."
+rag_context = create_rag_context(rag_test_prompt, "pandas loading data cleaning", sample_knowledge_base)
+
+print("RETRIEVAL-AUGMENTED CONTEXT:")
+print("-" * 80)
+print(rag_context)
+print("-" * 80)
+print(f"Token count: {count_tokens(rag_context)}")
+
+# Generate response with RAG context
+rag_response, rag_latency = generate_response(rag_context)
+print("\nRAG RESPONSE:")
+print("-" * 80)
+print(rag_response)
+print("-" * 80)
+```
+
+## 10. Conclusion: Context Expansion Best Practices
+
+Based on our experiments, here are the key best practices for effective context expansion:
+
+1. **Start minimal**: Begin with the simplest prompt that might work
+2. **Measure impact**: Track token usage, latency, and quality metrics for each expansion
+3. **Layer strategically**: Add context in distinct, modular layers that can be individually tested
+4. **Compress when possible**: Use summarization, bullet points, or keywords to reduce token usage
+5. **Prune ruthlessly**: Remove context layers that don't improve response quality
+6. **Use templates**: Create reusable templates for different context expansion patterns
+7. **Consider retrieval**: For large knowledge bases, use retrieval to dynamically expand context
+8. **Balance specificity vs. generality**: More specific context reduces hallucination but may constrain creativity
+
+### Template for Context Expansion Decision-Making
+
+```
+1. Define core objective
+   ↓
+2. Create minimal prompt
+   ↓
+3. Measure baseline performance
+   ↓
+4. Identify potential context layers
+   │  - Role assignment
+   │  - Few-shot examples
+   │  - Constraints/requirements
+   │  - Audience specification
+   │  - Tone/style guidance
+   ↓
+5. Test each layer individually
+   ↓
+6. Combine promising layers
+   ↓
+7. Measure impact on:
+   │  - Token usage
+   │  - Response quality
+   │  - Latency
+   ↓
+8. Prune unnecessary layers
+   ↓
+9. Compress remaining context
+   ↓
+10. Final optimization (token efficiency)
+```
+
+Remember: The goal is not to create the largest context possible, but the most effective one that optimizes for both quality and efficiency.
+
+## Next Steps
+
+In the next notebook (`03_control_loops.ipynb`), we'll explore how to build on these context expansion techniques to create more sophisticated control flow mechanisms for multi-step LLM interactions.
