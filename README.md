@@ -154,13 +154,14 @@ Context-Engineering/
 | **Metrics & Evaluation** | Measuring context effectiveness | Iterative optimization of token use vs. quality |
 | **Cognitive Tools & Prompt Programming** | Learm to build custom tools and templates | Prompt programming enables new layers for context engineering |
 
-## Karpathy Inspired Style
+## Karpathy + 3Blue1Brown Inspired Style
 
 1. **Minimal first pass** – start with the smallest viable context
 2. **Iterative add-on** – add only what the model demonstrably lacks
 3. **Measure everything** – token cost, latency, quality score
 4. **Delete ruthlessly** – pruning beats padding
 5. **Code > slides** – every concept has a runnable cell
+6. **Visualize everything** — every concept is visualized with ASCII and symbolic diagrams
 
 ## Contributing
 
