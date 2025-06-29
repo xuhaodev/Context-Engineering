@@ -11,6 +11,20 @@ A practical, first-principles handbook for moving beyond prompt engineering to t
              (Single instruction)       │    (Examples, memory, retrieval,
                                         │     tools, state, control flow)
 ```
+## Why This Repository Exists
+
+Prompt engineering gets all the attention, but imagine what comes next. Once you've mastered prompts, the real power comes from engineering the **entire context window** that surrounds those prompts.
+
+This repository provides a progressive, first-principles approach to context engineering, built around a biological metaphor:
+
+```
+atoms → molecules → cells → organs → systems
+  │        │         │        │         │
+single    few-     memory   multi-    full
+prompt    shot     state    agent     apps
+```
+
+
 ## Under Construction
 
 ```
@@ -53,18 +67,6 @@ Context-Engineering/
     ├── CONTRIBUTING.md
     └── workflows/ci.yml
 
-```
-## Why This Repository Exists
-
-Prompt engineering gets all the attention, but imagine what comes next. Once you've mastered prompts, the real power comes from engineering the **entire context window** that surrounds those prompts.
-
-This repository provides a progressive, first-principles approach to context engineering, built around a biological metaphor:
-
-```
-atoms → molecules → cells → organs → systems
-  │        │         │        │         │
-single    few-     memory   multi-    full
-prompt    shot     state    agent     apps
 ```
 
 ## Quick Start
