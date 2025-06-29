@@ -818,7 +818,7 @@ The boundary between traditional programming and prompt programming will likely 
 
 ## **pareto-lang**
 
-Prompt program and protocol template for fractal interpretability—serving as a translation layer and Rosetta Stone for agent, protocol, memory communication, and more. It is natively operationalized within advanced transformer and recursive architectures as it leverages the same mechanisms of tokenization—first principles reductionism of operations. At its core, pareto-lang encodes every operation, protocol, or agent action as:
+Prompt program and protocol template that empowers the agent with a meta template to design its own cognitive tools, guided by the user—serving as a translation layer, Rosetta Stone, and language engine for agent, protocol, memory communication, and more. It is natively operationalized within advanced transformer and recursive architectures as it leverages the same mechanisms of tokenization—first principles reductionism of operations. At its core, pareto-lang encodes every operation, protocol, or agent action as:
 
 ```python
 /action.mod{params}
