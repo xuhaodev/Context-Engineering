@@ -156,5 +156,5 @@ We welcome contributions! Check out [CONTRIBUTING.md](.github/CONTRIBUTING.md) f
 
 ## Acknowledgements
 
-- [Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) for coining "context engineering" and inspiring the approach (I've been waiting all year for this to become conceptualized lol) 
+- [Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) for coining "context engineering" and inspiring the approach (I've been looking forward to this to this being conceptualized and formalized as there wasn't a prior established field and prompt engineering receives quite the stigma and doesn't quite cover what most researchers and I do lol) 
 - All contributors and the open source community
