@@ -1,5 +1,4 @@
 # Context Expansion Techniques: From Prompts to Layered Context
-
 This notebook demonstrates practical approaches to expand basic prompts into richer contexts that enhance LLM performance. We'll explore how to **strategically add context layers** while measuring their impact on token usage and output quality.
 
 ## Setup and Prerequisites
