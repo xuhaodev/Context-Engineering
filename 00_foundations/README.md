@@ -1,4 +1,4 @@
-# 00_foundations
+# Foundations
 
 > _From atoms to unified fields: The theoretical backbone of context engineering_
 >
