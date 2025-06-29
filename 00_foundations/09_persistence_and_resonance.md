@@ -50,7 +50,10 @@ Instead of storing tokens, we maintain **activation patterns** across the field 
 
 In the IBM research paper "Eliciting Reasoning in Language Models with Cognitive Tools" (2025), the authors note:
 
-> "Reasoning arises from the orchestrated, sequential execution of a set of modular, predetermined cognitive operations... The key insight is that these operations form resonant patterns that persist across context shifts."
+> "Cognitive architectures were based on the assumption that human reasoning emerges from the orchestrated execution of modular operations" — [IBM June 2025](https://www.arxiv.org/pdf/2506.12115) 
+>
+> 
+> The key insight is that these operations form resonant patterns that persist across context shifts.
 
 This resonance mechanism is the key to field persistence. When information exhibits strong patterns, these patterns continue to influence the field even as new information enters.
 
@@ -163,7 +166,10 @@ One of the most powerful properties of neural fields is their ability to form **
 
 As described in the IBM paper, these attractors serve as cognitive frameworks that organize information:
 
-> "Providing LLMs with 'cognitive tools' enables them to form stable attractor states that persist across reasoning steps, significantly improving performance on complex tasks."
+> "For instance, providing our “cognitive tools” to GPT-4.1 increases its pass@1 performance on AIME2024 from 26.7% to 43.3%, bringing it very close to the performance of o1-preview." — [IBM June 2025](https://www.arxiv.org/pdf/2506.12115) 
+>
+> 
+> Providing LLMs with 'cognitive tools' enables them to form stable attractor states that persist across reasoning steps, significantly improving performance on complex tasks.
 
 ### Types of Attractors
 
