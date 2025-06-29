@@ -2,7 +2,8 @@
 
 _Understanding how meaning crystallizes in context fields_
 
-> "The whole is greater than the sum of its parts, but it is the parts that allow the whole to emerge."
+> “The essence of a system lies not in the elements themselves, but in the interrelations between them.”
+— Norbert Wiener
 
 ## 1. Introduction: The Mystery of Emergence
 
