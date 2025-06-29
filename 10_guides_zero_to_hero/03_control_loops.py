@@ -878,4 +878,488 @@ class ConditionalBrancher(ControlLoop):
         if "classification" in run_details:
             display(HTML("<h3>Classification</h3>"))
             branch = run_details["classification"]["branch"]
-            display(Markdown(f"Selected branch: **{branch
+            display(Markdown(f"Selected branch: **{branch}**"))
+            
+            # Display classification metrics
+            display(HTML("<h4>Classification Metrics:</h4>"))
+            metrics = run_details["classification"]["metrics"]
+            display(Markdown(f"```\n{format_metrics(metrics)}\n```"))
+        
+        # Display execution results
+        display(HTML("<h3>Execution Results</h3>"))
+        display(HTML("<h4>Branch:</h4>"))
+        display(Markdown(f"**{run_details['execution']['branch']}**"))
+        
+        display(HTML("<h4>Response:</h4>"))
+        display(Markdown(run_details["execution"]["response"]))
+        
+        display(HTML("<h4>Execution Metrics:</h4>"))
+        metrics = run_details["execution"]["metrics"]
+        display(Markdown(f"```\n{format_metrics(metrics)}\n```"))
+
+
+class SelfCritique(ControlLoop):
+    """
+    A control loop that generates a response, then critiques and improves it
+    in a single flow, without requiring multiple API calls for refinement.
+    """
+    
+    def __init__(
+        self,
+        critique_template: str = "Step 1: Generate a response to the question.\nStep 2: Critique your response for any errors, omissions, or improvements.\nStep 3: Provide a final, improved response based on your critique.\n\nQuestion: {input}",
+        parse_sections: bool = True,
+        **kwargs
+    ):
+        """
+        Initialize the self-critique control loop.
+        
+        Args:
+            critique_template: Template for the self-critique prompt
+            parse_sections: Whether to parse the response into sections
+            **kwargs: Additional args passed to ControlLoop
+        """
+        super().__init__(**kwargs)
+        self.critique_template = critique_template
+        self.parse_sections = parse_sections
+    
+    def run(self, input_text: str) -> Tuple[str, Dict[str, Any]]:
+        """
+        Run the self-critique process.
+        
+        Args:
+            input_text: Input to respond to
+            
+        Returns:
+            tuple: (final_response, run_details)
+        """
+        # Format prompt
+        prompt = self.critique_template.format(input=input_text)
+        
+        # Generate self-critique response
+        response, metadata = self._call_llm(prompt)
+        
+        # Parse sections if requested
+        sections = {}
+        if self.parse_sections:
+            # Attempt to parse initial response, critique, and final response
+            initial_match = re.search(r"Step 1:(.*?)Step 2:", response, re.DOTALL)
+            critique_match = re.search(r"Step 2:(.*?)Step 3:", response, re.DOTALL)
+            final_match = re.search(r"Step 3:(.*?)$", response, re.DOTALL)
+            
+            if initial_match:
+                sections["initial_response"] = initial_match.group(1).strip()
+            if critique_match:
+                sections["critique"] = critique_match.group(1).strip()
+            if final_match:
+                sections["final_response"] = final_match.group(1).strip()
+        
+        # If parsing failed, use the full response
+        if not sections and self.parse_sections:
+            self._log("Failed to parse sections from response")
+            sections["full_response"] = response
+        
+        # Create run details
+        run_details = {
+            "input": input_text,
+            "full_response": response,
+            "sections": sections,
+            "metrics": metadata
+        }
+        
+        # Return final response (or full response if parsing failed)
+        final_response = sections.get("final_response", response)
+        return final_response, run_details
+    
+    def display_results(self, run_details: Dict[str, Any]) -> None:
+        """
+        Display the self-critique results in a notebook.
+        
+        Args:
+            run_details: Run details from run()
+        """
+        display(HTML("<h2>Self-Critique Results</h2>"))
+        
+        # Display input
+        display(HTML("<h3>Input</h3>"))
+        display(Markdown(run_details["input"]))
+        
+        # Display parsed sections if available
+        if "sections" in run_details and run_details["sections"]:
+            sections = run_details["sections"]
+            
+            if "initial_response" in sections:
+                display(HTML("<h3>Initial Response</h3>"))
+                display(Markdown(sections["initial_response"]))
+            
+            if "critique" in sections:
+                display(HTML("<h3>Self-Critique</h3>"))
+                display(Markdown(sections["critique"]))
+            
+            if "final_response" in sections:
+                display(HTML("<h3>Final Response</h3>"))
+                display(Markdown(sections["final_response"]))
+        
+        # Display full response if no sections
+        elif "full_response" in run_details:
+            display(HTML("<h3>Full Response</h3>"))
+            display(Markdown(run_details["full_response"]))
+        
+        # Display metrics
+        display(HTML("<h3>Metrics</h3>"))
+        metrics = run_details["metrics"]
+        display(Markdown(f"```\n{format_metrics(metrics)}\n```"))
+
+
+class ExternalValidation(ControlLoop):
+    """
+    A control loop that uses external tools or knowledge to validate
+    and correct LLM responses, creating a closed feedback loop.
+    """
+    
+    def __init__(
+        self,
+        validator_fn: Callable[[str], Tuple[bool, str]],
+        correction_template: str = "Your previous response had some issues:\n\n{validation_feedback}\n\nPlease correct your response to address these issues:\n\n{previous_response}",
+        max_attempts: int = 3,
+        **kwargs
+    ):
+        """
+        Initialize the external validation loop.
+        
+        Args:
+            validator_fn: Function that takes a response and returns
+                        (is_valid, feedback_message)
+            correction_template: Template for correction prompts
+            max_attempts: Maximum validation attempts
+            **kwargs: Additional args passed to ControlLoop
+        """
+        super().__init__(**kwargs)
+        self.validator_fn = validator_fn
+        self.correction_template = correction_template
+        self.max_attempts = max_attempts
+    
+    def run(self, input_text: str) -> Tuple[str, Dict[str, Any]]:
+        """
+        Run the external validation process.
+        
+        Args:
+            input_text: Input to respond to
+            
+        Returns:
+            tuple: (final_response, run_details)
+        """
+        # Generate initial response
+        response, metadata = self._call_llm(input_text)
+        
+        attempts = []
+        current_response = response
+        is_valid = False
+        validation_feedback = ""
+        
+        # Add initial attempt
+        attempts.append({
+            "attempt": 1,
+            "response": current_response,
+            "metrics": metadata,
+            "validation": {
+                "pending": True
+            }
+        })
+        
+        # Validation loop
+        for attempt in range(1, self.max_attempts + 1):
+            # Validate the current response
+            self._log(f"Validating attempt {attempt}")
+            is_valid, validation_feedback = self.validator_fn(current_response)
+            
+            # Update validation results for the current attempt
+            attempts[-1]["validation"] = {
+                "is_valid": is_valid,
+                "feedback": validation_feedback,
+                "pending": False
+            }
+            
+            # Stop if valid
+            if is_valid:
+                self._log(f"Valid response on attempt {attempt}")
+                break
+            
+            # Stop if max attempts reached
+            if attempt >= self.max_attempts:
+                self._log(f"Max attempts ({self.max_attempts}) reached without valid response")
+                break
+            
+            # Create correction prompt
+            self._log(f"Attempting correction (attempt {attempt+1})")
+            correction_prompt = self.correction_template.format(
+                validation_feedback=validation_feedback,
+                previous_response=current_response
+            )
+            
+            # Generate corrected response
+            corrected_response, correction_metadata = self._call_llm(correction_prompt)
+            current_response = corrected_response
+            
+            # Add new attempt
+            attempts.append({
+                "attempt": attempt + 1,
+                "response": current_response,
+                "metrics": correction_metadata,
+                "validation": {
+                    "pending": True
+                }
+            })
+        
+        # Create run details
+        run_details = {
+            "input": input_text,
+            "attempts": attempts,
+            "final_response": current_response,
+            "is_valid": is_valid,
+            "validation_feedback": validation_feedback,
+            "attempts_count": len(attempts)
+        }
+        
+        return current_response, run_details
+    
+    def display_results(self, run_details: Dict[str, Any]) -> None:
+        """
+        Display the external validation results in a notebook.
+        
+        Args:
+            run_details: Run details from run()
+        """
+        display(HTML("<h2>External Validation Results</h2>"))
+        
+        # Display input
+        display(HTML("<h3>Input</h3>"))
+        display(Markdown(run_details["input"]))
+        
+        # Display attempts
+        for attempt_data in run_details["attempts"]:
+            attempt_num = attempt_data["attempt"]
+            display(HTML(f"<h3>Attempt {attempt_num}</h3>"))
+            
+            # Display response
+            display(HTML("<h4>Response:</h4>"))
+            display(Markdown(attempt_data["response"]))
+            
+            # Display validation results
+            if not attempt_data["validation"]["pending"]:
+                is_valid = attempt_data["validation"]["is_valid"]
+                display(HTML("<h4>Validation:</h4>"))
+                
+                if is_valid:
+                    display(HTML("<p style='color: green; font-weight: bold;'>✓ Valid</p>"))
+                else:
+                    display(HTML("<p style='color: red; font-weight: bold;'>✗ Invalid</p>"))
+                    display(HTML("<h4>Feedback:</h4>"))
+                    display(Markdown(attempt_data["validation"]["feedback"]))
+            
+            # Display metrics
+            display(HTML("<h4>Metrics:</h4>"))
+            metrics = attempt_data["metrics"]
+            display(Markdown(f"```\n{format_metrics(metrics)}\n```"))
+        
+        # Display summary
+        display(HTML("<h3>Summary</h3>"))
+        is_valid = run_details["is_valid"]
+        status = "✓ Valid" if is_valid else "✗ Invalid"
+        display(Markdown(f"""
+        - Final status: **{status}**
+        - Total attempts: {run_details['attempts_count']}
+        - Total tokens: {self.metrics['total_tokens']}
+        - Total latency: {self.metrics['total_latency']:.2f}s
+        """))
+
+
+# Example Usage
+# =============
+
+def example_sequential_chain():
+    """Example of a sequential chain for data analysis."""
+    steps = [
+        {
+            "name": "extract_entities",
+            "prompt_template": "Extract the main entities (people, places, organizations) from this text. For each entity, provide a brief description.\n\nText: {input}",
+            "system_message": "You are an expert at extracting and categorizing named entities from text."
+        },
+        {
+            "name": "analyze_relationships",
+            "prompt_template": "Based on these entities, analyze the relationships between them:\n\n{input}",
+            "system_message": "You are an expert at analyzing relationships between entities."
+        },
+        {
+            "name": "generate_report",
+            "prompt_template": "Create a concise summary report based on this relationship analysis:\n\n{input}",
+            "system_message": "You are an expert at creating clear, concise reports."
+        }
+    ]
+    
+    chain = SequentialChain(steps=steps, verbose=True)
+    
+    sample_text = """
+    In 1995, Jeff Bezos founded Amazon in Seattle. Initially an online bookstore, 
+    Amazon expanded rapidly under Bezos' leadership. By 2021, Amazon had become 
+    one of the world's most valuable companies, and Bezos had briefly overtaken 
+    Elon Musk as the world's richest person. Musk, the CEO of Tesla and SpaceX, 
+    later reclaimed the top spot after Tesla's stock surged. Meanwhile, Microsoft, 
+    founded by Bill Gates in Albuquerque in 1975, continued to be a major tech 
+    competitor under CEO Satya Nadella.
+    """
+    
+    final_output, all_outputs = chain.run(sample_text)
+    
+    # Display results
+    chain.display_chain_results(all_outputs)
+    
+    # Visualize metrics
+    chain.visualize_metrics()
+    
+    return final_output, all_outputs
+
+
+def example_iterative_refiner():
+    """Example of iterative refinement for essay writing."""
+    # Define a stopping condition based on a quality threshold
+    def quality_threshold(response, metadata):
+        # Stop if response is over 500 tokens and latency is acceptable
+        response_tokens = metadata.get("response_tokens", 0)
+        latency = metadata.get("latency", 0)
+        return response_tokens > 500 and latency < 5.0
+    
+    refiner = IterativeRefiner(
+        max_iterations=3,
+        stopping_condition=quality_threshold,
+        verbose=True
+    )
+    
+    prompt = "Write a short essay on the future of artificial intelligence."
+    
+    final_response, refinement_history = refiner.run(prompt)
+    
+    # Display results
+    refiner.display_refinement_history(refinement_history)
+    
+    # Visualize metrics
+    refiner.visualize_metrics()
+    
+    return final_response, refinement_history
+
+
+def example_conditional_brancher():
+    """Example of conditional branching for query routing."""
+    branches = {
+        "technical": {
+            "prompt_template": "Provide a technical, detailed explanation of this topic for an expert audience:\n\n{input}",
+            "system_message": "You are a technical expert who provides detailed, precise explanations."
+        },
+        "simplified": {
+            "prompt_template": "Explain this topic in simple terms that a 10-year-old would understand:\n\n{input}",
+            "system_message": "You are an educator who explains complex topics in simple, accessible language."
+        },
+        "practical": {
+            "prompt_template": "Provide practical, actionable advice on this topic:\n\n{input}",
+            "system_message": "You are a practical advisor who provides concrete, actionable guidance."
+        }
+    }
+    
+    brancher = ConditionalBrancher(branches=branches, verbose=True)
+    
+    queries = [
+        "How does quantum computing work?",
+        "What is climate change?",
+        "How can I improve my public speaking skills?"
+    ]
+    
+    results = []
+    for query in queries:
+        response, run_details = brancher.run(query)
+        results.append((query, response, run_details))
+        
+        # Display results
+        brancher.display_branching_results(run_details)
+    
+    # Visualize metrics
+    brancher.visualize_metrics()
+    
+    return results
+
+
+def example_self_critique():
+    """Example of self-critique for fact-checking."""
+    critique = SelfCritique(
+        critique_template="""
+        Answer the following question with factual information:
+        
+        Question: {input}
+        
+        Step 1: Write an initial response with all the information you think is relevant.
+        
+        Step 2: Critically review your response. Check for:
+        - Factual errors or inaccuracies
+        - Missing important information
+        - Potential biases or one-sided perspectives
+        - Areas where you're uncertain and should express less confidence
+        
+        Step 3: Write an improved final response that addresses the issues identified in your critique.
+        """,
+        verbose=True
+    )
+    
+    query = "What were the major causes of World War I and how did they lead to the conflict?"
+    
+    final_response, run_details = critique.run(query)
+    
+    # Display results
+    critique.display_results(run_details)
+    
+    # Visualize metrics
+    critique.visualize_metrics()
+    
+    return final_response, run_details
+
+
+def example_external_validation():
+    """Example of external validation for code generation."""
+    # Simple validator function that checks for Python syntax errors
+    def python_validator(code_response):
+        # Extract code blocks
+        import re
+        code_blocks = re.findall(r"```python(.*?)```", code_response, re.DOTALL)
+        
+        if not code_blocks:
+            return False, "No Python code blocks found in the response."
+        
+        # Check each block for syntax errors
+        for i, block in enumerate(code_blocks):
+            try:
+                compile(block, "<string>", "exec")
+            except SyntaxError as e:
+                return False, f"Syntax error in code block {i+1}: {str(e)}"
+        
+        return True, "Code syntax is valid."
+    
+    validator = ExternalValidation(
+        validator_fn=python_validator,
+        max_attempts=3,
+        verbose=True
+    )
+    
+    prompt = "Write a Python function to check if a string is a palindrome."
+    
+    final_response, run_details = validator.run(prompt)
+    
+    # Display results
+    validator.display_results(run_details)
+    
+    # Visualize metrics
+    validator.visualize_metrics()
+    
+    return final_response, run_details
+
+
+# Main execution (when run as a script)
+if __name__ == "__main__":
+    print("Control Loops for Multi-Step LLM Interactions")
+    print("Run examples individually or import classes for your own use.")
