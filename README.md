@@ -126,7 +126,7 @@ Context-Engineering/
 | **Context Pruning** | Removing irrelevant information | Keep only what's necessary for performance |
 | **Metrics & Evaluation** | Measuring context effectiveness | Iterative optimization of token use vs. quality |
 
-## Karpathy-Style Guidelines
+## Karpathy Inspired Style
 
 1. **Minimal first pass** – start with the smallest viable context
 2. **Iterative add-on** – add only what the model demonstrably lacks
