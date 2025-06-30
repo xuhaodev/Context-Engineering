@@ -1,4 +1,4 @@
-# `field.self_repair.shell`
+# `/field.self_repair.shell`
 
 _Implement self-healing mechanisms that detect and repair inconsistencies or damage in semantic fields_
 
@@ -12,7 +12,7 @@ Have you ever watched a cut on your skin heal itself over time? Or seen how a fo
 
 Semantic fields, like living systems, can develop inconsistencies, fragmentation, or damage through their evolution. This can occur through information loss, conflicting updates, noise accumulation, or boundary erosion. Left unaddressed, these issues can compromise field coherence, attractor stability, and overall system functionality.
 
-The `field.self_repair.shell` protocol provides a structured framework for implementing self-healing mechanisms that autonomously detect, diagnose, and repair damage in semantic fields, ensuring their continued coherence and functionality.
+The `/field.self_repair.shell` protocol provides a structured framework for implementing self-healing mechanisms that autonomously detect, diagnose, and repair damage in semantic fields, ensuring their continued coherence and functionality.
 
 **Socratic Question**: Think about a time when you encountered a contradiction or inconsistency in your own understanding of a complex topic. How did your mind work to resolve this inconsistency?
 
@@ -77,7 +77,7 @@ The healing process reconstructs damaged patterns, realigns field vectors, reest
 
 **Socratic Question**: How might a repair process for semantic fields differ from physical repair processes? What unique challenges might arise in repairing abstract patterns versus physical structures?
 
-## 3. The `field.self_repair.shell` Protocol
+## 3. The `/field.self_repair.shell` Protocol
 
 ### 3.1. Protocol Intent
 
@@ -900,7 +900,7 @@ output: {
 
 ## 4. Implementation Patterns
 
-Let's look at practical implementation patterns for using the `field.self_repair.shell` protocol.
+Let's look at practical implementation patterns for using the `/field.self_repair.shell` protocol.
 
 ### 4.1. Basic Implementation
 
@@ -1236,7 +1236,7 @@ class ContextEngineeringSystem:
 
 ## 5. Self-Repair Patterns
 
-The `field.self_repair.shell` protocol can facilitate several distinct self-repair patterns:
+The `/field.self_repair.shell` protocol can facilitate several distinct self-repair patterns:
 
 ### 5.1. Coherence Restoration
 
@@ -1285,7 +1285,7 @@ Process Flow:
 
 ## 6. Case Studies
 
-Let's examine some practical case studies of the `field.self_repair.shell` protocol in action.
+Let's examine some practical case studies of the `/field.self_repair.shell` protocol in action.
 
 ### 6.1. Knowledge Base Self-Healing
 
@@ -1355,7 +1355,7 @@ Let's examine some practical case studies of the `field.self_repair.shell` proto
 
 ## 7. Advanced Techniques
 
-Let's explore some advanced techniques for working with the `field.self_repair.shell` protocol.
+Let's explore some advanced techniques for working with the `/field.self_repair.shell` protocol.
 
 ### 7.1. Preventive Self-Repair
 
@@ -1615,7 +1615,7 @@ def collaborative_self_repair(fields, shared_damage_patterns, coordination_strat
 
 ## 8. Integration with Other Protocols
 
-The `field.self_repair.shell` protocol is designed to work seamlessly with other protocols in the ecosystem:
+The `/field.self_repair.shell` protocol is designed to work seamlessly with other protocols in the ecosystem:
 
 ### 8.1. With `attractor.co.emerge.shell`
 
@@ -1717,7 +1717,7 @@ def integrate_with_resonance_scaffold(field, damage_diagnosis):
 
 ## 9. Practical Implementation Guide
 
-To implement the `field.self_repair.shell` protocol in your own context engineering projects, follow these steps:
+To implement the `/field.self_repair.shell` protocol in your own context engineering projects, follow these steps:
 
 ### 9.1. Prerequisites
 
@@ -1781,7 +1781,7 @@ Before implementing this protocol, ensure you have:
 
 ### 10.1. Self-Healing Knowledge Base
 
-The `field.self_repair.shell` protocol can create a knowledge base that automatically repairs inconsistencies:
+The `/field.self_repair.shell` protocol can create a knowledge base that automatically repairs inconsistencies:
 
 ```python
 class SelfHealingKnowledgeBase:
@@ -2332,7 +2332,7 @@ class ResilientMultiAgentSystem:
 
 ## 11. Conclusion
 
-The `field.self_repair.shell` protocol provides a powerful framework for implementing self-healing mechanisms that detect, diagnose, and repair inconsistencies or damage in semantic fields. By enabling fields to maintain their own health and integrity, this approach enhances the robustness, reliability, and longevity of context engineering systems.
+The `/field.self_repair.shell` protocol provides a powerful framework for implementing self-healing mechanisms that detect, diagnose, and repair inconsistencies or damage in semantic fields. By enabling fields to maintain their own health and integrity, this approach enhances the robustness, reliability, and longevity of context engineering systems.
 
 Key takeaways:
 
