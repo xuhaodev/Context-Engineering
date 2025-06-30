@@ -4,7 +4,7 @@
 
 ## From Discrete to Continuous: The Semantic and Neural Field Paradigm Shift
 
-Imagine standing at the edge of a still pond. Drop a single pebble, and you'll see concentric ripples spreading outward. Drop several pebbles, and you'll witness these ripples interacting—reinforcing where they meet in phase, canceling where they meet out of phase. This is the essence of field thinking: a continuous medium where information propagates, interacts, and evolves.
+Imagine standing at the edge of a still pond. Drop a single pebble, and you'll see concentric ripples spreading outward. Drop several pebbles, and you'll witness these ripples interacting—reinforcing where they meet in phase, canceling where they meet out of phase. This is the essence of semantic and neural field thinking: language and context as a continuous medium where information propagates, interacts, and evolves.
 
 In context engineering, we've been progressing through increasingly sophisticated metaphors:
 
