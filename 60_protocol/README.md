@@ -170,35 +170,35 @@ Enables long-term persistence of context through stable attractor dynamics.
 Field protocols use a set of standardized operations. Common operation namespaces include:
 
 ### Attractor Operations
-- `attractor.scan`: Identify attractors in a field
-- `attractor.strengthen`: Increase attractor strength
-- `attractor.create`: Generate new attractors
-- `attractor.merge`: Combine attractors
-- `attractor.project`: Predict attractor evolution
+- `/attractor.scan`: Identify attractors in a field
+- `/attractor.strengthen`: Increase attractor strength
+- `/attractor.create`: Generate new attractors
+- `/attractor.merge`: Combine attractors
+- `/attractor.project`: Predict attractor evolution
 
 ### Residue Operations
-- `residue.surface`: Detect symbolic residue
-- `residue.compress`: Compress residue patterns
-- `residue.integrate`: Integrate residue into field
-- `residue.echo`: Create resonant echoes of residue
+- `/residue.surface`: Detect symbolic residue
+- `/residue.compress`: Compress residue patterns
+- `/residue.integrate`: Integrate residue into field
+- `/residue.echo`: Create resonant echoes of residue
 
 ### Boundary Operations
-- `boundary.collapse`: Remove or weaken boundaries
-- `boundary.adapt`: Modify boundary properties
-- `boundary.tune`: Fine-tune boundary parameters
-- `boundary.reconstruct`: Rebuild damaged boundaries
+- `/boundary.collapse`: Remove or weaken boundaries
+- `/boundary.adapt`: Modify boundary properties
+- `/boundary.tune`: Fine-tune boundary parameters
+- `/boundary.reconstruct`: Rebuild damaged boundaries
 
 ### Field Operations
-- `field.audit`: Analyze field properties
-- `field.partition`: Divide field into regions
-- `field.snapshot`: Capture field state
-- `field.evolution`: Guide field development
+- `/field.audit`: Analyze field properties
+- `/field.partition`: Divide field into regions
+- `/field.snapshot`: Capture field state
+- `/field.evolution`: Guide field development
 
 ### Agency Operations
-- `agency.activate`: Enable autonomous action
-- `agency.self-prompt`: Generate recursive prompts
-- `agency.evolve`: Improve agency capabilities
-- `agency.initiate`: Begin autonomous processes
+- `/agency.activate`: Enable autonomous action
+- `/agency.self-prompt`: Generate recursive prompts
+- `/agency.evolve`: Improve agency capabilities
+- `/agency.initiate`: Begin autonomous processes
 
 ## Using Field Protocols
 
