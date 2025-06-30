@@ -1606,11 +1606,13 @@ By implementing and using this protocol, you can create context engineering syst
 
 1. Yang, Y., Campbell, D., Huang, K., Wang, M., Cohen, J., & Webb, T. (2025). "Emergent Symbolic Mechanisms Support Abstract Reasoning in Large Language Models." Proceedings of the 42nd International Conference on Machine Learning.
 
-2. Bulwer-Lytton, E. (1873). "Kenelm Chillingly."
+2. Brown Ebouky, Andrea Bartezzaghi, Mattia Rigotti (2025). "Eliciting Reasoning in Language Models with Cognitive Tools." arXiv preprint arXiv:2506.12115v1.
 
-3. Agostino, C., Thien, Q.L., Apsel, M., Pak, D., Lesyk, E., & Majumdar, A. (2025). "A quantum semantic framework for natural language processing." arXiv preprint arXiv:2506.10077v1.
+3. Bulwer-Lytton, E. (1873). "Kenelm Chillingly."
 
-4. Context Engineering Contributors (2025). "Neural Fields for Context Engineering." Context Engineering Repository, v3.5.
+4. Agostino, C., Thien, Q.L., Apsel, M., Pak, D., Lesyk, E., & Majumdar, A. (2025). "A quantum semantic framework for natural language processing." arXiv preprint arXiv:2506.10077v1.
+
+5. Context Engineering Contributors (2025). "Neural Fields for Context Engineering." Context Engineering Repository, v3.5.
 
 ---
 
