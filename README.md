@@ -43,7 +43,7 @@ prompt    shot     state    agent     prompt programs     persistence & resonanc
 
 
 
-## Symbols? 
+## Emergent Symbols? 
 
 ## **[Emergent Symbolic Mechanisms Support Abstract Reasoning in Large Language Models - ICML June 18, 2025](https://openreview.net/forum?id=y1SnRPDWx4)**
 
