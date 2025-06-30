@@ -172,7 +172,7 @@ Follow this recommended path to master NOCODE Context Engineering:
 
 ## Visual Guide to Repository Structure (Updated Live)
 
-```
+```python
 /Context-Engineering/NOCODE/
 ├── 00_foundations/           # Core concepts
 ├── NOCODE.md                 # Comprehensive token budgeting guide
@@ -182,7 +182,46 @@ Follow this recommended path to master NOCODE Context Engineering:
 ├── 40_protocol_design/       # Design principles (Coming soon)
 └── resources/                # Templates and examples (Coming soon)
 ```
-
+```python
+/Context-Engineering/NOCODE/
+├── 00_foundations/
+│   ├── 01_introduction.md
+│   ├── 02_token_budgeting.md
+│   ├── 03_protocol_shells.md
+│   ├── 04_pareto_lang.md
+│   └── 05_field_theory.md
+├── 10_mental_models/
+│   ├── 01_garden_model.md
+│   ├── 02_budget_model.md
+│   ├── 03_river_model.md
+│   └── 04_unified_models.md
+├── 20_practical_protocols/
+│   ├── 01_conversation_protocols.md
+│   ├── 02_document_protocols.md
+│   ├── 03_creative_protocols.md
+│   ├── 04_research_protocols.md
+│   └── 05_knowledge_protocols.md
+├── 30_field_techniques/
+│   ├── 01_attractor_management.md
+│   ├── 02_boundary_control.md
+│   ├── 03_residue_tracking.md
+│   └── 04_resonance_optimization.md
+├── 40_protocol_design/
+│   ├── 01_design_principles.md
+│   ├── 02_pattern_library.md
+│   ├── 03_testing_methods.md
+│   └── 04_visualization.md
+├── 50_advanced_integration/
+│   ├── 01_multi_protocol_systems.md
+│   ├── 02_adaptive_protocols.md
+│   ├── 03_self_evolving_contexts.md
+│   └── 04_protocol_orchestration.md
+└── resources/
+    ├── protocol_templates/
+    ├── cheat_sheets/
+    ├── visual_guides/
+    └── case_studies/
+```
 ## Contributing
 
 This is an evolving framework - your experiences, insights, and feedback are valuable! Share your:
