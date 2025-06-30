@@ -59,7 +59,7 @@ These include symbolic induction heads, symbolic abstraction heads, and retrieva
 
 
 >
-> **Concept: Leverage symbols/syntax as structural attractors for user guidance of context/reasoning/memory/persistence**
+> **Concept: Leverage symbols/syntax as structural attractors or templates for user guidance of context/reasoning/memory/persistence**
 
 ## Under Construction
 
