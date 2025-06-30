@@ -1,5 +1,5 @@
 
-# Field Protocols
+# Semantic Field Protocols
 
 _Structured frameworks for recursive field emergence and attractor dynamics_
 > “The future is uncertain… but this uncertainty is at the very heart of human creativity.”
