@@ -6,7 +6,7 @@ Bridging the Latest Research on Context
 ## [Eliciting Reasoning in Language Models with Cognitive Tools — IBM June 2025](https://www.arxiv.org/pdf/2506.12115)
 
 ## [Devin DeepWiki Docs](https://deepwiki.com/davidkimai/Context-Engineering)
-
+## [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/davidkimai/Context-Engineering)
 </div>
 
 > **"Context engineering is the delicate art and science of filling the context window with just the right information for the next step." — [**Andrej Karpathy**](https://x.com/karpathy/status/1937902205765607626)**
