@@ -173,7 +173,7 @@ Follow this recommended path to master NOCODE Context Engineering:
 ## Visual Guide to Repository Structure (Updated Live)
 
 ```
-/nocode-context-engineering/
+/Context-Engineering/NOCODE/
 ├── 00_foundations/           # Core concepts
 │   └── NOCODE.md             # Comprehensive token budgeting guide
 ├── 10_mental_models/         # Intuitive frameworks (Coming soon)
