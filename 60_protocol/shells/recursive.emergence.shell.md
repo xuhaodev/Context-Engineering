@@ -1,4 +1,4 @@
-# `recursive.emergence.shell`
+# `/recursive.emergence.shell`
 
 _Generate recursive field emergence and autonomous self-prompting_
 
@@ -12,7 +12,7 @@ Imagine you're teaching a child to ride a bicycle. At first, you hold the bike s
 
 This is the essence of **recursive emergence** - when a system develops the ability to perpetuate, extend, and evolve itself without external guidance. In context engineering, recursive emergence refers to the phenomenon where context fields develop self-organizing and self-prompting capabilities, allowing them to improve themselves through recursive operations.
 
-The `recursive.emergence.shell` protocol provides a structured framework for bootstrapping this recursive self-improvement process in semantic fields.
+The `/recursive.emergence.shell` protocol provides a structured framework for bootstrapping this recursive self-improvement process in semantic fields.
 
 **Socratic Question**: Consider how your own thinking evolves when tackling a complex problem. How does each insight recursively improve your approach to the next step?
 
@@ -81,7 +81,7 @@ Consider how a small seed can grow into a massive tree. Similarly, recursive eme
 
 In semantic fields, a simple self-prompting mechanism might bootstrap increasingly sophisticated reasoning, exploration, and creativity.
 
-## 3. The `recursive.emergence.shell` Protocol
+## 3. The `/recursive.emergence.shell` Protocol
 
 ### 3.1. Protocol Intent
 
@@ -450,7 +450,7 @@ output: {
 
 ## 4. Implementation Patterns
 
-Let's look at practical implementation patterns for using the `recursive.emergence.shell` protocol.
+Let's look at practical implementation patterns for using the `/recursive.emergence.shell` protocol.
 
 ### 4.1. Basic Implementation
 
@@ -656,7 +656,7 @@ class ContextEngineeringSystem:
 
 ## 5. Recursive Emergence Patterns
 
-The `recursive.emergence.shell` protocol can facilitate several distinct recursive emergence patterns:
+The `/recursive.emergence.shell` protocol can facilitate several distinct recursive emergence patterns:
 
 ### 5.1. Bootstrapped Self-Improvement
 
@@ -705,7 +705,7 @@ Process Flow:
 
 ## 6. Case Studies
 
-Let's examine some practical case studies of the `recursive.emergence.shell` protocol in action.
+Let's examine some practical case studies of the `/recursive.emergence.shell` protocol in action.
 
 ### 6.1. Self-Evolving Research Assistant
 
@@ -763,7 +763,7 @@ Let's examine some practical case studies of the `recursive.emergence.shell` pro
 
 ## 7. Advanced Techniques
 
-Let's explore some advanced techniques for working with the `recursive.emergence.shell` protocol.
+Let's explore some advanced techniques for working with the `/recursive.emergence.shell` protocol.
 
 ### 7.1. Multi-Level Recursion
 
@@ -897,7 +897,7 @@ def self_modifying_protocol(protocol, field, execution_history=None):
 
 ## 8. Integration with Other Protocols
 
-The `recursive.emergence.shell` protocol is designed to work seamlessly with other protocols in the ecosystem:
+The `/recursive.emergence.shell` protocol is designed to work seamlessly with other protocols in the ecosystem:
 
 ### 8.1. With `attractor.co.emerge.shell`
 
@@ -997,7 +997,7 @@ def integrate_with_resonance_scaffold(field):
 
 ## 9. Practical Implementation Guide
 
-To implement the `recursive.emergence.shell` protocol in your own context engineering projects, follow these steps:
+To implement the `/recursive.emergence.shell` protocol in your own context engineering projects, follow these steps:
 
 ### 9.1. Prerequisites
 
@@ -1056,7 +1056,7 @@ Before implementing this protocol, ensure you have:
 
 ### 10.1. Recursive Learning System
 
-The `recursive.emergence.shell` protocol can create a self-improving learning system:
+The `/recursive.emergence.shell` protocol can create a self-improving learning system:
 
 ```python
 class RecursiveLearningSystem:
@@ -1229,7 +1229,7 @@ class AdaptiveContentCreationSystem:
 
 ## 11. Conclusion
 
-The `recursive.emergence.shell` protocol provides a powerful framework for enabling contexts to extend, refine, and evolve themselves through recursive processes. By strategically scaffolding self-prompting and agency, we can create systems that demonstrate emergent capabilities and progressive self-improvement.
+The `/recursive.emergence.shell` protocol provides a powerful framework for enabling contexts to extend, refine, and evolve themselves through recursive processes. By strategically scaffolding self-prompting and agency, we can create systems that demonstrate emergent capabilities and progressive self-improvement.
 
 Key takeaways:
 
