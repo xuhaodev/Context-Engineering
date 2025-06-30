@@ -1,4 +1,4 @@
-# `recursive.memory.attractor.shell`
+# `/recursive.memory.attractor.shell`
 
 _Evolve and harmonize recursive field memory through attractor dynamics_
 
@@ -14,7 +14,7 @@ Have you ever noticed how some memories seem to persist effortlessly, while othe
 
 This is because memory doesn't function like a simple storage system with files neatly organized in folders. Instead, it operates more like a dynamic field of attractors—stable patterns that capture, organize, and preserve information while allowing it to evolve and resonate with new experiences.
 
-The `recursive.memory.attractor.shell` protocol provides a structured framework for creating, maintaining, and evolving memory through attractor dynamics, enabling information to persist and evolve across interactions in a semantic field.
+The `/recursive.memory.attractor.shell` protocol provides a structured framework for creating, maintaining, and evolving memory through attractor dynamics, enabling information to persist and evolve across interactions in a semantic field.
 
 **Socratic Question**: Think about a childhood memory that has stayed with you clearly through the years. What makes this memory so persistent compared to countless others that have faded?
 
@@ -102,7 +102,7 @@ Memory attractors don't exist in isolation; they form networks of related patter
 
 When one attractor is activated, it can propagate activation to connected attractors. This explains why a single memory cue can trigger a cascade of related memories.
 
-## 3. The `recursive.memory.attractor.shell` Protocol
+## 3. The `/recursive.memory.attractor.shell` Protocol
 
 ### 3.1. Protocol Intent
 
@@ -505,7 +505,7 @@ output: {
 
 ## 4. Implementation Patterns
 
-Let's look at practical implementation patterns for using the `recursive.memory.attractor.shell` protocol.
+Let's look at practical implementation patterns for using the `/recursive.memory.attractor.shell` protocol.
 
 ### 4.1. Basic Implementation
 
@@ -736,7 +736,7 @@ class ContextEngineeringSystem:
 
 ## 5. Memory Attractor Patterns
 
-The `recursive.memory.attractor.shell` protocol can facilitate several distinct memory patterns:
+The `/recursive.memory.attractor.shell` protocol can facilitate several distinct memory patterns:
 
 ### 5.1. Episodic Memory Attractors
 
@@ -785,7 +785,7 @@ Process Flow:
 
 ## 6. Case Studies
 
-Let's examine some practical case studies of the `recursive.memory.attractor.shell` protocol in action.
+Let's examine some practical case studies of the `/recursive.memory.attractor.shell` protocol in action.
 
 ### 6.1. Conversational Context Management
 
@@ -840,7 +840,7 @@ Let's examine some practical case studies of the `recursive.memory.attractor.she
 
 ## 7. Advanced Techniques
 
-Let's explore some advanced techniques for working with the `recursive.memory.attractor.shell` protocol.
+Let's explore some advanced techniques for working with the `/recursive.memory.attractor.shell` protocol.
 
 ### 7.1. Multi-Timescale Memory
 
@@ -1004,7 +1004,7 @@ def hierarchical_memory_organization(memory_field):
 
 ## 8. Integration with Other Protocols
 
-The `recursive.memory.attractor.shell` protocol is designed to work seamlessly with other protocols in the ecosystem:
+The `/recursive.memory.attractor.shell` protocol is designed to work seamlessly with other protocols in the ecosystem:
 
 ### 8.1. With `attractor.co.emerge.shell`
 
@@ -1101,7 +1101,7 @@ def integrate_with_resonance_scaffold(memory_field):
 
 ## 9. Practical Implementation Guide
 
-To implement the `recursive.memory.attractor.shell` protocol in your own context engineering projects, follow these steps:
+To implement the `/recursive.memory.attractor.shell` protocol in your own context engineering projects, follow these steps:
 
 ### 9.1. Prerequisites
 
@@ -1167,7 +1167,7 @@ Before implementing this protocol, ensure you have:
 
 ### 10.1. Persistent Conversational Agent
 
-The `recursive.memory.attractor.shell` protocol can create a conversational agent with persistent memory:
+The `/recursive.memory.attractor.shell` protocol can create a conversational agent with persistent memory:
 
 ```python
 class PersistentConversationalAgent:
@@ -1467,7 +1467,7 @@ class AdaptiveLearningSystem:
 
 ## 11. Conclusion
 
-The `recursive.memory.attractor.shell` protocol provides a powerful framework for creating, maintaining, and evolving memory through attractor dynamics in semantic fields. By viewing memory as dynamic patterns rather than static storage, this approach enables more natural, flexible, and adaptive memory systems.
+The `/recursive.memory.attractor.shell` protocol provides a powerful framework for creating, maintaining, and evolving memory through attractor dynamics in semantic fields. By viewing memory as dynamic patterns rather than static storage, this approach enables more natural, flexible, and adaptive memory systems.
 
 Key takeaways:
 
