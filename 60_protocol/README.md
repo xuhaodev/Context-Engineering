@@ -2,7 +2,9 @@
 # Field Protocols
 
 _Structured frameworks for recursive field emergence and attractor dynamics_
-
+> “The future is uncertain… but this uncertainty is at the very heart of human creativity.”
+>
+> **— Ilya Prigogine**
 ## Overview
 
 The `60_protocols` directory contains structured definitions of field protocols, shells, and frameworks for advanced context engineering. These protocols represent the evolution of context engineering from discrete token-based approaches to continuous field-based approaches with emergent properties.
