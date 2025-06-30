@@ -33,7 +33,7 @@ Prompt engineering gets all the attention, but we can now get excited for what c
 
 This repository provides a progressive, first-principles approach to context engineering, built around a biological metaphor:
 
-> Cell = Singular Agent or Unit of Context
+> Cell = Agent 
 >
 > Organ = Multi-Agent Systems
 
