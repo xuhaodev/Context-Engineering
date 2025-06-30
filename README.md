@@ -1,5 +1,5 @@
 # Context Engineering
-Bringing You the Latest Research on Context With First Principles & Visuals
+Bringing You the Latest Research (June 2025 from ICML, IBM, NeurIPS, OHBM, and more) on Context With First Principles & Visuals
 
 <div align="center">
 
