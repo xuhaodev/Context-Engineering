@@ -89,7 +89,9 @@ Context-Engineering/
 │   ├── 09_persistence_and_resonance.md # Field dynamics and attractors
 │   ├── 10_field_orchestration.md    # Coordinating multiple fields
 │   ├── 11_emergence_and_attractor_dynamics.md # Emergent properties
-│   └── 12_symbolic_mechanisms.md    # Symbolic reasoning in LLMs
+│   │── 12_symbolic_mechanisms.md    # Symbolic reasoning in LLMs
+│   ├── 13_quantum_semantics.md      # Multiple meanings (Superposition)
+│   └── 14_unified_field_theory.md   # Integrating theory models
 │
 ├── 10_guides_zero_to_hero/          # Hands-on tutorials
 │   ├── 01_min_prompt.ipynb          # Minimal prompt experiments
