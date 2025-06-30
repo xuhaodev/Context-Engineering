@@ -92,7 +92,7 @@ Facilitates the co-emergence of multiple attractors, enabling them to interact a
 - Integration protocols
 - Boundary collapse
 
-[See full documentation](./shells/attractor.co.emerge.shell)
+[See full documentation](./shells/attractor.co.emerge.shell.md)
 
 ### `recursive.emergence.shell`
 
@@ -107,7 +107,7 @@ Generates recursive field emergence and autonomous self-prompting, enabling cont
 - Field evolution
 - Halt checking
 
-[See full documentation](./shells/recursive.emergence.shell)
+[See full documentation](./shells/recursive.emergence.shell.md)
 
 ### `recursive.memory.attractor.shell`
 
@@ -121,7 +121,7 @@ Creates and maintains memory through attractor dynamics, allowing information to
 - Memory integration
 - Attractor reinforcement
 
-[See full documentation](./shells/recursive.memory.attractor.shell)
+[See full documentation](./shells/recursive.memory.attractor.shell.md)
 
 ### `field.resonance.scaffold.shell`
 
@@ -135,7 +135,7 @@ Establishes resonance scaffolding to amplify coherent patterns and dampen noise 
 - Scaffold formation
 - Resonance tuning
 
-[See full documentation](./shells/field.resonance.scaffold.shell)
+[See full documentation](./shells/field.resonance.scaffold.shell.md)
 
 ### `field.self_repair.shell`
 
@@ -149,7 +149,7 @@ Implements self-healing mechanisms that detect and repair inconsistencies or dam
 - Coherence checking
 - Self-healing triggers
 
-[See full documentation](./shells/field.self_repair.shell)
+[See full documentation](./shells/field.self_repair.shell.md)
 
 ### `context.memory.persistence.attractor.shell`
 
@@ -163,7 +163,7 @@ Enables long-term persistence of context through stable attractor dynamics.
 - Forgetting mechanisms
 - Memory attractors
 
-[See full documentation](./shells/context.memory.persistence.attractor.shell)
+[See full documentation](./shells/context.memory.persistence.attractor.shell.md)
 
 ## Protocol Operations
 
