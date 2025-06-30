@@ -640,4 +640,750 @@ class ContextMemoryManager:
         self.messages.append(message)
         
         # Check if we're exceeding our history budget
-        history_content = "\n".join([f"{msg['role']}: {msg['content']}" for msg in
+        history_content = "\n".join([f"{msg['role']}: {msg['content']}" for msg in self.messages])
+        history_tokens = self.budget_planner.track_usage("history", history_content)
+        history_budget = self.budget_planner.get_budget("history")
+        
+        # If we're over budget, compress the history
+        if history_tokens > history_budget:
+            self.compress_history()
+    
+    def extract_key_information(self, message):
+        """Extract key information from a message to store in memory."""
+        if self.summarization_model:
+            extraction_prompt = "Extract key facts and information from this message as key-value pairs:"
+            extraction_input = f"{extraction_prompt}\n\n{message['content']}"
+            extraction_result = self.summarization_model(extraction_input)
+            
+            # Parse key-value pairs
+            for line in extraction_result.split("\n"):
+                if ":" in line:
+                    key, value = line.split(":", 1)
+                    self.memory[key.strip()] = value.strip()
+    
+    def compress_history(self):
+        """Compress history when it exceeds the budget."""
+        if not self.summarization_model:
+            # If no summarization model, use windowing
+            # Always keep the first message (system prompt) and last 5 messages
+            self.messages = [self.messages[0]] + self.messages[-5:]
+        else:
+            # Use summarization
+            history_to_summarize = self.messages[1:-3]  # Skip system prompt and keep last 3 messages
+            
+            if not history_to_summarize:
+                return  # Nothing to summarize
+                
+            # Extract content to summarize
+            content_to_summarize = "\n".join([
+                f"{msg['role']}: {msg['content']}" 
+                for msg in history_to_summarize
+            ])
+            
+            # Create summarization prompt
+            summarization_prompt = (
+                "Summarize the following conversation history concisely, "
+                "preserving key information, decisions, and context:"
+            )
+            
+            # Get summary
+            summary = self.summarization_model(
+                f"{summarization_prompt}\n\n{content_to_summarize}"
+            )
+            
+            # Replace the messages with a summary
+            summary_message = {
+                "role": "system",
+                "content": f"Summary of previous conversation: {summary}"
+            }
+            
+            # New messages list: system prompt + summary + recent messages
+            self.messages = [self.messages[0], summary_message] + self.messages[-3:]
+    
+    def get_formatted_memory(self):
+        """Get memory formatted as a string."""
+        if not self.memory:
+            return ""
+            
+        memory_lines = [f"{key}: {value}" for key, value in self.memory.items()]
+        return "Key information from conversation:\n" + "\n".join(memory_lines)
+    
+    def get_context(self):
+        """Get the full context for the next interaction."""
+        # Combine messages and memory
+        memory_content = self.get_formatted_memory()
+        
+        # If we have memory, insert it after the system prompt
+        if memory_content and len(self.messages) > 1:
+            memory_message = {"role": "system", "content": memory_content}
+            context = [self.messages[0], memory_message] + self.messages[1:]
+        else:
+            context = self.messages.copy()
+            
+        return context
+```
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     MEMORY MANAGER                          │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌───────────────┐          ┌───────────────────────────┐   │
+│  │ Budget Planner│◄─────────┤ Token Usage Monitoring    │   │
+│  └───────┬───────┘          └───────────────────────────┘   │
+│          │                                                  │
+│          ▼                                                  │
+│  ┌───────────────┐   Over    ┌───────────────────────────┐  │
+│  │ Message History├─Budget?──►│ Compression Strategies    │  │
+│  └───────┬───────┘          ┌┴──────────────────────────┐│  │
+│          │                  │1. Windowing               ││  │
+│          │                  │2. Summarization           ││  │
+│          │                  │3. Key-Value Extraction    ││  │
+│          │                  └───────────────────────────┘│  │
+│          ▼                                               │  │
+│  ┌───────────────┐          ┌───────────────────────────┐│  │
+│  │ Context Builder│◄─────────┤ Memory Storage            ││  │
+│  └───────┬───────┘          └───────────────────────────┘│  │
+│          │                                                  │
+│          ▼                                                  │
+│  ┌───────────────────────────────────────────────────────┐  │
+│  │               Final Context for LLM                    │  │
+│  └───────────────────────────────────────────────────────┘  │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 8.3. Dynamic Token Optimizer
+
+```python
+class DynamicTokenOptimizer:
+    def __init__(self, tokenizer, optimization_strategies=None):
+        self.tokenizer = tokenizer
+        self.strategies = optimization_strategies or {
+            "summarize": self.summarize_text,
+            "extract_key_points": self.extract_key_points,
+            "restructure": self.restructure_text,
+            "compress_format": self.compress_format
+        }
+    
+    def count_tokens(self, text):
+        """Count tokens in text."""
+        return len(self.tokenizer.encode(text))
+    
+    def optimize(self, text, target_tokens, strategy=None):
+        """Optimize text to fit within target token count."""
+        current_tokens = self.count_tokens(text)
+        
+        if current_tokens <= target_tokens:
+            return text  # Already within budget
+        
+        # Calculate compression ratio needed
+        compression_ratio = target_tokens / current_tokens
+        
+        # If no strategy specified, select based on compression ratio
+        if not strategy:
+            if compression_ratio > 0.8:
+                strategy = "compress_format"  # Light compression
+            elif compression_ratio > 0.5:
+                strategy = "restructure"  # Medium compression
+            elif compression_ratio > 0.3:
+                strategy = "extract_key_points"  # Heavy compression
+            else:
+                strategy = "summarize"  # Extreme compression
+        
+        # Apply selected strategy
+        if strategy in self.strategies:
+            return self.strategies[strategy](text, target_tokens)
+        else:
+            raise ValueError(f"Unknown optimization strategy: {strategy}")
+    
+    def summarize_text(self, text, target_tokens):
+        """Summarize text to target token count."""
+        # This would typically call an LLM for summarization
+        # For this example, we'll just truncate with a note
+        ratio = target_tokens / self.count_tokens(text)
+        truncated = self.truncate_to_ratio(text, ratio * 0.9)  # Leave room for the note
+        return f"{truncated}\n[Note: Content has been summarized to fit token budget.]"
+    
+    def extract_key_points(self, text, target_tokens):
+        """Extract key points from text."""
+        # This would typically call an LLM to extract key points
+        # For this example, we'll create a simple bullet point extraction
+        lines = text.split("\n")
+        result = "Key points:\n"
+        
+        for line in lines:
+            line = line.strip()
+            if line and self.count_tokens(result + f"• {line}\n") <= target_tokens * 0.95:
+                result += f"• {line}\n"
+        
+        return result
+    
+    def restructure_text(self, text, target_tokens):
+        """Restructure text to be more token-efficient."""
+        # Remove redundancies, use abbreviations, etc.
+        # This is a simplified example
+        text = re.sub(r"([A-Za-z]+) \1", r"\1", text)  # Remove repeated words
+        text = text.replace("for example", "e.g.")
+        text = text.replace("that is", "i.e.")
+        text = text.replace("and so on", "etc.")
+        
+        if self.count_tokens(text) <= target_tokens:
+            return text
+        
+        # If still too long, combine with extraction
+        return self.extract_key_points(text, target_tokens)
+    
+    def compress_format(self, text, target_tokens):
+        """Compress by changing formatting without losing content."""
+        # Remove extra whitespace
+        text = re.sub(r"\s+", " ", text)
+        
+        # Convert paragraphs to bullet points if appropriate
+        if ":" in text and "\n" in text:
+            lines = text.split("\n")
+            result = ""
+            for line in lines:
+                if ":" in line:
+                    key, value = line.split(":", 1)
+                    result += f"• {key}: {value.strip()}\n"
+                else:
+                    result += line + "\n"
+            text = result
+        
+        if self.count_tokens(text) <= target_tokens:
+            return text
+        
+        # If still too long, try more aggressive restructuring
+        return self.restructure_text(text, target_tokens)
+    
+    def truncate_to_ratio(self, text, ratio):
+        """Truncate text to a ratio of its original length."""
+        words = text.split()
+        target_words = int(len(words) * ratio)
+        return " ".join(words[:target_words])
+```
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                 DYNAMIC TOKEN OPTIMIZATION                       │
+├──────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│   ┌────────────────────────────────────────────────────────┐     │
+│   │                 Compression Ratio                      │     │
+│   └────────────────────────────────────────────────────────┘     │
+│                           │                                      │
+│                           ▼                                      │
+│   ┌─────────────┬─────────┴───────────┬──────────────┐          │
+│   │             │                     │              │          │
+│   ▼             ▼                     ▼              ▼          │
+│ 0.8-1.0       0.5-0.8              0.3-0.5        0.0-0.3       │
+│ Light         Medium               Heavy          Extreme       │
+│                                                                  │
+│   ┌─────────────┬─────────────────────┬──────────────┐          │
+│   │             │                     │              │          │
+│   ▼             ▼                     ▼              ▼          │
+│┌─────────┐  ┌─────────┐         ┌──────────┐    ┌─────────┐    │
+││ Format  │  │Structure│         │ Extract  │    │Summarize│    │
+││Compress │  │Reformat │         │Key Points│    │  Text   │    │
+│└─────────┘  └─────────┘         └──────────┘    └─────────┘    │
+│                                                                  │
+└──────────────────────────────────────────────────────────────────┘
+```
+
+### 8.4. Field-Aware Context Management
+
+Implementing field theory concepts for token budgeting:
+
+```python
+class FieldAwareContextManager:
+    def __init__(self, embedding_model, tokenizer, budget_planner):
+        self.embedding_model = embedding_model
+        self.tokenizer = tokenizer
+        self.budget_planner = budget_planner
+        self.field_state = {
+            "attractors": [],
+            "boundaries": {
+                "permeability": 0.7,  # Default permeability threshold
+                "gradient": 0.2       # How quickly permeability changes
+            },
+            "resonance": 0.0,
+            "residue": []
+        }
+    
+    def embed_text(self, text):
+        """Generate embeddings for text."""
+        return self.embedding_model.embed(text)
+    
+    def detect_attractors(self, text, threshold=0.8):
+        """Detect semantic attractors in text."""
+        # Split into paragraphs or sections
+        sections = text.split("\n\n")
+        
+        # Get embeddings for each section
+        embeddings = [self.embed_text(section) for section in sections]
+        
+        # Calculate centroid
+        centroid = np.mean(embeddings, axis=0)
+        
+        # Find sections that form attractors (high similarity to many others)
+        attractors = []
+        for i, (section, embedding) in enumerate(zip(sections, embeddings)):
+            # Calculate average similarity to other sections
+            similarities = [cosine_similarity(embedding, other_emb) 
+                           for j, other_emb in enumerate(embeddings) if i != j]
+            avg_similarity = np.mean(similarities) if similarities else 0
+            
+            # If similarity is above threshold, it's an attractor
+            if avg_similarity > threshold:
+                tokens = self.tokenizer.encode(section)
+                attractors.append({
+                    "text": section,
+                    "embedding": embedding,
+                    "strength": avg_similarity,
+                    "token_count": len(tokens)
+                })
+        
+        return attractors
+    
+    def calculate_resonance(self, text):
+        """Calculate field resonance for text."""
+        # Split into paragraphs or sections
+        sections = text.split("\n\n")
+        
+        if len(sections) <= 1:
+            return 0.0  # Not enough sections to calculate resonance
+        
+        # Get embeddings for each section
+        embeddings = [self.embed_text(section) for section in sections]
+        
+        # Calculate pairwise similarities
+        similarities = []
+        for i in range(len(embeddings)):
+            for j in range(i+1, len(embeddings)):
+                similarities.append(cosine_similarity(embeddings[i], embeddings[j]))
+        
+        # Resonance is the average similarity
+        return np.mean(similarities)
+    
+    def update_field_state(self, new_text):
+        """Update field state with new text."""
+        # Update attractors
+        new_attractors = self.detect_attractors(new_text)
+        self.field_state["attractors"].extend(new_attractors)
+        
+        # Update resonance
+        new_resonance = self.calculate_resonance(new_text)
+        self.field_state["resonance"] = (
+            self.field_state["resonance"] * 0.7 + new_resonance * 0.3
+        )  # Weighted average
+        
+        # Update permeability based on resonance
+        if new_resonance > self.field_state["resonance"]:
+            # If resonance is increasing, increase permeability
+            self.field_state["boundaries"]["permeability"] += self.field_state["boundaries"]["gradient"]
+        else:
+            # If resonance is decreasing, decrease permeability
+            self.field_state["boundaries"]["permeability"] -= self.field_state["boundaries"]["gradient"]
+        
+        # Keep permeability in [0.1, 0.9] range
+        self.field_state["boundaries"]["permeability"] = max(
+            0.1, min(0.9, self.field_state["boundaries"]["permeability"])
+        )
+    
+    def filter_by_attractor_relevance(self, text, top_n_attractors=3, threshold=0.6):
+        """Filter text based on relevance to top attractors."""
+        if not self.field_state["attractors"]:
+            return text  # No attractors to filter by
+        
+        # Sort attractors by strength
+        sorted_attractors = sorted(
+            self.field_state["attractors"], 
+            key=lambda x: x["strength"], 
+            reverse=True
+        )
+        
+        # Take top N attractors
+        top_attractors = sorted_attractors[:top_n_attractors]
+        top_embeddings = [attractor["embedding"] for attractor in top_attractors]
+        
+        # Split text into paragraphs
+        paragraphs = text.split("\n\n")
+        
+        # Calculate relevance of each paragraph to top attractors
+        filtered_paragraphs = []
+        for paragraph in paragraphs:
+            # Skip empty paragraphs
+            if not paragraph.strip():
+                continue
+                
+            # Get embedding
+            embedding = self.embed_text(paragraph)
+            
+            # Calculate max similarity to any attractor
+            similarities = [cosine_similarity(embedding, attractor_emb) 
+                           for attractor_emb in top_embeddings]
+            max_similarity = max(similarities)
+            
+            # If similarity is above threshold or permeability allows it
+            if (max_similarity > threshold or 
+                random.random() < self.field_state["boundaries"]["permeability"]):
+                filtered_paragraphs.append(paragraph)
+        
+        # Join filtered paragraphs
+        return "\n\n".join(filtered_paragraphs)
+    
+    def optimize_context_for_budget(self, context, target_tokens):
+        """Optimize context to fit token budget using field-aware methods."""
+        # Count current tokens
+        current_tokens = len(self.tokenizer.encode(context))
+        
+        if current_tokens <= target_tokens:
+            return context  # Already within budget
+        
+        # If we have attractors, use them to filter
+        if self.field_state["attractors"]:
+            context = self.filter_by_attractor_relevance(context)
+            
+            # Check if we're now within budget
+            current_tokens = len(self.tokenizer.encode(context))
+            if current_tokens <= target_tokens:
+                return context
+        
+        # If still over budget, use more aggressive techniques
+        # First, try to preserve the most important parts based on field analysis
+        
+        # Extract residue (symbolic fragments that should persist)
+        paragraphs = context.split("\n\n")
+        residue = []
+        
+        for paragraph in paragraphs:
+            # Check if paragraph contains key information worth preserving
+            # This could be based on resonance with attractors, presence of key terms, etc.
+            if any(attractor["text"] in paragraph for attractor in self.field_state["attractors"]):
+                residue.append(paragraph)
+        
+        # Update residue in field state
+        self.field_state["residue"] = residue
+        
+        # Combine residue with most important attractors
+        preserved_content = "\n\n".join(residue)
+        preserved_tokens = len(self.tokenizer.encode(preserved_content))
+        
+        # If preserved content already exceeds budget, summarize it
+        if preserved_tokens > target_tokens:
+            # This would typically call an LLM for summarization
+            # For this example, we'll just truncate
+            return context[:int(len(context) * (target_tokens / current_tokens))]
+        
+        # If we have room left, add the most relevant remaining content
+        remaining_budget = target_tokens - preserved_tokens
+        
+        # Sort remaining paragraphs by relevance to field state
+        remaining_paragraphs = [p for p in paragraphs if p not in residue]
+        
+        if not remaining_paragraphs:
+            return preserved_content
+            
+        # Calculate relevance scores
+        relevance_scores = []
+        for paragraph in remaining_paragraphs:
+            embedding = self.embed_text(paragraph)
+            # Calculate average similarity to attractors
+            similarities = [cosine_similarity(embedding, attractor["embedding"]) 
+                           for attractor in self.field_state["attractors"]]
+            avg_similarity = np.mean(similarities) if similarities else 0
+            tokens = len(self.tokenizer.encode(paragraph))
+            relevance_scores.append((paragraph, avg_similarity, tokens))
+        
+        # Sort by relevance
+        relevance_scores.sort(key=lambda x: x[1], reverse=True)
+        
+        # Add paragraphs until we hit the budget
+        additional_content = []
+        for paragraph, _, tokens in relevance_scores:
+            if tokens <= remaining_budget:
+                additional_content.append(paragraph)
+                remaining_budget -= tokens
+            
+            if remaining_budget <= 0:
+                break
+        
+        # Combine preserved content with additional content
+        return preserved_content + "\n\n" + "\n\n".join(additional_content)
+```
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                FIELD-AWARE CONTEXT MANAGEMENT                   │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌────────────────────┐      ┌────────────────────────────┐     │
+│  │   Field State      │      │       Attractor Map        │     │
+│  │                    │      │                            │     │
+│  │  • Attractors      │      │   Strong      Medium       │     │
+│  │  • Boundaries      │      │ ╭────╮       ╭────╮       │     │
+│  │  • Resonance       │      │ │ A1 │       │ A2 │       │     │
+│  │  • Residue         │      │ ╰────╯       ╰────╯       │     │
+│  └────────┬───────────┘      │                            │     │
+│           │                  │               Weak         │     │
+│           │                  │              ╭────╮        │     │
+│           │                  │              │ A3 │        │     │
+│           │                  │              ╰────╯        │     │
+│           │                  └────────────────────────────┘     │
+│           │                                                     │
+│           ▼                                                     │
+│  ┌────────────────────┐      ┌────────────────────────────┐     │
+│  │  Context Filtering │      │     Boundary Dynamics      │     │
+│  │                    │      │                            │     │
+│  │  • Attractor       │      │  Permeability: 0.7         │     │
+│  │    Relevance       │      │  ┌─────────────────────┐   │     │
+│  │  • Resonance       │      │  │█████████░░░░░░░░░░░░│   │     │
+│  │    Amplification   │      │  └─────────────────────┘   │     │
+│  │  • Residue         │      │                            │     │
+│  │    Preservation    │      │  Gradient: 0.2             │     │
+│  └────────┬───────────┘      └────────────────────────────┘     │
+│           │                                                     │
+│           ▼                                                     │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │                 Optimized Context                        │   │
+│  │                                                          │   │
+│  │  • Preserved high-resonance content                      │   │
+│  │  • Retained symbolic residue                             │   │
+│  │  • Filtered by attractor relevance                       │   │
+│  │  • Dynamically balanced by field state                   │   │
+│  └──────────────────────────────────────────────────────────┘   │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+## 9. No Code: Protocol Shells for Token Optimization
+
+You don't need to be a programmer to leverage advanced token budgeting techniques. Here we'll explore how to use protocol shells, pareto-lang, and fractal.json patterns to optimize your context without writing any code.
+
+### 9.1. Introduction to Protocol Shells
+
+Protocol shells are structured, human-readable templates that help organize context and control token usage. They follow a consistent pattern that both humans and AI models can easily understand.
+
+#### Basic Protocol Shell Structure
+
+```
+/protocol.name{
+    intent="What this protocol aims to achieve",
+    input={
+        key1="value1",
+        key2="value2"
+    },
+    process=[
+        /step1{action="do something"},
+        /step2{action="do something else"}
+    ],
+    output={
+        result1="expected output 1",
+        result2="expected output 2"
+    }
+}
+```
+
+This structure creates a clear, token-efficient way to express complex instructions.
+
+### 9.2. Using Pareto-lang for Token Management
+
+Pareto-lang is a simple but powerful notation for defining context operations. Here's how to use it for token optimization:
+
+#### 9.2.1. Basic Syntax
+
+```
+/action.modifier{parameters}
+```
+
+For example:
+
+```
+/context.compress{target="history", method="summarize", threshold=0.7}
+```
+
+This tells the model to compress the conversation history using summarization when it exceeds 70% of the allocated budget.
+
+#### 9.2.2. Token Budget Protocol Example
+
+```
+/token.budget{
+    intent="Manage token usage efficiently throughout conversation",
+    allocations={
+        system_prompt=0.15,   // 15% for system instructions
+        history=0.40,         // 40% for conversation history
+        current_input=0.30,   // 30% for current user input
+        reserve=0.15          // 15% reserve capacity
+    },
+    management_rules=[
+        /history.summarize{when="history > 0.8*allocation", method="key_points"},
+        /system.prune{when="system > allocation", keep="essential_instructions"},
+        /input.prioritize{method="relevance_to_context"}
+    ],
+    monitoring={
+        track_usage=true,
+        alert_threshold=0.9,  // Alert when 90% of total budget is used
+        optimize_automatically=true
+    }
+}
+```
+
+### 9.3. Token-Efficient Field Management
+
+Let's see how to use protocol shells to implement field theory concepts without code:
+
+```
+/field.manage{
+    intent="Create and maintain semantic field structure for optimal token usage",
+    
+    attractors=[
+        {name="core_concept_1", strength=0.8, keywords=["key1", "key2", "key3"]},
+        {name="core_concept_2", strength=0.7, keywords=["key4", "key5", "key6"]}
+    ],
+    
+    boundaries={
+        permeability=0.7,  // How easily new content enters the field
+        gradient=0.2,      // How quickly permeability changes
+        rules=[
+            /boundary.adapt{trigger="resonance_change", threshold=0.1},
+            /boundary.filter{method="attractor_relevance", min_score=0.6}
+        ]
+    },
+    
+    residue_handling={
+        tracking=true,
+        preservation_strategy="compress_and_retain",
+        priority="high"  // Residue gets token priority
+    },
+    
+    token_optimization=[
+        /optimize.by_attractor{keep="strongest", top_n=3},
+        /optimize.preserve_residue{min_strength=0.5},
+        /optimize.amplify_resonance{target=0.8}
+    ]
+}
+```
+
+### 9.4. Fractal.json for Structured Token Management
+
+Fractal.json provides a structured way to define recursive, self-similar patterns for context management:
+
+```json
+{
+  "fractalTokenManager": {
+    "version": "1.0.0",
+    "description": "Recursive token optimization framework",
+    "allocation": {
+      "system": 0.15,
+      "history": 0.40,
+      "input": 0.30,
+      "reserve": 0.15
+    },
+    "strategies": {
+      "system": {
+        "compression": "minimal",
+        "priority": "high"
+      },
+      "history": {
+        "compression": "progressive",
+        "strategies": ["window", "summarize", "key_value"],
+        "recursion": true
+      },
+      "input": {
+        "filtering": "relevance",
+        "threshold": 0.6
+      }
+    },
+    "field": {
+      "attractors": {
+        "detection": true,
+        "influence": 0.8
+      },
+      "resonance": {
+        "target": 0.7,
+        "amplification": true
+      },
+      "boundaries": {
+        "adaptive": true,
+        "permeability": 0.6
+      }
+    },
+    "recursion": {
+      "depth": 3,
+      "self_optimization": true
+    }
+  }
+}
+```
+
+### 9.5. Practical Applications Without Code
+
+Here are some practical ways to use these approaches without programming:
+
+#### 9.5.1. Manual Token Budget Tracking
+
+Keep a simple tracking system in your prompts:
+
+```
+TOKEN BUDGET (16K total):
+- System Instructions: 2K (12.5%)
+- Examples: 3K (18.75%)
+- Conversation History: 6K (37.5%)
+- Current Input: 4K (25%)
+- Reserve: 1K (6.25%)
+
+OPTIMIZATION RULES:
+1. When history exceeds 6K tokens, summarize oldest parts
+2. Prioritize examples most relevant to current query
+3. Keep system instructions concise and focused
+```
+
+#### 9.5.2. Field-Aware Prompting Template
+
+```
+FIELD MANAGEMENT:
+
+CORE ATTRACTORS:
+1. [Primary Topic] - maintain focus on this concept
+2. [Secondary Topic] - include when relevant to primary
+3. [Tertiary Topic] - include only when explicitly mentioned
+
+BOUNDARY RULES:
+- Include new information only when relevance > 7/10
+- Maintain coherence with previous context
+- Filter tangential content
+
+RESIDUE PRESERVATION:
+- Key definitions must persist across context
+- Core principles should be reinforced
+- Critical decisions/conclusions must be retained
+
+OPTIMIZATION DIRECTIVES:
+- Summarize history when exceeding 40% of context
+- Prioritize content with highest relevance to core attractors
+- Compress format but preserve meaning
+```
+
+#### 9.5.3. Protocol Shell Prompt Example
+
+Here's a complete example you can copy and paste to implement token budgeting:
+
+```
+I want you to act as a context management system using the following protocol:
+
+/context.manage{
+    intent="Optimize token usage while preserving key information",
+    
+    budget={
+        total_tokens=8000,
+        system=1000,
+        history=3000,
+        current=3000,
+        reserve=1000
+    },
+    
+    optimization=[
+        /system.compress{method="minimal_instructions"},
+        /history.manage{
+            method="summarize_when_exceeds_budget",
