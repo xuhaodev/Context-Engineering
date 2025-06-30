@@ -3,7 +3,7 @@ Bringing You the Latest Research on Context With First Principles & Visuals — 
 
 <div align="center">
 
-## [ICML June 2025](https://openreview.net/forum?id=y1SnRPDWx4) | [IBM Zurich June 2025](https://www.arxiv.org/pdf/2506.12115) | [Indiana June 2025](https://arxiv.org/pdf/2506.10077)
+## [ICML June 2025](https://openreview.net/forum?id=y1SnRPDWx4) | [IBM Zurich June 2025](https://www.arxiv.org/pdf/2506.12115) | [Quantum Semantics June 2025](https://arxiv.org/pdf/2506.10077)
 
 ## [Devin DeepWiki Docs](https://deepwiki.com/davidkimai/Context-Engineering)
 ## [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/davidkimai/Context-Engineering)
