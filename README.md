@@ -49,7 +49,9 @@ prompt    shot     state    agent     prompt programs     persistence & resonanc
 
 ![image](https://github.com/user-attachments/assets/76c6e6cb-b65d-4af7-95a5-6d52aee7efc0)
 
-> **TL;DR: A three-stage architecture is identified that supports abstract reasoning in LLMs via a set of emergent symbol-processing mechanisms**
+> **TL;DR: A three-stage architecture is identified that supports abstract reasoning in LLMs via a set of emergent symbol-processing mechanisms.**
+>
+>
 These include symbolic induction heads, symbolic abstraction heads, and retrieval heads.
 
 
