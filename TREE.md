@@ -1,6 +1,6 @@
 # Context Engineering Project - Comprehensive File Tree
 
-This file tree represents the comprehensive structure of the Context Engineering project as developed during our chat session, incorporating the protocols and shells we've created.
+This file tree represents the comprehensive structure of the Context Engineering project currently under development, incorporating the programs, templates, and research frameworks from multiple research fields.
 
 ```
 Context-Engineering/
