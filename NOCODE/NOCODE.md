@@ -1,4 +1,4 @@
-# NOCODE.md: Protocol-Driven Token Budgeting
+# NOCODE.md: Protocol-Driven Context Management & Token Budgeting
 
 > *"The map is not the territory, but a good map can navigate complex terrain."*
 >
