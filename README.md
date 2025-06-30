@@ -282,7 +282,7 @@ Context-Engineering/
 | **Metrics & Evaluation** | Measuring context effectiveness | Iterative optimization of token use vs. quality |
 | **Cognitive Tools & Prompt Programming** | Learm to build custom tools and templates | Prompt programming enables new layers for context engineering |
 | **Neural Field Theory** | Context as a Neural Field | Modeling context as a dynamic neural field allows for iterative context updating |
-| **Symbolic Mechnanisms** | Symbolic architectures enable higher order reasoning | Smarter systems = less work |
+| **Symbolic Mechanisms** | Symbolic architectures enable higher order reasoning | Smarter systems = less work |
 | **Quantum Semantics** |  Meaning as observer-dependent  | Design context systems leveraging superpositional techniques |
 
 
