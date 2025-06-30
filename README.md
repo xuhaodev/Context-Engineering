@@ -48,7 +48,12 @@ prompt    shot     state    agent     prompt programs     persistence & resonanc
 > **[Emergent Symbolic Mechanisms Support Abstract Reasoning in Large Language Models - ICML 2025](https://openreview.net/forum?id=y1SnRPDWx4)**
 >
 > **TL;DR: A three-stage architecture is identified that supports abstract reasoning in LLMs via a set of emergent symbol-processing mechanisms**
-> 
+These include symbolic induction heads, symbolic abstraction heads, and retrieval heads.
+
+
+![image](https://github.com/user-attachments/assets/2428544e-332a-4e32-9070-9f9d8716d491)
+
+
 >
 > **Concept: Leverage symbols/syntax as structural attractors for user guidance of context/reasoning/memory/persistence**
 
