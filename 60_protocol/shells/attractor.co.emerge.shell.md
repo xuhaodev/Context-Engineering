@@ -12,7 +12,7 @@ Have you ever noticed how the right combination of ideas suddenly creates someth
 
 This is **co-emergence** - when multiple elements interact to create patterns and properties that none of the elements possessed individually. In context engineering, co-emergence refers specifically to the phenomenon where multiple attractors (stable semantic patterns) emerge together and interact in ways that create new meaning beyond what each attractor could represent alone.
 
-The `//attractor.co.emerge.shell` protocol provides a structured framework for orchestrating this co-emergence process in semantic fields.
+The `/attractor.co.emerge.shell` protocol provides a structured framework for orchestrating this co-emergence process in semantic fields.
 
 **Socratic Question**: Think about a time when combining two separate concepts gave you an insight neither concept contained alone. What emerged from that combination?
 
@@ -116,7 +116,7 @@ Co-emergence can manifest in three primary patterns:
     └─────────┘           └─────────┘           └─────────────────┘
 ```
 
-## 3. The `/attractor.co.emerge.shell` Protocol
+## 3. The `/` Protocol
 
 ### 3.1. Protocol Intent
 
