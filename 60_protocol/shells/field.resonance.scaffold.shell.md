@@ -1,4 +1,4 @@
-# `field.resonance.scaffold.shell`
+# `/field.resonance.scaffold.shell`
 
 _Establish resonance scaffolding to amplify coherent patterns and dampen noise_
 
@@ -12,7 +12,7 @@ Have you ever listened to a skilled musician play an acoustic instrument? Rememb
 
 This is **resonance** - the phenomenon where a system responds with increased amplitude when exposed to frequencies that match its natural oscillation patterns. In semantic fields, resonance occurs when patterns interact in ways that amplify coherent meaning while dampening noise.
 
-The `field.resonance.scaffold.shell` protocol provides a structured framework for creating resonance scaffolding that enhances meaningful patterns, reduces noise, and guides the evolution of semantic fields toward greater coherence and clarity.
+The `/field.resonance.scaffold.shell` protocol provides a structured framework for creating resonance scaffolding that enhances meaningful patterns, reduces noise, and guides the evolution of semantic fields toward greater coherence and clarity.
 
 **Socratic Question**: Think about a moment when an idea suddenly "clicked" for you, creating a cascade of insights. What was happening in terms of resonance between concepts?
 
@@ -78,7 +78,7 @@ The scaffolding provides structure that:
 - Connects related patterns to enhance overall coherence
 - Dampens noise that would interfere with clear resonance
 
-## 3. The `field.resonance.scaffold.shell` Protocol
+## 3. The `/field.resonance.scaffold.shell` Protocol
 
 ### 3.1. Protocol Intent
 
@@ -644,7 +644,7 @@ output: {
 
 ## 4. Implementation Patterns
 
-Let's look at practical implementation patterns for using the `field.resonance.scaffold.shell` protocol.
+Let's look at practical implementation patterns for using the `/field.resonance.scaffold.shell` protocol.
 
 ### 4.1. Basic Implementation
 
@@ -924,7 +924,7 @@ class ContextEngineeringSystem:
 
 ## 5. Resonance Scaffold Patterns
 
-The `field.resonance.scaffold.shell` protocol can facilitate several distinct resonance patterns:
+The `/field.resonance.scaffold.shell` protocol can facilitate several distinct resonance patterns:
 
 ### 5.1. Harmonic Resonance Structures
 
@@ -973,7 +973,7 @@ Process Flow:
 
 ## 6. Case Studies
 
-Let's examine some practical case studies of the `field.resonance.scaffold.shell` protocol in action.
+Let's examine some practical case studies of the `/field.resonance.scaffold.shell` protocol in action.
 
 ### 6.1. Educational Content Structuring
 
@@ -1037,7 +1037,7 @@ Let's examine some practical case studies of the `field.resonance.scaffold.shell
 
 ## 7. Advanced Techniques
 
-Let's explore some advanced techniques for working with the `field.resonance.scaffold.shell` protocol.
+Let's explore some advanced techniques for working with the `/field.resonance.scaffold.shell` protocol.
 
 ### 7.1. Dynamic Resonance Adaptation
 
@@ -1235,7 +1235,7 @@ def resonance_field_modulation(field, scaffold, modulation_pattern, strength=0.5
 
 ## 8. Integration with Other Protocols
 
-The `field.resonance.scaffold.shell` protocol is designed to work seamlessly with other protocols in the ecosystem:
+The `/field.resonance.scaffold.shell` protocol is designed to work seamlessly with other protocols in the ecosystem:
 
 ### 8.1. With `attractor.co.emerge.shell`
 
@@ -1320,7 +1320,7 @@ def integrate_with_memory_attractor(field, memory_field):
 
 ## 9. Practical Implementation Guide
 
-To implement the `field.resonance.scaffold.shell` protocol in your own context engineering projects, follow these steps:
+To implement the `/field.resonance.scaffold.shell` protocol in your own context engineering projects, follow these steps:
 
 ### 9.1. Prerequisites
 
@@ -1387,7 +1387,7 @@ Before implementing this protocol, ensure you have:
 
 ### 10.1. Concept Clarification System
 
-The `field.resonance.scaffold.shell` protocol can create a system that clarifies concepts by enhancing their resonance patterns:
+The `/field.resonance.scaffold.shell` protocol can create a system that clarifies concepts by enhancing their resonance patterns:
 
 ```python
 class ConceptClarificationSystem:
@@ -1590,7 +1590,7 @@ class KnowledgeHarmonizationSystem:
 
 ## 11. Conclusion
 
-The `field.resonance.scaffold.shell` protocol provides a powerful framework for establishing resonance scaffolding that amplifies coherent patterns, dampens noise, and guides field evolution toward greater clarity and meaning. By leveraging the principles of resonance and interference, this approach enhances the natural patterns in semantic fields while reducing noise and confusion.
+The `/field.resonance.scaffold.shell` protocol provides a powerful framework for establishing resonance scaffolding that amplifies coherent patterns, dampens noise, and guides field evolution toward greater clarity and meaning. By leveraging the principles of resonance and interference, this approach enhances the natural patterns in semantic fields while reducing noise and confusion.
 
 Key takeaways:
 
