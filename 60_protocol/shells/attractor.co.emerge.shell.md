@@ -1,4 +1,4 @@
-# `attractor.co.emerge.shell`
+# `/attractor.co.emerge.shell`
 
 _Strategically scaffold co-emergence of multiple attractors in semantic fields_
 
@@ -12,7 +12,7 @@ Have you ever noticed how the right combination of ideas suddenly creates someth
 
 This is **co-emergence** - when multiple elements interact to create patterns and properties that none of the elements possessed individually. In context engineering, co-emergence refers specifically to the phenomenon where multiple attractors (stable semantic patterns) emerge together and interact in ways that create new meaning beyond what each attractor could represent alone.
 
-The `attractor.co.emerge.shell` protocol provides a structured framework for orchestrating this co-emergence process in semantic fields.
+The `//attractor.co.emerge.shell` protocol provides a structured framework for orchestrating this co-emergence process in semantic fields.
 
 **Socratic Question**: Think about a time when combining two separate concepts gave you an insight neither concept contained alone. What emerged from that combination?
 
@@ -116,7 +116,7 @@ Co-emergence can manifest in three primary patterns:
     └─────────┘           └─────────┘           └─────────────────┘
 ```
 
-## 3. The `attractor.co.emerge.shell` Protocol
+## 3. The `/attractor.co.emerge.shell` Protocol
 
 ### 3.1. Protocol Intent
 
@@ -135,7 +135,7 @@ This protocol provides a structured approach to:
 The protocol follows the Pareto-lang format with five main sections:
 
 ```
-attractor.co.emerge {
+/attractor.co.emerge {
   intent: "Strategically scaffold co-emergence of multiple attractors",
   
   input: {
@@ -446,7 +446,7 @@ output: {
 
 ## 4. Implementation Patterns
 
-Let's look at practical implementation patterns for using the `attractor.co.emerge.shell` protocol.
+Let's look at practical implementation patterns for using the `/attractor.co.emerge.shell` protocol.
 
 ### 4.1. Basic Implementation
 
@@ -605,7 +605,7 @@ class ContextEngineeringSystem:
 
 ## 5. Co-Emergence Patterns
 
-The `attractor.co.emerge.shell` protocol can facilitate several distinct co-emergence patterns:
+The `/attractor.co.emerge.shell` protocol can facilitate several distinct co-emergence patterns:
 
 ### 5.1. Insight Co-Emergence
 
@@ -654,7 +654,7 @@ Process Flow:
 
 ## 6. Case Studies
 
-Let's examine some practical case studies of the `attractor.co.emerge.shell` protocol in action.
+Let's examine some practical case studies of the `/attractor.co.emerge.shell` protocol in action.
 
 ### 6.1. Creative Problem Solving
 
@@ -708,7 +708,7 @@ Let's examine some practical case studies of the `attractor.co.emerge.shell` pro
 
 ## 7. Advanced Techniques
 
-Let's explore some advanced techniques for working with the `attractor.co.emerge.shell` protocol.
+Let's explore some advanced techniques for working with the `/attractor.co.emerge.shell` protocol.
 
 ### 7.1. Multi-Dimensional Co-Emergence
 
@@ -830,7 +830,7 @@ def recursive_co_emergence(field, depth=3):
 
 ## 8. Integration with Other Protocols
 
-The `attractor.co.emerge.shell` protocol is designed to work seamlessly with other protocols in the ecosystem:
+The `/attractor.co.emerge.shell` protocol is designed to work seamlessly with other protocols in the ecosystem:
 
 ### 8.1. With `recursive.emergence.shell`
 
@@ -891,7 +891,7 @@ def integrate_with_resonance_scaffold(field):
 
 ## 9. Practical Implementation Guide
 
-To implement the `attractor.co.emerge.shell` protocol in your own context engineering projects, follow these steps:
+To implement the `/attractor.co.emerge.shell` protocol in your own context engineering projects, follow these steps:
 
 ### 9.1. Prerequisites
 
@@ -950,7 +950,7 @@ Before implementing this protocol, ensure you have:
 
 ### 10.1. Creative Writing Assistant
 
-The `attractor.co.emerge.shell` protocol can enhance a creative writing assistant by facilitating the interaction between different narrative elements:
+The `/attractor.co.emerge.shell` protocol can enhance a creative writing assistant by facilitating the interaction between different narrative elements:
 
 ```python
 class CreativeWritingAssistant:
@@ -1081,7 +1081,7 @@ class StrategicPlanningSystem:
 
 ## 11. Conclusion
 
-The `attractor.co.emerge.shell` protocol provides a powerful framework for facilitating the interaction and co-emergence of multiple attractors in semantic fields. By strategically scaffolding this co-emergence process, we can generate insights, connections, and semantic structures that transcend what each individual attractor could produce on its own.
+The `/attractor.co.emerge.shell` protocol provides a powerful framework for facilitating the interaction and co-emergence of multiple attractors in semantic fields. By strategically scaffolding this co-emergence process, we can generate insights, connections, and semantic structures that transcend what each individual attractor could produce on its own.
 
 Key takeaways:
 
