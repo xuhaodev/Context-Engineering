@@ -175,7 +175,7 @@ Follow this recommended path to master NOCODE Context Engineering:
 ```
 /Context-Engineering/NOCODE/
 ├── 00_foundations/           # Core concepts
-│   └── NOCODE.md             # Comprehensive token budgeting guide
+├── NOCODE.md                 # Comprehensive token budgeting guide
 ├── 10_mental_models/         # Intuitive frameworks (Coming soon)
 ├── 20_practical_protocols/   # Real-world applications (Coming soon)
 ├── 30_field_techniques/      # Advanced approaches (Coming soon)
