@@ -1,4 +1,4 @@
-# `context.memory.persistence.attractor.shell`
+# `/context.memory.persistence.attractor.shell`
 
 _Enable long-term persistence of context through stable attractor dynamics_
 
@@ -12,7 +12,7 @@ Have you ever had a conversation with someone who seems to forget important deta
 
 In context engineering, persistent memory is crucial for creating systems that build upon past interactions rather than starting fresh each time. Yet traditional approaches often rely on explicit storage mechanisms that are limited by context windows, token budgets, and the challenge of determining what information is worth preserving.
 
-The `context.memory.persistence.attractor.shell` protocol offers a different approach, enabling long-term persistence of context through stable attractor dynamics. Rather than explicitly storing and retrieving memories, this protocol maintains information as stable attractors in a semantic field—patterns that naturally persist and influence field dynamics over time.
+The `/context.memory.persistence.attractor.shell` protocol offers a different approach, enabling long-term persistence of context through stable attractor dynamics. Rather than explicitly storing and retrieving memories, this protocol maintains information as stable attractors in a semantic field—patterns that naturally persist and influence field dynamics over time.
 
 **Socratic Question**: Consider how your own memory works. Do you consciously "store" and "retrieve" every memory, or do important concepts and experiences simply remain present in your thinking, influencing new thoughts as they arise?
 
@@ -102,7 +102,7 @@ Memory in this model functions as a network of interconnected attractors:
 
 In this network, activation can flow between connected attractors. When one attractor is activated (e.g., by new input resonating with it), activation spreads to connected attractors, making them more likely to influence field dynamics.
 
-## 3. The `context.memory.persistence.attractor.shell` Protocol
+## 3. The `/context.memory.persistence.attractor.shell` Protocol
 
 ### 3.1. Protocol Intent
 
