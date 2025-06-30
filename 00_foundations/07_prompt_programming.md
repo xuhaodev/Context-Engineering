@@ -4,7 +4,7 @@
 
 ## The Convergence of Code and Prompts
 
-In our journey through context engineering, we've progressed from atoms to cognitive tools. Now we explore a powerful synthesis: **prompt programming**—a hybrid approach that brings programming patterns to the world of prompts.
+In our journey through context engineering, we've progressed from atoms to cognitive tools. Now we explore a powerful synthesis: **context and prompt programming**—a hybrid approach that brings programming patterns to the world of prompts.
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
