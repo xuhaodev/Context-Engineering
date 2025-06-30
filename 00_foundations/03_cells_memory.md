@@ -3,7 +3,8 @@
 > "We are our memory, we are that chimerical museum of shifting shapes, that pile of broken mirrors." — Jorge Luis Borges
 
 ## From Molecules to Cells
-> Cells = Singular Agent
+> Cells = Singular Agent/Unit of Context
+
 We've explored **atoms** (single instructions) and **molecules** (instructions with examples). Now we ascend to **cells** — context structures with **memory** that persist across multiple interactions.
 
 ```
