@@ -35,7 +35,7 @@ This repository provides a progressive, first-principles approach to context eng
 
 > Cell = Singular Agent or Unit of Context
 >
-> Organ = Multi-agent System
+> Organ = Multi-Agent System
 
 ```
 atoms → molecules → cells → organs → neural systems → neural + semantic field theory 
