@@ -49,7 +49,7 @@ Field protocols provide:
 All protocol shells follow the Pareto-lang format, a concise and expressive syntax for defining field operations. The basic structure is:
 
 ```
-protocol_name {
+/protocol_name {
   intent: "Clear statement of protocol purpose",
   
   input: {
