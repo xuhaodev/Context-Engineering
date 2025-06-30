@@ -36,7 +36,7 @@ This repository provides a progressive, first-principles approach to context eng
 ```
 atoms → molecules → cells → organs → neural systems → neural + semantic field theory 
   │        │         │        │             │                         │        
-single    few-     memory   multi-    cognitive tools +   context = neural fields +
+single    few-     memory   multi-    cognitive tools +   context = fields +
 prompt    shot     state    agent     prompt programs     persistence & resonance
 ```
 > "Abstraction is the cost of generalization"— [**Grant Sanderson (3Blue1Brown)**](https://www.3blue1brown.com/)
