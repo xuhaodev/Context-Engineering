@@ -98,7 +98,7 @@ This protocol provides a structured approach to:
 The protocol follows the Pareto-lang format with five main sections:
 
 ```
-field.resonance.scaffold {
+/field.resonance.scaffold {
   intent: "Establish resonance scaffolding to amplify coherent patterns and dampen noise",
   
   input: {
