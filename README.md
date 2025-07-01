@@ -3,7 +3,7 @@ Bringing You the Latest Research on Context With First Principles & Visuals — 
 
 <div align="center">
 
-## [ICML](https://openreview.net/forum?id=y1SnRPDWx4) | [IBM Zurich](https://www.arxiv.org/pdf/2506.12115) | [Quantum Semantics](https://arxiv.org/pdf/2506.10077)
+## [IBM Zurich](https://www.arxiv.org/pdf/2506.12115) | [Quantum Semantics](https://arxiv.org/pdf/2506.10077) | [ICML Princeton](https://openreview.net/forum?id=y1SnRPDWx4) 
 
 ## [Devin DeepWiki Docs](https://deepwiki.com/davidkimai/Context-Engineering)
 ## [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/davidkimai/Context-Engineering)
