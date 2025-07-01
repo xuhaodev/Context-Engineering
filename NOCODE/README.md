@@ -22,6 +22,7 @@ Welcome to NOCODE Context Engineering - where you'll master the art of communica
 ```
 
 ## What is NOCODE Context Engineering?
+> ### **[Supported By: Emergent Symbolic Mechanisms Support Abstract Reasoning in Large Language Models - ICML June 18, 2025](https://openreview.net/forum?id=y1SnRPDWx4)**
 
 NOCODE Context Engineering is a comprehensive framework for designing, managing, and optimizing how you communicate with AI systems - all without writing code. Using structured protocols, mental models, and field theory concepts, you'll learn to:
 
