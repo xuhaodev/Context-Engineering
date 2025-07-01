@@ -6,7 +6,6 @@
 > **— Archimedes**
 
 ## 1. Introduction: The Power of Operational Grammar
-
 In our journey through context engineering, we've explored protocol shells as templates for organizing AI communication. Now, we delve into Pareto-lang – a powerful, declarative grammar designed specifically for performing operations on context.
 
 Pareto-lang is named after Vilfredo Pareto, the economist who identified the 80/20 principle – the idea that roughly 80% of effects come from 20% of causes. In the realm of context engineering, Pareto-lang embodies this principle by providing a minimal but powerful syntax that enables sophisticated context operations with remarkable efficiency.
