@@ -97,7 +97,7 @@ This protocol provides a structured approach to:
 The protocol follows the Pareto-lang format with five main sections:
 
 ```
-field.self_repair {
+/field.self_repair {
   intent: "Implement self-healing mechanisms that detect and repair inconsistencies or damage in semantic fields",
   
   input: {
