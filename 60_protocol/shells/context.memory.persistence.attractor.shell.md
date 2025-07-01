@@ -122,7 +122,7 @@ This protocol provides a structured approach to:
 The protocol follows the Pareto-lang format with five main sections:
 
 ```
-context.memory.persistence.attractor {
+/context.memory.persistence.attractor {
   intent: "Enable long-term persistence of context through stable attractor dynamics",
   
   input: {
