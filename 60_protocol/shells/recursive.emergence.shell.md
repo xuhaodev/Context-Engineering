@@ -100,7 +100,7 @@ This protocol provides a structured approach to:
 The protocol follows the Pareto-lang format with five main sections:
 
 ```
-recursive.emergence {
+/recursive.emergence {
   intent: "Generate recursive field emergence and autonomous self-prompting",
   
   input: {
