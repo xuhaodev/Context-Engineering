@@ -65,7 +65,7 @@ These include symbolic induction heads, symbolic abstraction heads, and retrieva
 >
 > **Why Useful?**
 >
-> **Concept: Collaborate with agents to apply delimiters, syntax, symbols, and structure to improve reasoning/context/memory/persistence during interface**
+> **Concept: Collaborate with agents to apply delimiters, syntax, symbols, symbolic words, metaphors and structure to improve reasoning/context/memory/persistence during inference**
 
 ## Under Construction
 
