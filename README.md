@@ -65,6 +65,9 @@ These include symbolic induction heads, symbolic abstraction heads, and retrieva
 >
 > **Why Useful?**
 >
+>
+> **This supports why Markdown, Json, and similar structured, symbolic formats are more easily LLM parsable**
+>
 > **Concept: Collaborate with agents to apply delimiters, syntax, symbols, symbolic words, metaphors and structure to improve reasoning/context/memory/persistence during inference**
 
 ## Under Construction
