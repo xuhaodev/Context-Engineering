@@ -4,7 +4,7 @@ This document provides a comprehensive overview of the repository structure, ref
 
 ```
 ╭─────────────────────────────────────────────────────────╮
-│               META-COGNITIVE CONTEXT ENGINEERING        │
+│               META-RECURSIVE CONTEXT ENGINEERING        │
 ╰─────────────────────────────────────────────────────────╯
                           ▲
                           │
