@@ -122,7 +122,7 @@ This protocol provides a structured approach to:
 The protocol follows the Pareto-lang format with five main sections:
 
 ```
-recursive.memory.attractor {
+/recursive.memory.attractor {
   intent: "Evolve and harmonize recursive field memory through attractor dynamics",
   
   input: {
