@@ -1,10 +1,10 @@
-# Context-Engineering Repository Structure v2.0
+# Context-Engineering Repository Structure v3.0
 
 This document provides a comprehensive overview of the repository structure, reflecting the evolution through version 6.0 of our conceptual framework. The structure follows a logical progression from foundational theory to practical implementation, advanced integration, and meta-recursive systems.
 
 ```
 ╭─────────────────────────────────────────────────────────╮
-│               META-RECURSIVE CONTEXT ENGINEERING        │
+│               META-COGNITIVE CONTEXT ENGINEERING        │
 ╰─────────────────────────────────────────────────────────╯
                           ▲
                           │
