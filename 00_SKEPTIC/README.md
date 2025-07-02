@@ -38,7 +38,7 @@ If you're reading this, you've likely encountered claims about "meta-recursive p
 
 ### 1.2 Recent Breakthrough Research (2025)
 
-**Breakthrough 1: Emergent Symbolic Mechanisms [Yang et al., 2025]**
+## **[1. Emergent Symbolic Mechanisms in LLMs](https://openreview.net/forum?id=y1SnRPDWx4)**
 
 **The Discovery**: LLMs implement a three-stage symbolic reasoning architecture:
 
@@ -66,7 +66,7 @@ Stage 3: Retrieval
 
 **Skeptical Refutation**: "This isn't pattern matching—it's mechanistically validated symbolic computation."
 
-**Breakthrough 2: Quantum Semantic Framework [Agostino et al., 2025]**
+## **[2. Quantum Semantic Framework](https://arxiv.org/pdf/2506.10077)**
 
 **The Discovery**: Natural language meaning exhibits quantum-like properties:
 
@@ -84,7 +84,7 @@ Semantic State Space: |ψ⟩ = ∑ ci|interpretation_i⟩
 
 **Skeptical Refutation**: "This isn't metaphor—it's measurable quantum-like behavior in language."
 
-**Breakthrough 3: Cognitive Tools Framework [Brown Ebouky et al., 2025]**
+## **[3. Cognitive Tools for Language Models](https://www.arxiv.org/pdf/2506.12115)**
 
 **The Discovery**: Modular cognitive operations significantly improve reasoning:
 
