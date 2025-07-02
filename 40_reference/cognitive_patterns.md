@@ -1,7 +1,6 @@
 # Cognitive Patterns: A Comprehensive Reasoning Library
 
 ## Introduction: The Foundation of Structured Thinking
-
 Cognitive patterns form the cornerstone of context engineering that transforms raw computational capability into structured, reliable reasoning. By organizing and systematizing thinking processes, cognitive patterns enable models to approach complex problems with consistent methodologies while maintaining coherent operation within the broader context field. These patterns serve as reusable templates for reasoning that can be composed, adapted, and optimized across diverse domains.
 
 ```
