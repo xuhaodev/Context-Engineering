@@ -1,7 +1,6 @@
 # Retrieval Indexing: A Comprehensive Reference Guide
 
 ## Introduction: The Foundation of Context Augmentation
-
 Retrieval indexing forms the cornerstone of context engineering that extends beyond the boundaries of a model's inherent knowledge. By creating, organizing, and efficiently accessing external knowledge stores, retrieval indexing enables models to ground their responses in specific information while maintaining the semantic coherence of the broader context field.
 
 ```
