@@ -59,7 +59,6 @@ In this comprehensive reference guide, we'll explore:
 Let's begin with the fundamental concepts that underpin effective cognitive pattern design in context engineering.
 
 ## 1. Foundational Principles of Cognitive Patterns
-
 At its core, cognitive pattern design is about structuring thinking processes in ways that enable reliable, efficient, and effective reasoning. This involves several key principles:
 
 ```
