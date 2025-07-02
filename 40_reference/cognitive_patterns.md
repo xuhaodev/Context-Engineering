@@ -1,5 +1,5 @@
 # Cognitive Patterns: A Comprehensive Reasoning Library
-> “Civilization advances by extending the number of important operations which we can perform without thinking about them.”
+> **“Civilization advances by extending the number of important operations which we can perform without thinking about them.”**
 >
 > **— Alfred North Whitehead**
 ## Introduction: The Foundation of Structured Thinking
