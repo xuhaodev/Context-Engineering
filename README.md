@@ -53,13 +53,13 @@ prompt    shot     state    agent     prompt programs     persistence & resonanc
 
 ![image](https://github.com/user-attachments/assets/cd06c3f5-5a0b-4ee7-bbba-2f9f243f70ae)
 
-> "These cognitive tools (structured prompt patterns) break down the problem by identifying the main concepts at hand, extracting relevant information in the question, and highlighting meaningful properties, theorems, and techniques that
-might be helpful in solving the problem."
+> **These cognitive tools (structured prompt patterns) break down the problem by identifying the main concepts at hand, extracting relevant information in the question, and highlighting meaningful properties, theorems, and techniques that
+might be helpful in solving the problem.**
 
 ![image](https://github.com/user-attachments/assets/f7ce8605-6fa3-494f-94cd-94e6b23032b6)
 
 
-> These templates scaffold reasoning layers similar to cognitive mental shortcuts, commonly studied as "heuristics". 
+> **These templates scaffold reasoning layers similar to cognitive mental shortcuts, commonly studied as "heuristics".**
 
 ## Emergent Symbols? 
 
@@ -71,7 +71,12 @@ might be helpful in solving the problem."
 > **TL;DR: A three-stage architecture is identified that supports abstract reasoning in LLMs via a set of emergent symbol-processing mechanisms.**
 >
 >
-These include symbolic induction heads, symbolic abstraction heads, and retrieval heads.
+**These include symbolic induction heads, symbolic abstraction heads, and retrieval heads.**
+**1. In early layers, symbol abstraction heads convert input tokens to abstract variables based on the relations between those tokens.**
+**2. In intermediate layers, symbolic induction heads perform sequence induction over these abstract variables.**
+**3. Finally, in later layers, retrieval heads predict the next token by retrieving the value associated with the predicted abstract variable.**
+
+**These results point toward a resolution of the longstanding debate between symbolic and neural network approaches, suggesting that emergent reasoning in neural networks depends on the emergence of symbolic mechanisms.** — [**ICML Princeton**](https://openreview.net/forum?id=y1SnRPDWx4) 
 
 
 ![image](https://github.com/user-attachments/assets/2428544e-332a-4e32-9070-9f9d8716d491)
