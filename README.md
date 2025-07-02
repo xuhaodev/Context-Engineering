@@ -1,7 +1,8 @@
 # Context Engineering
 Bringing You the Latest Research on Context With First Principles & Visuals — June 2025 from ICML, IBM, NeurIPS, OHBM, and more 
 
-> For instance, providing our “cognitive tools” to GPT-4.1 increases its pass@1 performance on AIME2024 from 26.7% to 43.3%, bringing it very close to the performance of o1-preview. — [IBM Zurich](https://www.arxiv.org/pdf/2506.12115) 
+> For instance, providing our “cognitive tools” to GPT-4.1 increases its pass@1 performance on AIME2024 from 26.7% to 43.3%, bringing it very close to the performance of o1-preview. — [IBM Zurich](https://www.arxiv.org/pdf/2506.12115)
+
 <div align="center">
 
 ## [IBM Zurich](https://www.arxiv.org/pdf/2506.12115) | [Quantum Semantics](https://arxiv.org/pdf/2506.10077) | [ICML Princeton](https://openreview.net/forum?id=y1SnRPDWx4) 
@@ -46,11 +47,28 @@ prompt    shot     state    agent     prompt programs     persistence & resonanc
 ```
 > "Abstraction is the cost of generalization"— [**Grant Sanderson (3Blue1Brown)**](https://www.3blue1brown.com/)
 
+## Cognitive Tools? 
+## **[Eliciting Reasoning in Language Models with Cognitive Tools - IBM Zurich June 2025](https://openreview.net/forum?id=y1SnRPDWx4)**
 
+
+![image](https://github.com/user-attachments/assets/cd06c3f5-5a0b-4ee7-bbba-2f9f243f70ae)
+
+> "These cognitive tools (structured prompt patterns) break down the problem by identifying the main concepts at hand, extracting relevant
+information in the question, and highlighting meaningful properties, theorems, and techniques that
+might be helpful in solving the problem."
+
+![image](https://github.com/user-attachments/assets/f7ce8605-6fa3-494f-94cd-94e6b23032b6)
+
+
+> The placeholder {{cognitive_tools_signature}} is replaced with the tools which the LLM can
+use to help its reasoning. In order to take advantage of the capability of LLMs to generate code in
+addition to using the cognitive tools, we allow the LLM to generate code as an additional modular
+tool.
 
 ## Emergent Symbols? 
 
 ## **[Emergent Symbolic Mechanisms Support Abstract Reasoning in Large Language Models - ICML June 18, 2025](https://openreview.net/forum?id=y1SnRPDWx4)**
+
 
 ![image](https://github.com/user-attachments/assets/76c6e6cb-b65d-4af7-95a5-6d52aee7efc0)
 
