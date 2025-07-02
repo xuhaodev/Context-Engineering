@@ -1145,11 +1145,10 @@ Context Engineering represents a vision of AI development that prioritizes under
 5. **Lead**: Take on increasing responsibility and help shape the future of the project
 
 **Quick Links:**
-- 🎯 [Find Your Pathway](/) - Repository structure and learning paths
-- 💬 [Join Discussions](https://github.com/your-repo/Context-Engineering/discussions) - Community conversations
-- 🐛 [Report Issues](https://github.com/your-repo/Context-Engineering/issues) - Problems and suggestions
-- 📚 [Learning Resources](/00_foundations/README.md) - Getting started with concepts
-- 🤝 [Mentorship Program](/50_contrib/mentorship.md) - Support for new contributors
-- 🌟 [Good First Issues](https://github.com/your-repo/Context-Engineering/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) - Perfect starting contributions
+-  [Find Your Pathway](/) - Repository structure and learning paths
+-  [Join Discussions](https://github.com/your-repo/Context-Engineering/discussions) - Community conversations
+-  [Report Issues](https://github.com/your-repo/Context-Engineering/issues) - Problems and suggestions
+-  [Learning Resources](/00_foundations/README.md) - Getting started with concepts
+-  [Good First Issues](https://github.com/your-repo/Context-Engineering/issues) - Perfect starting contributions
 
 **Welcome to the Context Engineering community. Let's build the future of intelligent systems together.**
