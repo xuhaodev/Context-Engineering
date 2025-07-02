@@ -6,7 +6,6 @@
 > **— Antoine de Saint-Exupéry**
 
 ## 1. Introduction: The Economy of Context
-
 Imagine your context window as a precious, finite resource - like memory on an old computer or water in a desert. Every token you use is a drop of water or a byte of memory. Spend too many on the wrong things, and you'll run dry exactly when you need it most.
 
 Token budgeting is the art and science of making the most of this finite resource. It's about maximizing the value of every token while ensuring your most critical information gets through.
