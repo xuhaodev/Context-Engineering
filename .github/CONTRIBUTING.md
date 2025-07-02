@@ -4,7 +4,7 @@
 
 Contributing to Context Engineering represents more than adding code or documentation—it's about participating in the evolution of how humans and AI systems understand and interact with complex information. This repository is designed as an inclusive learning ecosystem where **every perspective adds value**, regardless of your technical background, experience level, or domain expertise.
 
-```
+```python
 ┌─────────────────────────────────────────────────────────┐
 │           THE CONTRIBUTION ECOSYSTEM FRAMEWORK         │
 ├─────────────────────────────────────────────────────────┤
@@ -51,7 +51,7 @@ Let's begin with understanding how your unique perspective contributes to our co
 
 At its core, our contribution philosophy is built on the recognition that breakthrough innovations emerge from diverse perspectives working together systematically.
 
-```
+```python
 ┌─────────────────────────────────────────────────────────┐
 │           CONTRIBUTION PHILOSOPHY FOUNDATIONS           │
 ├─────────────────────────────────────────────────────────┤
@@ -161,7 +161,7 @@ Our contribution system is designed to support growth and learning for contribut
 
 Our repository structure creates natural pathways for different types of contributors. Understanding these pathways helps you find where your contributions will have the most impact.
 
-```
+```python
 ┌─────────────────────────────────────────────────────────┐
 │              CONTRIBUTOR PATHWAY ARCHITECTURE           │
 ├─────────────────────────────────────────────────────────┤
@@ -204,7 +204,7 @@ Our repository structure creates natural pathways for different types of contrib
 If you're primarily here to learn while contributing, these pathways offer the best starting points:
 
 #### **NOCODE/ Pathway - Conceptual Contributors**
-```
+```python
 /pathway.nocode{
   intent="Contribute through conceptual understanding and accessible explanations",
   
@@ -237,7 +237,7 @@ If you're primarily here to learn while contributing, these pathways offer the b
 - Improving accessibility and cross-cultural understanding
 
 #### **00_foundations/ Pathway - Theoretical Contributors**
-```
+```python
 /pathway.foundations{
   intent="Contribute through deep theoretical understanding and academic rigor",
   
@@ -264,7 +264,7 @@ If you're primarily here to learn while contributing, these pathways offer the b
 ```
 
 #### **10_guides/ Pathway - Practical Learning Contributors**
-```
+```python
 /pathway.guides{
   intent="Contribute through hands-on learning and practical implementation",
   
@@ -330,7 +330,7 @@ Build integrated solutions that demonstrate the full potential of context engine
 
 Context Engineering benefits from many different types of contributions. Understanding these types helps you identify where your unique skills and perspectives can have the greatest impact.
 
-```
+```python
 ┌─────────────────────────────────────────────────────────┐
 │              CONTRIBUTION TYPE SPECTRUM                 │
 ├─────────────────────────────────────────────────────────┤
@@ -482,7 +482,7 @@ Collaborative contributions focus on community building, process improvement, an
 
 Our quality framework ensures that all contributions enhance learning and understanding while maintaining high standards of accuracy and accessibility.
 
-```
+```python
 ┌─────────────────────────────────────────────────────────┐
 │              COLLABORATIVE QUALITY FRAMEWORK           │
 ├─────────────────────────────────────────────────────────┤
@@ -548,7 +548,7 @@ Our review process is designed to be educational and collaborative rather than g
 #### Review Process Stages:
 
 1. **Self-Review and Preparation**
-   ```
+   ```python
    /self.review{
      intent="Prepare high-quality contributions through systematic self-assessment",
      
@@ -589,7 +589,7 @@ We track quality through multiple dimensions to ensure continuous improvement.
 
 #### Quality Assessment Framework:
 
-```
+```python
 /quality.assessment{
   intent="Measure and improve contribution quality through systematic feedback",
   
@@ -694,7 +694,7 @@ Quality improvement is an ongoing, collaborative process involving the entire co
 
 Joining the Context Engineering community means becoming part of a collaborative learning ecosystem where individual contributions amplify collective intelligence.
 
-```
+```python
 ┌─────────────────────────────────────────────────────────┐
 │           COMMUNITY INTEGRATION ARCHITECTURE           │
 ├─────────────────────────────────────────────────────────┤
@@ -731,7 +731,7 @@ We've designed a systematic onboarding process that helps new contributors find 
 
 #### Onboarding Framework:
 
-```
+```python
 /onboarding.process{
   intent="Systematically integrate new contributors into the community ecosystem",
   
@@ -784,7 +784,7 @@ Effective collaboration requires clear communication patterns and shared underst
 
 #### Collaboration Protocols:
 
-```
+```python
 /collaboration.protocols{
   intent="Enable effective collaboration across diverse backgrounds and time zones",
   
@@ -838,7 +838,7 @@ We believe in recognizing all types of contributions and providing clear pathway
 
 #### Recognition Systems:
 
-```
+```python
 /recognition.framework{
   intent="Acknowledge and celebrate diverse contributions to community growth",
   
@@ -893,7 +893,7 @@ We believe in recognizing all types of contributions and providing clear pathway
 
 As contributors grow in experience and impact, opportunities emerge for leadership, innovation, and strategic influence within the community ecosystem.
 
-```
+```python
 ┌─────────────────────────────────────────────────────────┐
 │            ADVANCED COLLABORATION PATTERNS             │
 ├─────────────────────────────────────────────────────────┤
@@ -940,7 +940,7 @@ Experienced contributors can lead innovation initiatives that push the boundarie
 #### Innovation Leadership Roles:
 
 1. **Research Initiative Leadership**
-   ```
+   ```python
    /research.leadership{
      intent="Lead cutting-edge research that advances context engineering",
      
@@ -1005,7 +1005,7 @@ Experienced contributors can shape how knowledge is organized, presented, and ac
 #### Knowledge Architecture Roles:
 
 1. **Information Organization and Curation**
-   ```
+   ```python
    /knowledge.architecture{
      intent="Optimize knowledge organization for maximum learning effectiveness",
      
