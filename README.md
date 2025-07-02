@@ -53,17 +53,13 @@ prompt    shot     state    agent     prompt programs     persistence & resonanc
 
 ![image](https://github.com/user-attachments/assets/cd06c3f5-5a0b-4ee7-bbba-2f9f243f70ae)
 
-> "These cognitive tools (structured prompt patterns) break down the problem by identifying the main concepts at hand, extracting relevant
-information in the question, and highlighting meaningful properties, theorems, and techniques that
+> "These cognitive tools (structured prompt patterns) break down the problem by identifying the main concepts at hand, extracting relevant information in the question, and highlighting meaningful properties, theorems, and techniques that
 might be helpful in solving the problem."
 
 ![image](https://github.com/user-attachments/assets/f7ce8605-6fa3-494f-94cd-94e6b23032b6)
 
 
-> The placeholder {{cognitive_tools_signature}} is replaced with the tools which the LLM can
-use to help its reasoning. In order to take advantage of the capability of LLMs to generate code in
-addition to using the cognitive tools, we allow the LLM to generate code as an additional modular
-tool.
+> These templates scaffold reasoning layers similar to cognitive mental shortcuts, commonly studied as "heuristics". 
 
 ## Emergent Symbols? 
 
