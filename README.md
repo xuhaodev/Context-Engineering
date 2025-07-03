@@ -19,7 +19,13 @@ Bringing You the Latest Research on Context With First Principles & Visuals — 
 
 > **"Context engineering is the delicate art and science of filling the context window with just the right information for the next step." — [**Andrej Karpathy**](https://x.com/karpathy/status/1937902205765607626)**
 
+<div align="center">
+  
+https://github.com/user-attachments/assets/a07bcdc2-1bc4-4369-9531-1c07d0023ead
 
+![image](https://github.com/user-attachments/assets/309b8d8c-13b5-403c-9f1d-6a0ad551ea56)
+
+</div>
 
 
 A practical, first-principles handbook for moving beyond prompt engineering to the wider discipline of context design, orchestration, and optimization.
@@ -33,13 +39,8 @@ A practical, first-principles handbook for moving beyond prompt engineering to t
                                         │     tools, state, control flow)
 ```
 
-![image](https://github.com/user-attachments/assets/309b8d8c-13b5-403c-9f1d-6a0ad551ea56)
 
-<div align="center">
-  
-https://github.com/user-attachments/assets/a07bcdc2-1bc4-4369-9531-1c07d0023ead
 
-</div>
 
 ## Why This Repository Exists
 
