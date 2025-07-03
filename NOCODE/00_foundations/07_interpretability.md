@@ -1,4 +1,7 @@
 # Interpretability: Making AI Thinking Transparent Without Code
+> *“Extraordinary claims require extraordinary evidence.”*
+>
+> — Carl Sagan
 
 ## Introduction: Why Interpretability Matters
 
