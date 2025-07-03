@@ -85,7 +85,7 @@ A prompt program is a structured, reusable prompt pattern designed to guide an L
 
 ### From Ad-hoc Prompts to Programmatic Patterns
 
-Let's compare an ad-hoc prompt with a simple prompt program:
+Let's compare an ad-hoc prompt with a simple prompt program (reasoning tool calls):
 
 ```
 ┌───────────────────────────────────────────────────────────────┐
@@ -124,7 +124,7 @@ Let's compare an ad-hoc prompt with a simple prompt program:
 └───────────────────────────────────────────────────────────────┘
 ```
 
-## Prompt Template (
+## Prompt Template (Reasoning Tool Call)
 
 ### 1. Step-by-Step Reasoning
 
