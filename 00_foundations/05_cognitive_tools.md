@@ -124,34 +124,6 @@ Let's compare an ad-hoc prompt with a simple prompt program (reasoning tool call
 └───────────────────────────────────────────────────────────────┘
 ```
 
-## Prompt Template (Reasoning Tool Call)
-
-### 1. Step-by-Step Reasoning
-
-The fundamental template for breaking down complex reasoning into manageable steps.
-
-```markdown
-# Step-by-Step Reasoning Template
-
-Task: Solve the following problem by breaking it down into clear, logical steps.
-
-Problem: {{problem}}
-
-Please follow this process:
-1. **Understand**: Restate the problem and identify what you need to find.
-2. **Plan**: Outline your approach to solving the problem.
-3. **Execute**: Work through each step of your plan in detail.
-   - Step 1: [Description of the first step]
-   - Step 2: [Description of the second step]
-   - Step 3: [Continue with additional steps as needed]
-4. **Verify**: Check your solution against the original problem.
-5. **Conclude**: State your final answer or conclusion clearly.
-
-Show all your work and explain your reasoning at each step.
-```
-
-**Token Count**: ~130 tokens (template only)
-
 The prompt program approach offers several advantages:
 1. **Reusability**: The same pattern can be applied to different texts
 2. **Parameterization**: Easily customize length, complexity, etc.
@@ -187,6 +159,34 @@ In practice, this template can be implemented in various ways:
 - As actual JavaScript/Python functions that generate prompts
 - As YAML templates with variable substitution
 - As JSON schemas for standardized prompt construction
+
+## Prompt Template (Reasoning Tool Call)
+
+### 1. Step-by-Step Reasoning
+
+The fundamental template for breaking down complex reasoning into manageable steps.
+
+```markdown
+# Step-by-Step Reasoning Template
+
+Task: Solve the following problem by breaking it down into clear, logical steps.
+
+Problem: {{problem}}
+
+Please follow this process:
+1. **Understand**: Restate the problem and identify what you need to find.
+2. **Plan**: Outline your approach to solving the problem.
+3. **Execute**: Work through each step of your plan in detail.
+   - Step 1: [Description of the first step]
+   - Step 2: [Description of the second step]
+   - Step 3: [Continue with additional steps as needed]
+4. **Verify**: Check your solution against the original problem.
+5. **Conclude**: State your final answer or conclusion clearly.
+
+Show all your work and explain your reasoning at each step.
+```
+
+**Token Count**: ~130 tokens (template only)
 
 ## Context Schemas: Structured Information Patterns
 
