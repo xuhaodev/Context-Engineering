@@ -158,7 +158,7 @@ program [Name]([parameters]) {
 ```
 
 In practice, this template can be implemented in various ways:
-- As pseudocode in your documentation
+- As pseudocode or protocol shells in your documentation
 - As actual JavaScript/Python functions that generate prompts
 - As YAML templates with variable substitution
 - As JSON schemas for standardized prompt construction
@@ -190,6 +190,80 @@ Show all your work and explain your reasoning at each step.
 ```
 
 **Token Count**: ~130 tokens (template only)
+
+## What Are Protocol Shells? (Reasoning Tool Calls)
+
+Protocol shells are structured templates that organize communication with AI systems into clear, consistent patterns. Think of them as conversational blueprints that establish:
+
+1. **Intent**: What you're trying to accomplish
+2. **Input**: What information you're providing
+3. **Process**: How the information should be processed
+4. **Output**: What results you expect
+
+### Basic Protocol Shell Structure
+
+```
+/protocol.name{
+    intent="Clear statement of purpose",
+    input={
+        param1="value1",
+        param2="value2"
+    },
+    process=[
+        /step1{action="do something"},
+        /step2{action="do something else"}
+    ],
+    output={
+        result1="expected output 1",
+        result2="expected output 2"
+    }
+}
+```
+
+This structure creates a clear, token-efficient framework that both you and the AI can follow.
+
+**Reflective Exercise**: Look at your recent AI conversations. Can you identify implicit structures you've been using? How might formalizing these into protocol shells improve your interactions?
+
+## Anatomy of a Protocol Shell
+
+Let's dissect each component of a protocol shell to understand its purpose and power:
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    PROTOCOL ANATOMY                     │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  /protocol.name{                                        │
+│    │       │                                            │
+│    │       └── Subtype or specific variant              │
+│    │                                                    │
+│    └── Core protocol type                               │
+│                                                         │
+│    intent="Clear statement of purpose",                 │
+│    │       │                                            │
+│    │       └── Guides AI understanding of goals         │
+│    │                                                    │
+│    └── Declares objective                               │
+│                                                         │
+│    input={                                              │
+│        param1="value1",   ◄── Structured input data     │
+│        param2="value2"                                  │
+│    },                                                   │
+│                                                         │
+│    process=[                                            │
+│        /step1{action="do something"},     ◄── Ordered   │
+│        /step2{action="do something else"} ◄── steps     │
+│    ],                                                   │
+│                                                         │
+│    output={                                             │
+│        result1="expected output 1",   ◄── Output        │
+│        result2="expected output 2"    ◄── specification │
+│    }                                                    │
+│  }                                                      │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+```
+
 
 ## Context Schemas: Structured Information Patterns
 
