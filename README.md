@@ -32,7 +32,14 @@ A practical, first-principles handbook for moving beyond prompt engineering to t
              (Single instruction)       │    (Examples, memory, retrieval,
                                         │     tools, state, control flow)
 ```
+
 ![image](https://github.com/user-attachments/assets/309b8d8c-13b5-403c-9f1d-6a0ad551ea56)
+
+<div align="center">
+  
+https://github.com/user-attachments/assets/a07bcdc2-1bc4-4369-9531-1c07d0023ead
+
+</div>
 
 ## Why This Repository Exists
 
@@ -55,7 +62,6 @@ prompt    shot     state    agent     prompt programs     persistence & resonanc
 ```
 > "Abstraction is the cost of generalization"— [**Grant Sanderson (3Blue1Brown)**](https://www.3blue1brown.com/)
 
-https://github.com/user-attachments/assets/a07bcdc2-1bc4-4369-9531-1c07d0023ead
 
 
 ```mermaid
