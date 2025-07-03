@@ -96,6 +96,9 @@ graph TD
     class G,H,G1,G2,H1,H2 advanced
     class I,I1,I2 meta
 ```
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=davidkimai/Context-Engineering&type=Date)](https://www.star-history.com/#davidkimai/Context-Engineering&Date)
 
 ## Why This Repository Exists
 
