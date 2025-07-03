@@ -222,7 +222,7 @@ Protocol shells are structured templates that organize communication with AI sys
 
 This structure creates a clear, token-efficient framework that both you and the AI can follow.
 
-**Reflective Exercise**: Look at your recent AI conversations. Can you identify implicit structures you've been using? How might formalizing these into protocol shells improve your interactions?
+**Reflective Exercise**: Look at your recent AI conversations. Can you identify implicit structures you've been using (ie. affective context, underlying intent, long horizon goals, clarifying data, etc) ? How might formalizing these into protocol shells improve your interactions?
 
 ## Anatomy of a Protocol Shell
 
