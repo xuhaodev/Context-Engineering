@@ -13,13 +13,12 @@ Bringing You the Latest Research on Context With First Principles & Visuals — 
 
 
 
-https://github.com/user-attachments/assets/a07bcdc2-1bc4-4369-9531-1c07d0023ead
-
 
 
 </div>
 
 > **"Context engineering is the delicate art and science of filling the context window with just the right information for the next step." — [**Andrej Karpathy**](https://x.com/karpathy/status/1937902205765607626)**
+
 
 
 
@@ -55,6 +54,9 @@ single    few-     memory   multi-    cognitive tools +   context = fields +
 prompt    shot     state    agent     prompt programs     persistence & resonance
 ```
 > "Abstraction is the cost of generalization"— [**Grant Sanderson (3Blue1Brown)**](https://www.3blue1brown.com/)
+
+https://github.com/user-attachments/assets/a07bcdc2-1bc4-4369-9531-1c07d0023ead
+
 
 ```mermaid
 graph TD
