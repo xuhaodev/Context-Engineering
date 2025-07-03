@@ -12,6 +12,11 @@ Bringing You the Latest Research on Context With First Principles & Visuals — 
 ## [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/davidkimai/Context-Engineering) 
 
 
+
+https://github.com/user-attachments/assets/a07bcdc2-1bc4-4369-9531-1c07d0023ead
+
+
+
 </div>
 
 > **"Context engineering is the delicate art and science of filling the context window with just the right information for the next step." — [**Andrej Karpathy**](https://x.com/karpathy/status/1937902205765607626)**
