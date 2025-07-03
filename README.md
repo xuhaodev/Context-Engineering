@@ -134,8 +134,15 @@ graph TD
     class G,H,G1,G2,H1,H2 advanced
     class I,I1,I2 meta
 ```
+# Memory + Reasoning
 
-## Cognitive Tools? 
+### **[MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents - Singapore-MIT June 2025](https://www.arxiv.org/pdf/2506.12115)**
+
+> “Our results demonstrate the promise of reasoning-driven memory consolidation as a scalable alternative to existing solutions for training long-horizon interactive agents, where both efficiency and performance are optimized." — [Singapore-MIT](https://arxiv.org/pdf/2506.15841)
+
+![image](https://github.com/user-attachments/assets/16e3f241-5f44-4ed5-9622-f0b4acbb67b0)
+
+## Cognitive Tools
 
 ### **[Eliciting Reasoning in Language Models with Cognitive Tools - IBM Zurich June 2025](https://www.arxiv.org/pdf/2506.12115)**
 
@@ -154,7 +161,7 @@ might be helpful in solving the problem.**
 
 > **These templates scaffold reasoning layers similar to cognitive mental shortcuts, commonly studied as "heuristics".**
 
-## Emergent Symbols? 
+## Emergent Symbols
 
 ## **[Emergent Symbolic Mechanisms Support Abstract Reasoning in Large Language Models - ICML Princeton June 18, 2025](https://openreview.net/forum?id=y1SnRPDWx4)**
 
