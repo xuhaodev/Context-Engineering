@@ -272,6 +272,7 @@ Let's dissect each component of a protocol shell to understand its purpose and p
 
 ## Context Schemas: Structured Information Patterns
 
+
 Just as human minds use schemas to organize knowledge, we can create context schemas for LLMs—standardized ways of structuring information to improve model understanding.
 
 ### Basic Schema Structure
@@ -311,6 +312,14 @@ Just as human minds use schemas to organize knowledge, we can create context sch
 │ }                                                             │
 └───────────────────────────────────────────────────────────────┘
 ```
+
+
+### **[MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents - Singapore-MIT June 2025](https://www.arxiv.org/pdf/2506.12115)**
+
+> “Our results demonstrate the promise of reasoning-driven memory consolidation as a scalable alternative to existing solutions for training long-horizon interactive agents, where both efficiency and performance are optimized." — [Singapore-MIT](https://arxiv.org/pdf/2506.15841)
+
+![image](https://github.com/user-attachments/assets/16e3f241-5f44-4ed5-9622-f0b4acbb67b0)
+
 
 ### From Schema to Prompt
 
