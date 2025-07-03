@@ -27,88 +27,69 @@ A practical, first-principles handbook for moving beyond prompt engineering to t
 
 ```mermaid
 graph TD
-    classDef basic fill:#e1f5fe,stroke:#01579b,stroke-width:2px
-    classDef intermediate fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
-    classDef advanced fill:#fff3e0,stroke:#e65100,stroke-width:2px
-    classDef meta fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    classDef basic fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#01579b
+    classDef intermediate fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#2e7d32
+    classDef advanced fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100
+    classDef meta fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px,color:#6a1b9a
     
-    A[Atoms] --> B[Molecules]
-    B --> C[Cells]
-    C --> D[Organs]
-    D --> E[Neural Systems]
-    E --> F[Neural Fields]
-    F --> G[Protocol Shells]
-    G --> H[Unified System]
-    H --> I[Meta-Recursive Framework]
+    subgraph Basic["Level 1: Basic Context Engineering"]
+        A[Atoms]
+        B[Molecules]
+        C[Cells]
+        D[Organs]
+    end
     
-    A1[Basic Instructions] --> A
-    A2[Constraints] --> A
-    A3[Direct Prompts] --> A
+    subgraph Field["Level 2: Field Theory"]
+        E[Neural Systems]
+        F[Neural Fields]
+    end
     
-    B1[Few-Shot Examples] --> B
-    B2[Demonstrations] --> B
-    B3[Templates] --> B
+    subgraph Protocol["Level 3: Protocol System"]
+        G[Protocol Shells]
+        H[Unified System]
+    end
     
-    C1[Memory Mechanisms] --> C
-    C2[State Persistence] --> C
-    C3[Context Retention] --> C
+    subgraph Meta["Level 4: Meta-Recursion"]
+        I[Meta-Recursive Framework]
+    end
     
-    D1[Multi-step Workflows] --> D
-    D2[Specialist Components] --> D
-    D3[System Orchestration] --> D
+    %% Connections
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
     
-    E1[Reasoning Frameworks] --> E
-    E2[Verification Methods] --> E
-    E3[Composition Patterns] --> E
+    %% Descriptions for each level
+    A1["Single instructions<br>Simple constraints<br>Basic prompts"] --> A
+    B1["Example pairs<br>Few-shot patterns<br>Demonstration sets"] --> B
+    C1["Persistent memory<br>State management<br>Context window"] --> C
+    D1["Multi-step flows<br>Specialists<br>System orchestration"] --> D
+    E1["Reasoning frameworks<br>Verification tools<br>Cognitive patterns"] --> E
+    F1["Continuous meaning<br>Attractors & resonance<br>Symbolic residue"] --> F
+    G1["Structured templates<br>Field operations<br>Emergence protocols"] --> G
+    H1["Protocol integration<br>System-level emergence<br>Self-maintenance"] --> H
+    I1["Self-reflection<br>Recursive improvement<br>Interpretable evolution"] --> I
     
-    F1[Attractors] --> F
-    F2[Field Resonance] --> F
-    F3[Boundary Dynamics] --> F
-    F4[Symbolic Residue] --> F
-    
-    G1[Co-emergence] --> G
-    G2[Recursive Emergence] --> G
-    G3[Memory Persistence] --> G
-    G4[Resonance Scaffold] --> G
-    G5[Self-Repair] --> G
-    
-    H1[Protocol Orchestration] --> H
-    H2[Emergence Coordination] --> H
-    H3[Self-Maintaining Coherence] --> H
-    
-    I1[Self-Reflection] --> I
-    I2[Recursive Improvement] --> I
-    I3[Interpretability Scaffold] --> I
-    I4[Collaborative Co-Evolution] --> I
-    I5[Cross-Modal Integration] --> I
+    %% Real-world parallels
+    A2["Like: Basic prompt<br>engineering"] -.-> A
+    B2["Like: Few-shot<br>learning"] -.-> B
+    C2["Like: Conversational<br>chatbots"] -.-> C
+    D2["Like: Multi-agent<br>systems"] -.-> D
+    E2["Like: ReAct<br>Chain-of-Thought"] -.-> E
+    F2["Like: Semantic<br>field theory"] -.-> F
+    G2["Like: Protocol<br>orchestration"] -.-> G
+    H2["Like: Self-organizing<br>systems"] -.-> H
+    I2["Like: Self-improving<br>intelligence"] -.-> I
     
     %% Apply classes
-    class A,B,C,D basic
-    class E,F,G intermediate
-    class H advanced
-    class I meta
-    
-    %% Descriptions
-    subgraph Level-1[Basic Context Engineering]
-        A
-        B
-        C
-        D
-    end
-    
-    subgraph Level-2[Field-Based Context Engineering]
-        E
-        F
-        G
-    end
-    
-    subgraph Level-3[Advanced Context Engineering]
-        H
-    end
-    
-    subgraph Level-4[Meta-Recursive Context Engineering]
-        I
-    end
+    class A,B,C,D,A1,A2,B1,B2,C1,C2,D1,D2 basic
+    class E,F,E1,E2,F1,F2 intermediate
+    class G,H,G1,G2,H1,H2 advanced
+    class I,I1,I2 meta
 ```
 
 ## Why This Repository Exists
