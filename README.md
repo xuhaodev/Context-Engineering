@@ -18,6 +18,7 @@ Bringing You the Latest Research on Context With First Principles & Visuals — 
 
 A practical, first-principles handbook for moving beyond prompt engineering to the wider discipline of context design, orchestration, and optimization.
 
+
 ```
                     Prompt Engineering  │  Context Engineering
                        ↓                │            ↓                      
@@ -25,6 +26,7 @@ A practical, first-principles handbook for moving beyond prompt engineering to t
              (Single instruction)       │    (Examples, memory, retrieval,
                                         │     tools, state, control flow)
 ```
+![image](https://github.com/user-attachments/assets/309b8d8c-13b5-403c-9f1d-6a0ad551ea56)
 
 ```mermaid
 graph TD
