@@ -148,7 +148,9 @@ might be helpful in solving the problem.**
 **These include symbolic induction heads, symbolic abstraction heads, and retrieval heads.**
 
 **1. In early layers, symbol abstraction heads convert input tokens to abstract variables based on the relations between those tokens.**
+
 **2. In intermediate layers, symbolic induction heads perform sequence induction over these abstract variables.**
+
 **3. Finally, in later layers, retrieval heads predict the next token by retrieving the value associated with the predicted abstract variable.**
 
 **These results point toward a resolution of the longstanding debate between symbolic and neural network approaches, suggesting that emergent reasoning in neural networks depends on the emergence of symbolic mechanisms.** — [**ICML Princeton**](https://openreview.net/forum?id=y1SnRPDWx4) 
