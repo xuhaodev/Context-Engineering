@@ -79,7 +79,7 @@ Now, we'll extend this framework by drawing parallels to human cognition. Just a
 └──────────┴───────────────────┴──────────────────────────────────────┘
 ```
 
-## Prompt Programs: Algorithmic Thinking for LLMs
+## Prompt Programs: Algorithmic Thinking for LLMs (Reasoning Tool Calls)
 
 A prompt program is a structured, reusable prompt pattern designed to guide an LLM's reasoning process—similar to how heuristics guide human thinking.
 
@@ -160,7 +160,7 @@ In practice, this template can be implemented in various ways:
 - As YAML templates with variable substitution
 - As JSON schemas for standardized prompt construction
 
-## Prompt Template (Reasoning Tool Call)
+## Prompt Template (Reasoning Tool Calls)
 
 ### 1. Step-by-Step Reasoning
 
