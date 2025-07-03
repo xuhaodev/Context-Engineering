@@ -1,5 +1,7 @@
 # Collaboration: Human-AI Partnership Without Code
-
+> *“This is a collaborative venture; the machines do not replace man, but rather they assist him in formulating and manipulating knowledge.”*
+>
+> — Vannevar Bush
 ## Introduction: The Dance of Minds
 
 Collaboration between humans and AI is more than just giving instructions and receiving outputs—it's a dynamic partnership where both bring unique strengths to create something greater than either could alone. Without writing code, you can establish rich, evolving collaborative relationships with AI systems that amplify your capabilities and create new possibilities.
