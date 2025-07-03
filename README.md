@@ -134,7 +134,7 @@ graph TD
     class G,H,G1,G2,H1,H2 advanced
     class I,I1,I2 meta
 ```
-# Memory + Reasoning
+## Memory + Reasoning
 
 ### **[MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents - Singapore-MIT June 2025](https://www.arxiv.org/pdf/2506.12115)**
 
