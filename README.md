@@ -143,7 +143,10 @@ might be helpful in solving the problem.**
 > **TL;DR: A three-stage architecture is identified that supports abstract reasoning in LLMs via a set of emergent symbol-processing mechanisms.**
 >
 >
+
+
 **These include symbolic induction heads, symbolic abstraction heads, and retrieval heads.**
+
 **1. In early layers, symbol abstraction heads convert input tokens to abstract variables based on the relations between those tokens.**
 **2. In intermediate layers, symbolic induction heads perform sequence induction over these abstract variables.**
 **3. Finally, in later layers, retrieval heads predict the next token by retrieving the value associated with the predicted abstract variable.**
