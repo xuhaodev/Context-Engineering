@@ -25,7 +25,93 @@ The `00_foundations` directory contains the core theoretical foundations of cont
       Basic     Few-shot    Stateful    Multi-step
     Prompting    Learning    Memory      Control
 ```
+```mermaid
 
+flowchart TD
+    %% Node styling for an intuitive semantic network with compact formatting
+    classDef center fill:#f8f8f8,stroke:#444,stroke-width:3px,color:#333,font-weight:bold,font-size:16px,rx:20,ry:20
+    classDef level1 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#1565c0,font-weight:bold,rx:15,ry:15
+    classDef level2 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#2e7d32,font-weight:bold,rx:15,ry:15
+    classDef level3 fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100,font-weight:bold,rx:15,ry:15
+    classDef level4 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px,color:#6a1b9a,font-weight:bold,rx:15,ry:15
+    classDef concept fill:#f5f5f5,stroke:#777,stroke-width:1px,rx:10,ry:10,font-size:12px
+    classDef realworld fill:#e1f5fe,stroke:#0277bd,stroke-width:1px,rx:10,ry:10,font-style:italic,font-size:11px
+    
+    %% Main evolutionary pathway with compact layout
+    CE(["Context Engineering"]):::center
+    
+    %% Level 1: Basic Context Engineering
+    L1[/"Level 1: Basic\nContext Engineering"/]:::level1
+    CE === L1
+    
+    A([Atoms]):::level1
+    B([Molecules]):::level1
+    C([Cells]):::level1
+    D([Organs]):::level1
+    
+    L1 --- A
+    A --> B
+    B --> C
+    C --> D
+    
+    %% Level 2: Field Theory
+    L2[/"Level 2: Field\nTheory"/]:::level2
+    D --> L2
+    
+    E([Neural Systems]):::level2
+    F([Neural Fields]):::level2
+    
+    L2 --- E
+    E --> F
+    
+    %% Level 3: Protocol Systems
+    L3[/"Level 3: Protocol\nSystem"/]:::level3
+    F --> L3
+    
+    G([Protocol Shells]):::level3
+    H([Unified System]):::level3
+    
+    L3 --- G
+    G --> H
+    
+    %% Level 4: Meta-Recursion
+    L4[/"Level 4: Meta-\nRecursion"/]:::level4
+    H --> L4
+    
+    I([Meta-Recursive Framework]):::level4
+    
+    L4 --- I
+    
+    %% Key Concepts - Compact version
+    A --- A1["• Basic Instructions<br>• Simple Constraints<br>• Direct Prompts"]:::concept
+    B --- B1["• Few-Shot Examples<br>• Templates & Patterns<br>• Demonstrations"]:::concept
+    C --- C1["• Memory Mechanisms<br>• State Management<br>• Context Window"]:::concept
+    D --- D1["• Multi-step Workflows<br>• Specialized Components<br>• System Orchestration"]:::concept
+    
+    E --- E1["• Reasoning Frameworks<br>• Verification Methods<br>• Cognitive Patterns"]:::concept
+    F --- F1["• Attractors & Resonance<br>• Boundaries & Persistence<br>• Symbolic Residue"]:::concept
+    
+    G --- G1["• Structured Templates<br>• Field Operations<br>• Emergence Protocols"]:::concept
+    H --- H1["• Protocol Integration<br>• System-level Emergence<br>• Self-maintaining Coherence"]:::concept
+    
+    I --- I1["• Self-reflection<br>• Recursive Improvement<br>• Interpretability<br>• Collaborative Evolution<br>• Cross-modal Integration"]:::concept
+    
+    %% Real-world applications - Side connections
+    A -.- AR["Like: Basic prompt engineering"]:::realworld
+    B -.- BR["Like: Few-shot learning"]:::realworld
+    C -.- CR["Like: Conversational chatbots"]:::realworld
+    D -.- DR["Like: Multi-agent systems"]:::realworld
+    
+    E -.- ER["Like: ReAct, Chain-of-Thought"]:::realworld
+    F -.- FR["Like: Semantic field theory"]:::realworld
+    
+    G -.- GR["Like: Protocol orchestration"]:::realworld
+    H -.- HR["Like: Self-organizing systems"]:::realworld
+    
+    I -.- IR["Like: Self-improving intelligence"]:::realworld
+
+
+```
 ## Biological Metaphor
 
 Our approach is structured around a biological metaphor that provides an intuitive framework for understanding the increasing complexity of context engineering:
