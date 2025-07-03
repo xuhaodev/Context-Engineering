@@ -117,10 +117,6 @@ graph TD
     class G,H,G1,G2,H1,H2 advanced
     class I,I1,I2 meta
 ```
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=davidkimai/Context-Engineering&type=Date)](https://www.star-history.com/#davidkimai/Context-Engineering&Date)
-
 
 ## Cognitive Tools? 
 
@@ -411,6 +407,11 @@ Context-Engineering/
 4. **Delete ruthlessly** – pruning beats padding
 5. **Code > slides** – every concept has a runnable cell
 6. **Visualize everything** — every concept is visualized with ASCII and symbolic diagrams
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=davidkimai/Context-Engineering&type=Date)](https://www.star-history.com/#davidkimai/Context-Engineering&Date)
+
 
 ## Contributing
 
