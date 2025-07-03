@@ -48,7 +48,7 @@ prompt    shot     state    agent     prompt programs     persistence & resonanc
 > "Abstraction is the cost of generalization"— [**Grant Sanderson (3Blue1Brown)**](https://www.3blue1brown.com/)
 
 ## Cognitive Tools? 
-## **[Eliciting Reasoning in Language Models with Cognitive Tools - IBM Zurich June 2025](https://openreview.net/forum?id=y1SnRPDWx4)**
+## **[Eliciting Reasoning in Language Models with Cognitive Tools - IBM Zurich June 2025](https://www.arxiv.org/pdf/2506.12115)**
 
 
 ![image](https://github.com/user-attachments/assets/cd06c3f5-5a0b-4ee7-bbba-2f9f243f70ae)
