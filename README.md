@@ -30,6 +30,27 @@ A practical, first-principles handbook for moving beyond prompt engineering to t
 ```
 ![image](https://github.com/user-attachments/assets/309b8d8c-13b5-403c-9f1d-6a0ad551ea56)
 
+## Why This Repository Exists
+
+> **"Meaning is not an intrinsic, static property of a semantic expression, but rather an emergent phenomenon actualized through the dynamic interaction between the expression and an interpretive agent situated within a specific context."
+— [Agostino et al. — June 2025, Indiana University](https://arxiv.org/pdf/2506.10077)**
+
+Prompt engineering gets all the attention, but we can now get excited for what comes next. Once you've mastered prompts, the real power comes from engineering the **entire context window** that surrounds those prompts. Guiding thought, if you will. 
+
+This repository provides a progressive, first-principles approach to context engineering, built around a biological metaphor:
+
+> Cell = Agent 
+>
+> Organ = Multi-Agent Systems
+
+```
+atoms → molecules → cells → organs → neural systems → neural + semantic field theory 
+  │        │         │        │             │                         │        
+single    few-     memory   multi-    cognitive tools +   context = fields +
+prompt    shot     state    agent     prompt programs     persistence & resonance
+```
+> "Abstraction is the cost of generalization"— [**Grant Sanderson (3Blue1Brown)**](https://www.3blue1brown.com/)
+
 ```mermaid
 graph TD
     classDef basic fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#01579b
@@ -100,26 +121,6 @@ graph TD
 
 [![Star History Chart](https://api.star-history.com/svg?repos=davidkimai/Context-Engineering&type=Date)](https://www.star-history.com/#davidkimai/Context-Engineering&Date)
 
-## Why This Repository Exists
-
-> **"Meaning is not an intrinsic, static property of a semantic expression, but rather an emergent phenomenon actualized through the dynamic interaction between the expression and an interpretive agent situated within a specific context."
-— [Agostino et al. — June 2025, Indiana University](https://arxiv.org/pdf/2506.10077)**
-
-Prompt engineering gets all the attention, but we can now get excited for what comes next. Once you've mastered prompts, the real power comes from engineering the **entire context window** that surrounds those prompts. Guiding thought, if you will. 
-
-This repository provides a progressive, first-principles approach to context engineering, built around a biological metaphor:
-
-> Cell = Agent 
->
-> Organ = Multi-Agent Systems
-
-```
-atoms → molecules → cells → organs → neural systems → neural + semantic field theory 
-  │        │         │        │             │                         │        
-single    few-     memory   multi-    cognitive tools +   context = fields +
-prompt    shot     state    agent     prompt programs     persistence & resonance
-```
-> "Abstraction is the cost of generalization"— [**Grant Sanderson (3Blue1Brown)**](https://www.3blue1brown.com/)
 
 ## Cognitive Tools? 
 
