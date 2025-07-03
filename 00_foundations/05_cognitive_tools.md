@@ -23,6 +23,16 @@ Our journey through context engineering has followed a biological metaphor:
 ## Cognitive Tools? 
 > “Cognitive tools” encapsulate reasoning operations within the LLM itself — [IBM June 2025](https://www.arxiv.org/pdf/2506.12115)
 
+## **[Eliciting Reasoning in Language Models with Cognitive Tools - IBM Zurich June 2025](https://www.arxiv.org/pdf/2506.12115)**
+
+
+![image](https://github.com/user-attachments/assets/cd06c3f5-5a0b-4ee7-bbba-2f9f243f70ae)
+
+> **These cognitive tools (structured prompt templates as tool calls) break down the problem by identifying the main concepts at hand, extracting relevant information in the question, and highlighting meaningful properties, theorems, and techniques that
+might be helpful in solving the problem.**
+
+![image](https://github.com/user-attachments/assets/f7ce8605-6fa3-494f-94cd-94e6b23032b6)
+
 Now, we'll extend this framework by drawing parallels to human cognition. Just as human minds use cognitive tools to process information efficiently, we can create similar structures for LLMs:
 
 ```
@@ -113,6 +123,34 @@ Let's compare an ad-hoc prompt with a simple prompt program:
 │ }                                                             │
 └───────────────────────────────────────────────────────────────┘
 ```
+
+## Prompt Template (
+
+### 1. Step-by-Step Reasoning
+
+The fundamental template for breaking down complex reasoning into manageable steps.
+
+```markdown
+# Step-by-Step Reasoning Template
+
+Task: Solve the following problem by breaking it down into clear, logical steps.
+
+Problem: {{problem}}
+
+Please follow this process:
+1. **Understand**: Restate the problem and identify what you need to find.
+2. **Plan**: Outline your approach to solving the problem.
+3. **Execute**: Work through each step of your plan in detail.
+   - Step 1: [Description of the first step]
+   - Step 2: [Description of the second step]
+   - Step 3: [Continue with additional steps as needed]
+4. **Verify**: Check your solution against the original problem.
+5. **Conclude**: State your final answer or conclusion clearly.
+
+Show all your work and explain your reasoning at each step.
+```
+
+**Token Count**: ~130 tokens (template only)
 
 The prompt program approach offers several advantages:
 1. **Reusability**: The same pattern can be applied to different texts
