@@ -163,7 +163,7 @@ In practice, this template can be implemented in various ways:
 - As YAML templates with variable substitution
 - As JSON schemas for standardized prompt construction
 
-## Prompt Template (Reasoning Tool Calls)
+## Reasoning Prompt Template (Tool Call)
 
 ### 1. Step-by-Step Reasoning
 
