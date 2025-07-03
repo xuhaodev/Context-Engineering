@@ -7,7 +7,6 @@ Bringing You the Latest Research on Context With First Principles & Visuals — 
 
 ## [IBM Zurich](https://www.arxiv.org/pdf/2506.12115) | [Quantum Semantics](https://arxiv.org/pdf/2506.10077) | [ICML Princeton](https://openreview.net/forum?id=y1SnRPDWx4) 
 
-## [Learn to Visualize Context Semantic Networks and Fields](https://claude.ai/public/artifacts/6a078ba1-7941-43ef-aab1-bad800a3e10c)
 ## [AI Docs:](https://deepwiki.com/davidkimai/Context-Engineering) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/davidkimai/Context-Engineering) 
 
 
