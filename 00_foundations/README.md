@@ -5,6 +5,8 @@
 >
 > **“Order emerges from the interactions of chaos.”
 — Ilya Prigogine**
+
+## [Visual Semantic Network](https://claude.ai/public/artifacts/6a078ba1-7941-43ef-aab1-bad800a3e10c)
 ## Overview
 
 The `00_foundations` directory contains the core theoretical foundations of context engineering, progressing from basic prompting concepts to advanced unified field theory. Each module builds on the previous ones, creating a comprehensive framework for understanding and manipulating context in large language models.
