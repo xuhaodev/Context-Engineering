@@ -172,6 +172,17 @@ might be helpful in solving the problem.**
 
 > **These templates scaffold reasoning layers similar to cognitive mental shortcuts, commonly studied as "heuristics".**
 
+1. **This research shows that breaking complex tasks into modular “cognitive tools” lets AI solve problems more thoughtfully—mirroring how expert humans reason step by step.**
+
+2. **Instead of relying on a single, big prompt, the model calls specialized tools like “understand question,” “recall related,” “examine answer,” and “backtracking”—each handling a distinct mental operation.**
+
+3. **Cognitive tools work like inner mini-apps: the AI picks the right one at each stage, runs it, and then integrates its output back into the reasoning flow for greater accuracy and flexibility.**
+
+4. **By compartmentalizing reasoning steps, these tools prevent confusion, reduce error, and make the model’s thought process transparent and auditable—even on hard math problems.**
+
+5. **This modular approach upgrades both open and closed models—boosting real-world math problem-solving and approaching the performance of advanced RL-trained “reasoning” models, without extra training.**
+
+6. **The results suggest that the seeds of powerful reasoning are already inside large language models—cognitive tools simply unlock and orchestrate these abilities, offering a transparent, efficient, and interpretable alternative to black-box tuning.**
 ## Emergent Symbols
 
 ## **[Emergent Symbolic Mechanisms Support Abstract Reasoning in Large Language Models - ICML Princeton June 18, 2025](https://openreview.net/forum?id=y1SnRPDWx4)**
