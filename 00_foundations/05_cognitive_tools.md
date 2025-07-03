@@ -193,7 +193,7 @@ Show all your work and explain your reasoning at each step.
 
 ## What Are Protocol Shells? (Reasoning Tool Calls)
 
-Protocol shells are structured templates that organize communication with AI systems into clear, consistent patterns. Think of them as conversational blueprints that establish:
+Protocol shells are structured no code templates that organize communication with AI systems into clear, consistent patterns. Think of them as conversational blueprints that establish:
 
 1. **Intent**: What you're trying to accomplish
 2. **Input**: What information you're providing
