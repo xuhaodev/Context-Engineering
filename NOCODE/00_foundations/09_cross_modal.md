@@ -1,5 +1,7 @@
 # Cross-Modal Integration: Unified Context Engineering Across Modalities
-
+> *“The brain is a prediction machine, continually integrating signals from all senses into a coherent experience.”*
+>
+> — Stanislas Dehaene 
 ## Introduction: Beyond Single-Modal Boundaries
 
 Cross-modal integration represents the frontier of context engineering—moving beyond text-only approaches to create unified systems that operate coherently across different modalities (text, image, audio, code, etc.). This guide explores how to engineer contexts that maintain semantic coherence, field resonance, and symbolic integrity across these diverse representational forms.
