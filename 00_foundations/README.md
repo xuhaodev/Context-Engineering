@@ -31,90 +31,40 @@ The `00_foundations` directory contains the core theoretical foundations of cont
 
 ```mermaid
 graph TD
-    %% Node styling for ASCII-inspired diagram
-    classDef root fill:#202030,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:18px
-    classDef box fill:#202030,stroke:#ffffff,stroke-width:1.5px,color:#ffffff,font-weight:bold
-    classDef label fill:none,stroke:none,color:#cccccc,font-size:12px
+    %% Minimal styling with clear level distinction
+    classDef root fill:#131722,stroke:#4b96ff,stroke-width:2px,color:#f0f0f0,font-weight:bold,font-size:14px
+    classDef level1 fill:#131722,stroke:#4b96ff,stroke-width:1.5px,color:#f0f0f0,font-weight:normal,font-size:12px
+    classDef level2 fill:#131722,stroke:#50cf9a,stroke-width:1.5px,color:#f0f0f0,font-weight:normal,font-size:12px
+    classDef level3 fill:#131722,stroke:#ff7d55,stroke-width:1.5px,color:#f0f0f0,font-weight:normal,font-size:12px
+    classDef level4 fill:#131722,stroke:#a78bfa,stroke-width:1.5px,color:#f0f0f0,font-weight:normal,font-size:12px
     
     %% Root node
-    ROOT["Context Engineering"]:::root
+    CE["Context Engineering"]:::root
     
-    %% Level lines
-    L1["  "]:::label
-    L2["  "]:::label
-    L3["  "]:::label
-    L4["  "]:::label
+    %% Extremely compact level structure - all nodes with integrated labels
+    A1["Atoms<br><font size=1>Basic Prompting</font>"]:::level1
+    B1["Molecules<br><font size=1>Few-Shot Learning</font>"]:::level1
+    C1["Cells<br><font size=1>Stateful Memory</font>"]:::level1
+    D1["Organs<br><font size=1>Multi-step Control</font>"]:::level1
     
-    %% Core boxes - Level 1
-    BOX1A["Atoms"]:::box
-    BOX1B["Molecules"]:::box
-    BOX1C["Cells"]:::box
-    BOX1D["Organs"]:::box
+    A2["Neural Systems<br><font size=1>Cognitive Tools</font>"]:::level2
+    B2["Neural Fields<br><font size=1>Field Dynamics</font>"]:::level2
     
-    %% Core boxes - Level 2
-    BOX2A["Neural Systems"]:::box
-    BOX2B["Neural Fields"]:::box
+    A3["Protocol Shells<br><font size=1>Structured Protocols</font>"]:::level3
+    B3["Unified System<br><font size=1>Integrated Systems</font>"]:::level3
     
-    %% Core boxes - Level 3
-    BOX3A["Protocol Shells"]:::box
-    BOX3B["Unified System"]:::box
+    M4["Meta-Recursive Framework<br><font size=1>Recursive Evolution</font>"]:::level4
     
-    %% Core box - Level 4
-    BOX4["Meta-Recursive Framework"]:::box
+    %% Minimal required connections
+    CE --> A1 & B1 & C1 & D1
+    D1 --> A2 & B2
+    B2 --> A3 & B3
+    B3 --> M4
     
-    %% Hierarchical connections
-    ROOT --- L1
-    L1 --- BOX1A & BOX1B & BOX1C & BOX1D
-    L2 --- BOX2A & BOX2B
-    L3 --- BOX3A & BOX3B
-    L4 --- BOX4
-    
-    %% Vertical connections
-    BOX1D --- L2
-    BOX2B --- L3
-    BOX3B --- L4
-    
-    %% Clear labels below boxes
-    LABEL1A["Basic<br>Prompting"]:::label
-    LABEL1B["Few-Shot<br>Learning"]:::label
-    LABEL1C["Stateful<br>Memory"]:::label
-    LABEL1D["Multi-step<br>Control"]:::label
-    
-    BOX1A --- LABEL1A
-    BOX1B --- LABEL1B
-    BOX1C --- LABEL1C
-    BOX1D --- LABEL1D
-    
-    %% Level 2 labels
-    LABEL2A["Cognitive<br>Tools"]:::label
-    LABEL2B["Field<br>Dynamics"]:::label
-    
-    BOX2A --- LABEL2A
-    BOX2B --- LABEL2B
-    
-    %% Level 3 labels
-    LABEL3A["Structured<br>Protocols"]:::label
-    LABEL3B["Integrated<br>Systems"]:::label
-    
-    BOX3A --- LABEL3A
-    BOX3B --- LABEL3B
-    
-    %% Level 4 label
-    LABEL4["Recursive<br>Evolution"]:::label
-    
-    BOX4 --- LABEL4
-    
-    %% Horizontal connecting lines for each level
-    BOX1A --- BOX1B --- BOX1C --- BOX1D
-    BOX2A --- BOX2B
-    BOX3A --- BOX3B
-    
-    %% Background styling
-    style ROOT fill:#202030,color:#ffffff
-    style L1 fill:#202030,color:#202030
-    style L2 fill:#202030,color:#202030
-    style L3 fill:#202030,color:#202030
-    style L4 fill:#202030,color:#202030
+    %% Horizontal connections (minimal)
+    A1 --- B1 --- C1 --- D1
+    A2 --- B2
+    A3 --- B3
 ```
 ## Biological Metaphor
 
