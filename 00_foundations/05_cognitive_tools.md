@@ -21,7 +21,7 @@ Our journey through context engineering has followed a biological metaphor:
 └──────────┘     └──────────┘     └──────────┘     └──────────┘
 ```
 ## Cognitive Tools? 
-> “Cognitive tools” encapsulate reasoning operations within the LLM itself — [IBM June 2025](https://www.arxiv.org/pdf/2506.12115)
+> “Cognitive tools” encapsulate reasoning operations within the LLM itself — [IBM Zurich](https://www.arxiv.org/pdf/2506.12115)
 
 ## **[Eliciting Reasoning in Language Models with Cognitive Tools - IBM Zurich June 2025](https://www.arxiv.org/pdf/2506.12115)**
 
