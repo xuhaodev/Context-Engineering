@@ -176,11 +176,11 @@ might be helpful in solving the problem.**
 
 1. **This research shows that breaking complex tasks into modular “cognitive tools” lets AI solve problems more thoughtfully—mirroring how expert humans reason step by step.**
 
-2. **Instead of relying on a single, big prompt, the model calls specialized tools like “understand question,” “recall related,” “examine answer,” and “backtracking”—each handling a distinct mental operation.**
+2. **Instead of relying on a single, big prompt, the model calls specialized prompt templates, aka cognitive tools like “understand question,” “recall related,” “examine answer,” and “backtracking”—each handling a distinct mental operation.**
 
-3. **Cognitive tools work like inner mini-apps: the AI picks the right one at each stage, runs it, and then integrates its output back into the reasoning flow for greater accuracy and flexibility.**
+3. **Cognitive tools work like inner mental shortcuts: the AI picks the right program at each stage and runs it to plan its reasoning and downstream actions before conducting the task for greater accuracy and flexibility.**
 
-4. **By compartmentalizing reasoning steps, these tools prevent confusion, reduce error, and make the model’s thought process transparent and auditable—even on hard math problems.**
+4. **By compartmentalizing reasoning steps into modular blocks, these tools prevent confusion, reduce error, and make the model’s thought process transparent and auditable—even on hard math problems.**
 
 5. **This modular approach upgrades both open and closed models—boosting real-world math problem-solving and approaching the performance of advanced RL-trained “reasoning” models, without extra training.**
 
