@@ -26,6 +26,17 @@ Let's approach this from three perspectives:
 - **Concrete**: Using visual and physical metaphors to build intuition
 - **Numeric**: Understanding the computational patterns and measurements
 - **Abstract**: Exploring the theoretical principles and structures
+  
+<div align="center">
+       
+## ![image](https://github.com/user-attachments/assets/924f37fb-190f-4f71-9f98-97d656587f12)
+
+
+[*Courtesy of Columbia*](http://wordpress.ei.columbia.edu/ac4/about/our-approach/dynamical-systems-theory/)
+
+*The attractor landscape model refers to the range of possible states of the system that are the result of the evolution of the system over time.*
+
+</div>
 
 ## 2. Building Intuition: What Are Attractors, Really?
 
