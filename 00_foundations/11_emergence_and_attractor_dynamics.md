@@ -1,5 +1,7 @@
 # 11. Emergence and Attractor Dynamics
+## [Attractors in LLMs](https://arxiv.org/pdf/2502.15208?) 
 
+### [Intro to Dynamical Systems Theory](https://content.csbs.utah.edu/~butner/systems/DynamicalSystemsIntro.html)
 _Understanding how meaning crystallizes in context fields_
 
 > “The essence of a system lies not in the elements themselves, but in the interrelations between them.”
