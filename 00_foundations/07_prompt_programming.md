@@ -71,7 +71,7 @@ The fundamental insight of prompt programming is treating cognitive operations a
 While both approaches can yield similar results, the prompt programming version:
 1. Makes parameters explicit
 2. Enables systematic variation of inputs
-3. Creates a reusable pattern for similar analyses
+3. Creates a reusable template for similar analyses
 4. Guides the model through a specific reasoning structure
 
 ## Cognitive Tools vs. Prompt Programming
