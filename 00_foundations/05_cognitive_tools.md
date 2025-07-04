@@ -460,7 +460,7 @@ This architecture can be implemented as a complete system using the tools and pa
 
 ## Key Takeaways
 
-1. **Prompt Programs** structure reasoning like human heuristics
+1. **Prompt Programs/Protocols** structure reasoning like human heuristics
 2. **Context Schemas** organize information like mental knowledge structures
 3. **Recursive Prompting** creates self-improvement loops similar to cognitive reflection
 4. **Cognitive Architecture** combines these tools into complete systems
