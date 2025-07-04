@@ -471,7 +471,7 @@ might be helpful in solving the problem.**
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=davidkimai/Context-Engineering&type=Timeline)](https://www.star-history.com/#davidkimai/Context-Engineering&Timeline)
+[![Star History Chart](https://api.star-history.com/svg?repos=davidkimai/Context-Engineering&type=Date)](https://www.star-history.com/#davidkimai/Context-Engineering&Date)
 
 ## Contributing
 
