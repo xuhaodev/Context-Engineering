@@ -7,9 +7,11 @@ Bringing You the Latest Research on Context With First Principles & Visuals — 
 
 ## [IBM Zurich](https://www.arxiv.org/pdf/2506.12115) | [Quantum Semantics](https://arxiv.org/pdf/2506.10077) | [ICML Princeton](https://openreview.net/forum?id=y1SnRPDWx4) | [MEM1 Singapore-MIT](https://arxiv.org/pdf/2506.15841) | [LLM Attractors Shanghai AI](https://arxiv.org/pdf/2502.15208?) 
 
-### [Intro to Dynamical Systems Theory](https://content.csbs.utah.edu/~butner/systems/DynamicalSystemsIntro.html) | [Columbia DST](http://wordpress.ei.columbia.edu/ac4/about/our-approach/dynamical-systems-theory/)
 
-## [DeepWiki Docs](https://deepwiki.com/davidkimai/Context-Engineering)
+## [New: Chat with NotebookLM + Podcast Deep Dive](https://notebooklm.google.com/notebook/0c6e4dc6-9c30-4f53-8e1a-05cc9ff3bc7e)
+
+## [DeepWiki Docs](https://deepwiki.com/davidkimai/Context-Engineering) 
+
 
 ## [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/davidkimai/Context-Engineering) 
 
@@ -22,7 +24,10 @@ Bringing You the Latest Research on Context With First Principles & Visuals — 
 > **"Context engineering is the delicate art and science of filling the context window with just the right information for the next step." — [**Andrej Karpathy**](https://x.com/karpathy/status/1937902205765607626)**
 
 <div align="center">
+
   
+ **[Dynamical Systems Theory Intro](https://content.csbs.utah.edu/~butner/systems/DynamicalSystemsIntro.html) | [Columbia DST](http://wordpress.ei.columbia.edu/ac4/about/our-approach/dynamical-systems-theory/)**
+
 
 https://github.com/user-attachments/assets/9f046259-e5ec-4160-8ed0-41a608d8adf3
 
