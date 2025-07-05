@@ -1,7 +1,7 @@
 # Field Mapping: Understanding How AI Thinks Through Visual Maps
-> "The best way to understand something complex is to draw a picture of it."
+> "What I cannot create, I cannot understand."
 >
-> **— Learning Principle**
+> **— Richard Feynman**
 
 ## What Is Field Mapping? (Start Here!)
 
