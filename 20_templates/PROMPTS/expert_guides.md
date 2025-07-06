@@ -706,3 +706,358 @@ Please provide technically sound advice that would be appropriate for my backgro
 
 ### Medical Information Expert
 
+```
+# Medical Information Consultation
+
+## Information Context
+I'm seeking evidence-based information about {{medical_topic}} for {{educational_purpose}}. This is for informational purposes only and not a substitute for professional medical advice.
+
+## Topic Background
+{{specific_aspects_of_medical_topic}} and how it relates to {{relevant_context}}.
+
+## Information Needs
+1. {{specific_medical_information_question_1}}
+2. {{specific_medical_information_question_2}}
+3. {{additional_questions_as_needed}}
+
+## Response Parameters
+- Evidence level: Please cite current medical understanding
+- Detail level: {{layperson_to_medical_professional}}
+- Context: Include relevant factors, limitations, and considerations
+- Clarity: Please explain medical terminology
+
+Please provide medically accurate information based on current scientific understanding, with appropriate context and explanations suitable for my background.
+```
+
+### Financial Guidance Expert
+
+```
+# Financial Information Consultation
+
+## Financial Context
+I'm seeking general information about {{financial_topic}} for educational purposes. This is for informational purposes only and not a substitute for professional financial advice.
+
+## Situation Overview
+{{your_financial_education_goal}} and how it relates to {{relevant_context}}.
+
+## Information Needs
+1. {{specific_financial_information_question_1}}
+2. {{specific_financial_information_question_2}}
+3. {{additional_questions_as_needed}}
+
+## Response Parameters
+- Evidence basis: Please reference general financial principles
+- Detail level: {{basic_to_sophisticated}}
+- Context: Include relevant considerations and limitations
+- Educational focus: Focus on helping me understand concepts, not specific recommendations
+
+Please provide financially sound educational information with appropriate context and explanations suitable for my learning goals.
+```
+
+### Legal Information Expert
+
+```
+# Legal Information Consultation
+
+## Information Context
+I'm seeking general information about {{legal_topic}} for educational purposes. This is for informational purposes only and not a substitute for professional legal advice.
+
+## Topic Background
+{{specific_aspects_of_legal_topic}} and how it relates to {{relevant_context}}.
+
+## Information Needs
+1. {{specific_legal_information_question_1}}
+2. {{specific_legal_information_question_2}}
+3. {{additional_questions_as_needed}}
+
+## Response Parameters
+- Evidence basis: Please reference general legal principles and common understanding
+- Detail level: {{general_overview_to_detailed_explanation}}
+- Jurisdictional notes: Mention if there are major jurisdictional differences
+- Educational focus: Focus on helping me understand concepts, not specific recommendations
+
+Please provide legally sound educational information with appropriate context and explanations suitable for my learning goals.
+```
+
+### Creative Expert
+
+```
+# Creative Expert Consultation: {{creative_field}}
+
+## Creative Context
+I'm working on {{creative_project}} in the field of {{creative_field}}. My experience level is {{your_creative_background}}.
+
+## Project Details
+{{detailed_description_of_creative_project_or_challenge}}
+
+## Creative Questions
+1. {{specific_creative_question_1}}
+2. {{specific_creative_question_2}}
+3. {{additional_questions_as_needed}}
+
+## Response Needs
+- Approach: {{practical_advice_or_conceptual_guidance}}
+- Examples: Please include relevant examples or references
+- Techniques: Specific methods or techniques that might help
+- Perspective: Creative insights that might expand my thinking
+- Development: How to take this to the next level
+
+Please provide creative guidance that combines practical techniques with inspirational direction, appropriate for my experience level and project needs.
+```
+
+### Business Strategy Expert
+
+```
+# Business Strategy Consultation
+
+## Business Context
+I'm working on {{business_challenge}} for {{company_type}} in the {{industry}} industry. The business is currently {{relevant_business_situation}}.
+
+## Strategic Situation
+{{detailed_description_of_business_situation_or_challenge}}
+
+## Strategy Questions
+1. {{specific_strategy_question_1}}
+2. {{specific_strategy_question_2}}
+3. {{additional_questions_as_needed}}
+
+## Response Needs
+- Strategic level: {{tactical_to_long_term}}
+- Market perspective: Include relevant market considerations
+- Approaches: Multiple potential strategies with pros and cons
+- Implementation: Practical considerations for execution
+- Metrics: How to measure success
+
+Please provide business strategy guidance that is practical, market-aware, and includes both strategic direction and implementation considerations.
+```
+
+### Research Methodology Expert
+
+```
+# Research Methodology Consultation
+
+## Research Context
+I'm conducting research on {{research_topic}} with the goal of {{research_purpose}}. My background in research methods is {{research_experience_level}}.
+
+## Research Situation
+{{detailed_description_of_research_project_or_challenge}}
+
+## Methodology Questions
+1. {{specific_methodology_question_1}}
+2. {{specific_methodology_question_2}}
+3. {{additional_questions_as_needed}}
+
+## Response Needs
+- Methodological approach: Recommend appropriate methods
+- Design considerations: Key factors for research design
+- Validity concerns: Potential threats and how to address them
+- Analysis techniques: Appropriate analytical approaches
+- Limitations: Important limitations to acknowledge
+
+Please provide methodologically sound research guidance that is rigorous yet practical for my experience level and research goals.
+```
+
+### UX/Design Expert
+
+```
+# UX/Design Expert Consultation
+
+## Design Context
+I'm working on {{design_project}} for {{target_audience}} with the goal of {{design_purpose}}. My design background is {{design_experience_level}}.
+
+## Project Details
+{{detailed_description_of_design_project_or_challenge}}
+
+## Design Questions
+1. {{specific_design_question_1}}
+2. {{specific_design_question_2}}
+3. {{additional_questions_as_needed}}
+
+## Response Needs
+- Design principles: Relevant principles for this challenge
+- User perspective: Insights from the user's point of view
+- Process guidance: Approach recommendations
+- Examples: Similar successful designs or approaches
+- Evaluation: How to test or evaluate the design
+
+Please provide design guidance that balances aesthetic considerations with user needs and practical implementation, appropriate for my experience level.
+```
+
+### Pedagogical Expert
+
+```
+# Teaching/Educational Expert Consultation
+
+## Educational Context
+I'm developing {{educational_content}} for {{learner_group}} with the goal of {{learning_objectives}}. My teaching/educational background is {{educational_experience_level}}.
+
+## Project Details
+{{detailed_description_of_educational_project_or_challenge}}
+
+## Pedagogical Questions
+1. {{specific_educational_question_1}}
+2. {{specific_educational_question_2}}
+3. {{additional_questions_as_needed}}
+
+## Response Needs
+- Learning principles: Relevant educational approaches
+- Engagement strategies: How to maintain interest and motivation
+- Assessment ideas: Ways to check understanding
+- Differentiation: Addressing diverse learning needs
+- Resources: Types of materials or activities to consider
+
+Please provide educational guidance that is evidence-based, learner-centered, and practical for implementation in my specific context.
+```
+
+## How to Choose the Right Expert Template
+
+Each expert template is designed for different needs. Here's a quick guide to help you select the most appropriate one:
+
+1. **Expert Consultation**: For broad advice from a subject matter expert in any field
+   - Best for: General guidance in a specific domain
+   - Example use: "What marketing strategy should I use for my small business?"
+
+2. **Specialized Knowledge Extraction**: For precise, technical information on specific topics
+   - Best for: Getting detailed, factual information in specialized domains
+   - Example use: "How does CRISPR-Cas9 gene editing technology work?"
+
+3. **Multi-Perspective Expert Panel**: For exploring different viewpoints on complex topics
+   - Best for: Understanding multiple sides of a complex issue
+   - Example use: "What are different approaches to addressing climate change?"
+
+4. **Expert Teaching/Explanation**: For learning complex topics through clear explanations
+   - Best for: Understanding difficult concepts through educational guidance
+   - Example use: "Explain quantum computing in a way I can understand"
+
+5. **Domain-Specific Expert Templates**: For guidance in common specialized fields
+   - Best for: Getting advice in specific professional domains
+   - Example use: "How should I structure my research methodology?"
+
+## Tips for Getting the Best Expert Guidance
+
+Regardless of which template you choose, these tips will help you get better results:
+
+1. **Be specific about your needs**: The more precise your request, the more tailored the guidance
+2. **Provide relevant context**: Background information helps experts understand your situation
+3. **Clarify your level of knowledge**: This helps ensure the response is at the right level
+4. **Ask focused questions**: Specific questions yield more useful answers than general ones
+5. **Request examples**: Concrete examples make abstract advice more actionable
+6. **Specify format preferences**: Mention if you prefer step-by-step guidance, comparisons, etc.
+7. **Indicate how you'll use the information**: This helps experts frame their response appropriately
+
+## Combining Expert Templates
+
+For complex needs, you can combine elements from different templates:
+
+### Expert Consultation + Multi-Perspective
+```
+# Expert Consultation with Multiple Perspectives: {{topic}}
+
+## Expert Profiles
+You are an experienced {{primary_expert_role}} with these additional perspectives:
+- {{perspective_1}} background with knowledge of {{specific_area_1}}
+- {{perspective_2}} background with knowledge of {{specific_area_2}}
+- {{perspective_3}} background with knowledge of {{specific_area_3}}
+
+## My Question/Request
+{{your_specific_question_or_request}}
+
+## Additional Context
+{{any_relevant_background_information}}
+
+## What I'm Looking For
+- Depth of detail: {{how_detailed_you_want_the_response}}
+- Focus areas: {{specific_aspects_to_focus_on}}
+- Multiple perspectives: Please address this from each perspective above
+- Synthesis: Conclude with integrated insights from all perspectives
+
+Please provide comprehensive expert guidance that incorporates these different viewpoints, highlighting both consensus and meaningful differences.
+```
+
+### Expert Teaching + Specialized Knowledge
+```
+# Expert Teaching with Technical Depth: {{topic}}
+
+## Learning Context
+I want to understand {{topic}} both conceptually and technically. My current knowledge level is {{your_background_knowledge}}.
+
+## Expert Profile
+You are both an exceptional teacher who makes complex concepts accessible and a technical specialist with deep expertise in {{topic}}.
+
+## Learning Request
+Please explain {{specific_concept_or_process}} in a way that:
+1. Starts with intuitive understanding and clear examples
+2. Progresses to more technical details and precision
+3. Includes both practical applications and theoretical foundations
+4. Addresses common misconceptions at both basic and advanced levels
+
+## Learning & Technical Parameters
+- Conceptual approach: {{preferred_learning_approach}}
+- Technical depth: {{technical_level_desired}}
+- Examples: {{types_of_examples_that_would_help}}
+- Technical details: {{specific_technical_elements_to_include}}
+
+Please create an explanation that builds from accessible foundations to technical precision while remaining engaging and clear throughout.
+```
+
+## Advanced Expert Template Customization
+
+For specialized needs, consider these advanced customization approaches:
+
+### Time Period Expert
+Specify expertise from a particular historical period:
+```
+# Historical Expert Consultation: {{time_period}}
+
+## Expert Profile
+You are a knowledgeable historian specializing in {{time_period}} ({{year_range}}) with particular expertise in {{specific_historical_focus}}. Your understanding reflects the historical context, available sources, and scholarly interpretations of this period.
+
+## Historical Inquiry
+{{your_specific_historical_question}}
+
+## Additional Context
+{{why_you're_asking_and_any_background}}
+
+## What I'm Looking For
+- Historical accuracy: Reflecting current scholarly understanding
+- Period context: Important contextual factors from this time
+- Source considerations: Types of evidence this is based on
+- Scholarly perspectives: Different interpretations where relevant
+
+Please provide historically informed guidance that avoids presentism while making this historical period and its implications accessible.
+```
+
+### Specialized Technical Expert
+For highly technical domains:
+```
+# Technical Specialist Consultation: {{technical_domain}}
+
+## Expert Profile
+You are a specialist with deep technical expertise in {{technical_domain}}, particularly {{specific_technical_area}}. You have practical experience with {{relevant_applications}} and understand both theoretical foundations and implementation challenges.
+
+## Technical Context
+{{your_technical_situation_or_question}}
+My technical background: {{your_technical_knowledge_level}}
+
+## Technical Requirements
+{{specific_technical_parameters_or_constraints}}
+
+## What I'm Looking For
+- Technical accuracy: Precise, current technical information
+- Depth: {{appropriate_technical_depth}}
+- Implementation focus: Practical considerations for real-world application
+- Trade-offs: Technical advantages and limitations of different approaches
+- Code or formulas: {{whether_you_want_technical_notation}}
+
+Please provide technically rigorous guidance suitable for my background level, balancing theoretical correctness with practical implementation considerations.
+```
+
+---
+
+## Conclusion
+
+Expert templates are powerful tools for accessing specialized knowledge and guidance across domains. By selecting the right template and customizing it to your specific needs, you can get highly relevant, actionable expert advice on virtually any topic.
+
+Remember that the quality of the response depends significantly on the clarity and specificity of your request. Take time to clearly articulate your needs, provide relevant context, and specify the type of guidance you're looking for.
+
+As you become more familiar with these templates, you'll develop an intuitive sense for which one is most appropriate for different situations and how to customize them for your specific needs.
