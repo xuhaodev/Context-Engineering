@@ -2,7 +2,6 @@
 
 ## Summary
 A streamlined template for creating minimal but effective context for AI systems, focusing on clarity and essential information.
-
 ## Context & Application
 Use this template when you need to provide just enough context for an AI system to perform effectively without unnecessary information. It establishes clear boundaries, expectations, and essential information in a structured format.
 
