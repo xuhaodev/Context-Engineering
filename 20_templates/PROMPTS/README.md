@@ -6,7 +6,7 @@
 
 Welcome to **PROMPTS**, a library of carefully crafted templates designed to help you accomplish your goals through effective AI interaction. Unlike traditional prompt collections, these templates are organized around what you're trying to achieve, not technical patterns or domains.
 
-This library is based on extensive research into human-AI interaction patterns, designed to bridge the gap between frontier AI capabilities and practical everyday use. Each template embodies principles from context engineering while remaining accessible and immediately useful.
+This library is based on extensive research into human-AI interactions, designed to bridge the gap between frontier AI capabilities and practical everyday use. Each template embodies principles from context engineering while remaining accessible and immediately useful.
 
 ## How to Use This Library
 
