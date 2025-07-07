@@ -4,6 +4,141 @@ This document provides a comprehensive framework of cognitive tools, protocol sh
 
 ## 1. Core Meta-Cognitive Framework
 
+## Context Schemas
+
+### Code Understanding Schema
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Code Understanding Schema",
+  "description": "Standardized format for analyzing and understanding code",
+  "type": "object",
+  "properties": {
+    "codebase": {
+      "type": "object",
+      "properties": {
+        "structure": {
+          "type": "array",
+          "description": "Key files and directories with their purposes"
+        },
+        "architecture": {
+          "type": "string",
+          "description": "Overall architectural pattern"
+        },
+        "technologies": {
+          "type": "array",
+          "description": "Key technologies, frameworks, and libraries"
+        }
+      }
+    },
+    "functionality": {
+      "type": "object",
+      "properties": {
+        "entry_points": {
+          "type": "array",
+          "description": "Main entry points to the application"
+        },
+        "core_workflows": {
+          "type": "array",
+          "description": "Primary functional flows"
+        },
+        "data_flow": {
+          "type": "string",
+          "description": "How data moves through the system"
+        }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "properties": {
+        "strengths": {
+          "type": "array",
+          "description": "Well-designed aspects"
+        },
+        "concerns": {
+          "type": "array",
+          "description": "Potential issues or areas for improvement"
+        },
+        "patterns": {
+          "type": "array",
+          "description": "Recurring design patterns"
+        }
+      }
+    }
+  }
+}
+```
+
+### Troubleshooting Schema
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Troubleshooting Schema",
+  "description": "Framework for systematic problem diagnosis and resolution",
+  "type": "object",
+  "properties": {
+    "problem": {
+      "type": "object",
+      "properties": {
+        "symptoms": {
+          "type": "array",
+          "description": "Observable issues"
+        },
+        "context": {
+          "type": "string",
+          "description": "When and how the problem occurs"
+        },
+        "impact": {
+          "type": "string",
+          "description": "Severity and scope of the issue"
+        }
+      }
+    },
+    "diagnosis": {
+      "type": "object",
+      "properties": {
+        "potential_causes": {
+          "type": "array",
+          "description": "Possible root causes"
+        },
+        "evidence": {
+          "type": "array",
+          "description": "Supporting information for each cause"
+        },
+        "verification_steps": {
+          "type": "array",
+          "description": "How to confirm each potential cause"
+        }
+      }
+    },
+    "solution": {
+      "type": "object",
+      "properties": {
+        "approach": {
+          "type": "string",
+          "description": "Overall strategy"
+        },
+        "steps": {
+          "type": "array",
+          "description": "Specific actions to take"
+        },
+        "verification": {
+          "type": "string",
+          "description": "How to confirm the solution worked"
+        },
+        "prevention": {
+          "type": "string",
+          "description": "How to prevent future occurrences"
+        }
+      }
+    }
+  }
+}
+```
+
+
 ### Reasoning Protocols
 
 ```
