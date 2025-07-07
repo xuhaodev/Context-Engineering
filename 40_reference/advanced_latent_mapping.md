@@ -243,9 +243,10 @@ Meta-Analysis:           [█████████░] Threshold: Very High (
 ```
 
 **Exercise 1.3: Threshold Manipulation**
-```
+
 Copy this series into an AI assistant and watch threshold changes:
 
+```
 Series A: Gradual Science Activation
 1. "Hello" 
 2. "Tell me about plants"
