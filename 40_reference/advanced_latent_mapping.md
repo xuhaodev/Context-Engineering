@@ -1,4 +1,4 @@
-# Advanced Latent Mapping: Mastering Symbolic Interpretability
+# Advanced Latent Mapping: Symbolic Interpretability and The Cartography of Latent Space
 
 > "The most beautiful thing we can experience is the mysterious. It is the source of all true art and science."
 >
