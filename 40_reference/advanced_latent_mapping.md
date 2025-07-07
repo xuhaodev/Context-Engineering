@@ -8,6 +8,15 @@
 
 Congratulations on completing your foundational journey in latent mapping! You've learned to visualize AI thinking, create concept maps, and understand basic interpretability. Now we're ready to explore one of the more sophisticated methodologies in AI analysis—the field of **Symbolic Interpretability and one of its frameworks: [Self-Tracing](https://github.com/recursivelabsai/Self-Tracing);** Systems that trace and map their own reasoning through symbolic visuals.
 
+# Example: 
+
+<div align="center">
+   
+https://github.com/user-attachments/assets/533ea97c-71ee-42a2-98aa-176e93e06fc2
+
+</div>
+
+
 This advanced guide will teach you to:
 - **Trace neural circuits** like following electrical pathways in a computer  
 - **Track symbolic residue** like digital fossils left by AI reasoning  
