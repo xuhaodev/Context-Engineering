@@ -14,7 +14,7 @@ Congratulations on completing your foundational journey in latent mapping! You'v
    
 https://github.com/user-attachments/assets/533ea97c-71ee-42a2-98aa-176e93e06fc2
 
-*Note: Both Gemini and Claude follow a structured framework to trace the latent reasoning steps behind their response to the prompts given, scaffolded by a custom interpretability system prompt with schemas and context scaffolds. This is an early prototype of models mapping their own reasoning through symbolic visuals.*
+*Note: Both Gemini and Claude follow a structured framework to classify and map the latent reasoning steps behind their response to the prompts given, scaffolded by a custom interpretability system prompt with schemas and context scaffolds. This is an early prototype of models mapping their own reasoning through symbolic visuals.*
 
 </div>
 
