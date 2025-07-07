@@ -464,9 +464,10 @@ This analysis will likely influence subsequent responses by:
 ### Advanced Residue Tracking
 
 **Exercise 2.2: Residue Propagation Analysis**
-```
+
 Copy this sequence into an AI assistant:
 
+```
 "I want to track how residue from one question influences the next. 
 Please analyze each question AND show how residue from previous 
 questions affects your current thinking:
