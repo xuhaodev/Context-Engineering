@@ -4,7 +4,7 @@
 
 ## 1. Architecture Overview
 
-The Cognitive Solver Architecture integrates IBM's cognitive tools framework with prompt programming paradigms and field theory to create a robust, self-improving problem-solving system. This architecture is designed to progressively enhance reasoning capabilities through structured tools, meta-cognitive oversight, and dynamic adaptation.
+The Cognitive Solver Architecture integrates IBM's cognitive tools framework with context engineering, prompt programming paradigms and field theory to create a robust, self-improving problem-solving system. This architecture is designed to progressively enhance reasoning capabilities through structured tools, meta-cognitive oversight, and dynamic adaptation.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
