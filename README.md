@@ -26,7 +26,7 @@ Bringing You the Latest Practical Tools, Guides, and Research on Context With Fi
 <div align="center">
 
   
- **[Dynamical Systems Theory Intro](https://content.csbs.utah.edu/~butner/systems/DynamicalSystemsIntro.html) | [Columbia DST](http://wordpress.ei.columbia.edu/ac4/about/our-approach/dynamical-systems-theory/)**
+ **[On Emergence, Attractors, and Dynamical Systems Theory](https://content.csbs.utah.edu/~butner/systems/DynamicalSystemsIntro.html) | [Columbia DST](http://wordpress.ei.columbia.edu/ac4/about/our-approach/dynamical-systems-theory/)**
 
 
 https://github.com/user-attachments/assets/9f046259-e5ec-4160-8ed0-41a608d8adf3
