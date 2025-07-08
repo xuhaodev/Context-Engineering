@@ -1,9 +1,9 @@
-# Enhanced Cognitive Solver Architecture
+# Cognitive Solver Architecture
 
 > "To solve a difficult problem, first make it a simpler problem, and then solve that simpler problem." — George Pólya
 ## 1. Architecture Overview
 
-The Enhanced Cognitive Solver Architecture integrates IBM's cognitive tools framework with prompt programming paradigms and field theory to create a robust, self-improving problem-solving system. This architecture is designed to progressively enhance reasoning capabilities through structured tools, meta-cognitive oversight, and dynamic adaptation.
+The Cognitive Solver Architecture integrates IBM's cognitive tools framework with prompt programming paradigms and field theory to create a robust, self-improving problem-solving system. This architecture is designed to progressively enhance reasoning capabilities through structured tools, meta-cognitive oversight, and dynamic adaptation.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
