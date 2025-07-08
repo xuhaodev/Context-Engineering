@@ -2679,4 +2679,4 @@ By building on the foundations of context engineering and extending them into th
 
 4. Singapore-MIT (2025): "MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents." arXiv preprint arXiv:2506.15841.
 
-5. Context Engineering Contributors (2024): "Context-Engineering: From Atoms to Neural Fields." https://github.com/davidkimai/context-engineering
+5. Context Engineering Contributors (2025): "Context-Engineering: From Atoms to Neural Fields." https://github.com/davidkimai/context-engineering
