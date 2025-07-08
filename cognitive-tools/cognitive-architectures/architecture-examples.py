@@ -3096,4 +3096,777 @@ class ResearchSynthesisModel:
         model_results = protocol.execute()
         
         # Store the theoretical model
-       
+        model_id = generate_id()
+        self.theory_models[model_id] = {
+            "model": model_results.get("theoretical_model", "Theoretical model"),
+            "core_concepts": model_results.get("core_concepts", []),
+            "relationships": model_results.get("relationships", []),
+            "explanatory_power": model_results.get("explanatory_power", "medium"),
+            "falsifiability": model_results.get("falsifiability", []),
+            "novelty": model_results.get("novelty", ""),
+            "implications": model_results.get("implications", []),
+            "synthesis_ids": synthesis_ids,
+            "type": model_type,
+            "timestamp": get_current_timestamp()
+        }
+        
+        return {
+            "model_id": model_id,
+            "theoretical_model": self.theory_models[model_id]
+        }
+
+class ResearchCommunicationModel:
+    """Implementation of research communication capabilities."""
+    
+    def __init__(self):
+        """Initialize the research communication model."""
+        self.communications = {}
+        self.narratives = {}
+        self.visualizations = {}
+        self.communication_trajectories = []
+    
+    def develop_research_narrative(self, knowledge_field: ResearchKnowledgeField, synthesis_id: str,
+                                 audience: str = "academic", narrative_type: str = "article") -> Dict[str, Any]:
+        """
+        Develop research narrative from synthesis.
+        
+        Args:
+            knowledge_field: Research knowledge field
+            synthesis_id: ID of the synthesis to communicate
+            audience: Target audience
+            narrative_type: Type of narrative to develop
+            
+        Returns:
+            dict: Research narrative
+        """
+        # Retrieve synthesis
+        if synthesis_id not in self.synthesis_model.syntheses:
+            raise ValueError(f"Synthesis ID {synthesis_id} not found")
+        synthesis = self.synthesis_model.syntheses[synthesis_id]
+        
+        # Protocol shell for narrative development
+        protocol = ProtocolShell(
+            intent="Develop compelling research narrative from synthesis",
+            input_params={
+                "knowledge_field": "field_state",
+                "synthesis": synthesis,
+                "audience": audience,
+                "narrative_type": narrative_type
+            },
+            process_steps=[
+                {"action": "structure", "description": "Organize content into narrative flow"},
+                {"action": "frame", "description": "Establish framing and significance"},
+                {"action": "develop", "description": "Elaborate key points with evidence"},
+                {"action": "connect", "description": "Create narrative connections"},
+                {"action": "refine", "description": "Enhance clarity and engagement"}
+            ],
+            output_spec={
+                "narrative": "Complete research narrative",
+                "structure": "Organizational structure",
+                "key_points": "Central arguments and findings",
+                "evidence_integration": "How evidence supports narrative",
+                "framing": "Contextual framing of research",
+                "significance": "Articulation of importance and implications"
+            }
+        )
+        
+        # Execute protocol
+        narrative_results = protocol.execute()
+        
+        # Store the narrative
+        narrative_id = generate_id()
+        self.narratives[narrative_id] = {
+            "narrative": narrative_results.get("narrative", "Research narrative"),
+            "structure": narrative_results.get("structure", {}),
+            "key_points": narrative_results.get("key_points", []),
+            "evidence_integration": narrative_results.get("evidence_integration", {}),
+            "framing": narrative_results.get("framing", ""),
+            "significance": narrative_results.get("significance", ""),
+            "synthesis_id": synthesis_id,
+            "audience": audience,
+            "type": narrative_type,
+            "timestamp": get_current_timestamp()
+        }
+        
+        return {
+            "narrative_id": narrative_id,
+            "narrative": self.narratives[narrative_id]
+        }
+    
+    def create_research_visualization(self, knowledge_field: ResearchKnowledgeField, data: Dict[str, Any],
+                                   visualization_type: str = "conceptual", purpose: str = "explanation") -> Dict[str, Any]:
+        """
+        Create research visualization.
+        
+        Args:
+            knowledge_field: Research knowledge field
+            data: Data to visualize
+            visualization_type: Type of visualization
+            purpose: Purpose of visualization
+            
+        Returns:
+            dict: Research visualization
+        """
+        # Protocol shell for visualization creation
+        protocol = ProtocolShell(
+            intent="Create effective research visualization",
+            input_params={
+                "knowledge_field": "field_state",
+                "data": data,
+                "visualization_type": visualization_type,
+                "purpose": purpose
+            },
+            process_steps=[
+                {"action": "analyze", "description": "Determine appropriate visualization approach"},
+                {"action": "structure", "description": "Organize visual elements for clarity"},
+                {"action": "design", "description": "Create visualization with appropriate elements"},
+                {"action": "annotate", "description": "Add necessary context and explanation"},
+                {"action": "evaluate", "description": "Assess effectiveness and clarity"}
+            ],
+            output_spec={
+                "visualization": "Complete visualization specification",
+                "design_rationale": "Justification for design choices",
+                "key_insights": "Central insights conveyed",
+                "interpretation_guide": "How to interpret the visualization",
+                "limitations": "Limitations of the visualization"
+            }
+        )
+        
+        # Execute protocol
+        visualization_results = protocol.execute()
+        
+        # Store the visualization
+        visualization_id = generate_id()
+        self.visualizations[visualization_id] = {
+            "visualization": visualization_results.get("visualization", {}),
+            "design_rationale": visualization_results.get("design_rationale", ""),
+            "key_insights": visualization_results.get("key_insights", []),
+            "interpretation_guide": visualization_results.get("interpretation_guide", ""),
+            "limitations": visualization_results.get("limitations", []),
+            "data": data,
+            "type": visualization_type,
+            "purpose": purpose,
+            "timestamp": get_current_timestamp()
+        }
+        
+        return {
+            "visualization_id": visualization_id,
+            "visualization": self.visualizations[visualization_id]
+        }
+
+class ResearchArchitecture:
+    """Complete implementation of the Research Architecture."""
+    
+    def __init__(self, domain: str = "general"):
+        """
+        Initialize the research architecture.
+        
+        Args:
+            domain: Research domain
+        """
+        self.knowledge_field = ResearchKnowledgeField(domain=domain)
+        self.inquiry_model = ResearchInquiryModel()
+        self.synthesis_model = ResearchSynthesisModel()
+        self.communication_model = ResearchCommunicationModel()
+        self.session_history = []
+        
+        # Establish references between models
+        self.synthesis_model.inquiry_model = self.inquiry_model
+        self.communication_model.synthesis_model = self.synthesis_model
+    
+    def initialize_literature(self, papers: List[Dict[str, Any]]):
+        """
+        Initialize knowledge field with research literature.
+        
+        Args:
+            papers: Research papers to add
+        """
+        self.knowledge_field.add_literature(papers)
+    
+    def conduct_literature_review(self, research_question: str, depth: str = "comprehensive") -> Dict[str, Any]:
+        """
+        Conduct a literature review on a research question.
+        
+        Args:
+            research_question: The research question
+            depth: Depth of the literature review
+            
+        Returns:
+            dict: Literature review results
+        """
+        # Extract domain from research question (simplified)
+        domain = self.knowledge_field.domain
+        
+        # Create a session record
+        session = {
+            "type": "literature_review",
+            "research_question": research_question,
+            "depth": depth,
+            "steps": [],
+            "results": {},
+            "field_updates": {}
+        }
+        
+        # Step 1: Search for relevant literature
+        search_results = {
+            "query": research_question,
+            "domain": domain,
+            "sources": list(self.knowledge_field.literature.values())
+        }
+        session["steps"].append({
+            "step": "search",
+            "results": {
+                "sources_found": len(search_results["sources"])
+            }
+        })
+        
+        # Step 2: Screen sources for relevance
+        # Simulate screening by randomly selecting a subset
+        screened_sources = random.sample(
+            search_results["sources"], 
+            min(len(search_results["sources"]), 5)
+        )
+        session["steps"].append({
+            "step": "screen",
+            "results": {
+                "sources_screened": len(screened_sources)
+            }
+        })
+        
+        # Step 3: Extract information from sources
+        extracted_information = []
+        for source in screened_sources:
+            # Simulate information extraction
+            extracted_info = {
+                "source_id": source.get("id", "unknown"),
+                "key_findings": ["finding 1", "finding 2"],
+                "methodology": "research methodology",
+                "limitations": ["limitation 1"]
+            }
+            extracted_information.append(extracted_info)
+        
+        session["steps"].append({
+            "step": "extract",
+            "results": {
+                "information_extracted": len(extracted_information)
+            }
+        })
+        
+        # Step 4: Analyze patterns across sources
+        analysis_results = {
+            "themes": ["theme 1", "theme 2"],
+            "methodologies": ["methodology 1", "methodology 2"],
+            "timeline": ["development 1", "development 2"],
+            "contradictions": ["contradiction 1"] if random.random() < 0.3 else []
+        }
+        session["steps"].append({
+            "step": "analyze",
+            "results": {
+                "themes_identified": len(analysis_results["themes"]),
+                "contradictions_found": len(analysis_results["contradictions"])
+            }
+        })
+        
+        # Step 5: Synthesize findings
+        synthesis_results = {
+            "narrative": "Synthesis of literature findings...",
+            "framework": {
+                "components": ["component 1", "component 2"],
+                "relationships": ["relationship 1"]
+            }
+        }
+        session["steps"].append({
+            "step": "synthesize",
+            "results": {
+                "synthesis_completed": True
+            }
+        })
+        
+        # Step 6: Identify gaps
+        gap_results = {
+            "gaps": ["gap 1", "gap 2"] if random.random() < 0.8 else [],
+            "contradictions": analysis_results["contradictions"],
+            "future_directions": ["direction 1", "direction 2"]
+        }
+        session["steps"].append({
+            "step": "identify_gaps",
+            "results": {
+                "gaps_identified": len(gap_results["gaps"]),
+                "future_directions": len(gap_results["future_directions"])
+            }
+        })
+        
+        # Compile literature review results
+        review_results = {
+            "literature_summary": synthesis_results["narrative"],
+            "thematic_analysis": analysis_results["themes"],
+            "methodological_assessment": analysis_results["methodologies"],
+            "chronological_development": analysis_results["timeline"],
+            "conceptual_framework": synthesis_results["framework"],
+            "gaps": gap_results["gaps"],
+            "contradictions": gap_results["contradictions"],
+            "future_directions": gap_results["future_directions"],
+            "sources": [s.get("id", "unknown") for s in screened_sources]
+        }
+        
+        # Update session with results
+        session["results"] = review_results
+        
+        # Add gaps to knowledge field
+        for gap in gap_results["gaps"]:
+            if gap not in self.knowledge_field.gaps:
+                self.knowledge_field.gaps.append(gap)
+        
+        # Record field updates
+        session["field_updates"] = {
+            "gaps_added": len(gap_results["gaps"]),
+            "contradictions_added": len(gap_results["contradictions"])
+        }
+        
+        # Add to session history
+        self.session_history.append(session)
+        
+        return review_results
+    
+    def develop_research_idea(self, research_interest: str, 
+                            constraints: Dict[str, Any] = None) -> Dict[str, Any]:
+        """
+        Develop a complete research idea from interest area.
+        
+        Args:
+            research_interest: Research interest area
+            constraints: Optional constraints
+            
+        Returns:
+            dict: Complete research idea
+        """
+        # Create a session record
+        session = {
+            "type": "research_idea_development",
+            "research_interest": research_interest,
+            "constraints": constraints,
+            "steps": [],
+            "results": {},
+            "field_updates": {}
+        }
+        
+        # Step 1: Identify research opportunities
+        opportunities = self.knowledge_field.identify_research_opportunities(
+            research_interests=[research_interest],
+            constraints=constraints
+        )
+        session["steps"].append({
+            "step": "identify_opportunities",
+            "results": {
+                "opportunities_identified": len(opportunities)
+            }
+        })
+        
+        # Select the best opportunity (simplified)
+        selected_opportunity = opportunities[0] if opportunities else {
+            "id": generate_id(),
+            "title": f"Research opportunity related to {research_interest}",
+            "description": "Default opportunity"
+        }
+        
+        # Step 2: Develop research question
+        question_result = self.inquiry_model.develop_research_question(
+            knowledge_field=self.knowledge_field,
+            research_interest=selected_opportunity["title"],
+            constraints=constraints
+        )
+        session["steps"].append({
+            "step": "develop_question",
+            "results": {
+                "question_id": question_result["question_id"]
+            }
+        })
+        
+        # Step 3: Develop hypothesis
+        hypothesis_result = self.inquiry_model.develop_hypothesis(
+            knowledge_field=self.knowledge_field,
+            research_question_id=question_result["question_id"]
+        )
+        session["steps"].append({
+            "step": "develop_hypothesis",
+            "results": {
+                "hypothesis_id": hypothesis_result["hypothesis_id"]
+            }
+        })
+        
+        # Step 4: Create preliminary research design
+        research_design = {
+            "design_type": "experimental",
+            "participants": {
+                "sample_size": random.randint(30, 200),
+                "characteristics": "target population"
+            },
+            "procedures": ["procedure 1", "procedure 2"],
+            "measures": ["measure 1", "measure 2"],
+            "analysis_plan": "statistical analysis approach"
+        }
+        session["steps"].append({
+            "step": "create_research_design",
+            "results": {
+                "design_type": research_design["design_type"]
+            }
+        })
+        
+        # Compile research idea results
+        idea_results = {
+            "research_question": question_result["question"],
+            "hypothesis": hypothesis_result["hypothesis"],
+            "research_design": research_design,
+            "opportunity": selected_opportunity
+        }
+        
+        # Update session with results
+        session["results"] = idea_results
+        
+        # Add to session history
+        self.session_history.append(session)
+        
+        return idea_results
+    
+    def analyze_interdisciplinary_potential(self, primary_domain: str, 
+                                         secondary_domains: List[str]) -> Dict[str, Any]:
+        """
+        Analyze potential for interdisciplinary research.
+        
+        Args:
+            primary_domain: Primary research domain
+            secondary_domains: Secondary domains to consider
+            
+        Returns:
+            dict: Interdisciplinary analysis
+        """
+        # Create a session record
+        session = {
+            "type": "interdisciplinary_analysis",
+            "primary_domain": primary_domain,
+            "secondary_domains": secondary_domains,
+            "steps": [],
+            "results": {},
+            "field_updates": {}
+        }
+        
+        # Step 1: Analyze domain characteristics
+        domain_characteristics = {}
+        for domain in [primary_domain] + secondary_domains:
+            # Simulate domain analysis
+            characteristics = {
+                "key_concepts": [f"{domain} concept 1", f"{domain} concept 2"],
+                "methodologies": [f"{domain} methodology 1", f"{domain} methodology 2"],
+                "theoretical_frameworks": [f"{domain} framework 1", f"{domain} framework 2"]
+            }
+            domain_characteristics[domain] = characteristics
+        
+        session["steps"].append({
+            "step": "analyze_domains",
+            "results": {
+                "domains_analyzed": len(domain_characteristics)
+            }
+        })
+        
+        # Step 2: Identify potential integration points
+        integration_points = []
+        for secondary_domain in secondary_domains:
+            # Simulate integration points
+            integration_point = {
+                "domains": [primary_domain, secondary_domain],
+                "conceptual_bridges": [f"Bridge between {primary_domain} and {secondary_domain}"],
+                "methodological_synergies": [f"Synergy between methodologies"],
+                "theoretical_integrations": [f"Integration of theories"]
+            }
+            integration_points.append(integration_point)
+        
+        session["steps"].append({
+            "step": "identify_integration",
+            "results": {
+                "integration_points": len(integration_points)
+            }
+        })
+        
+        # Step 3: Evaluate research potential
+        research_potential = []
+        for integration_point in integration_points:
+            # Simulate research potential
+            potential = {
+                "integration_point": integration_point,
+                "research_questions": [f"Interdisciplinary question 1", f"Interdisciplinary question 2"],
+                "novelty": random.uniform(0.6, 0.9),
+                "feasibility": random.uniform(0.4, 0.8),
+                "impact": random.uniform(0.5, 0.95)
+            }
+            research_potential.append(potential)
+        
+        session["steps"].append({
+            "step": "evaluate_potential",
+            "results": {
+                "potential_areas": len(research_potential)
+            }
+        })
+        
+        # Step 4: Identify challenges and strategies
+        challenges_strategies = {
+            "conceptual_challenges": ["Challenge 1", "Challenge 2"],
+            "methodological_challenges": ["Methodological challenge 1"],
+            "practical_challenges": ["Practical challenge 1"],
+            "mitigation_strategies": ["Strategy 1", "Strategy 2"]
+        }
+        
+        session["steps"].append({
+            "step": "identify_challenges",
+            "results": {
+                "challenges": len(challenges_strategies["conceptual_challenges"]) + 
+                            len(challenges_strategies["methodological_challenges"]) + 
+                            len(challenges_strategies["practical_challenges"]),
+                "strategies": len(challenges_strategies["mitigation_strategies"])
+            }
+        })
+        
+        # Compile interdisciplinary analysis results
+        analysis_results = {
+            "domain_characteristics": domain_characteristics,
+            "integration_points": integration_points,
+            "research_potential": research_potential,
+            "challenges_strategies": challenges_strategies,
+            "recommended_approach": "Recommended interdisciplinary approach"
+        }
+        
+        # Update session with results
+        session["results"] = analysis_results
+        
+        # Add to session history
+        self.session_history.append(session)
+        
+        return analysis_results
+    
+    def visualize_research_process(self, session_index: int = -1) -> plt.Figure:
+        """
+        Visualize the research process from a session.
+        
+        Args:
+            session_index: Index of session to visualize
+            
+        Returns:
+            matplotlib.figure.Figure: Visualization figure
+        """
+        # Get the specified session
+        if not self.session_history:
+            raise ValueError("No research sessions available for visualization")
+        
+        session = self.session_history[session_index]
+        session_type = session.get("type", "unknown")
+        
+        # Create a figure with 2x2 subplots
+        fig, axs = plt.subplots(2, 2, figsize=(15, 12))
+        fig.suptitle(f"Research Process: {session_type.replace('_', ' ').title()}", fontsize=16)
+        
+        # Plot 1: Process steps visualization (top left)
+        steps = session.get("steps", [])
+        if steps:
+            # Create a flow diagram of steps
+            G = nx.DiGraph()
+            
+            # Add step nodes
+            for i, step in enumerate(steps):
+                step_name = step.get("step", f"Step {i+1}")
+                G.add_node(step_name, pos=(i, 0))
+                
+                # Connect steps
+                if i > 0:
+                    prev_step = steps[i-1].get("step", f"Step {i}")
+                    G.add_edge(prev_step, step_name)
+            
+            # Draw the graph
+            pos = nx.get_node_attributes(G, 'pos')
+            nx.draw(G, pos, with_labels=True, node_size=2000, node_color='lightblue', 
+                   font_size=10, font_weight='bold', ax=axs[0, 0])
+            
+            # Add result annotations
+            for i, step in enumerate(steps):
+                step_name = step.get("step", f"Step {i+1}")
+                results = step.get("results", {})
+                
+                # Create result text
+                result_text = "\n".join([f"{k}: {v}" for k, v in results.items()])
+                
+                # Add annotation
+                axs[0, 0].annotate(result_text, xy=(i, -0.3), xycoords='data',
+                                 fontsize=8, ha='center', va='top')
+            
+            axs[0, 0].set_title("Research Process Steps")
+        else:
+            axs[0, 0].text(0.5, 0.5, "No process steps available", 
+                          ha='center', va='center', fontsize=12)
+        
+        # Plot 2: Research content visualization (top right)
+        if session_type == "literature_review":
+            # Visualize literature review results
+            results = session.get("results", {})
+            
+            if results:
+                # Create a mind map style visualization of themes and gaps
+                G = nx.Graph()
+                
+                # Add central node
+                central_topic = "Literature Review"
+                G.add_node(central_topic, pos=(0, 0))
+                
+                # Add theme nodes
+                themes = results.get("thematic_analysis", [])
+                for i, theme in enumerate(themes):
+                    angle = i * 2 * np.pi / len(themes)
+                    x = 1.5 * np.cos(angle)
+                    y = 1.5 * np.sin(angle)
+                    G.add_node(f"Theme: {theme}", pos=(x, y))
+                    G.add_edge(central_topic, f"Theme: {theme}")
+                
+                # Add gap nodes
+                gaps = results.get("gaps", [])
+                for i, gap in enumerate(gaps):
+                    angle = i * 2 * np.pi / len(gaps) if gaps else 0
+                    x = 3 * np.cos(angle)
+                    y = 3 * np.sin(angle)
+                    G.add_node(f"Gap: {gap}", pos=(x, y))
+                    
+                    # Connect to most relevant theme (simplified)
+                    if themes:
+                        theme_index = i % len(themes)
+                        theme = themes[theme_index]
+                        G.add_edge(f"Theme: {theme}", f"Gap: {gap}")
+                
+                # Draw the graph
+                pos = nx.get_node_attributes(G, 'pos')
+                
+                # Draw with different colors for different node types
+                theme_nodes = [n for n in G.nodes if "Theme" in n]
+                gap_nodes = [n for n in G.nodes if "Gap" in n]
+                
+                nx.draw_networkx_nodes(G, pos, nodelist=[central_topic], 
+                                     node_color='lightgreen', node_size=3000, ax=axs[0, 1])
+                nx.draw_networkx_nodes(G, pos, nodelist=theme_nodes, 
+                                     node_color='lightblue', node_size=2000, ax=axs[0, 1])
+                nx.draw_networkx_nodes(G, pos, nodelist=gap_nodes, 
+                                     node_color='salmon', node_size=1500, ax=axs[0, 1])
+                
+                nx.draw_networkx_edges(G, pos, ax=axs[0, 1])
+                nx.draw_networkx_labels(G, pos, font_size=8, font_weight='bold', ax=axs[0, 1])
+                
+                axs[0, 1].set_title("Literature Review Content Map")
+            else:
+                axs[0, 1].text(0.5, 0.5, "No literature review results available", 
+                              ha='center', va='center', fontsize=12)
+                
+        elif session_type == "research_idea_development":
+            # Visualize research idea
+            results = session.get("results", {})
+            
+            if results:
+                # Create a hierarchical diagram of research components
+                G = nx.DiGraph()
+                
+                # Add central node for research question
+                research_question = results.get("research_question", {}).get("question", "Research Question")
+                G.add_node("Research Question", pos=(0, 0))
+                
+                # Add hypothesis
+                hypothesis = results.get("hypothesis", {}).get("hypothesis", "Hypothesis")
+                G.add_node("Hypothesis", pos=(0, -1))
+                G.add_edge("Research Question", "Hypothesis")
+                
+                # Add research design components
+                design = results.get("research_design", {})
+                
+                # Add design type
+                design_type = design.get("design_type", "Design Type")
+                G.add_node(f"Design: {design_type}", pos=(-2, -2))
+                G.add_edge("Hypothesis", f"Design: {design_type}")
+                
+                # Add participants
+                participants = design.get("participants", {})
+                sample_size = participants.get("sample_size", "N/A")
+                G.add_node(f"Participants: n={sample_size}", pos=(-1, -2))
+                G.add_edge("Hypothesis", f"Participants: n={sample_size}")
+                
+                # Add measures
+                measures = design.get("measures", [])
+                for i, measure in enumerate(measures):
+                    G.add_node(f"Measure: {measure}", pos=(1 + i*0.5, -2))
+                    G.add_edge("Hypothesis", f"Measure: {measure}")
+                
+                # Add analysis
+                analysis = design.get("analysis_plan", "Analysis Plan")
+                G.add_node(f"Analysis: {analysis}", pos=(3, -2))
+                G.add_edge("Hypothesis", f"Analysis: {analysis}")
+                
+                # Draw the graph
+                pos = nx.get_node_attributes(G, 'pos')
+                nx.draw(G, pos, with_labels=True, node_size=2000, node_color='lightgreen', 
+                       font_size=8, font_weight='bold', ax=axs[0, 1])
+                
+                axs[0, 1].set_title("Research Idea Components")
+            else:
+                axs[0, 1].text(0.5, 0.5, "No research idea results available", 
+                              ha='center', va='center', fontsize=12)
+        
+        elif session_type == "interdisciplinary_analysis":
+            # Visualize interdisciplinary connections
+            results = session.get("results", {})
+            
+            if results:
+                # Create a network diagram of domain connections
+                G = nx.Graph()
+                
+                # Add domain nodes
+                primary_domain = session.get("primary_domain", "Primary")
+                secondary_domains = session.get("secondary_domains", [])
+                
+                # Add primary domain at center
+                G.add_node(primary_domain, pos=(0, 0))
+                
+                # Add secondary domains around it
+                for i, domain in enumerate(secondary_domains):
+                    angle = i * 2 * np.pi / len(secondary_domains)
+                    x = 2 * np.cos(angle)
+                    y = 2 * np.sin(angle)
+                    G.add_node(domain, pos=(x, y))
+                    G.add_edge(primary_domain, domain)
+                
+                # Add integration points
+                integration_points = results.get("integration_points", [])
+                for i, point in enumerate(integration_points):
+                    domains = point.get("domains", [])
+                    if len(domains) >= 2:
+                        # Add edge label for integration
+                        bridges = point.get("conceptual_bridges", [])
+                        if bridges:
+                            # Use first bridge as edge label
+                            edge_label = {(domains[0], domains[1]): bridges[0][:20] + "..."}
+                            nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_label, 
+                                                      font_size=8, ax=axs[0, 1])
+                
+                # Draw the graph
+                pos = nx.get_node_attributes(G, 'pos')
+                
+                # Draw nodes with different colors for primary vs secondary
+                nx.draw_networkx_nodes(G, pos, nodelist=[primary_domain], 
+                                     node_color='gold', node_size=3000, ax=axs[0, 1])
+                nx.draw_networkx_nodes(G, pos, nodelist=secondary_domains, 
+                                     node_color='lightblue', node_size=2000, ax=axs[0, 1])
+                
+                nx.draw_networkx_edges(G, pos, width=2, alpha=0.7, ax=axs[0, 1])
+                nx.draw_networkx_labels(G, pos, font_size=10, font_weight='bold', ax=axs[0, 1])
+                
+                axs[0, 1].set_title("Interdisciplinary Connections")
+            else:
+                axs[0, 1].text(0.5, 0.5, "No interdisciplinary results available", 
+                              ha='center', va='center', fontsize=12)
+        else:
+            axs[0, 1].text(0.5, 0.5, f"No visualization for {session_type}", 
+                          ha='center', va='center', fontsize=12)
+        
+        # Plot 3: Field visualization (bottom left)
+        # Visualize knowledge field changes
+        
