@@ -1523,4 +1523,4 @@ By combining the latest research in cognitive tools, prompt programming, and fie
 
 3. Yang et al. (2025): "Emergent Symbolic Mechanisms Support Abstract Reasoning in Large Language Models." Proceedings of the 42nd International Conference on Machine Learning.
 
-4. Context Engineering Contributors (2024): "Context-Engineering: From Atoms to Neural Fields." https://github.com/context-engineering/context-engineering
+4. Context Engineering Contributors (2025): "Context-Engineering: From Atoms to Neural Fields." https://github.com/davidkimai/context-engineering
