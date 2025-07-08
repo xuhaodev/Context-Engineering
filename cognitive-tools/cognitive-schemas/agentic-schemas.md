@@ -4,7 +4,7 @@
 
 ## 1. Overview and Purpose
 
-The Agentic Schemas framework provides practical tools and templates for coordinating multiple AI agents in complex workflows. Rather than focusing on theoretical multi-agent systems, this architecture delivers actionable cognitive tools that can be immediately implemented to orchestrate agent networks, delegate tasks intelligently, and maintain system coherence.
+The Agentic Schemas framework provides practical tools and templates for coordinating multiple AI agents in complex workflows. This architecture delivers actionable cognitive tools that can be immediately implemented to orchestrate agent networks, delegate tasks intelligently, and maintain system coherence.
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
