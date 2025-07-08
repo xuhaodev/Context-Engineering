@@ -1245,6 +1245,3 @@ def domain_reasoning_example():
 
 This domain schema framework provides a practical, layered approach to modeling and working with specialized knowledge domains. The modular design enables composition and recombination of domain components while maintaining transparency and effectiveness across diverse applications. The progressive complexity approach ensures accessibility for users at different expertise levels while supporting sophisticated domain reasoning and integration capabilities.
 
-<function_calls>
-<invoke name="TodoWrite">
-<parameter name="todos">[{"id": "1", "content": "Analyze implementation strategy principles for domain-schemas.md", "status": "completed", "priority": "high"}, {"id": "2", "content": "Design domain-schemas.md with layered approach and practical focus", "status": "completed", "priority": "high"}, {"id": "3", "content": "Create modular domain schema components that can be recombined", "status": "completed", "priority": "high"}, {"id": "4", "content": "Implement progressive complexity from simple to sophisticated schemas", "status": "completed", "priority": "medium"}, {"id": "5", "content": "Ensure domain schemas integrate with broader cognitive-tools ecosystem", "status": "completed", "priority": "medium"}]
