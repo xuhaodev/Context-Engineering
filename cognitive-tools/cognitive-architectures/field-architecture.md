@@ -2,1239 +2,788 @@
 
 > "The mind is not a vessel to be filled, but a field to be cultivated." — Adapted from Plutarch
 
-## 1. Overview and Purpose
+## 1. Overview
 
-The Field Architecture introduces a paradigm shift in cognitive system design by conceptualizing cognition as a continuous semantic field rather than a discrete symbolic process. Unlike traditional architectures that process information through linear pathways or hierarchical structures, this architecture models cognition as occurring within a dynamic field with attractors, boundaries, resonance patterns, and emergent properties—enabling more fluid, context-sensitive, and emergent cognitive capabilities.
+The Field Architecture provides a framework for treating context as a dynamic, continuous semantic field rather than as discrete tokens or static structures. This approach enables more sophisticated capabilities through:
 
-```
-┌──────────────────────────────────────────────────────────────────────────┐
-│                         FIELD ARCHITECTURE                               │
-├──────────────────────────────────────────────────────────────────────────┤
-│                                                                          │
-│  ┌─────────────────────────────────────────────────────────────────┐    │
-│  │                        FIELD REPRESENTATION                      │    │
-│  │                                                                  │    │
-│  │   ┌────────────┐     ┌────────────┐     ┌────────────┐          │    │
-│  │   │            │     │            │     │            │          │    │
-│  │   │ Attractor  │     │ Boundary   │     │ Resonance  │          │    │
-│  │   │ Basins     │     │ Dynamics   │     │ Patterns   │          │    │
-│  │   │            │     │            │     │            │          │    │
-│  │   └────────────┘     └────────────┘     └────────────┘          │    │
-│  │                                                                  │    │
-│  │   ┌────────────┐     ┌────────────┐     ┌────────────┐          │    │
-│  │   │            │     │            │     │            │          │    │
-│  │   │ Symbolic   │     │ Emergent   │     │ Field      │          │    │
-│  │   │ Residue    │     │ Properties │     │ Gradients  │          │    │
-│  │   │            │     │            │     │            │          │    │
-│  │   └────────────┘     └────────────┘     └────────────┘          │    │
-│  │                                                                  │    │
-│  └─────────────────────────────────────────────────────────────────┘    │
-│                                │                                         │
-│                                ▼                                         │
-│  ┌─────────────────────────────────────────────────────────────────┐    │
-│  │                        FIELD OPERATIONS                          │    │
-│  │                                                                  │    │
-│  │   ┌────────────┐     ┌────────────┐     ┌────────────┐          │    │
-│  │   │            │     │            │     │            │          │    │
-│  │   │ Attractor  │     │ Boundary   │     │ Resonance  │          │    │
-│  │   │ Formation  │     │ Transition │     │ Cultivation│          │    │
-│  │   │            │     │            │     │            │          │    │
-│  │   └────────────┘     └────────────┘     └────────────┘          │    │
-│  │                                                                  │    │
-│  │   ┌────────────┐     ┌────────────┐     ┌────────────┐          │    │
-│  │   │            │     │            │     │            │          │    │
-│  │   │ Residue    │     │ Emergence  │     │ Field      │          │    │
-│  │   │ Tracking   │     │ Detection  │     │ Navigation │          │    │
-│  │   │            │     │            │     │            │          │    │
-│  │   └────────────┘     └────────────┘     └────────────┘          │    │
-│  │                                                                  │    │
-│  └─────────────────────────────────────────────────────────────────┘    │
-│                                │                                         │
-│                                ▼                                         │
-│  ┌─────────────────────────────────────────────────────────────────┐    │
-│  │                   INTEGRATION MECHANISMS                         │    │
-│  │                                                                  │    │
-│  │   ┌────────────┐     ┌────────────┐     ┌────────────┐          │    │
-│  │   │            │     │            │     │            │          │    │
-│  │   │ Cognitive  │     │ Symbolic   │     │ Quantum    │          │    │
-│  │   │ Tools      │     │ Mechanisms │     │ Semantics  │          │    │
-│  │   │            │     │            │     │            │          │    │
-│  │   └────────────┘     └────────────┘     └────────────┘          │    │
-│  │                                                                  │    │
-│  │   ┌────────────┐     ┌────────────┐     ┌────────────┐          │    │
-│  │   │            │     │            │     │            │          │    │
-│  │   │ Memory     │     │ Meta-      │     │ Protocol   │          │    │
-│  │   │ Synergy    │     │ Recursion  │     │ Shells     │          │    │
-│  │   │            │     │            │     │            │          │    │
-│  │   └────────────┘     └────────────┘     └────────────┘          │    │
-│  │                                                                  │    │
-│  └─────────────────────────────────────────────────────────────────┘    │
-│                                │                                         │
-│                                ▼                                         │
-│  ┌─────────────────────────────────────────────────────────────────┐    │
-│  │                  APPLICATION FRAMEWORKS                          │    │
-│  │                                                                  │    │
-│  │   ┌────────────┐     ┌────────────┐     ┌────────────┐          │    │
-│  │   │            │     │            │     │            │          │    │
-│  │   │ Reasoning  │     │ Learning   │     │ Creative   │          │    │
-│  │   │ Fields     │     │ Fields     │     │ Fields     │          │    │
-│  │   │            │     │            │     │            │          │    │
-│  │   └────────────┘     └────────────┘     └────────────┘          │    │
-│  │                                                                  │    │
-│  │   ┌────────────┐     ┌────────────┐     ┌────────────┐          │    │
-│  │   │            │     │            │     │            │          │    │
-│  │   │ Social     │     │ Knowledge  │     │ Research   │          │    │
-│  │   │ Fields     │     │ Fields     │     │ Fields     │          │    │
-│  │   │            │     │            │     │            │          │    │
-│  │   └────────────┘     └────────────┘     └────────────┘          │    │
-│  │                                                                  │    │
-│  └─────────────────────────────────────────────────────────────────┘    │
-│                                                                          │
-└──────────────────────────────────────────────────────────────────────────┘
-```
-
-The Field Architecture serves multiple cognitive functions:
-
-1. **Dynamic Representation**: Representing knowledge and concepts as a continuous field rather than discrete symbols
-2. **Attractor-Based Processing**: Processing information through attractor dynamics rather than explicit algorithms
-3. **Boundary Navigation**: Transitioning fluidly between different cognitive states and domains
-4. **Emergent Cognition**: Enabling emergent cognitive capabilities beyond explicit programming
-5. **Resonant Integration**: Harmonizing different cognitive components through field resonance
-6. **Symbolic Residue**: Maintaining persistent patterns across context transitions
-
-## 2. Theoretical Foundations
-
-### 2.1 Field Theory Dynamics
-
-Building on Zhang et al. (2025), we conceptualize cognitive fields through dynamical systems theory:
+1. **Attractor Dynamics**: Stable semantic patterns that "pull" neighboring content
+2. **Boundary Operations**: Detection and manipulation of knowledge boundaries
+3. **Resonance Effects**: Coherent interactions between semantic elements
+4. **Symbolic Residue**: Persistence of information across context transitions
+5. **Emergent Properties**: Complex behaviors arising from field interactions
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│             FIELD THEORY COMPONENTS IN COGNITION                    │
-├─────────────────────────────┬───────────────────────────────────────┤
-│ Component                   │ Cognitive Parallel                    │
-├─────────────────────────────┼───────────────────────────────────────┤
-│ Attractor Basins            │ Stable cognitive patterns that emerge │
-│                             │ from repeated information processing  │
-├─────────────────────────────┼───────────────────────────────────────┤
-│ Field Gradients             │ Direction and magnitude of cognitive  │
-│                             │ "pull" toward different attractors    │
-├─────────────────────────────┼───────────────────────────────────────┤
-│ Boundary Dynamics           │ Transitions between different         │
-│                             │ cognitive states and domains          │
-├─────────────────────────────┼───────────────────────────────────────┤
-│ Resonance Patterns          │ Harmonization between different       │
-│                             │ components of the cognitive system    │
-├─────────────────────────────┼───────────────────────────────────────┤
-│ Symbolic Residue            │ Persistent information patterns that  │
-│                             │ maintain coherence across context     │
-├─────────────────────────────┼───────────────────────────────────────┤
-│ Emergent Properties         │ System-wide behaviors arising from    │
-│                             │ local component interactions          │
-└─────────────────────────────┴───────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────┐
+│               FIELD ARCHITECTURE OVERVIEW                 │
+├──────────────────────────────────────────────────────────┤
+│                                                          │
+│  ┌────────────┐   ┌────────────┐   ┌────────────┐        │
+│  │ ATTRACTORS │◄─►│FIELD STATE │◄─►│ BOUNDARIES │        │
+│  └────────────┘   └─────┬──────┘   └────────────┘        │
+│        ▲                │                ▲               │
+│        │                ▼                │               │
+│        │          ┌────────────┐         │               │
+│        └──────────┤  SYMBOLIC  ├─────────┘               │
+│                   │  RESIDUE   │                         │
+│                   └─────┬──────┘                         │
+│                         │                                │
+│                         ▼                                │
+│  ┌────────────┐   ┌────────────┐   ┌────────────┐        │
+│  │  QUANTUM   │◄─►│ EMERGENCE  │◄─►│ RESONANCE  │        │
+│  │ SEMANTICS  │   │ DETECTION  │   │  PATTERNS  │        │
+│  └────────────┘   └────────────┘   └────────────┘        │
+│                                                          │
+└──────────────────────────────────────────────────────────┘
 ```
 
-This framework provides a mathematically grounded model for emergent cognitive behaviors that arise from interactions between field components rather than explicit programming.
+## 2. Practical Field Operations
 
-### 2.2 Quantum Semantic Integration
+This section provides ready-to-use functions and protocols for working with semantic fields.
 
-Drawing from Agostino et al. (2025), we implement observer-dependent meaning actualization:
+### 2.1 Field Representation and Initialization
+
+Field representation uses embedding vectors in a high-dimensional space. Here's a practical implementation:
 
 ```python
-def quantum_semantic_field():
-    """Quantum semantic framework for field-based cognition."""
+import numpy as np
+from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt
+from scipy.spatial import Voronoi, voronoi_plot_2d
+from scipy.ndimage import gaussian_filter
+
+class SemanticField:
+    """Representation and operations for a semantic field."""
+    
+    def __init__(self, dimensions=768):
+        """Initialize a semantic field.
+        
+        Args:
+            dimensions: Dimensionality of the field (default: 768 for many embedding models)
+        """
+        self.dimensions = dimensions
+        self.content = {}  # Map of positions to content
+        self.embeddings = {}  # Map of content IDs to embedding vectors
+        self.field_state = np.zeros((10, 10))  # Simple 2D representation for visualization
+        self.attractors = []  # List of attractors in the field
+        self.boundaries = []  # List of boundaries in the field
+        
+    def add_content(self, content_id, content_text, embedding_vector=None):
+        """Add content to the semantic field.
+        
+        Args:
+            content_id: Unique identifier for the content
+            content_text: The text content
+            embedding_vector: Optional pre-computed embedding vector
+        """
+        # If no embedding provided, create a random one for demonstration
+        if embedding_vector is None:
+            # In production, you would use a real embedding model here
+            embedding_vector = np.random.randn(self.dimensions)
+            embedding_vector = embedding_vector / np.linalg.norm(embedding_vector)
+            
+        self.content[content_id] = content_text
+        self.embeddings[content_id] = embedding_vector
+        
+        # Update field state
+        self._update_field_state()
+        
+        return content_id
+    
+    def _update_field_state(self):
+        """Update the field state based on current content."""
+        if not self.embeddings:
+            return
+            
+        # For visualization purposes, reduce to 2D
+        if len(self.embeddings) > 1:
+            # In real implementation, use t-SNE, UMAP, or PCA for dimensionality reduction
+            vectors = np.array(list(self.embeddings.values()))
+            
+            # Simple field state update for demonstration
+            # In a real implementation, this would use sophisticated field equations
+            # influenced by attractors, boundaries, etc.
+            self.field_state = np.zeros((10, 10))
+            
+            # For each embedding, add a gaussian "bump" to the field
+            for idx, embedding in enumerate(self.embeddings.values()):
+                # Convert high-dimensional position to 2D grid position for visualization
+                grid_x = int(5 + 4 * (embedding[0] / np.linalg.norm(embedding)))
+                grid_y = int(5 + 4 * (embedding[1] / np.linalg.norm(embedding)))
+                
+                # Keep within bounds
+                grid_x = max(0, min(grid_x, 9))
+                grid_y = max(0, min(grid_y, 9))
+                
+                # Add gaussian bump
+                self.field_state[grid_x, grid_y] += 1.0
+            
+            # Apply gaussian filter to create smooth field
+            self.field_state = gaussian_filter(self.field_state, sigma=1.0)
+    
+    def visualize(self, show_attractors=True, show_boundaries=True):
+        """Visualize the semantic field.
+        
+        Args:
+            show_attractors: Whether to display attractors (default: True)
+            show_boundaries: Whether to display boundaries (default: True)
+        """
+        if not self.embeddings:
+            print("Field is empty. Add content first.")
+            return
+            
+        # Create a 2D representation using t-SNE for visualization
+        if len(self.embeddings) > 1:
+            embeddings_array = np.array(list(self.embeddings.values()))
+            tsne = TSNE(n_components=2, random_state=42)
+            positions_2d = tsne.fit_transform(embeddings_array)
+            
+            # Plot the field
+            plt.figure(figsize=(10, 8))
+            
+            # Plot contour of field state
+            x = np.linspace(0, 9, 10)
+            y = np.linspace(0, 9, 10)
+            X, Y = np.meshgrid(x, y)
+            plt.contourf(X, Y, self.field_state, cmap='viridis', alpha=0.5)
+            
+            # Plot content points
+            plt.scatter(positions_2d[:, 0], positions_2d[:, 1], c='white', edgecolors='black')
+            
+            # Add labels
+            for i, content_id in enumerate(self.embeddings.keys()):
+                plt.annotate(content_id, (positions_2d[i, 0], positions_2d[i, 1]), 
+                             fontsize=9, ha='center')
+            
+            # Show attractors
+            if show_attractors and self.attractors:
+                for attractor in self.attractors:
+                    plt.scatter(attractor['position'][0], attractor['position'][1], 
+                                c='red', s=100, marker='*', edgecolors='black')
+                    plt.annotate(f"A: {attractor['label']}", 
+                                (attractor['position'][0], attractor['position'][1]),
+                                fontsize=9, ha='center', color='red')
+            
+            # Show boundaries
+            if show_boundaries and self.boundaries:
+                for boundary in self.boundaries:
+                    plt.plot([boundary['start'][0], boundary['end'][0]], 
+                             [boundary['start'][1], boundary['end'][1]],
+                             'r--', linewidth=2)
+            
+            plt.colorbar(label='Field Intensity')
+            plt.title('Semantic Field Visualization')
+            plt.xlabel('Dimension 1')
+            plt.ylabel('Dimension 2')
+            plt.show()
+        else:
+            print("Need at least 2 content items for visualization.")
+
+# Usage example
+field = SemanticField()
+field.add_content('concept1', 'Machine learning is a subset of artificial intelligence')
+field.add_content('concept2', 'Neural networks are used in deep learning')
+field.add_content('concept3', 'Data preprocessing is important for model performance')
+field.add_content('concept4', 'Hyperparameter tuning improves model accuracy')
+field.visualize()
+```
+
+### 2.2 Attractor Dynamics Implementation
+
+Attractors are stable semantic points that influence surrounding content. Here's a practical implementation:
+
+```python
+def add_attractor(self, label, position=None, strength=1.0, concept_id=None):
+    """Add an attractor to the semantic field.
+    
+    Args:
+        label: Label for the attractor
+        position: Optional specific position (will use concept embedding if not provided)
+        strength: Strength of the attractor (default: 1.0)
+        concept_id: Optional concept to use as attractor center
+        
+    Returns:
+        dict: The created attractor
+    """
+    if position is None and concept_id is None:
+        raise ValueError("Either position or concept_id must be provided")
+        
+    if position is None:
+        # Use the concept's embedding as position
+        if concept_id not in self.embeddings:
+            raise ValueError(f"Concept {concept_id} not found in field")
+            
+        # For visualization purposes, convert to 2D
+        embedding = self.embeddings[concept_id]
+        tsne = TSNE(n_components=2, random_state=42)
+        position = tsne.fit_transform([embedding])[0]
+    
+    attractor = {
+        'id': f"attractor_{len(self.attractors) + 1}",
+        'label': label,
+        'position': position,
+        'strength': strength,
+        'concept_id': concept_id
+    }
+    
+    self.attractors.append(attractor)
+    self._update_field_state()  # Update field to reflect attractor influence
+    
+    return attractor
+
+def apply_attractor_forces(self, iterations=5, step_size=0.1):
+    """Apply attractor forces to evolve the field state.
+    
+    Args:
+        iterations: Number of iterations to evolve the field (default: 5)
+        step_size: Size of each evolution step (default: 0.1)
+        
+    Returns:
+        dict: Information about the field evolution
+    """
+    if not self.attractors or not self.embeddings:
+        return {"status": "No attractors or content to evolve"}
+    
+    # Protocol shell for attractor application
+    protocol = """
+    /attractor.apply{
+        intent="Apply attractor forces to evolve field state",
+        input={
+            field_state="Current semantic field state",
+            attractors="List of attractors in the field",
+            iterations="Number of evolution iterations",
+            step_size="Size of each evolution step"
+        },
+        process=[
+            /calculate{action="Calculate attractor forces on each field position"},
+            /apply{action="Apply forces to update positions"},
+            /stabilize{action="Ensure field stability after updates"},
+            /measure{action="Measure field evolution metrics"}
+        ],
+        output={
+            updated_field="Evolved field state after attractor influence",
+            evolution_metrics="Measurements of field evolution",
+            convergence_status="Whether the field has stabilized"
+        }
+    }
+    """
+    
+    # Store original positions for tracking evolution
+    original_positions = {}
+    
+    # Convert embeddings to 2D positions for visualization and application
+    if len(self.embeddings) > 1:
+        embeddings_array = np.array(list(self.embeddings.values()))
+        tsne = TSNE(n_components=2, random_state=42)
+        positions_2d = tsne.fit_transform(embeddings_array)
+        
+        for i, content_id in enumerate(self.embeddings.keys()):
+            original_positions[content_id] = positions_2d[i].copy()
+    
+    # Evolution results for each iteration
+    evolution_history = []
+    
+    # Apply forces for multiple iterations
+    for iteration in range(iterations):
+        # New positions after applying forces
+        new_positions = {}
+        
+        # For each content point, calculate attractor forces
+        for i, content_id in enumerate(self.embeddings.keys()):
+            position = positions_2d[i]
+            
+            # Initialize force vector
+            force = np.zeros(2)
+            
+            # Sum forces from all attractors
+            for attractor in self.attractors:
+                # Calculate distance to attractor
+                attractor_pos = np.array(attractor['position'])
+                distance = np.linalg.norm(position - attractor_pos)
+                
+                # Calculate force (inversely proportional to distance)
+                if distance > 0.001:  # Avoid division by zero
+                    direction = (attractor_pos - position) / distance
+                    force_magnitude = attractor['strength'] / (distance ** 2)
+                    force += direction * force_magnitude
+            
+            # Apply force to update position
+            new_position = position + step_size * force
+            new_positions[content_id] = new_position
+        
+        # Update positions
+        for i, content_id in enumerate(self.embeddings.keys()):
+            positions_2d[i] = new_positions[content_id]
+        
+        # Record evolution metrics for this iteration
+        avg_displacement = np.mean([
+            np.linalg.norm(new_positions[content_id] - original_positions[content_id])
+            for content_id in self.embeddings.keys()
+        ])
+        
+        evolution_history.append({
+            'iteration': iteration + 1,
+            'average_displacement': avg_displacement
+        })
+    
+    # Check if field has stabilized
+    final_movement = np.mean([
+        np.linalg.norm(new_positions[content_id] - positions_2d[i])
+        for i, content_id in enumerate(self.embeddings.keys())
+    ])
+    
+    convergence_status = "stabilized" if final_movement < 0.01 else "still evolving"
+    
     return {
-        "superposition_state": {
-            "identify_meanings": "Map potential field interpretations",
-            "maintain_ambiguity": "Preserve multiple meaning possibilities",
-            "context_sensitivity": "Track context-dependent field variations"
+        "evolution_history": evolution_history,
+        "final_positions": {
+            content_id: positions_2d[i].tolist()
+            for i, content_id in enumerate(self.embeddings.keys())
         },
-        "measurement_state": {
-            "observer_context": "Apply interpretive framework to field",
-            "meaning_collapse": "Actualize specific field interpretation", 
-            "coherence_check": "Verify field interpretation consistency"
-        },
-        "adaptation_state": {
-            "context_update": "Refine field based on new context",
-            "meaning_refinement": "Adjust actualized field meanings",
-            "uncertainty_quantification": "Measure field interpretation confidence"
-        }
+        "convergence_status": convergence_status
     }
+
+# Add these methods to the SemanticField class
+SemanticField.add_attractor = add_attractor
+SemanticField.apply_attractor_forces = apply_attractor_forces
+
+# Usage example
+field = SemanticField()
+field.add_content('ml', 'Machine learning concepts')
+field.add_content('dl', 'Deep learning approaches')
+field.add_content('nlp', 'Natural language processing')
+field.add_content('cv', 'Computer vision techniques')
+
+# Add an attractor for AI concepts
+field.add_attractor('AI Center', strength=2.0, concept_id='ml')
+
+# Evolve the field under attractor influence
+evolution_results = field.apply_attractor_forces(iterations=10)
+print(f"Field evolution: {evolution_results['convergence_status']}")
+field.visualize(show_attractors=True)
 ```
 
-This enables the Field Architecture to maintain multiple potential interpretations of the semantic field simultaneously until an observer or context actualizes a specific interpretation.
+### 2.3 Boundary Detection and Manipulation
 
-### 2.3 Symbolic Processing Integration
-
-Based on Yang et al. (2025), we embed the three-stage symbolic architecture within field dynamics:
-
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│        THREE-STAGE SYMBOLIC ARCHITECTURE IN FIELD COGNITION         │
-├─────────────────────────────┬───────────────────────────────────────┤
-│ Symbolic Stage              │ Field Integration                     │
-├─────────────────────────────┼───────────────────────────────────────┤
-│ 1. Symbol Abstraction       │ 1. Field Sampling                     │
-│    Convert tokens to        │    Sample field attractor basins to   │
-│    abstract variables       │    extract symbolic variables         │
-├─────────────────────────────┼───────────────────────────────────────┤
-│ 2. Symbolic Induction       │ 2. Field Pattern Recognition          │
-│    Perform sequence         │    Identify patterns in field         │
-│    induction                │    dynamics and gradients             │
-├─────────────────────────────┼───────────────────────────────────────┤
-│ 3. Retrieval                │ 3. Field Manifestation                │
-│    Predict tokens by        │    Project symbolic patterns back     │
-│    retrieving values        │    onto the cognitive field           │
-└─────────────────────────────┴───────────────────────────────────────┘
-```
-
-This integration allows the Field Architecture to leverage the power of symbolic processing while maintaining the fluidity and context-sensitivity of field dynamics.
-
-### 2.4 Memory-Reasoning Integration
-
-Applying the MEM1 framework (Li et al., 2025), we implement field-based memory consolidation:
+Boundaries represent edges or transitions in the semantic field:
 
 ```python
-def field_memory_consolidation():
-    """Field-based memory consolidation strategy."""
-    return {
-        "analysis_stage": {
-            "field_pattern_analysis": "Identify significant field patterns",
-            "attractor_analysis": "Measure attractor strength and stability",
-            "resonance_evaluation": "Assess field resonance patterns"
+def detect_boundaries(self, sensitivity=0.5):
+    """Detect boundaries in the semantic field.
+    
+    Args:
+        sensitivity: Detection sensitivity (0.0-1.0, default: 0.5)
+        
+    Returns:
+        list: Detected boundaries
+    """
+    # Protocol shell for boundary detection
+    protocol = """
+    /boundary.detect{
+        intent="Identify semantic boundaries in field",
+        input={
+            field_state="Current semantic field state",
+            sensitivity="Detection sensitivity parameter",
         },
-        "consolidation_stage": {
-            "attractor_strengthening": "Reinforce important field attractors",
-            "boundary_clarification": "Sharpen field boundaries",
-            "resonance_enhancement": "Optimize field resonance patterns"
-        },
-        "optimization_stage": {
-            "field_pruning": "Remove weak or redundant field elements",
-            "gradient_optimization": "Optimize field gradient efficiency",
-            "residue_preservation": "Maintain important symbolic residue"
+        process=[
+            /analyze{action="Calculate field gradients"},
+            /threshold{action="Apply sensitivity threshold to gradients"},
+            /identify{action="Identify boundary lines from thresholded gradients"},
+            /characterize{action="Determine boundary properties"}
+        ],
+        output={
+            boundaries="Detected semantic boundaries",
+            properties="Boundary properties and characteristics"
         }
     }
-```
-
-This approach ensures that the Field Architecture efficiently maintains and consolidates important field patterns while optimizing resource utilization.
-
-### 2.5 Progressive Complexity Framework
-
-Drawing from Kim et al. (2025), we implement field-based progressive complexity:
-
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│          PROGRESSIVE COMPLEXITY IN FIELD ARCHITECTURE               │
-├─────────────────────────────┬───────────────────────────────────────┤
-│ Traditional Level           │ Field Parallel                        │
-├─────────────────────────────┼───────────────────────────────────────┤
-│ Atoms                       │ Field Points                          │
-│ (Single prompts)            │ (Individual field elements)           │
-├─────────────────────────────┼───────────────────────────────────────┤
-│ Molecules                   │ Field Clusters                        │
-│ (Few-shot examples)         │ (Related field element groups)        │
-├─────────────────────────────┼───────────────────────────────────────┤
-│ Cells                       │ Proto-Attractors                      │
-│ (Memory and state)          │ (Emergent stable field patterns)      │
-├─────────────────────────────┼───────────────────────────────────────┤
-│ Organs                      │ Attractor Networks                    │
-│ (Specialist systems)        │ (Interconnected attractor systems)    │
-├─────────────────────────────┼───────────────────────────────────────┤
-│ Neural Systems              │ Field Ecosystems                      │
-│ (Cognitive tools)           │ (Multiple interacting fields)         │
-├─────────────────────────────┼───────────────────────────────────────┤
-│ Neural Fields               │ Meta-Fields                           │
-│ (Field dynamics)            │ (Fields that operate on other fields) │
-└─────────────────────────────┴───────────────────────────────────────┘
-```
-
-This progressive framework enables the Field Architecture to scale from simple field points to sophisticated meta-fields that operate on other fields.
-
-## 3. Core Components
-
-### 3.1 Field Representation
-
-The Field Representation component models cognitive states as a continuous semantic field:
-
-```python
-class CognitiveField:
-    """Representation of cognitive state as a continuous field."""
-    
-    def __init__(self, dimensions=None, initial_state=None):
-        self.dimensions = dimensions or ["semantic", "emotional", "temporal", "abstraction"]
-        self.state = initial_state or self._initialize_field()
-        self.attractors = {}
-        self.boundaries = {}
-        self.gradients = {}
-        self.resonance_patterns = {}
-        self.symbolic_residue = {}
-        
-    def _initialize_field(self):
-        """Initialize empty cognitive field."""
-        return {dim: {} for dim in self.dimensions}
-    
-    def add_attractor(self, attractor_id, position, strength, basin_size, concept):
-        """
-        Add an attractor basin to the cognitive field.
-        
-        Args:
-            attractor_id: Unique identifier for the attractor
-            position: Position in field dimensions
-            strength: Attractor strength/stability
-            basin_size: Size/scope of attractor influence
-            concept: Associated concept or meaning
-            
-        Returns:
-            dict: Attractor details
-        """
-        attractor = {
-            "position": position,
-            "strength": strength,
-            "basin_size": basin_size,
-            "concept": concept,
-            "stability": 1.0,  # Initial stability
-            "activation": 0.0,  # Initial activation
-            "connections": []   # Connected attractors
-        }
-        
-        self.attractors[attractor_id] = attractor
-        return attractor
-    
-    def add_boundary(self, boundary_id, start_position, end_position, permeability, transition_properties):
-        """
-        Add a boundary to the cognitive field.
-        
-        Args:
-            boundary_id: Unique identifier for the boundary
-            start_position: Starting position in field dimensions
-            end_position: Ending position in field dimensions
-            permeability: How easily the boundary can be crossed
-            transition_properties: Characteristics of boundary crossing
-            
-        Returns:
-            dict: Boundary details
-        """
-        boundary = {
-            "start_position": start_position,
-            "end_position": end_position,
-            "permeability": permeability,
-            "transition_properties": transition_properties
-        }
-        
-        self.boundaries[boundary_id] = boundary
-        return boundary
-    
-    def calculate_field_at_position(self, position):
-        """
-        Calculate field properties at a specific position.
-        
-        Args:
-            position: Position in field dimensions
-            
-        Returns:
-            dict: Field properties at position
-        """
-        # Implementation would calculate combined influence of attractors,
-        # boundaries, gradients, etc. at the specified position
-        
-        field_properties = {
-            "value": 0.0,
-            "gradient": {},
-            "attractor_influences": {},
-            "boundary_effects": {},
-            "symbolic_residue": {}
-        }
-        
-        # Calculate combined attractor influence
-        for attractor_id, attractor in self.attractors.items():
-            distance = self._calculate_distance(position, attractor["position"])
-            influence = attractor["strength"] * self._influence_function(distance, attractor["basin_size"])
-            field_properties["attractor_influences"][attractor_id] = influence
-            field_properties["value"] += influence
-        
-        # Calculate boundary effects
-        for boundary_id, boundary in self.boundaries.items():
-            distance = self._distance_to_boundary(position, boundary)
-            effect = self._boundary_effect(distance, boundary["permeability"])
-            field_properties["boundary_effects"][boundary_id] = effect
-            field_properties["value"] *= (1.0 - effect)
-        
-        # Calculate field gradient
-        for dim in self.dimensions:
-            delta = 0.01  # Small delta for numerical gradient
-            pos_delta = position.copy()
-            pos_delta[dim] += delta
-            
-            value_delta = self.calculate_field_at_position(pos_delta)["value"]
-            gradient = (value_delta - field_properties["value"]) / delta
-            field_properties["gradient"][dim] = gradient
-        
-        # Integrate symbolic residue
-        for residue_id, residue in self.symbolic_residue.items():
-            if self._residue_active_at_position(position, residue):
-                field_properties["symbolic_residue"][residue_id] = residue["intensity"]
-        
-        return field_properties
-    
-    def _calculate_distance(self, pos1, pos2):
-        """Calculate distance between positions in the field."""
-        return sum((pos1[dim] - pos2[dim])**2 for dim in self.dimensions)**0.5
-    
-    def _influence_function(self, distance, basin_size):
-        """Calculate attractor influence based on distance."""
-        return math.exp(-distance / basin_size)
-    
-    def _distance_to_boundary(self, position, boundary):
-        """Calculate distance to a boundary."""
-        # Implementation would compute distance to boundary in field space
-        return 1.0  # Placeholder
-    
-    def _boundary_effect(self, distance, permeability):
-        """Calculate boundary effect based on distance."""
-        return (1.0 - permeability) * math.exp(-distance)
-    
-    def _residue_active_at_position(self, position, residue):
-        """Check if symbolic residue is active at position."""
-        # Implementation would determine if residue is active at position
-        return True  # Placeholder
-```
-
-This model represents the cognitive state as a multidimensional field with attractors, boundaries, gradients, and symbolic residue—enabling the fluid, context-sensitive processing characteristic of field-based cognition.
-
-### 3.2 Field Operations 
-
-```python
-def track_symbolic_residue(self, source_attractor_id, residue_pattern, persistence=0.7, decay_rate=0.1):
     """
-    Track symbolic residue from an attractor.
+    
+    if len(self.embeddings) < 3:
+        return []
+    
+    # Create a 2D representation for boundary detection
+    embeddings_array = np.array(list(self.embeddings.values()))
+    tsne = TSNE(n_components=2, random_state=42)
+    positions_2d = tsne.fit_transform(embeddings_array)
+    
+    # Create Voronoi diagram to detect natural boundaries
+    vor = Voronoi(positions_2d)
+    
+    # Extract boundary segments from Voronoi ridges
+    boundaries = []
+    
+    # Calculate average distance between points to normalize
+    distances = []
+    for i in range(len(positions_2d)):
+        for j in range(i+1, len(positions_2d)):
+            distances.append(np.linalg.norm(positions_2d[i] - positions_2d[j]))
+    avg_distance = np.mean(distances)
+    
+    # Adjust threshold based on sensitivity
+    threshold = avg_distance * (1.0 - sensitivity)
+    
+    # Process Voronoi ridges
+    for ridge_vertices in vor.ridge_vertices:
+        if -1 not in ridge_vertices:  # Only use finite ridges
+            start = vor.vertices[ridge_vertices[0]]
+            end = vor.vertices[ridge_vertices[1]]
+            
+            # Calculate ridge length
+            length = np.linalg.norm(end - start)
+            
+            # Only keep boundaries above threshold length
+            if length > threshold:
+                # Identify adjacent regions
+                ridge_points = []
+                for i, ridge_list in enumerate(vor.ridge_points):
+                    if set(ridge_vertices) == set(vor.ridge_vertices[i]):
+                        ridge_points = vor.ridge_points[i]
+                        break
+                
+                # Get concepts on either side of boundary
+                if ridge_points:
+                    concept1 = list(self.embeddings.keys())[ridge_points[0]]
+                    concept2 = list(self.embeddings.keys())[ridge_points[1]]
+                    
+                    boundary = {
+                        'id': f"boundary_{len(self.boundaries) + 1}",
+                        'start': start,
+                        'end': end,
+                        'length': length,
+                        'adjacent_concepts': [concept1, concept2],
+                        'strength': length / avg_distance  # Normalized strength
+                    }
+                    
+                    boundaries.append(boundary)
+    
+    self.boundaries = boundaries
+    return boundaries
+
+def analyze_boundary(self, boundary_id):
+    """Analyze a specific boundary.
     
     Args:
-        source_attractor_id: ID of source attractor
-        residue_pattern: Pattern to persist as residue
-        persistence: Initial persistence strength
-        decay_rate: Rate of residue decay
+        boundary_id: ID of boundary to analyze
         
     Returns:
-        dict: Symbolic residue details
+        dict: Boundary analysis results
     """
-    if source_attractor_id not in self.field.attractors:
-        raise ValueError(f"Source attractor {source_attractor_id} not found")
-    
-    residue_id = f"residue_{source_attractor_id}_{len(self.field.symbolic_residue) + 1}"
-    
-    # Create symbolic residue
-    symbolic_residue = {
-        "source": source_attractor_id,
-        "pattern": residue_pattern,
-        "persistence": persistence,
-        "decay_rate": decay_rate,
-        "current_strength": persistence,
-        "creation_time": time.time(),
-        "last_activation": time.time(),
-        "activation_count": 1
+    # Protocol shell for boundary analysis
+    protocol = """
+    /boundary.analyze{
+        intent="Analyze semantic boundary properties",
+        input={
+            boundary="Target boundary to analyze",
+            field_state="Current semantic field state"
+        },
+        process=[
+            /extract{action="Extract concepts on either side of boundary"},
+            /compare{action="Compare semantic properties across boundary"},
+            /measure{action="Calculate boundary permeability and strength"},
+            /identify{action="Identify potential knowledge gaps"}
+        ],
+        output={
+            boundary_analysis="Detailed boundary properties",
+            semantic_gap="Measure of semantic distance across boundary",
+            knowledge_gaps="Potential knowledge gaps at boundary",
+            crossing_recommendations="Suggestions for boundary crossing"
+        }
     }
-    
-    # Store symbolic residue
-    self.field.symbolic_residue[residue_id] = symbolic_residue
-    
-    return symbolic_residue
-
-def detect_emergence(self, sampling_positions, sampling_density=10, threshold=0.3):
     """
-    Detect emergent patterns in the cognitive field.
     
-    Args:
-        sampling_positions: Regions to sample for emergence
-        sampling_density: Density of sampling points
-        threshold: Threshold for emergence detection
-        
-    Returns:
-        dict: Detected emergent patterns
-    """
-    emergent_patterns = {}
+    # Find the boundary
+    boundary = None
+    for b in self.boundaries:
+        if b['id'] == boundary_id:
+            boundary = b
+            break
     
-    for region_id, region in enumerate(sampling_positions):
-        samples = []
-        # Generate sampling points within region
-        for _ in range(sampling_density):
-            position = {}
-            for dim in self.field.dimensions:
-                min_val = region[dim]["min"]
-                max_val = region[dim]["max"]
-                position[dim] = min_val + random.random() * (max_val - min_val)
-            
-            field_properties = self.field.calculate_field_at_position(position)
-            samples.append(field_properties)
-        
-        # Analyze samples for emergent patterns
-        # This is a simplified placeholder for more sophisticated emergence detection
-        
-        # Check for value patterns
-        values = [sample["value"] for sample in samples]
-        value_mean = sum(values) / len(values)
-        value_variance = sum((v - value_mean)**2 for v in values) / len(values)
-        
-        # Check for gradient patterns
-        gradient_consistency = {}
-        for dim in self.field.dimensions:
-            gradients = [sample["gradient"][dim] for sample in samples]
-            grad_mean = sum(gradients) / len(gradients)
-            gradient_consistency[dim] = sum(1 for g in gradients if g * grad_mean > 0) / len(gradients)
-        
-        # Check for attractor influence patterns
-        attractor_influences = {}
-        for sample in samples:
-            for attractor_id, influence in sample["attractor_influences"].items():
-                if attractor_id not in attractor_influences:
-                    attractor_influences[attractor_id] = []
-                attractor_influences[attractor_id].append(influence)
-        
-        attractor_patterns = {}
-        for attractor_id, influences in attractor_influences.items():
-            infl_mean = sum(influences) / len(influences)
-            infl_variance = sum((i - infl_mean)**2 for i in influences) / len(influences)
-            attractor_patterns[attractor_id] = {
-                "mean_influence": infl_mean,
-                "influence_variance": infl_variance,
-                "consistency": 1.0 - (infl_variance / (infl_mean + 1e-6))
-            }
-        
-        # Determine if emergence is present
-        emergence_score = 0.0
-        
-        # Contribution from value consistency
-        value_consistency = 1.0 - math.sqrt(value_variance) / (value_mean + 1e-6)
-        emergence_score += value_consistency * 0.3
-        
-        # Contribution from gradient consistency
-        avg_gradient_consistency = sum(gradient_consistency.values()) / len(gradient_consistency)
-        emergence_score += avg_gradient_consistency * 0.3
-        
-        # Contribution from attractor patterns
-        avg_attractor_consistency = sum(pattern["consistency"] for pattern in attractor_patterns.values()) / len(attractor_patterns) if attractor_patterns else 0.0
-        emergence_score += avg_attractor_consistency * 0.4
-        
-        # Check if emergence exceeds threshold
-        if emergence_score > threshold:
-            # Characterize the emergent pattern
-            pattern_type = "undefined"
-            if value_consistency > 0.7 and avg_gradient_consistency > 0.7:
-                pattern_type = "stable_attractor"
-            elif value_consistency < 0.3 and avg_gradient_consistency > 0.7:
-                pattern_type = "dynamic_flow"
-            elif value_consistency > 0.7 and avg_gradient_consistency < 0.3:
-                pattern_type = "meta_stable"
-            else:
-                pattern_type = "complex_dynamics"
-            
-            emergent_patterns[f"emergence_{region_id}"] = {
-                "region": region,
-                "emergence_score": emergence_score,
-                "pattern_type": pattern_type,
-                "value_consistency": value_consistency,
-                "gradient_consistency": gradient_consistency,
-                "attractor_patterns": attractor_patterns,
-                "detection_time": time.time()
-            }
+    if not boundary:
+        return {"error": f"Boundary {boundary_id} not found"}
     
-    return emergent_patterns
-
-def apply_field_operation(self, operation_type, parameters):
-    """
-    Apply a high-level field operation.
+    # Get concepts on either side
+    concept1, concept2 = boundary['adjacent_concepts']
     
-    Args:
-        operation_type: Type of field operation
-        parameters: Operation parameters
-        
-    Returns:
-        dict: Operation results
-    """
-    if operation_type == "attractor_formation":
-        return self.form_attractor(
-            position=parameters["position"],
-            concept=parameters["concept"],
-            strength=parameters.get("strength", 1.0),
-            basin_size=parameters.get("basin_size", 1.0)
-        )
+    # Calculate semantic properties
+    # In a real implementation, this would analyze the actual semantic content
+    # Here we'll use the embedding vectors
     
-    elif operation_type == "boundary_creation":
-        return self.create_boundary(
-            start_position=parameters["start_position"],
-            end_position=parameters["end_position"],
-            permeability=parameters.get("permeability", 0.5),
-            transition_properties=parameters.get("transition_properties")
-        )
+    # Calculate semantic distance across boundary
+    embedding1 = self.embeddings[concept1]
+    embedding2 = self.embeddings[concept2]
+    semantic_distance = 1.0 - np.dot(embedding1, embedding2) / (
+        np.linalg.norm(embedding1) * np.linalg.norm(embedding2))
     
-    elif operation_type == "field_navigation":
-        return self.navigate_to_attractor(
-            current_position=parameters["current_position"],
-            target_attractor_id=parameters["target_attractor_id"],
-            steps=parameters.get("steps", 10)
-        )
+    # Estimate boundary permeability (inverse of semantic distance)
+    permeability = 1.0 - semantic_distance
     
-    elif operation_type == "resonance_generation":
-        return self.generate_field_resonance(
-            source_attractor_id=parameters["source_attractor_id"],
-            target_attractor_id=parameters["target_attractor_id"],
-            resonance_strength=parameters.get("resonance_strength", 0.5)
-        )
+    # Generate example knowledge gap
+    gap_description = f"Potential knowledge gap between {concept1} and {concept2}"
     
-    elif operation_type == "residue_tracking":
-        return self.track_symbolic_residue(
-            source_attractor_id=parameters["source_attractor_id"],
-            residue_pattern=parameters["residue_pattern"],
-            persistence=parameters.get("persistence", 0.7),
-            decay_rate=parameters.get("decay_rate", 0.1)
-        )
-    
-    elif operation_type == "emergence_detection":
-        return self.detect_emergence(
-            sampling_positions=parameters["sampling_positions"],
-            sampling_density=parameters.get("sampling_density", 10),
-            threshold=parameters.get("threshold", 0.3)
-        )
-    
+    # Generate crossing recommendation
+    if permeability > 0.7:
+        recommendation = f"Easy crossing: concepts {concept1} and {concept2} are closely related"
+    elif permeability > 0.4:
+        recommendation = f"Moderate crossing: bridge concepts between {concept1} and {concept2}"
     else:
-        raise ValueError(f"Unknown operation type: {operation_type}")
+        recommendation = f"Difficult crossing: significant semantic distance between {concept1} and {concept2}"
+    
+    return {
+        "boundary_id": boundary_id,
+        "adjacent_concepts": [concept1, concept2],
+        "semantic_distance": semantic_distance,
+        "permeability": permeability,
+        "boundary_strength": boundary['strength'],
+        "knowledge_gaps": [gap_description],
+        "crossing_recommendations": recommendation
+    }
+
+# Add these methods to the SemanticField class
+SemanticField.detect_boundaries = detect_boundaries
+SemanticField.analyze_boundary = analyze_boundary
+
+# Usage example
+field = SemanticField()
+field.add_content('ml', 'Machine learning concepts')
+field.add_content('dl', 'Deep learning approaches')
+field.add_content('nlp', 'Natural language processing')
+field.add_content('cv', 'Computer vision techniques')
+field.add_content('stats', 'Statistical methods')
+field.add_content('math', 'Mathematical foundations')
+
+# Detect boundaries
+boundaries = field.detect_boundaries(sensitivity=0.6)
+print(f"Detected {len(boundaries)} boundaries")
+
+# Analyze a boundary
+if boundaries:
+    analysis = field.analyze_boundary(boundaries[0]['id'])
+    print(f"Boundary analysis: {analysis['crossing_recommendations']}")
+
+field.visualize(show_boundaries=True)
 ```
 
-### 3.3 Field Metrics and Evaluation
+### 2.4 Symbolic Residue Tracking
 
-The Field Metrics component provides mechanisms for measuring and evaluating field properties:
+Symbolic residue represents persistent patterns across context transitions:
 
 ```python
-class FieldMetrics:
-    """Metrics for evaluating cognitive field properties."""
+def track_residue(self, previous_field, current_field, threshold=0.3):
+    """Track symbolic residue between two semantic fields.
     
-    def __init__(self, cognitive_field):
-        self.field = cognitive_field
-    
-    def measure_attractor_strength(self, attractor_id):
-        """
-        Measure the effective strength of an attractor.
+    Args:
+        previous_field: Previous semantic field
+        current_field: Current semantic field
+        threshold: Similarity threshold for residue detection
         
-        Args:
-            attractor_id: ID of attractor to measure
-            
-        Returns:
-            float: Effective attractor strength
-        """
-        if attractor_id not in self.field.attractors:
-            raise ValueError(f"Attractor {attractor_id} not found")
-        
-        attractor = self.field.attractors[attractor_id]
-        
-        # Base strength
-        strength = attractor["strength"]
-        
-        # Adjust for connections
-        connection_factor = 1.0
-        for connection in attractor["connections"]:
-            if connection["type"] == "resonance":
-                connection_factor += connection["strength"] * 0.2
-        
-        # Adjust for stability
-        stability_factor = attractor["stability"]
-        
-        # Adjust for activation
-        activation_factor = 1.0 + attractor["activation"] * 0.3
-        
-        # Calculate effective strength
-        effective_strength = strength * connection_factor * stability_factor * activation_factor
-        
-        return effective_strength
-    
-    def measure_field_coherence(self, sampling_positions, sampling_density=10):
-        """
-        Measure the overall coherence of the field.
-        
-        Args:
-            sampling_positions: Regions to sample for coherence
-            sampling_density: Density of sampling points
-            
-        Returns:
-            float: Field coherence measure (0.0-1.0)
-        """
-        samples = []
-        
-        # Generate sampling points
-        for region in sampling_positions:
-            for _ in range(sampling_density):
-                position = {}
-                for dim in self.field.dimensions:
-                    min_val = region[dim]["min"]
-                    max_val = region[dim]["max"]
-                    position[dim] = min_val + random.random() * (max_val - min_val)
-                
-                field_properties = self.field.calculate_field_at_position(position)
-                samples.append(field_properties)
-        
-        # Calculate gradient consistency
-        gradient_consistency = {}
-        for dim in self.field.dimensions:
-            gradients = [sample["gradient"][dim] for sample in samples]
-            grad_mean = sum(gradients) / len(gradients)
-            grad_squared = sum(g**2 for g in gradients) / len(gradients)
-            grad_alignment = (grad_mean**2) / grad_squared if grad_squared > 0 else 0.0
-            gradient_consistency[dim] = grad_alignment
-        
-        # Calculate attractor influence consistency
-        attractor_consistency = {}
-        attractor_counts = {}
-        
-        for sample in samples:
-            for attractor_id, influence in sample["attractor_influences"].items():
-                if attractor_id not in attractor_consistency:
-                    attractor_consistency[attractor_id] = 0.0
-                    attractor_counts[attractor_id] = 0
-                
-                attractor_consistency[attractor_id] += influence
-                attractor_counts[attractor_id] += 1
-        
-        # Normalize attractor consistency
-        for attractor_id in attractor_consistency:
-            attractor_consistency[attractor_id] /= attractor_counts[attractor_id]
-        
-        # Calculate overall attractor influence variance
-        total_variance = 0.0
-        total_influence = 0.0
-        
-        for sample in samples:
-            sample_influence = sum(sample["attractor_influences"].values())
-            total_influence += sample_influence
-            
-            for attractor_id, influence in sample["attractor_influences"].items():
-                avg_influence = attractor_consistency[attractor_id]
-                total_variance += (influence - avg_influence)**2
-        
-        # Normalize variance
-        if total_influence > 0:
-            normalized_variance = total_variance / total_influence
-        else:
-            normalized_variance = 1.0
-        
-        attractor_coherence = 1.0 - math.sqrt(normalized_variance)
-        
-        # Calculate boundary effect consistency
-        boundary_consistency = {}
-        boundary_counts = {}
-        
-        for sample in samples:
-            for boundary_id, effect in sample["boundary_effects"].items():
-                if boundary_id not in boundary_consistency:
-                    boundary_consistency[boundary_id] = 0.0
-                    boundary_counts[boundary_id] = 0
-                
-                boundary_consistency[boundary_id] += effect
-                boundary_counts[boundary_id] += 1
-        
-        # Normalize boundary consistency
-        for boundary_id in boundary_consistency:
-            boundary_consistency[boundary_id] /= boundary_counts[boundary_id]
-        
-        # Calculate overall boundary effect variance
-        boundary_variance = 0.0
-        total_effect = 0.0
-        
-        for sample in samples:
-            sample_effect = sum(sample["boundary_effects"].values())
-            total_effect += sample_effect
-            
-            for boundary_id, effect in sample["boundary_effects"].items():
-                avg_effect = boundary_consistency[boundary_id]
-                boundary_variance += (effect - avg_effect)**2
-        
-        # Normalize variance
-        if total_effect > 0:
-            normalized_boundary_variance = boundary_variance / total_effect
-        else:
-            normalized_boundary_variance = 1.0
-        
-        boundary_coherence = 1.0 - math.sqrt(normalized_boundary_variance)
-        
-        # Calculate overall field coherence
-        avg_gradient_consistency = sum(gradient_consistency.values()) / len(gradient_consistency)
-        
-        field_coherence = (
-            avg_gradient_consistency * 0.4 +
-            attractor_coherence * 0.4 +
-            boundary_coherence * 0.2
-        )
-        
-        return field_coherence
-    
-    def measure_resonance_quality(self, resonance_id):
-        """
-        Measure the quality of a resonance pattern.
-        
-        Args:
-            resonance_id: ID of resonance pattern to measure
-            
-        Returns:
-            float: Resonance quality measure (0.0-1.0)
-        """
-        if resonance_id not in self.field.resonance_patterns:
-            raise ValueError(f"Resonance pattern {resonance_id} not found")
-        
-        resonance = self.field.resonance_patterns[resonance_id]
-        source_id = resonance["source"]
-        target_id = resonance["target"]
-        
-        if source_id not in self.field.attractors or target_id not in self.field.attractors:
-            return 0.0
-        
-        source = self.field.attractors[source_id]
-        target = self.field.attractors[target_id]
-        
-        # Base resonance strength
-        strength = resonance["strength"]
-        
-        # Resonance stability
-        stability = resonance["stability"]
-        
-        # Synchronization level
-        synchronization = resonance["synchronization"]
-        
-        # Calculate attractor compatibility
-        position_distance = self.field._calculate_distance(source["position"], target["position"])
-        distance_factor = math.exp(-position_distance / (source["basin_size"] + target["basin_size"]))
-        
-        # Concept compatibility (simplified)
-        concept_compatibility = 0.5  # Placeholder for actual concept compatibility calculation
-        
-        # Calculate resonance quality
-        resonance_quality = (
-            strength * 0.3 +
-            stability * 0.2 +
-            synchronization * 0.2 +
-            distance_factor * 0.15 +
-            concept_compatibility * 0.15
-        )
-        
-        return resonance_quality
-    
-    def measure_symbolic_residue_strength(self, residue_id):
-        """
-        Measure the current strength of symbolic residue.
-        
-        Args:
-            residue_id: ID of symbolic residue to measure
-            
-        Returns:
-            float: Current residue strength (0.0-1.0)
-        """
-        if residue_id not in self.field.symbolic_residue:
-            raise ValueError(f"Symbolic residue {residue_id} not found")
-        
-        residue = self.field.symbolic_residue[residue_id]
-        
-        # Calculate time-based decay
-        current_time = time.time()
-        elapsed_time = current_time - residue["last_activation"]
-        decay_factor = math.exp(-residue["decay_rate"] * elapsed_time)
-        
-        # Calculate activation-based strengthening
-        activation_factor = 1.0 + 0.1 * math.log(1 + residue["activation_count"])
-        
-        # Calculate current strength
-        current_strength = residue["persistence"] * decay_factor * activation_factor
-        
-        # Update residue strength
-        self.field.symbolic_residue[residue_id]["current_strength"] = current_strength
-        
-        return current_strength
-    
-    def evaluate_field_state(self):
-        """
-        Provide a comprehensive evaluation of the current field state.
-        
-        Returns:
-            dict: Field state evaluation
-        """
-        # Sampling positions for field-wide metrics
-        sampling_positions = []
-        for dim in self.field.dimensions:
-            sampling_positions.append({
-                dim: {"min": -10.0, "max": 10.0}
-                for dim in self.field.dimensions
-            })
-        
-        # Overall field coherence
-        field_coherence = self.measure_field_coherence(sampling_positions)
-        
-        # Attractor metrics
-        attractor_metrics = {}
-        for attractor_id in self.field.attractors:
-            strength = self.measure_attractor_strength(attractor_id)
-            attractor = self.field.attractors[attractor_id]
-            
-            attractor_metrics[attractor_id] = {
-                "effective_strength": strength,
-                "stability": attractor["stability"],
-                "activation": attractor["activation"],
-                "connections": len(attractor["connections"]),
-                "basin_size": attractor["basin_size"]
-            }
-        
-        # Resonance metrics
-        resonance_metrics = {}
-        for resonance_id in self.field.resonance_patterns:
-            quality = self.measure_resonance_quality(resonance_id)
-            resonance = self.field.resonance_patterns[resonance_id]
-            
-            resonance_metrics[resonance_id] = {
-                "quality": quality,
-                "strength": resonance["strength"],
-                "stability": resonance["stability"],
-                "synchronization": resonance["synchronization"]
-            }
-        
-        # Symbolic residue metrics
-        residue_metrics = {}
-        for residue_id in self.field.symbolic_residue:
-            strength = self.measure_symbolic_residue_strength(residue_id)
-            residue = self.field.symbolic_residue[residue_id]
-            
-            residue_metrics[residue_id] = {
-                "current_strength": strength,
-                "persistence": residue["persistence"],
-                "decay_rate": residue["decay_rate"],
-                "activation_count": residue["activation_count"],
-                "age": time.time() - residue["creation_time"]
-            }
-        
-        # Emergence detection
-        emergent_patterns = FieldOperations(self.field).detect_emergence(sampling_positions)
-        
-        # Compile overall evaluation
-        evaluation = {
-            "field_coherence": field_coherence,
-            "attractor_count": len(self.field.attractors),
-            "boundary_count": len(self.field.boundaries),
-            "resonance_count": len(self.field.resonance_patterns),
-            "residue_count": len(self.field.symbolic_residue),
-            "emergence_count": len(emergent_patterns),
-            "attractor_metrics": attractor_metrics,
-            "resonance_metrics": resonance_metrics,
-            "residue_metrics": residue_metrics,
-            "emergent_patterns": emergent_patterns,
-            "evaluation_time": time.time()
+    Returns:
+        dict: Detected symbolic residue
+    """
+    # Protocol shell for residue tracking
+    protocol = """
+    /residue.track{
+        intent="Track symbolic residue across context transitions",
+        input={
+            previous_field="Prior semantic field state",
+            current_field="Current semantic field state",
+            threshold="Similarity threshold for detection"
+        },
+        process=[
+            /extract{action="Extract symbolic representations from both fields"},
+            /align{action="Align representations across fields"},
+            /compare{action="Calculate similarity between aligned elements"},
+            /filter{action="Apply threshold to identify persistent elements"}
+        ],
+        output={
+            detected_residue="Persistent symbolic patterns",
+            residue_strength="Strength of each residue element",
+            persistence_metrics="Detailed persistence measurements"
         }
+    }
+    """
+    
+    # For each concept in previous field, look for similar concepts in current field
+    residue = {}
+    
+    for prev_id, prev_embedding in previous_field.embeddings.items():
+        # Find most similar concept in current field
+        best_match = None
+        best_similarity = 0
         
-        return evaluation
+        for curr_id, curr_embedding in current_field.embeddings.items():
+            # Calculate cosine similarity
+            similarity = np.dot(prev_embedding, curr_embedding) / (
+                np.linalg.norm(prev_embedding) * np.linalg.norm(curr_embedding))
+            
+            if similarity > best_similarity:
+                best_similarity = similarity
+                best_match = curr_id
+        
+        # If similarity above threshold, consider it residue
+        if best_similarity > threshold:
+            residue[prev_id] = {
+                "matched_concept": best_match,
+                "similarity": best_similarity,
+                "previous_content": previous_field.content.get(prev_id, ""),
+                "current_content": current_field.content.get(best_match, "")
+            }
+    
+    # Calculate overall residue metrics
+    residue_metrics = {
+        "residue_count": len(residue),
+        "average_similarity": np.mean([r["similarity"] for r in residue.values()]) if residue else 0,
+        "strongest_residue": max([r["similarity"] for r in residue.values()]) if residue else 0,
+        "persistence_ratio": len(residue) / len(previous_field.embeddings) if previous_field.embeddings else 0
+    }
+    
+    return {
+        "detected_residue": residue,
+        "residue_metrics": residue_metrics
+    }
+
+# This would be a standalone function, not a class method
+def visualize_residue(previous_field, current_field, residue_data):
+    """Visualize symbolic residue between two fields.
+    
+    Args:
+        previous_field: Previous semantic field
+        current_field: Current semantic field
+        residue_data: Residue detection results
+    """
+    if not residue_data["detected_residue"]:
+        print("No residue detected to visualize")
+        return
+    
+    # Create 2D representations of both fields
+    prev_embeddings = np.array(list(previous_field.embeddings.values()))
+    curr_embeddings = np.array(list(current_field.embeddings.values()))
+    
+    tsne = TSNE(n_components=2, random_state=42)
+    
+    # Combine embeddings for consistent mapping
+    combined_embeddings = np.vstack([prev_embeddings, curr_embeddings])
+    combined_positions = tsne.fit_transform(combined_embeddings)
+    
+    # Split back into separate position sets
+    prev_positions = combined_positions[:len(prev_embeddings)]
+    curr_positions = combined_positions[len(prev_embeddings):]
+    
+    # Create visualization
+    plt.figure(figsize=(12, 6))
+    
+    # Plot previous field
+    plt.subplot(1, 2, 1)
+    plt.scatter(prev_positions[:, 0], prev_positions[:, 1], 
+                c='blue', edgecolors='black', label='Previous Field')
+    
+    # Add labels
+    for i, content_id in enumerate(previous_field.embeddings.keys()):
+        plt.annotate(content_id, (prev_positions[i, 0], prev_positions[i, 1]), 
+                     fontsize=9, ha='center')
+    
+    plt.title('Previous Field')
+    plt.xlabel('Dimension 1')
+    plt.ylabel('Dimension 2')
+    
+    # Plot current field
+    plt.subplot(1, 2, 2)
+    plt.scatter(curr_positions[:, 0], curr_positions[:, 1], 
+                c='green', edgecolors='black', label='Current Field')
+    
+    # Add labels
+    for i, content_id in enumerate(current_field.embeddings.keys()):
+        plt.annotate(content_id, (curr_positions[i, 0], curr_positions[i, 1]), 
+                     fontsize=9, ha='center')
+    
+    plt.title('Current Field')
+    plt.xlabel('Dimension 1')
+    plt.ylabel('Dimension 2')
+    
+    # Highlight residue with connecting lines
+    for prev_id, residue_info in residue_data["detected_residue"].items():
+        curr_id = residue_info["matched_concept"]
+        
+        # Find indices
+        prev_idx = list(previous_field.embeddings.keys()).index(prev_id)
+        curr_idx = list(current_field.embeddings.keys()).index(curr_id)
+        
+        # Get positions
+        prev_pos = prev_positions[prev_idx]
+        curr_pos = curr_positions[curr_idx]
+        
+        # Draw connection
+        plt.plot([prev_positions[prev_idx, 0], curr_positions[curr_idx, 0]], 
+                 [prev_positions[prev_idx, 1], curr_positions[curr_idx, 1]], 
+                 'r--', alpha=residue_info["similarity"])
+    
+    plt.tight_layout()
+    plt.show()
+    
+    # Print residue summary
+    print(f"Detected {len(residue_data['detected_residue'])} residue connections")
+    print(f"Persistence ratio: {residue_data['residue_metrics']['persistence_ratio']:.2f}")
+    print(f"Average similarity: {residue_data['residue_metrics']['average_similarity']:.2f}")
+
+# Usage example
+# Create two fields with some overlapping concepts
+field1 = SemanticField()
+field1.add_content('ml', 'Machine learning concepts')
+field1.add_content('dl', 'Deep learning approaches')
+field1.add_content('nlp', 'Natural language processing')
+field1.add_content('math', 'Mathematical foundations')
+
+field2 = SemanticField()
+field2.add_content('dl', 'Advanced deep learning techniques')
+field2.add_content('cv', 'Computer vision applications')
+field2.add_content('math', 'Mathematical principles')
+field2.add_content('stats', 'Statistical methods')
+
+# Track residue between fields
+residue_results = track_residue(field1, field2, threshold=0.3)
+visualize_residue(field1, field2, residue_results)
 ```
 
-### 3.4 Integration Mechanisms
+### 2.5 Resonance Patterns
 
-The Integration Mechanisms component provides bridges between the Field Architecture and other cognitive frameworks:
+Resonance represents coherent patterns between semantic elements:
 
 ```python
-class FieldIntegration:
-    """Integration mechanisms for field architecture."""
+def measure_resonance(self, concept1_id, concept2_id):
+    """Measure resonance between two concepts in the field.
     
-    def __init__(self, cognitive_field):
-        self.field = cognitive_field
-    
-    def integrate_cognitive_tools(self, cognitive_tool, tool_parameters, field_position=None):
-        """
-        Integrate a cognitive tool with the field architecture.
+    Args:
+        concept1_id: First concept ID
+        concept2_id: Second concept ID
         
-        Args:
-            cognitive_tool: Cognitive tool definition
-            tool_parameters: Parameters for the tool
-            field_position: Optional position in field to apply tool
-            
-        Returns:
-            dict: Integration results
-        """
-        # Get field position if not provided
-        if field_position is None:
-            # Find the most relevant position based on tool function
-            relevant_attractors = self._find_relevant_attractors(cognitive_tool["intent"])
-            if relevant_attractors:
-                strongest_attractor = max(relevant_attractors, key=lambda a: a["strength"])
-                field_position = strongest_attractor["position"]
-            else:
-                # Default position
-                field_position = {dim: 0.0 for dim in self.field.dimensions}
-        
-        # Apply cognitive tool to field
-        tool_result = self._apply_cognitive_tool(cognitive_tool, tool_parameters)
-        
-        # Create field attractor for tool result
-        operations = FieldOperations(self.field)
-        attractor = operations.form_attractor(
-            position=field_position,
-            concept={"type": "tool_result", "tool": cognitive_tool["type"], "result": tool_result},
-            strength=0.8,
-            basin_size=1.0
-        )
-        
-        # Generate symbolic residue from tool execution
-        residue = operations.track_symbolic_residue(
-            source_attractor_id=attractor["id"],
-            residue_pattern={"tool_type": cognitive_tool["type"], "result_signature": self._generate_signature(tool_result)},
-            persistence=0.6,
-            decay_rate=0.05
-        )
-        
-        return {
-            "tool_result": tool_result,
-            "field_attractor": attractor,
-            "symbolic_residue": residue
+    Returns:
+        dict: Resonance measurements
+    """
+    # Protocol shell for resonance measurement
+    protocol = """
+    /resonance.measure{
+        intent="Measure semantic resonance between concepts",
+        input={
+            concept1="First concept",
+            concept2="Second concept",
+            field_state="Current semantic field state"
+        },
+        process=[
+            /extract{action="Extract semantic representations"},
+            /analyze{action="Calculate direct and indirect connections"},
+            /measure{action="Compute resonance metrics"},
+            /interpret{action="Interpret resonance significance"}
+        ],
+        output={
+            resonance_score="Overall resonance measurement",
+            connection_paths="Paths connecting the concepts",
+            shared_contexts="Contexts where both concepts appear",
+            semantic_bridge="Concepts that bridge the two"
         }
+    }
+    """
     
-    def integrate_symbolic_mechanisms(self, stage, input_data, field_region=None):
-        """
-        Integrate symbolic processing mechanisms with the field.
-        
-        Args:
-            stage: Symbolic processing stage (abstraction, induction, retrieval)
-            input_data: Input data for processing
-            field_region: Optional field region for processing
-            
-        Returns:
-            dict: Integration results
-        """
-        # Define field region if not provided
-        if field_region is None:
-            field_region = {
-                dim: {"min": -5.0, "max": 5.0}
-                for dim in self.field.dimensions
-            }
-        
-        # Process based on symbolic stage
-        if stage == "abstraction":
-            # Symbol abstraction (early stage)
-            abstract_variables = self._perform_symbol_abstraction(input_data)
-            
-            # Create field representation for abstract variables
-            variable_attractors = {}
-            operations = FieldOperations(self.field)
-            
-            for var_name, var_data in abstract_variables.items():
-                # Calculate position within field region
-                position = {}
-                for dim in self.field.dimensions:
-                    min_val = field_region[dim]["min"]
-                    max_val = field_region[dim]["max"]
-                    relative_pos = random.random()  # Placeholder for more intelligent positioning
-                    position[dim] = min_val + relative_pos * (max_val - min_val)
-                
-                # Create attractor for variable
-                attractor = operations.form_attractor(
-                    position=position,
-                    concept={"type": "abstract_variable", "name": var_name, "data": var_data},
-                    strength=0.7,
-                    basin_size=0.8
-                )
-                
-                variable_attractors[var_name] = attractor
-            
-            return {
-                "stage": "abstraction",
-                "abstract_variables": abstract_variables,
-                "field_representation": variable_attractors
-            }
-            
-        elif stage == "induction":
-            # Symbolic induction (middle stage)
-            induction_patterns = self._perform_symbol_induction(input_data)
-            
-            # Create field representation for induction patterns
-            pattern_resonances = {}
-            operations = FieldOperations(self.field)
-            
-            for pattern_name, pattern_data in induction_patterns.items():
-                if "source" in pattern_data and "target" in pattern_data:
-                    source = pattern_data["source"]
-                    target = pattern_data["target"]
-                    
-                    # Find attractors for source and target
-                    source_attractor = self._find_variable_attractor(source)
-                    target_attractor = self._find_variable_attractor(target)
-                    
-                    if source_attractor and target_attractor:
-                        # Create resonance pattern
-                        resonance = operations.generate_field_resonance(
-                            source_attractor_id=source_attractor["id"],
-                            target_attractor_id=target_attractor["id"],
-                            resonance_strength=pattern_data.get("strength", 0.6)
-                        )
-                        
-                        pattern_resonances[pattern_name] = resonance
-            
-            return {
-                "stage": "induction",
-                "induction_patterns": induction_patterns,
-                "field_representation": pattern_resonances
-            }
-            
-        elif stage == "retrieval":
-            # Retrieval (late stage)
-            retrieval_results = self._perform_symbol_retrieval(input_data)
-            
-            # Create field representation for retrieval results
-            result_manifestations = {}
-            operations = FieldOperations(self.field)
-            
-            for result_name, result_data in retrieval_results.items():
-                # Calculate position for result
-                position = {}
-                for dim in self.field.dimensions:
-                    min_val = field_region[dim]["min"]
-                    max_val = field_region[dim]["max"]
-                    relative_pos = random.random()  # Placeholder for more intelligent positioning
-                    position[dim] = min_val + relative_pos * (max_val - min_val)
-                
-                # Create attractor for result
-                attractor = operations.form_attractor(
-                    position=position,
-                    concept={"type": "retrieval_result", "name": result_name, "data": result_data},
-                    strength=0.9,
-                    basin_size=1.2
-                )
-                
-                result_manifestations[result_name] = attractor
-            
-            return {
-                "stage": "retrieval",
-                "retrieval_results": retrieval_results,
-                "field_representation": result_manifestations
-            }
-        
-        else:
-            raise ValueError(f"Unknown symbolic stage: {stage}")
-    
-    def integrate_quantum_semantics(self, semantic_state, observer_context, field_region=None):
-        """
-        Integrate quantum semantic interpretation with the field.
-        
-        Args:
-            semantic_state: Quantum semantic state to interpret
-            observer_context: Observer context for interpretation
-            field_region: Optional field region for interpretation
-            
-        Returns:
-            dict: Integration results
-        """
-        # Define field region if not provided
-        if field_region is None:
-            field_region = {
-                dim: {"min": -5.0, "max": 5.0}
-                for dim in self.field.dimensions
-            }
-        
-        # Process quantum semantic states
-        # Superposition stage
-        potential_interpretations = self._identify_potential_meanings(semantic_state)
-        
-        # Measurement stage
-        actualized_interpretation = self._apply_observer_context(potential_interpretations, observer_context)
-        
-        # Create field representation
-        operations = FieldOperations(self.field)
-        
-        # Create attractor for each potential interpretation (weaker)
-        potential_attractors = {}
-        for interp_id, interpretation in potential_interpretations.items():
-            # Calculate position within field region
-            position = {}
-            for dim in self.field.dimensions:
-                min_val = field_region[dim]["min"]
-                max_val = field_region[dim]["max"]
-                relative_pos = random.random()  # Placeholder for more intelligent positioning
-                position[dim] = min_val + relative_pos * (max_val - min_val)
-            
-            # Create attractor with strength proportional to probability
-            attractor = operations.form_attractor(
-                position=position,
-                concept={"type": "potential_interpretation", "interpretation": interpretation},
-                strength=interpretation.get("probability", 0.3),
-                basin_size=0.7
-            )
-            
-            potential_attractors[interp_id] = attractor
-        
-        # Create strong attractor for actualized interpretation
-        actualized_position = {}
-        for dim in self.field.dimensions:
-            min_val = field_region[dim]["min"]
-            max_val = field_region[dim]["max"]
-            # Center of the region
-            actualized_position[dim] = (min_val + max_val) / 2
-        
-        actualized_attractor = operations.form_attractor(
-            position=actualized_position,
-            concept={"type": "actualized_interpretation", "interpretation": actualized_interpretation},
-            strength=1.0,
-            basin_size=1.5
-        )
-        
-        # Create resonance patterns between potential and actualized
-        interpretation_resonances = {}
-        for interp_id, potential_attractor in potential_attractors.items():
-            # Strength based on similarity to actualized interpretation
-            similarity = self._calculate_interpretation_similarity(
-                potential_interpretations[interp_id],
-                actualized_interpretation
-            )
-            
-            resonance = operations.generate_field_resonance(
-                source_attractor_id=actualized_attractor["id"],
-                target_attractor_id=potential_attractor["id"],
-                resonance_strength=similarity
-            )
-            
-            interpretation_resonances[interp_id] = resonance
-        
-        return {
-            "potential_interpretations": potential_interpretations,
-            "actualized_interpretation": actualized_interpretation,
-            "field_representation": {
-                "potential_attractors": potential_attractors,
-                "actualized_attractor": actualized_attractor,
-                "resonances": interpretation_resonances
-            }
-        }
-    
-    def integrate_memory_reasoning(self, memory_elements, reasoning_operation, field_region=None):
-        """
-        Integrate memory-reasoning synergy with the field.
-        
-        Args:
-            memory_elements: Memory elements to integrate
-            reasoning_operation: Reasoning operation to apply
-            field_region: Optional field region for integration
-            
-        Returns:
-            dict: Integration results
-        """
-        # Define field region if not provided
-        if field_region is None:
-            field_region = {
-                dim: {"min": -5.0, "max": 5.0}
-                for dim in self.field.dimensions
-            }
-        
-        # Process memory elements
-        memory_analysis = self._analyze_memory_elements(memory_elements)
-        
-        # Apply reasoning operation
-        reasoning_result = self._apply_reasoning_operation(memory_analysis, reasoning_operation)
-        
-        # Consolidate memory based on reasoning
-        consolidated_memory = self._consolidate_memory(memory_elements, reasoning_result)
-        
-        # Create field representation
-        operations = FieldOperations(self.field)
-        
-        # Create attractors for memory elements
-        memory_attractors = {}
-        for mem_id, memory in memory_elements.items():
-            # Skip elements that were consolidated away
-            if mem_id not in consolidated_memory:
-                continue
-            
-            # Calculate position
+    # Check that both concepts exist
+    if concept1_id not in self.embeddings or concept2_id not in self.embeddings:
+        missing = []
+        if concept1_id not in self.embeddings:
+            missing.append(concept1_id)
+        if concept2_i
