@@ -1612,4 +1612,730 @@ class PedagogicalModel:
                 {"action": "select", "description": "Choose appropriate examples"},
                 {"action": "scaffold", "description": "Structure progressive explanation"},
                 {"action": "connect", "description": "Link to prior knowledge"},
-                {"action": "visualize", "description":
+                {"action": "visualize", "description": "Create mental models"}
+            ],
+            output_spec={
+                "explanation": "Tailored concept explanation",
+                "examples": "Supporting examples",
+                "analogies": "Relevant analogies",
+                "visuals": "Conceptual visualizations"
+            }
+        )
+        
+        # Execute protocol
+        explanation_results = protocol.execute()
+        
+        return explanation_results
+    
+    def _practice_tool(self, concept: str, student_model: StudentKnowledgeModel, 
+                      content_model: ContentModel, difficulty: str = "adaptive") -> Dict[str, Any]:
+        """Tool for concept practice."""
+        # Create protocol for practice
+        protocol = ProtocolShell(
+            intent="Generate appropriate practice activities",
+            input_params={
+                "concept": concept,
+                "student_model": "student_model_state",
+                "difficulty": difficulty
+            },
+            process_steps=[
+                {"action": "design", "description": "Design practice activities"},
+                {"action": "calibrate", "description": "Adjust difficulty level"},
+                {"action": "sequence", "description": "Order activities progressively"},
+                {"action": "embed", "description": "Incorporate feedback mechanisms"}
+            ],
+            output_spec={
+                "activities": "Practice activities",
+                "difficulty_levels": "Calibrated difficulty",
+                "sequence": "Progressive activity sequence",
+                "feedback_mechanisms": "Embedded feedback"
+            }
+        )
+        
+        # Execute protocol
+        practice_results = protocol.execute()
+        
+        # Add simulated assessment data
+        practice_results["assessment_data"] = {
+            "performance": random.uniform(0.5, 0.9),
+            "completion_time": random.randint(5, 15),
+            "error_patterns": [
+                "error_type_1" if random.random() < 0.3 else None,
+                "error_type_2" if random.random() < 0.3 else None
+            ],
+            "mastery_level": random.uniform(0.4, 0.8)
+        }
+        
+        return practice_results
+    
+    def _assessment_tool(self, concept: str, student_model: StudentKnowledgeModel, 
+                        content_model: ContentModel, assessment_type: str = "formative") -> Dict[str, Any]:
+        """Tool for concept assessment."""
+        # Create protocol for assessment
+        protocol = ProtocolShell(
+            intent="Assess student understanding of concept",
+            input_params={
+                "concept": concept,
+                "student_model": "student_model_state",
+                "assessment_type": assessment_type
+            },
+            process_steps=[
+                {"action": "design", "description": "Design assessment items"},
+                {"action": "measure", "description": "Measure understanding dimensions"},
+                {"action": "analyze", "description": "Analyze response patterns"},
+                {"action": "diagnose", "description": "Diagnose misconceptions"}
+            ],
+            output_spec={
+                "assessment_items": "Assessment questions/tasks",
+                "measurement_dimensions": "Aspects being assessed",
+                "analysis_framework": "Framework for analyzing responses",
+                "diagnostic_criteria": "Criteria for identifying issues"
+            }
+        )
+        
+        # Execute protocol
+        assessment_results = protocol.execute()
+        
+        # Add simulated assessment data
+        assessment_results["assessment_data"] = {
+            "mastery_level": random.uniform(0.3, 0.9),
+            "misconceptions": ["misconception_1"] if random.random() < 0.3 else [],
+            "knowledge_gaps": ["gap_1"] if random.random() < 0.4 else [],
+            "strengths": ["strength_1"] if random.random() < 0.7 else []
+        }
+        
+        return assessment_results
+    
+    def _feedback_tool(self, performance: Dict[str, Any], student_model: StudentKnowledgeModel,
+                      feedback_type: str = "constructive") -> Dict[str, Any]:
+        """Tool for providing feedback."""
+        # Create protocol for feedback
+        protocol = ProtocolShell(
+            intent="Provide targeted instructional feedback",
+            input_params={
+                "performance": performance,
+                "student_model": "student_model_state",
+                "feedback_type": feedback_type
+            },
+            process_steps=[
+                {"action": "analyze", "description": "Analyze performance patterns"},
+                {"action": "identify", "description": "Identify feedback opportunities"},
+                {"action": "formulate", "description": "Formulate effective feedback"},
+                {"action": "frame", "description": "Frame feedback constructively"}
+            ],
+            output_spec={
+                "feedback": "Specific feedback messages",
+                "focus_areas": "Areas to focus on",
+                "reinforcement": "Positive reinforcement elements",
+                "next_steps": "Suggested next steps"
+            }
+        )
+        
+        # Execute protocol
+        feedback_results = protocol.execute()
+        
+        return feedback_results
+    
+    def _scaffolding_tool(self, task: Dict[str, Any], student_model: StudentKnowledgeModel,
+                         scaffolding_level: str = "adaptive") -> Dict[str, Any]:
+        """Tool for providing scaffolding."""
+        # Create protocol for scaffolding
+        protocol = ProtocolShell(
+            intent="Provide appropriate learning scaffolds",
+            input_params={
+                "task": task,
+                "student_model": "student_model_state",
+                "scaffolding_level": scaffolding_level
+            },
+            process_steps=[
+                {"action": "analyze", "description": "Analyze task requirements"},
+                {"action": "assess", "description": "Assess student capabilities"},
+                {"action": "design", "description": "Design appropriate scaffolds"},
+                {"action": "sequence", "description": "Plan scaffold fading sequence"}
+            ],
+            output_spec={
+                "scaffolds": "Specific scaffolding elements",
+                "rationale": "Reasoning for each scaffold",
+                "fading_plan": "Plan for gradually removing scaffolds",
+                "independence_indicators": "Signs of readiness for reduced support"
+            }
+        )
+        
+        # Execute protocol
+        scaffolding_results = protocol.execute()
+        
+        return scaffolding_results
+    
+    def _misconception_detector(self, responses: Dict[str, Any], content_model: ContentModel) -> Dict[str, Any]:
+        """Tool for detecting misconceptions."""
+        # Create protocol for misconception detection
+        protocol = ProtocolShell(
+            intent="Detect conceptual misconceptions in responses",
+            input_params={
+                "responses": responses,
+                "content_model": "content_model_state"
+            },
+            process_steps=[
+                {"action": "analyze", "description": "Analyze response patterns"},
+                {"action": "compare", "description": "Compare with known misconception patterns"},
+                {"action": "infer", "description": "Infer underlying mental models"},
+                {"action": "classify", "description": "Classify identified misconceptions"}
+            ],
+            output_spec={
+                "misconceptions": "Identified misconceptions",
+                "evidence": "Supporting evidence from responses",
+                "severity": "Severity assessment for each misconception",
+                "remediation_strategies": "Suggested approaches for correction"
+            }
+        )
+        
+        # Execute protocol
+        detection_results = protocol.execute()
+        
+        return detection_results
+    
+    def _goal_assessment(self, learning_goal: str, student_model: StudentKnowledgeModel,
+                        content_model: ContentModel) -> Dict[str, Any]:
+        """Tool for assessing progress toward learning goals."""
+        # Create protocol for goal assessment
+        protocol = ProtocolShell(
+            intent="Assess progress toward learning goal",
+            input_params={
+                "learning_goal": learning_goal,
+                "student_model": "student_model_state",
+                "content_model": "content_model_state"
+            },
+            process_steps=[
+                {"action": "analyze", "description": "Analyze goal components"},
+                {"action": "evaluate", "description": "Evaluate current progress"},
+                {"action": "identify", "description": "Identify remaining gaps"},
+                {"action": "predict", "description": "Predict time to goal achievement"}
+            ],
+            output_spec={
+                "progress_assessment": "Current progress toward goal",
+                "gap_analysis": "Remaining knowledge/skill gaps",
+                "achievement_prediction": "Estimated time/effort to achievement",
+                "continue_session": "Whether to continue current session"
+            }
+        )
+        
+        # Execute protocol
+        assessment_results = protocol.execute()
+        
+        # Add simulated data
+        assessment_results["continue_session"] = random.random() < 0.7
+        
+        return assessment_results
+    
+    def _reflection_prompt(self, learning_experience: Dict[str, Any], student_model: StudentKnowledgeModel,
+                          prompt_type: str = "integrative") -> Dict[str, Any]:
+        """Tool for generating metacognitive reflection prompts."""
+        # Create protocol for reflection prompts
+        protocol = ProtocolShell(
+            intent="Generate prompts for metacognitive reflection",
+            input_params={
+                "learning_experience": learning_experience,
+                "student_model": "student_model_state",
+                "prompt_type": prompt_type
+            },
+            process_steps=[
+                {"action": "identify", "description": "Identify reflection opportunities"},
+                {"action": "formulate", "description": "Formulate effective prompts"},
+                {"action": "sequence", "description": "Sequence prompts logically"},
+                {"action": "calibrate", "description": "Calibrate to metacognitive level"}
+            ],
+            output_spec={
+                "reflection_prompts": "Specific reflection questions",
+                "rationale": "Purpose of each prompt",
+                "expected_development": "Anticipated metacognitive growth",
+                "integration_guidance": "How to integrate insights"
+            }
+        )
+        
+        # Execute protocol
+        reflection_results = protocol.execute()
+        
+        return reflection_results
+    
+    def select_strategy(self, learning_goal: str, student_model: StudentKnowledgeModel,
+                      content_model: ContentModel) -> Dict[str, Any]:
+        """
+        Select appropriate pedagogical strategy.
+        
+        Args:
+            learning_goal: Target learning outcome
+            student_model: Current student knowledge state
+            content_model: Content representation
+            
+        Returns:
+            dict: Selected strategy with tool sequence
+        """
+        # Create protocol for strategy selection
+        protocol = ProtocolShell(
+            intent="Select optimal teaching strategy",
+            input_params={
+                "learning_goal": learning_goal,
+                "student_model": "student_model_state",
+                "content_model": "content_model_state"
+            },
+            process_steps=[
+                {"action": "analyze", "description": "Identify knowledge gaps"},
+                {"action": "match", "description": "Select appropriate strategy type"},
+                {"action": "sequence", "description": "Determine tool sequence"},
+                {"action": "adapt", "description": "Personalize strategy parameters"}
+            ],
+            output_spec={
+                "strategy": "Selected teaching strategy",
+                "tool_sequence": "Ordered cognitive tools",
+                "parameters": "Strategy parameters",
+                "rationale": "Selection justification"
+            }
+        )
+        
+        # Execute protocol
+        strategy_results = protocol.execute()
+        
+        # Simulate strategy selection
+        strategies = [
+            "direct_instruction",
+            "guided_discovery",
+            "problem_based",
+            "flipped_instruction",
+            "mastery_learning"
+        ]
+        
+        # Select a random strategy
+        strategy = random.choice(strategies)
+        
+        # Create a tool sequence based on strategy
+        tool_sequence = []
+        
+        if strategy == "direct_instruction":
+            tool_sequence = [
+                {"tool": "explanation_tool", "parameters": {"complexity": "adaptive"}},
+                {"tool": "practice_tool", "parameters": {"difficulty": "scaffolded"}},
+                {"tool": "assessment_tool", "parameters": {"assessment_type": "formative"}},
+                {"tool": "feedback_tool", "parameters": {"feedback_type": "directive"}}
+            ]
+        elif strategy == "guided_discovery":
+            tool_sequence = [
+                {"tool": "scaffolding_tool", "parameters": {"scaffolding_level": "high"}},
+                {"tool": "practice_tool", "parameters": {"difficulty": "progressive"}},
+                {"tool": "feedback_tool", "parameters": {"feedback_type": "guiding"}},
+                {"tool": "reflection_prompt", "parameters": {"prompt_type": "discovery"}}
+            ]
+        else:
+            # Generic sequence for other strategies
+            tool_sequence = [
+                {"tool": "explanation_tool", "parameters": {"complexity": "adaptive"}},
+                {"tool": "practice_tool", "parameters": {"difficulty": "adaptive"}},
+                {"tool": "assessment_tool", "parameters": {"assessment_type": "formative"}},
+                {"tool": "feedback_tool", "parameters": {"feedback_type": "constructive"}}
+            ]
+        
+        # Return strategy details
+        return {
+            "strategy": strategy,
+            "tool_sequence": tool_sequence,
+            "parameters": {
+                "intensity": random.uniform(0.5, 0.9),
+                "pace": random.uniform(0.4, 0.8),
+                "interaction_level": random.uniform(0.3, 0.9)
+            },
+            "rationale": f"Selected {strategy} based on student's current knowledge state and learning goal"
+        }
+    
+    def execute_strategy(self, strategy: Dict[str, Any], student_model: StudentKnowledgeModel,
+                       content_model: ContentModel) -> Dict[str, Any]:
+        """
+        Execute a pedagogical strategy.
+        
+        Args:
+            strategy: Selected teaching strategy
+            student_model: Current student knowledge state
+            content_model: Content representation
+            
+        Returns:
+            dict: Learning experience with results
+        """
+        learning_experience = []
+        
+        # Execute each tool in the sequence
+        for tool_step in strategy["tool_sequence"]:
+            tool_name = tool_step["tool"]
+            tool_params = tool_step["parameters"]
+            
+            # Execute the tool
+            if tool_name in self.tools:
+                # Call the tool function
+                # In a real implementation, we would pass the actual student_model and content_model
+                result = self.tools[tool_name](
+                    concept="example_concept" if "concept" not in tool_params else tool_params["concept"],
+                    student_model=student_model,
+                    content_model=content_model,
+                    **{k: v for k, v in tool_params.items() if k != "concept"}
+                )
+                
+                learning_experience.append({
+                    "tool": tool_name,
+                    "params": tool_params,
+                    "result": result
+                })
+                
+                # Update student model based on tool interaction
+                if "assessment_data" in result:
+                    student_model.update_knowledge_state(result["assessment_data"])
+        
+        return {
+            "strategy": strategy,
+            "experience": learning_experience,
+            "outcome": {
+                "learning_progress": student_model.learning_trajectory[-1] if student_model.learning_trajectory else None,
+                "misconceptions": student_model.misconceptions,
+                "next_steps": self.recommend_next_steps(student_model, content_model)
+            }
+        }
+    
+    def recommend_next_steps(self, student_model: StudentKnowledgeModel, content_model: ContentModel) -> List[str]:
+        """Recommend next steps based on student model."""
+        # Simplified next steps recommendation
+        return [
+            "Review concept X to address identified misconception",
+            "Practice skill Y with increased complexity",
+            "Explore relationship between concepts A and B"
+        ]
+    
+    def modulate_field(self, current_field: Dict[str, Any], target_state: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Modulate the educational field toward a target state.
+        
+        Args:
+            current_field: Current educational field state
+            target_state: Desired field state
+            
+        Returns:
+            dict: Field modulation actions
+        """
+        # Create protocol for field modulation
+        protocol = ProtocolShell(
+            intent="Guide educational field toward target state",
+            input_params={
+                "current_field": current_field,
+                "target_state": target_state
+            },
+            process_steps=[
+                {"action": "analyze", "description": "Calculate field differential"},
+                {"action": "identify", "description": "Locate attractor basins"},
+                {"action": "select", "description": "Choose modulation techniques"},
+                {"action": "sequence", "description": "Order modulation actions"}
+            ],
+            output_spec={
+                "modulation_sequence": "Ordered field modulations",
+                "attractor_adjustments": "Changes to attractors",
+                "boundary_operations": "Field boundary adjustments",
+                "expected_trajectory": "Predicted field evolution"
+            }
+        )
+        
+        # Execute protocol
+        modulation_results = protocol.execute()
+        
+        return modulation_results
+
+class TutorArchitecture:
+    """Complete implementation of the Tutor Architecture."""
+    
+    def __init__(self, domain: str = "general"):
+        """
+        Initialize the tutor architecture.
+        
+        Args:
+            domain: Subject domain
+        """
+        self.student_model = StudentKnowledgeModel()
+        self.content_model = ContentModel(domain)
+        self.pedagogical_model = PedagogicalModel()
+        self.knowledge_field = SemanticField(name="learning_field")
+        self.session_history = []
+    
+    def initialize_content(self):
+        """Initialize content model with sample concepts."""
+        # Add some sample concepts
+        concepts = [
+            {
+                "id": "concept_1",
+                "name": "Basic Concept",
+                "description": "A foundational concept in the domain",
+                "difficulty": 0.3,
+                "prerequisites": []
+            },
+            {
+                "id": "concept_2",
+                "name": "Intermediate Concept",
+                "description": "Builds on the basic concept",
+                "difficulty": 0.5,
+                "prerequisites": ["concept_1"]
+            },
+            {
+                "id": "concept_3",
+                "name": "Advanced Concept",
+                "description": "Complex concept requiring prior knowledge",
+                "difficulty": 0.8,
+                "prerequisites": ["concept_1", "concept_2"]
+            }
+        ]
+        
+        # Add concepts to content model
+        for concept in concepts:
+            self.content_model.add_concept(concept["id"], concept)
+            
+            # Also add as an attractor in the knowledge field
+            position = np.random.normal(0, 1, self.knowledge_field.dimensions)
+            position = position / np.linalg.norm(position)
+            
+            self.knowledge_field.add_attractor(
+                concept=concept["name"],
+                position=position,
+                strength=1.0 - concept["difficulty"]  # Easier concepts have stronger attractors
+            )
+    
+    def teach_concept(self, concept_id: str, learning_goal: str = "mastery") -> Dict[str, Any]:
+        """
+        Execute a complete tutoring session for a concept.
+        
+        Args:
+            concept_id: ID of the concept to teach
+            learning_goal: Learning goal for the session
+            
+        Returns:
+            dict: Complete tutoring session results
+        """
+        # Initialize session
+        session = {
+            "concept_id": concept_id,
+            "learning_goal": learning_goal,
+            "initial_state": self.student_model.get_knowledge_state(concept_id),
+            "interactions": [],
+            "field_state": {},
+            "final_state": None
+        }
+        
+        # Get concept from content model
+        concept = self.content_model.get_concept(concept_id)
+        if not concept:
+            raise ValueError(f"Concept ID {concept_id} not found in content model")
+        
+        # Select teaching strategy
+        strategy = self.pedagogical_model.select_strategy(
+            learning_goal=learning_goal,
+            student_model=self.student_model,
+            content_model=self.content_model
+        )
+        
+        # Execute strategy
+        learning_experience = self.pedagogical_model.execute_strategy(
+            strategy=strategy,
+            student_model=self.student_model,
+            content_model=self.content_model
+        )
+        
+        # Record interactions
+        session["interactions"] = learning_experience["experience"]
+        
+        # Update field state based on learning
+        self.update_field_from_learning(concept_id, learning_experience)
+        
+        # Record field state
+        session["field_state"] = {
+            "attractors": len(self.knowledge_field.attractors),
+            "trajectories": len(self.knowledge_field.trajectories),
+            "field_coherence": random.uniform(0.5, 0.9)  # Simulated coherence metric
+        }
+        
+        # Record final state
+        session["final_state"] = self.student_model.get_knowledge_state(concept_id)
+        
+        # Add to session history
+        self.session_history.append(session)
+        
+        return session
+    
+    def update_field_from_learning(self, concept_id: str, learning_experience: Dict[str, Any]):
+        """
+        Update the knowledge field based on learning experience.
+        
+        Args:
+            concept_id: Concept being learned
+            learning_experience: Learning experience data
+        """
+        # Get concept
+        concept = self.content_model.get_concept(concept_id)
+        if not concept:
+            return
+        
+        # Simulate learning trajectory
+        start_state = np.random.normal(0, 1, self.knowledge_field.dimensions)
+        start_state = start_state / np.linalg.norm(start_state)
+        
+        # Calculate trajectory through field
+        trajectory = self.knowledge_field.calculate_trajectory(start_state, steps=10)
+        
+        # Analyze whether any misconceptions were addressed
+        if self.student_model.misconceptions:
+            # For each misconception, potentially create an "anti-attractor"
+            for misconception in self.student_model.misconceptions:
+                # Only create anti-attractors for some misconceptions (randomly)
+                if random.random() < 0.5:
+                    # Create an "anti-attractor" for the misconception
+                    # This represents the process of addressing the misconception
+                    position = np.random.normal(0, 1, self.knowledge_field.dimensions)
+                    position = position / np.linalg.norm(position)
+                    
+                    self.knowledge_field.add_attractor(
+                        concept=f"Misconception: {misconception}",
+                        position=position,
+                        strength=0.3  # Weak attractor
+                    )
+    
+    def visualize_learning_process(self, session_index: int = -1) -> plt.Figure:
+        """
+        Visualize the learning process from a session.
+        
+        Args:
+            session_index: Index of session to visualize
+            
+        Returns:
+            matplotlib.figure.Figure: Visualization figure
+        """
+        # Get the specified session
+        if not self.session_history:
+            raise ValueError("No tutoring sessions available for visualization")
+        
+        session = self.session_history[session_index]
+        
+        # Create a figure with 2x2 subplots
+        fig, axs = plt.subplots(2, 2, figsize=(15, 12))
+        fig.suptitle(f"Learning Process for Concept: {session['concept_id']}", fontsize=16)
+        
+        # Plot 1: Knowledge state visualization (top left)
+        initial_state = session["initial_state"]
+        final_state = session["final_state"]
+        
+        if initial_state and final_state:
+            # Create bar chart of knowledge metrics
+            metrics = ["understanding", "uncertainty"]
+            initial_values = [initial_state.get("understanding", 0.3), initial_state.get("uncertainty", 0.7)]
+            final_values = [final_state.get("understanding", 0.7), final_state.get("uncertainty", 0.3)]
+            
+            x = np.arange(len(metrics))
+            width = 0.35
+            
+            axs[0, 0].bar(x - width/2, initial_values, width, label='Initial')
+            axs[0, 0].bar(x + width/2, final_values, width, label='Final')
+            
+            axs[0, 0].set_xticks(x)
+            axs[0, 0].set_xticklabels(metrics)
+            axs[0, 0].legend()
+            axs[0, 0].set_title("Knowledge State Change")
+        else:
+            axs[0, 0].text(0.5, 0.5, "No knowledge state data available", 
+                          ha='center', va='center', fontsize=12)
+        
+        # Plot 2: Learning interactions visualization (top right)
+        interactions = session["interactions"]
+        if interactions:
+            # Create a timeline of interactions
+            interaction_types = [interaction["tool"] for interaction in interactions]
+            unique_types = list(set(interaction_types))
+            
+            # Map interaction types to y-positions
+            type_positions = {t: i for i, t in enumerate(unique_types)}
+            
+            # Plot each interaction as a point on the timeline
+            for i, interaction in enumerate(interactions):
+                tool = interaction["tool"]
+                y_pos = type_positions[tool]
+                
+                # Plot point
+                axs[0, 1].scatter(i, y_pos, s=100, label=tool if i == 0 else "")
+                
+                # Connect with line if not first
+                if i > 0:
+                    prev_tool = interactions[i-1]["tool"]
+                    prev_y_pos = type_positions[prev_tool]
+                    axs[0, 1].plot([i-1, i], [prev_y_pos, y_pos], 'k-', alpha=0.3)
+            
+            # Set y-ticks to interaction types
+            axs[0, 1].set_yticks(range(len(unique_types)))
+            axs[0, 1].set_yticklabels(unique_types)
+            
+            # Set x-ticks to interaction indices
+            axs[0, 1].set_xticks(range(len(interactions)))
+            axs[0, 1].set_xticklabels([f"{i+1}" for i in range(len(interactions))])
+            
+            axs[0, 1].set_title("Learning Interaction Sequence")
+        else:
+            axs[0, 1].text(0.5, 0.5, "No interaction data available", 
+                          ha='center', va='center', fontsize=12)
+        
+        # Plot 3: Misconception visualization (bottom left)
+        initial_misconceptions = initial_state.get("misconceptions", []) if initial_state else []
+        final_misconceptions = final_state.get("misconceptions", []) if final_state else []
+        
+        if initial_misconceptions or final_misconceptions:
+            # Combine all misconceptions
+            all_misconceptions = list(set(initial_misconceptions + final_misconceptions))
+            
+            # Create data for presence (1) or absence (0) of each misconception
+            initial_data = [1 if m in initial_misconceptions else 0 for m in all_misconceptions]
+            final_data = [1 if m in final_misconceptions else 0 for m in all_misconceptions]
+            
+            # Create bar chart
+            x = np.arange(len(all_misconceptions))
+            width = 0.35
+            
+            axs[1, 0].bar(x - width/2, initial_data, width, label='Initial')
+            axs[1, 0].bar(x + width/2, final_data, width, label='Final')
+            
+            axs[1, 0].set_xticks(x)
+            axs[1, 0].set_xticklabels([f"M{i+1}" for i in range(len(all_misconceptions))], rotation=45)
+            axs[1, 0].legend()
+            
+            # Add misconception descriptions as text
+            for i, m in enumerate(all_misconceptions):
+                axs[1, 0].annotate(m, xy=(i, -0.1), xycoords='data', fontsize=8,
+                                 ha='center', va='top', rotation=45)
+            
+            axs[1, 0].set_title("Misconceptions Addressed")
+        else:
+            axs[1, 0].text(0.5, 0.5, "No misconception data available", 
+                          ha='center', va='center', fontsize=12)
+        
+        # Plot 4: Field visualization (bottom right)
+        # Instead of trying to visualize the full field, create a simplified representation
+        # Create a circular plot with attractors
+        
+        # Create a circle representing the field
+        circle = plt.Circle((0, 0), 1, fill=False, color='gray', linestyle='--')
+        axs[1, 1].add_artist(circle)
+        
+        # Add concept attractor
+        concept_pos = (0.5, 0.3)  # Arbitrary position
+        axs[1, 1].scatter(concept_pos[0], concept_pos[1], s=200, color='green', alpha=0.7)
+        axs[1, 1].text(concept_pos[0], concept_pos[1], f"Concept: {session['concept_id']}", 
+                      fontsize=10, ha='center', va='bottom')
+        
+        # Add student initial position
+        initial_pos = (-0.7, -0.5)  # Arbitrary position
+        axs[1, 1].scatter(initial_pos[0], initial_pos[1], s=100, color='blue', alpha=0.7)
+        axs[1, 1].text(initial_pos[0], initial_pos[1], "Initial State", 
+                      fontsize=9, ha='center', va='bottom')
+        
+        # Add student final position
+        final_pos = (0.3, 0.2)  # Arbitrary position near the concept
+        axs[1, 1].scatter(final_pos[0], final_pos[1], s=100, color='red', alpha=0.7)
+        axs[1, 1].text(final_pos[0], final_pos[1], "Final State", 
+                      fontsize=9, ha='center', va='bottom')
+        
+        # Add a simulated learning trajectory
+        
