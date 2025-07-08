@@ -3869,4 +3869,554 @@ class ResearchArchitecture:
         
         # Plot 3: Field visualization (bottom left)
         # Visualize knowledge field changes
+        field_updates = session.get("field_updates", {})
         
+        if field_updates:
+            # Create a bar chart of field updates
+            update_types = []
+            update_values = []
+            
+            for update_type, value in field_updates.items():
+                if isinstance(value, (int, float)):
+                    update_types.append(update_type)
+                    update_values.append(value)
+            
+            if update_types:
+                y_pos = np.arange(len(update_types))
+                axs[1, 0].barh(y_pos, update_values, align='center')
+                axs[1, 0].set_yticks(y_pos)
+                axs[1, 0].set_yticklabels(update_types)
+                axs[1, 0].invert_yaxis()  # Labels read top-to-bottom
+                
+                axs[1, 0].set_title("Knowledge Field Updates")
+            else:
+                axs[1, 0].text(0.5, 0.5, "No field update data available", 
+                              ha='center', va='center', fontsize=12)
+        else:
+            axs[1, 0].text(0.5, 0.5, "No field update data available", 
+                          ha='center', va='center', fontsize=12)
+        
+        # Plot 4: Research field visualization (bottom right)
+        # Visualize a simplified version of the research field
+        
+        # Create a circle representing the field
+        circle = plt.Circle((0, 0), 1, fill=False, color='gray', linestyle='--')
+        axs[1, 1].add_artist(circle)
+        
+        # Add attractor points for literature
+        literature_count = len(self.knowledge_field.literature)
+        
+        if literature_count > 0:
+            # Create points around a circle for literature
+            angles = np.linspace(0, 2*np.pi, min(10, literature_count), endpoint=False)
+            for i, angle in enumerate(angles):
+                x = 0.7 * np.cos(angle)
+                y = 0.7 * np.sin(angle)
+                axs[1, 1].scatter(x, y, s=100, color='blue', alpha=0.7)
+                axs[1, 1].text(x, y, f"Paper {i+1}", fontsize=8, ha='center', va='bottom')
+        
+        # Add points for research gaps
+        gap_count = len(self.knowledge_field.gaps)
+        
+        if gap_count > 0:
+            # Create points for gaps
+            gap_angles = np.linspace(0, 2*np.pi, min(5, gap_count), endpoint=False)
+            for i, angle in enumerate(gap_angles):
+                # Position gaps at a different radius
+                x = 0.4 * np.cos(angle)
+                y = 0.4 * np.sin(angle)
+                axs[1, 1].scatter(x, y, s=150, color='red', alpha=0.5, marker='*')
+                axs[1, 1].text(x, y, f"Gap {i+1}", fontsize=8, ha='center', va='bottom')
+        
+        # Add research question
+        if session_type in ["research_idea_development", "literature_review"]:
+            research_question = (session.get("research_question", "") if session_type == "literature_review" else
+                               session.get("results", {}).get("research_question", {}).get("question", ""))
+            
+            if research_question:
+                # Position research question at center
+                axs[1, 1].scatter(0, 0, s=200, color='green', alpha=0.7)
+                axs[1, 1].text(0, 0, "Research\nQuestion", fontsize=9, ha='center', va='center')
+        
+        # Set equal aspect ratio and limits
+        axs[1, 1].set_aspect('equal')
+        axs[1, 1].set_xlim(-1.2, 1.2)
+        axs[1, 1].set_ylim(-1.2, 1.2)
+        axs[1, 1].set_title("Research Knowledge Field")
+        
+        # Adjust layout
+        plt.tight_layout(rect=[0, 0, 1, 0.95])  # Make room for suptitle
+        
+        return fig
+
+# Research Example Functions
+
+def research_example_literature_review():
+    """Example: Conducting a systematic literature review."""
+    print("\n===== RESEARCH EXAMPLE: SYSTEMATIC LITERATURE REVIEW =====")
+    
+    # Initialize the research architecture
+    research = ResearchArchitecture(domain="cognitive_science")
+    
+    # Initialize with some sample papers
+    sample_papers = [
+        {
+            "id": "paper1",
+            "title": "Advances in Cognitive Processing",
+            "authors": ["Author A", "Author B"],
+            "year": 2023,
+            "abstract": "This paper explores recent advances in cognitive processing..."
+        },
+        {
+            "id": "paper2",
+            "title": "Neural Mechanisms of Memory",
+            "authors": ["Author C", "Author D"],
+            "year": 2022,
+            "abstract": "This study investigates the neural mechanisms underlying memory formation..."
+        },
+        {
+            "id": "paper3",
+            "title": "Cognitive Load Theory",
+            "authors": ["Author E", "Author F"],
+            "year": 2021,
+            "abstract": "A comprehensive review of cognitive load theory and its applications..."
+        },
+        {
+            "id": "paper4",
+            "title": "Working Memory Capacity",
+            "authors": ["Author G", "Author H"],
+            "year": 2023,
+            "abstract": "This research examines factors affecting working memory capacity..."
+        },
+        {
+            "id": "paper5",
+            "title": "Attention and Cognitive Control",
+            "authors": ["Author I", "Author J"],
+            "year": 2022,
+            "abstract": "A study on the relationship between attention mechanisms and cognitive control..."
+        }
+    ]
+    
+    research.initialize_literature(sample_papers)
+    
+    # Define a research question
+    research_question = "How do working memory capacity and cognitive load interact to affect learning outcomes?"
+    
+    # Conduct a literature review
+    print(f"Conducting literature review on: {research_question}")
+    review_results = research.conduct_literature_review(research_question)
+    
+    # Print results
+    print("\nLiterature Review Results:")
+    print(f"  Thematic Analysis: {review_results['thematic_analysis']}")
+    print(f"  Gaps Identified: {review_results['gaps']}")
+    print(f"  Future Directions: {review_results['future_directions']}")
+    
+    # Visualize the research process
+    fig = research.visualize_research_process()
+    plt.show()
+    
+    # Visualize the research landscape
+    field_fig = research.knowledge_field.visualize_research_landscape(include_gaps=True)
+    plt.show()
+    
+    return review_results
+
+def research_example_hypothesis_development():
+    """Example: Developing and refining research hypotheses."""
+    print("\n===== RESEARCH EXAMPLE: HYPOTHESIS DEVELOPMENT =====")
+    
+    # Initialize the research architecture
+    research = ResearchArchitecture(domain="psychology")
+    
+    # Initialize with some sample papers
+    sample_papers = [
+        {
+            "id": "paper1",
+            "title": "Social Media and Mental Health",
+            "authors": ["Author A", "Author B"],
+            "year": 2023,
+            "abstract": "This paper explores the relationship between social media use and mental health outcomes..."
+        },
+        {
+            "id": "paper2",
+            "title": "Screen Time Effects on Adolescents",
+            "authors": ["Author C", "Author D"],
+            "year": 2022,
+            "abstract": "This study investigates how screen time affects adolescent development..."
+        },
+        {
+            "id": "paper3",
+            "title": "Digital Wellbeing Interventions",
+            "authors": ["Author E", "Author F"],
+            "year": 2021,
+            "abstract": "A review of interventions designed to promote digital wellbeing..."
+        }
+    ]
+    
+    research.initialize_literature(sample_papers)
+    
+    # Develop a research idea
+    research_interest = "The effects of social media usage patterns on psychological wellbeing"
+    constraints = {
+        "population": "young adults (18-25)",
+        "timeframe": "longitudinal study",
+        "resources": "limited budget"
+    }
+    
+    print(f"Developing research idea on: {research_interest}")
+    print(f"With constraints: {constraints}")
+    
+    idea_results = research.develop_research_idea(research_interest, constraints)
+    
+    # Print initial research idea
+    print("\nInitial Research Idea:")
+    if isinstance(idea_results.get("research_question"), dict):
+        print(f"  Research Question: {idea_results['research_question'].get('question', 'N/A')}")
+    else:
+        print(f"  Research Question: {idea_results.get('research_question', 'N/A')}")
+        
+    if isinstance(idea_results.get("hypothesis"), dict):
+        print(f"  Hypothesis: {idea_results['hypothesis'].get('hypothesis', 'N/A')}")
+    else:
+        print(f"  Hypothesis: {idea_results.get('hypothesis', 'N/A')}")
+    
+    # Simulate hypothesis refinement
+    print("\nRefining hypothesis through multiple iterations...")
+    
+    # Get the hypothesis ID from the idea results
+    if isinstance(idea_results.get("hypothesis"), dict):
+        hypothesis_id = idea_results["hypothesis"].get("hypothesis_id")
+    else:
+        # Create a mock hypothesis ID for simulation
+        hypothesis_id = "hypothesis_1"
+        research.inquiry_model.hypotheses[hypothesis_id] = {
+            "hypothesis": "Initial hypothesis statement",
+            "research_question_id": "question_1",
+            "state": "active",
+            "timestamp": get_current_timestamp()
+        }
+    
+    # First refinement
+    refinement_data_1 = {
+        "precision_improvement": "Add specific social media platforms",
+        "variable_clarification": "Distinguish between active and passive usage",
+        "measurement_specification": "Use validated wellbeing scales"
+    }
+    
+    refined_1 = research.inquiry_model.refine_hypothesis(hypothesis_id, refinement_data_1)
+    print(f"  Refinement 1: {refined_1['hypothesis']['hypothesis']}")
+    
+    # Second refinement
+    refinement_data_2 = {
+        "precision_improvement": "Specify usage frequency thresholds",
+        "mediator_addition": "Include social comparison as mediator",
+        "boundary_condition": "Limit to non-clinical population"
+    }
+    
+    refined_2 = research.inquiry_model.refine_hypothesis(refined_1["hypothesis_id"], refinement_data_2)
+    print(f"  Refinement 2: {refined_2['hypothesis']['hypothesis']}")
+    
+    # Visualize the research process
+    fig = research.visualize_research_process()
+    plt.show()
+    
+    return {
+        "initial_idea": idea_results,
+        "refinement_1": refined_1,
+        "refinement_2": refined_2
+    }
+
+def research_example_interdisciplinary_research():
+    """Example: Orchestrating interdisciplinary research."""
+    print("\n===== RESEARCH EXAMPLE: INTERDISCIPLINARY RESEARCH =====")
+    
+    # Initialize the research architecture
+    research = ResearchArchitecture(domain="human_computer_interaction")
+    
+    # Initialize with some sample papers
+    sample_papers = [
+        {
+            "id": "paper1",
+            "title": "User Experience Design Principles",
+            "authors": ["Author A", "Author B"],
+            "year": 2023,
+            "domain": "human_computer_interaction",
+            "abstract": "This paper explores foundational principles in UX design..."
+        },
+        {
+            "id": "paper2",
+            "title": "Cognitive Neuroscience of Decision Making",
+            "authors": ["Author C", "Author D"],
+            "year": 2022,
+            "domain": "neuroscience",
+            "abstract": "This study investigates neural mechanisms of decision making..."
+        },
+        {
+            "id": "paper3",
+            "title": "Behavioral Economics and Choice Architecture",
+            "authors": ["Author E", "Author F"],
+            "year": 2021,
+            "domain": "behavioral_economics",
+            "abstract": "A review of how choice architecture influences decision making..."
+        },
+        {
+            "id": "paper4",
+            "title": "AI Systems for Decision Support",
+            "authors": ["Author G", "Author H"],
+            "year": 2023,
+            "domain": "artificial_intelligence",
+            "abstract": "This research examines AI-based decision support systems..."
+        }
+    ]
+    
+    research.initialize_literature(sample_papers)
+    
+    # Define domains for interdisciplinary analysis
+    primary_domain = "human_computer_interaction"
+    secondary_domains = ["neuroscience", "behavioral_economics", "artificial_intelligence"]
+    
+    print(f"Analyzing interdisciplinary research potential:")
+    print(f"  Primary Domain: {primary_domain}")
+    print(f"  Secondary Domains: {', '.join(secondary_domains)}")
+    
+    # Conduct interdisciplinary analysis
+    analysis_results = research.analyze_interdisciplinary_potential(
+        primary_domain=primary_domain,
+        secondary_domains=secondary_domains
+    )
+    
+    # Print results
+    print("\nInterdisciplinary Analysis Results:")
+    print("  Integration Points:")
+    for i, point in enumerate(analysis_results["integration_points"][:2]):  # Limit to 2 for clarity
+        domains = point.get("domains", [])
+        bridges = point.get("conceptual_bridges", [])
+        print(f"    {i+1}. Between {' and '.join(domains)}: {bridges[0] if bridges else 'N/A'}")
+    
+    print("\n  Research Potential Areas:")
+    for i, potential in enumerate(analysis_results["research_potential"][:2]):  # Limit to 2 for clarity
+        questions = potential.get("research_questions", [])
+        novelty = potential.get("novelty", 0)
+        impact = potential.get("impact", 0)
+        print(f"    {i+1}. Question: {questions[0] if questions else 'N/A'}")
+        print(f"       Novelty: {novelty:.2f}, Impact: {impact:.2f}")
+    
+    print("\n  Challenges and Strategies:")
+    challenges = analysis_results["challenges_strategies"]["conceptual_challenges"]
+    strategies = analysis_results["challenges_strategies"]["mitigation_strategies"]
+    for i, challenge in enumerate(challenges[:2]):  # Limit to 2 for clarity
+        print(f"    Challenge {i+1}: {challenge}")
+    for i, strategy in enumerate(strategies[:2]):  # Limit to 2 for clarity
+        print(f"    Strategy {i+1}: {strategy}")
+    
+    # Visualize the research process
+    fig = research.visualize_research_process()
+    plt.show()
+    
+    return analysis_results
+
+# =============================================================================
+# CROSS-ARCHITECTURE INTEGRATION EXAMPLE
+# =============================================================================
+
+def cross_architecture_integration_example():
+    """Example: Integration between different architectures."""
+    print("\n===== CROSS-ARCHITECTURE INTEGRATION EXAMPLE =====")
+    
+    # Initialize architectures
+    solver = SolverArchitecture()
+    tutor = TutorArchitecture(domain="mathematics")
+    research = ResearchArchitecture(domain="education")
+    
+    # Initialize content for tutor
+    tutor.initialize_content()
+    
+    # Scenario: Research-informed teaching of problem-solving strategies
+    print("Scenario: Research-informed teaching of problem-solving strategies")
+    
+    # Step 1: Use research architecture to analyze literature on problem-solving
+    print("\nStep 1: Analyzing research literature on problem-solving...")
+    
+    # Initialize research with sample papers
+    sample_papers = [
+        {
+            "id": "paper1",
+            "title": "Problem-Solving Strategies in Mathematics",
+            "authors": ["Author A", "Author B"],
+            "year": 2023,
+            "abstract": "This paper explores effective strategies for mathematical problem-solving..."
+        },
+        {
+            "id": "paper2",
+            "title": "Metacognition in Problem-Solving",
+            "authors": ["Author C", "Author D"],
+            "year": 2022,
+            "abstract": "This study investigates how metacognitive strategies enhance problem-solving..."
+        },
+        {
+            "id": "paper3",
+            "title": "Teaching Problem-Solving in STEM",
+            "authors": ["Author E", "Author F"],
+            "year": 2021,
+            "abstract": "A review of approaches to teaching problem-solving in STEM disciplines..."
+        }
+    ]
+    
+    research.initialize_literature(sample_papers)
+    
+    # Conduct literature review
+    research_question = "What are the most effective metacognitive strategies for teaching mathematical problem-solving?"
+    review_results = research.conduct_literature_review(research_question)
+    
+    print(f"  Research findings on effective strategies:")
+    for theme in review_results["thematic_analysis"][:3]:  # Limit to 3 for clarity
+        print(f"    - {theme}")
+    
+    # Step 2: Use solver architecture to formalize problem-solving strategies
+    print("\nStep 2: Formalizing problem-solving strategies...")
+    
+    # Define a math problem
+    math_problem = "Find all values of x that satisfy the equation x^2 - 5x + 6 = 0"
+    
+    # Solve the problem to demonstrate strategies
+    solution = solver.solve(math_problem, domain="mathematics")
+    
+    print(f"  Problem: {math_problem}")
+    print("  Formalized problem-solving approach:")
+    for stage, data in solution["stages"].items():
+        print(f"    - {stage.capitalize()}")
+    
+    # Step 3: Use tutor architecture to create teaching module
+    print("\nStep 3: Creating teaching module based on research and strategies...")
+    
+    # Create a concept for problem-solving
+    problem_solving_concept = {
+        "id": "problem_solving",
+        "name": "Mathematical Problem-Solving",
+        "description": "Strategies for solving mathematical problems",
+        "difficulty": 0.6,
+        "prerequisites": []
+    }
+    
+    # Add to tutor's content model
+    tutor.content_model.add_concept(problem_solving_concept["id"], problem_solving_concept)
+    
+    # Add as attractor in knowledge field
+    position = np.random.normal(0, 1, tutor.knowledge_field.dimensions)
+    position = position / np.linalg.norm(position)
+    tutor.knowledge_field.add_attractor(
+        concept=problem_solving_concept["name"],
+        position=position,
+        strength=0.8
+    )
+    
+    # Teach the concept
+    session = tutor.teach_concept(problem_solving_concept["id"], learning_goal="strategy_mastery")
+    
+    print("  Teaching module created with:")
+    print(f"    - Initial student knowledge: {session['initial_state'].get('understanding', 0):.2f}")
+    print(f"    - {len(session['interactions'])} learning interactions")
+    print(f"    - Final student knowledge: {session['final_state'].get('understanding', 0):.2f}")
+    
+    # Step 4: Demonstrate integrated learning experience
+    print("\nStep 4: Simulating integrated learning experience...")
+    
+    # Simulate a student learning to solve problems
+    print("  Student learning trajectory:")
+    print("    1. Research-based metacognitive strategies introduced")
+    print("    2. Formal problem-solving process demonstrated")
+    print("    3. Guided practice with metacognitive scaffolding")
+    print("    4. Independent problem-solving with reflection")
+    
+    # Calculate an integrated measure of effectiveness
+    research_quality = random.uniform(0.7, 0.9)  # Research-based approach
+    solver_effectiveness = random.uniform(0.8, 0.95)  # Formalized strategies
+    tutor_engagement = random.uniform(0.75, 0.9)  # Adaptive teaching
+    
+    integrated_effectiveness = (research_quality * 0.3 + 
+                              solver_effectiveness * 0.3 + 
+                              tutor_engagement * 0.4)
+    
+    print(f"\n  Integrated effectiveness score: {integrated_effectiveness:.2f}")
+    print(f"    - Research quality component: {research_quality:.2f}")
+    print(f"    - Solver effectiveness component: {solver_effectiveness:.2f}")
+    print(f"    - Tutor engagement component: {tutor_engagement:.2f}")
+    
+    return {
+        "research_component": review_results,
+        "solver_component": solution,
+        "tutor_component": session,
+        "integrated_effectiveness": integrated_effectiveness
+    }
+
+# =============================================================================
+# MAIN FUNCTION
+# =============================================================================
+
+def main():
+    """Run architecture examples."""
+    print("=" * 80)
+    print("COGNITIVE ARCHITECTURE EXAMPLES")
+    print("=" * 80)
+    
+    # Get example selection from user
+    print("\nAvailable Examples:")
+    print("  1. Solver: Math Problem")
+    print("  2. Solver: Algorithm Design")
+    print("  3. Solver: Field Theory")
+    print("  4. Tutor: Math Concept")
+    print("  5. Tutor: Adaptive Scaffolding")
+    print("  6. Tutor: Misconception Remediation")
+    print("  7. Research: Literature Review")
+    print("  8. Research: Hypothesis Development")
+    print("  9. Research: Interdisciplinary Research")
+    print(" 10. Cross-Architecture Integration")
+    print(" 11. Run All Examples")
+    print("  0. Exit")
+    
+    try:
+        choice = input("\nSelect an example to run (0-11): ")
+        choice = int(choice.strip())
+        
+        if choice == 0:
+            print("\nExiting...")
+            return
+        
+        if choice == 1 or choice == 11:
+            solver_example_math_problem()
+        
+        if choice == 2 or choice == 11:
+            solver_example_algorithmic_design()
+        
+        if choice == 3 or choice == 11:
+            solver_example_with_field_theory()
+        
+        if choice == 4 or choice == 11:
+            tutor_example_math_concept()
+        
+        if choice == 5 or choice == 11:
+            tutor_example_adaptive_scaffolding()
+        
+        if choice == 6 or choice == 11:
+            tutor_example_misconception_remediation()
+        
+        if choice == 7 or choice == 11:
+            research_example_literature_review()
+        
+        if choice == 8 or choice == 11:
+            research_example_hypothesis_development()
+        
+        if choice == 9 or choice == 11:
+            research_example_interdisciplinary_research()
+        
+        if choice == 10 or choice == 11:
+            cross_architecture_integration_example()
+        
+    except ValueError:
+        print("Invalid input. Please enter a number between 0 and 11.")
+    
+    print("\nExamples completed. Thank you for exploring the cognitive architectures!")
+
+if __name__ == "__main__":
+    main()
