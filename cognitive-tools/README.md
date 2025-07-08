@@ -31,36 +31,76 @@ Cognitive tools are structured prompt patterns that guide language models throug
 ## Structure
 ```
 cognitive-tools/
-├── README.md                  # Overview and quick-start guide
-├── cognitive-templates/       # Reusable templates for different reasoning patterns
-│   ├── understanding.md       # Templates for comprehension operations
-│   ├── reasoning.md           # Templates for analytical operations
-│   ├── verification.md        # Templates for checking and validation
-│   └── composition.md         # Templates for combining multiple tools
-│
-├── cognitive-programs/        # Structured prompt programs with code-like patterns
-│   ├── basic-programs.md      # Fundamental program structures (conditionals, loops)
-│   ├── advanced-programs.md   # Complex program architectures (meta-programming)
-│   ├── program-library.py     # Python implementation of common prompt programs
-│   └── program-examples.ipynb # Interactive examples showing programs in action
-│
-├── cognitive-schemas/         # Structured knowledge representation formats
-│   ├── user-schemas.md        # Schemas for representing user information
-│   ├── domain-schemas.md      # Schemas for different knowledge domains
-│   ├── task-schemas.md        # Schemas for different reasoning tasks
-│   └── schema-library.yaml    # YAML library of reusable schemas
-│
-├── cognitive-architectures/   # Complete reasoning systems combining multiple tools
-│   ├── solver-architecture.md # Architecture for problem-solving applications
-│   ├── tutor-architecture.md  # Architecture for educational applications
-│   ├── research-architecture.md # Architecture for information synthesis
-│   └── architecture-examples.py # Implementation examples of complete architectures
-│
-└── integration/               # Guides for integrating with other components
-    ├── with-rag.md            # Combining cognitive tools with retrieval
-    ├── with-memory.md         # Integrating with memory systems
-    ├── with-agents.md         # Using in multi-agent architectures
-    └── evaluation-metrics.md  # Measuring cognitive tool effectiveness
+├── README.md                       # Overview and quick-start guide
+├── cognitive-templates/            # Templates for cognitive processes
+│   ├── understanding.md            # Comprehension templates
+│   ├── reasoning.md                # Reasoning templates
+│   ├── verification.md             # Verification templates
+│   ├── composition.md              # Composition templates
+│   ├── emergence.md                # Emergence templates
+│   ├── quantum_interpretation.md   # Quantum semantics templates
+│   ├── unified_field_reasoning.md  # Unified field templates
+│   ├── meta_recursive_reasoning.md # Self-improvement templates
+│   ├── interpretability_scaffolding.md # Transparency templates
+│   ├── collaborative_co_evolution.md # Human-AI templates
+│   └── cross_modal_integration.md  # Multi-modal templates
+├── cognitive-programs/             # Executable cognitive processes
+│   ├── basic-programs.md           # Fundamental programs
+│   ├── advanced-programs.md        # Complex programs
+│   ├── program-library.py          # Program collection
+│   ├── program-examples.ipynb      # Program demonstrations
+│   ├── emergence-programs.md       # Emergence programs
+│   ├── quantum_semantic_programs.md # Quantum semantics programs
+│   ├── unified_field_programs.md   # Unified field programs
+│   ├── meta_recursive_programs.md  # Self-improvement programs
+│   ├── interpretability_programs.md # Transparency programs
+│   ├── collaborative_evolution_programs.md # Human-AI programs
+│   └── cross_modal_programs.md     # Multi-modal programs
+├── cognitive-schemas/              # Knowledge representation structures
+│   ├── user-schemas.md             # User modeling schemas
+│   ├── domain-schemas.md           # Domain knowledge schemas
+│   ├── task-schemas.md             # Task representation schemas
+│   ├── schema-library.yaml         # Schema collection
+│   ├── field-schemas.md            # Field theory schemas
+│   ├── quantum_schemas.md          # Quantum semantics schemas
+│   ├── unified_schemas.md          # Unified field schemas
+│   ├── meta_recursive_schemas.md   # Self-improvement schemas
+│   ├── interpretability_schemas.md # Transparency schemas
+│   ├── collaborative_schemas.md    # Human-AI schemas
+│   └── cross_modal_schemas.md      # Multi-modal schemas
+├── cognitive-architectures/        # System-level frameworks
+│   ├── solver-architecture.md      # Problem-solving architecture
+│   ├── tutor-architecture.md       # Educational architecture
+│   ├── research-architecture.md    # Research assistant architecture
+│   ├── architecture-examples.py    # Architecture demonstrations
+│   ├── field-architecture.md       # Field theory architecture
+│   ├── quantum_architecture.md     # Quantum semantics architecture
+│   ├── unified_architecture.md     # Unified field architecture
+│   ├── meta_recursive_architecture.md # Self-improvement architecture
+│   ├── interpretability_architecture.md # Transparency architecture
+│   ├── collaborative_architecture.md # Human-AI architecture
+│   └── cross_modal_architecture.md # Multi-modal architecture
+├── integration/                    # Integration with other systems
+│   ├── with-rag.md                 # Retrieval integration
+│   ├── with-memory.md              # Memory system integration
+│   ├── with-agents.md              # Agent system integration
+│   ├── evaluation-metrics.md       # Evaluation methods
+│   ├── with-fields.md              # Field theory integration
+│   ├── with-quantum.md             # Quantum semantics integration
+│   ├── with-unified.md             # Unified field integration
+│   ├── with-meta-recursion.md      # Self-improvement integration
+│   ├── with-interpretability.md    # Transparency integration
+│   ├── with-collaboration.md       # Human-AI integration
+│   └── with-cross-modal.md         # Multi-modal integration
+└── meta-cognition/                 # Meta-cognitive capabilities
+    ├── self-reflection.md          # Self-analysis systems
+    ├── recursive-improvement.md    # Self-enhancement methods
+    ├── meta-awareness.md           # System self-awareness
+    ├── attribution-engines.md      # Causal attribution systems
+    ├── symbolic-echo-processing.md # Symbolic pattern processing
+    ├── meta-interpretability.md    # Meta-level transparency
+    ├── meta-collaboration.md       # Meta-level human-AI partnership
+    └── meta-modal-integration.md   # Meta-level modal integration
 ```
 ## Why Cognitive Tools Matter
 
