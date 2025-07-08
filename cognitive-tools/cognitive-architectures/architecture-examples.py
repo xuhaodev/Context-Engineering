@@ -2338,4 +2338,762 @@ class TutorArchitecture:
                       fontsize=9, ha='center', va='bottom')
         
         # Add a simulated learning trajectory
+        trajectory_x = [initial_pos[0], -0.4, -0.1, 0.2, final_pos[0]]
+        trajectory_y = [initial_pos[1], -0.3, 0.0, 0.1, final_pos[1]]
+        axs[1, 1].plot(trajectory_x, trajectory_y, 'b-', alpha=0.5)
         
+        # Add misconception attractors if any
+        if initial_misconceptions:
+            for i, m in enumerate(initial_misconceptions[:2]):  # Limit to 2 for clarity
+                # Position for misconception attractor
+                m_pos = (-0.5 + i*0.4, -0.6 + i*0.2)
+                axs[1, 1].scatter(m_pos[0], m_pos[1], s=100, color='orange', alpha=0.5)
+                axs[1, 1].text(m_pos[0], m_pos[1], f"M{i+1}", fontsize=9, ha='center', va='bottom')
+        
+        # Set equal aspect ratio and limits
+        axs[1, 1].set_aspect('equal')
+        axs[1, 1].set_xlim(-1.2, 1.2)
+        axs[1, 1].set_ylim(-1.2, 1.2)
+        axs[1, 1].set_title("Learning Field Trajectory")
+        
+        # Adjust layout
+        plt.tight_layout(rect=[0, 0, 1, 0.95])  # Make room for suptitle
+        
+        return fig
+
+# Tutor Example Functions
+
+def tutor_example_math_concept():
+    """Example: Teaching a mathematical concept."""
+    print("\n===== TUTOR EXAMPLE: MATH CONCEPT =====")
+    
+    # Initialize the tutor architecture
+    tutor = TutorArchitecture(domain="mathematics")
+    
+    # Initialize content with sample concepts
+    tutor.initialize_content()
+    
+    # Define the concept to teach
+    concept_id = "concept_2"  # Intermediate concept
+    
+    # Execute tutoring session
+    print(f"Teaching concept: {concept_id}")
+    session = tutor.teach_concept(concept_id, learning_goal="mastery")
+    
+    # Print results
+    print("\nInitial Knowledge State:")
+    print(json.dumps(session["initial_state"], indent=2))
+    
+    print("\nInteractions:")
+    for i, interaction in enumerate(session["interactions"]):
+        print(f"  Interaction {i+1}: {interaction['tool']}")
+    
+    print("\nFinal Knowledge State:")
+    print(json.dumps(session["final_state"], indent=2))
+    
+    # Visualize the learning process
+    fig = tutor.visualize_learning_process()
+    plt.show()
+    
+    # Also visualize the field
+    field_fig = tutor.knowledge_field.visualize()
+    plt.show()
+    
+    return session
+
+def tutor_example_adaptive_scaffolding():
+    """Example: Adaptive scaffolding for skill development."""
+    print("\n===== TUTOR EXAMPLE: ADAPTIVE SCAFFOLDING =====")
+    
+    # Initialize the tutor architecture
+    tutor = TutorArchitecture(domain="programming")
+    
+    # Initialize content with sample concepts
+    tutor.initialize_content()
+    
+    # Define the concept to teach with scaffolding
+    concept_id = "concept_3"  # Advanced concept
+    
+    # Set up scaffolding field
+    # Add attractors representing different scaffolding levels
+    field = tutor.knowledge_field
+    
+    # Add attractors for scaffolding levels
+    field.add_attractor("High Scaffolding", np.array([0.8, 0.2, 0.1]), strength=0.9)
+    field.add_attractor("Medium Scaffolding", np.array([0.1, 0.9, 0.2]), strength=0.7)
+    field.add_attractor("Low Scaffolding", np.array([0.4, 0.4, 0.8]), strength=0.5)
+    field.add_attractor("Independent Practice", np.array([-0.7, 0.5, 0.1]), strength=0.3)
+    
+    # Execute tutoring session
+    print(f"Teaching concept with adaptive scaffolding: {concept_id}")
+    session = tutor.teach_concept(concept_id, learning_goal="skill_development")
+    
+    # Print results
+    print("\nInitial Knowledge State:")
+    print(json.dumps(session["initial_state"], indent=2))
+    
+    print("\nScaffolding Progression:")
+    for i, interaction in enumerate(session["interactions"]):
+        print(f"  Stage {i+1}: {interaction['tool']} with parameters: {interaction['params']}")
+    
+    print("\nFinal Knowledge State:")
+    print(json.dumps(session["final_state"], indent=2))
+    
+    # Simulate scaffold fading trajectory
+    start_position = np.array([0.8, 0.1, 0.1])  # Near high scaffolding
+    start_position = start_position / np.linalg.norm(start_position)
+    
+    print("\nSimulating scaffold fading trajectory...")
+    trajectory = field.calculate_trajectory(start_position, steps=20)
+    
+    # Create a simple representation of scaffolding levels over time
+    scaffolding_levels = ["High", "High", "High", "Medium", "Medium", 
+                         "Medium", "Low", "Low", "Independent", "Independent"]
+    
+    print("Scaffolding Fading Sequence:")
+    for i, level in enumerate(scaffolding_levels):
+        print(f"  Learning Activity {i+1}: {level} Scaffolding")
+    
+    # Visualize the field with scaffolding trajectory
+    field_fig = field.visualize(show_trajectories=True)
+    plt.show()
+    
+    # Visualize the learning process
+    fig = tutor.visualize_learning_process()
+    plt.show()
+    
+    return session
+
+def tutor_example_misconception_remediation():
+    """Example: Addressing and remediating misconceptions."""
+    print("\n===== TUTOR EXAMPLE: MISCONCEPTION REMEDIATION =====")
+    
+    # Initialize the tutor architecture
+    tutor = TutorArchitecture(domain="science")
+    
+    # Initialize content with sample concepts
+    tutor.initialize_content()
+    
+    # Manually add misconceptions to the student model
+    tutor.student_model.misconceptions = [
+        "Confusion between correlation and causation",
+        "Belief that heavier objects fall faster than lighter ones",
+        "Misunderstanding of experimental control variables"
+    ]
+    
+    # Define the concept to teach
+    concept_id = "concept_2"  # Intermediate concept
+    
+    # Execute tutoring session
+    print(f"Teaching concept with misconception remediation: {concept_id}")
+    print(f"Initial Misconceptions: {tutor.student_model.misconceptions}")
+    
+    session = tutor.teach_concept(concept_id, learning_goal="conceptual_change")
+    
+    # Print results
+    print("\nRemediation Process:")
+    for i, interaction in enumerate(session["interactions"]):
+        print(f"  Step {i+1}: {interaction['tool']}")
+        if 'result' in interaction and 'misconceptions' in interaction['result']:
+            print(f"    Addressed: {interaction['result']['misconceptions']}")
+    
+    print("\nRemaining Misconceptions:")
+    print(f"  {tutor.student_model.misconceptions}")
+    
+    # Visualize the learning process
+    fig = tutor.visualize_learning_process()
+    plt.show()
+    
+    return session
+
+# =============================================================================
+# RESEARCH ARCHITECTURE IMPLEMENTATION
+# =============================================================================
+
+class ResearchKnowledgeField(SemanticField):
+    """Implementation of research domain knowledge field."""
+    
+    def __init__(self, domain: str, dimensions: int = 128):
+        """
+        Initialize the research knowledge field.
+        
+        Args:
+            domain: Research domain
+            dimensions: Dimensionality of the field
+        """
+        super().__init__(dimensions=dimensions, name=f"research_field_{domain}")
+        self.domain = domain
+        self.literature = {}
+        self.research_questions = {}
+        self.hypotheses = {}
+        self.gaps = []
+        self.contradictions = []
+    
+    def add_literature(self, papers: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """
+        Integrate research literature into the knowledge field.
+        
+        Args:
+            papers: Collection of research papers
+            
+        Returns:
+            dict: Updated field state
+        """
+        # Protocol shell for literature integration
+        protocol = ProtocolShell(
+            intent="Integrate research literature into knowledge field",
+            input_params={
+                "papers": papers,
+                "current_field": "field_state"
+            },
+            process_steps=[
+                {"action": "extract", "description": "Identify key concepts and findings"},
+                {"action": "map", "description": "Position concepts in field space"},
+                {"action": "detect", "description": "Identify attractor basins"},
+                {"action": "connect", "description": "Establish concept relationships"},
+                {"action": "locate", "description": "Identify knowledge boundaries and gaps"}
+            ],
+            output_spec={
+                "updated_field": "New field state with integrated literature",
+                "new_concepts": "Newly added concepts",
+                "new_attractors": "Newly identified attractor basins",
+                "new_boundaries": "Updated knowledge boundaries",
+                "new_gaps": "Newly detected knowledge gaps"
+            }
+        )
+        
+        # Execute protocol
+        integration_results = protocol.execute()
+        
+        # Store papers in literature collection
+        for paper in papers:
+            paper_id = paper.get("id", generate_id())
+            self.literature[paper_id] = paper
+            
+            # Add paper as attractor in field
+            paper_title = paper.get("title", f"Paper {paper_id}")
+            position = np.random.normal(0, 1, self.dimensions)
+            position = position / np.linalg.norm(position)
+            
+            self.add_attractor(
+                concept=f"Paper: {paper_title}",
+                position=position,
+                strength=0.7  # Moderate strength for literature attractors
+            )
+        
+        # Extract potential gaps
+        if "new_gaps" in integration_results and isinstance(integration_results["new_gaps"], list):
+            for gap in integration_results["new_gaps"]:
+                if gap not in self.gaps:
+                    self.gaps.append(gap)
+        
+        # Extract potential contradictions
+        contradictions = []
+        for i, paper1 in enumerate(papers):
+            for paper2 in papers[i+1:]:
+                # Simulate contradiction detection (in real implementation would be more sophisticated)
+                if random.random() < 0.2:  # 20% chance of contradiction
+                    contradiction = {
+                        "papers": [paper1.get("id", "unknown"), paper2.get("id", "unknown")],
+                        "topic": "research_topic",
+                        "description": "Contradictory findings on same phenomenon"
+                    }
+                    contradictions.append(contradiction)
+        
+        for contradiction in contradictions:
+            if contradiction not in self.contradictions:
+                self.contradictions.append(contradiction)
+        
+        return {
+            "papers_added": len(papers),
+            "new_gaps": len(self.gaps) - (len(self.gaps) - len(integration_results.get("new_gaps", []))),
+            "new_contradictions": len(contradictions),
+            "field_update": integration_results
+        }
+    
+    def identify_research_opportunities(self, research_interests: List[str], 
+                                      constraints: Dict[str, Any] = None) -> List[Dict[str, Any]]:
+        """
+        Identify promising research opportunities in the field.
+        
+        Args:
+            research_interests: Areas of research interest
+            constraints: Optional research constraints
+            
+        Returns:
+            list: Promising research opportunities
+        """
+        # Protocol shell for opportunity identification
+        protocol = ProtocolShell(
+            intent="Identify promising research opportunities",
+            input_params={
+                "knowledge_field": "field_state",
+                "research_interests": research_interests,
+                "constraints": constraints if constraints else {}
+            },
+            process_steps=[
+                {"action": "analyze", "description": "Examine knowledge gaps"},
+                {"action": "explore", "description": "Identify boundary areas"},
+                {"action": "evaluate", "description": "Assess attractor interactions"},
+                {"action": "match", "description": "Align opportunities with interests"},
+                {"action": "prioritize", "description": "Rank by promise and feasibility"}
+            ],
+            output_spec={
+                "opportunities": "Prioritized research opportunities",
+                "rationale": "Justification for each opportunity",
+                "gap_alignment": "How opportunities address gaps",
+                "impact_potential": "Potential research impact",
+                "feasibility": "Implementation feasibility assessment"
+            }
+        )
+        
+        # Execute protocol
+        opportunities = protocol.execute()
+        
+        # Generate simulated research opportunities
+        simulated_opportunities = []
+        
+        # Create opportunities based on gaps and interests
+        for i, interest in enumerate(research_interests[:3]):  # Limit to 3
+            # Create a research opportunity
+            opportunity = {
+                "id": f"opportunity_{i+1}",
+                "title": f"Research opportunity related to {interest}",
+                "description": f"Investigate the relationship between {interest} and related factors",
+                "gap_addressed": self.gaps[i % len(self.gaps)] if self.gaps else "Unknown gap",
+                "alignment": random.uniform(0.6, 0.9),
+                "feasibility": random.uniform(0.5, 0.9),
+                "impact": random.uniform(0.4, 0.95)
+            }
+            
+            simulated_opportunities.append(opportunity)
+        
+        return simulated_opportunities
+    
+    def detect_contradictions(self) -> List[Dict[str, Any]]:
+        """
+        Detect contradictions in the research literature.
+        
+        Returns:
+            list: Detected contradictions
+        """
+        return self.contradictions
+    
+    def visualize_research_landscape(self, focus: str = "literature", include_gaps: bool = True) -> plt.Figure:
+        """
+        Visualize the research knowledge landscape.
+        
+        Args:
+            focus: Focus of visualization (literature, gaps, opportunities)
+            include_gaps: Whether to include knowledge gaps
+            
+        Returns:
+            matplotlib.figure.Figure: Visualization figure
+        """
+        # Create base visualization using parent class method
+        fig = self.visualize(show_attractors=True, show_trajectories=False)
+        
+        # Get the current axes
+        ax = plt.gca()
+        
+        # Add gap visualization if requested
+        if include_gaps and self.gaps:
+            # Visualize gaps as dashed boundaries
+            for i, gap in enumerate(self.gaps[:5]):  # Limit to 5 for clarity
+                # Create a dashed circle representing the gap
+                gap_radius = random.uniform(0.1, 0.3)
+                gap_x = random.uniform(-0.8, 0.8)
+                gap_y = random.uniform(-0.8, 0.8)
+                
+                gap_circle = plt.Circle((gap_x, gap_y), gap_radius, fill=False, 
+                                      color='red', linestyle='dashed', alpha=0.7)
+                ax.add_artist(gap_circle)
+                
+                # Add gap label
+                if isinstance(gap, str):
+                    gap_label = gap
+                else:
+                    gap_label = f"Gap {i+1}"
+                
+                ax.text(gap_x, gap_y, gap_label, fontsize=8, ha='center', va='center', color='red')
+        
+        # Update title based on focus
+        ax.set_title(f"Research Knowledge Landscape: {focus.capitalize()}")
+        
+        return fig
+
+class ResearchInquiryModel:
+    """Implementation of research question and hypothesis management."""
+    
+    def __init__(self):
+        """Initialize the research inquiry model."""
+        self.research_questions = {}
+        self.hypotheses = {}
+        self.evidence_mappings = {}
+        self.inquiry_trajectories = []
+    
+    def develop_research_question(self, knowledge_field: ResearchKnowledgeField,
+                               research_interest: str, constraints: Dict[str, Any] = None) -> Dict[str, Any]:
+        """
+        Develop well-formed research question from interest area.
+        
+        Args:
+            knowledge_field: Research knowledge field
+            research_interest: General area of interest
+            constraints: Optional research constraints
+            
+        Returns:
+            dict: Formulated research question
+        """
+        # Protocol shell for research question development
+        protocol = ProtocolShell(
+            intent="Formulate precise research question from interest area",
+            input_params={
+                "knowledge_field": "field_state",
+                "research_interest": research_interest,
+                "constraints": constraints if constraints else {}
+            },
+            process_steps=[
+                {"action": "analyze", "description": "Examine knowledge field relevant to interest"},
+                {"action": "identify", "description": "Locate knowledge gaps and boundaries"},
+                {"action": "formulate", "description": "Craft potential research questions"},
+                {"action": "evaluate", "description": "Assess question quality and feasibility"},
+                {"action": "refine", "description": "Improve question precision and scope"}
+            ],
+            output_spec={
+                "research_question": "Precisely formulated research question",
+                "sub_questions": "Related sub-questions to explore",
+                "rationale": "Justification and background",
+                "relationship_to_gaps": "How question addresses knowledge gaps",
+                "novelty_assessment": "Evaluation of question novelty"
+            }
+        )
+        
+        # Execute protocol
+        question_results = protocol.execute()
+        
+        # Store the research question
+        question_id = generate_id()
+        self.research_questions[question_id] = {
+            "question": question_results.get("research_question", f"Research question about {research_interest}"),
+            "sub_questions": question_results.get("sub_questions", []),
+            "rationale": question_results.get("rationale", ""),
+            "gap_relationship": question_results.get("relationship_to_gaps", ""),
+            "novelty": question_results.get("novelty_assessment", ""),
+            "interest": research_interest,
+            "constraints": constraints,
+            "state": "active",
+            "timestamp": get_current_timestamp()
+        }
+        
+        return {
+            "question_id": question_id,
+            "question": self.research_questions[question_id]
+        }
+    
+    def develop_hypothesis(self, knowledge_field: ResearchKnowledgeField, 
+                         research_question_id: str, hypothesis_type: str = "explanatory") -> Dict[str, Any]:
+        """
+        Develop testable hypothesis for research question.
+        
+        Args:
+            knowledge_field: Research knowledge field
+            research_question_id: ID of the research question
+            hypothesis_type: Type of hypothesis to develop
+            
+        Returns:
+            dict: Formulated hypothesis
+        """
+        # Retrieve the research question
+        if research_question_id not in self.research_questions:
+            raise ValueError(f"Research question ID {research_question_id} not found")
+            
+        research_question = self.research_questions[research_question_id]
+        
+        # Protocol shell for hypothesis development
+        protocol = ProtocolShell(
+            intent="Formulate testable hypothesis for research question",
+            input_params={
+                "knowledge_field": "field_state",
+                "research_question": research_question,
+                "hypothesis_type": hypothesis_type
+            },
+            process_steps=[
+                {"action": "analyze", "description": "Examine relevant theory and evidence"},
+                {"action": "formulate", "description": "Craft potential hypotheses"},
+                {"action": "evaluate", "description": "Assess testability and explanatory power"},
+                {"action": "refine", "description": "Improve precision and falsifiability"},
+                {"action": "connect", "description": "Link to existing knowledge"}
+            ],
+            output_spec={
+                "hypothesis": "Precisely formulated hypothesis",
+                "alternative_hypotheses": "Alternative explanations to consider",
+                "testability": "Assessment of empirical testability",
+                "variables": "Key variables and relationships",
+                "predictions": "Specific predictions derived from hypothesis",
+                "theoretical_grounding": "Connection to existing theory"
+            }
+        )
+        
+        # Execute protocol
+        hypothesis_results = protocol.execute()
+        
+        # Store the hypothesis
+        hypothesis_id = generate_id()
+        self.hypotheses[hypothesis_id] = {
+            "hypothesis": hypothesis_results.get("hypothesis", "Hypothesis statement"),
+            "alternatives": hypothesis_results.get("alternative_hypotheses", []),
+            "testability": hypothesis_results.get("testability", "medium"),
+            "variables": hypothesis_results.get("variables", {}),
+            "predictions": hypothesis_results.get("predictions", []),
+            "theoretical_grounding": hypothesis_results.get("theoretical_grounding", ""),
+            "research_question_id": research_question_id,
+            "type": hypothesis_type,
+            "state": "active",
+            "timestamp": get_current_timestamp()
+        }
+        
+        # Link hypothesis to research question
+        if "hypotheses" not in self.research_questions[research_question_id]:
+            self.research_questions[research_question_id]["hypotheses"] = []
+        
+        self.research_questions[research_question_id]["hypotheses"].append(hypothesis_id)
+        
+        return {
+            "hypothesis_id": hypothesis_id,
+            "hypothesis": self.hypotheses[hypothesis_id]
+        }
+    
+    def refine_hypothesis(self, hypothesis_id: str, refinement_data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Refine an existing hypothesis.
+        
+        Args:
+            hypothesis_id: ID of the hypothesis to refine
+            refinement_data: Data for refinement
+            
+        Returns:
+            dict: Refined hypothesis
+        """
+        # Check if hypothesis exists
+        if hypothesis_id not in self.hypotheses:
+            raise ValueError(f"Hypothesis ID {hypothesis_id} not found")
+        
+        # Get the original hypothesis
+        original_hypothesis = self.hypotheses[hypothesis_id]
+        
+        # Protocol shell for hypothesis refinement
+        protocol = ProtocolShell(
+            intent="Refine hypothesis for precision and testability",
+            input_params={
+                "original_hypothesis": original_hypothesis,
+                "refinement_data": refinement_data
+            },
+            process_steps=[
+                {"action": "analyze", "description": "Analyze refinement needs"},
+                {"action": "improve", "description": "Improve precision and clarity"},
+                {"action": "enhance", "description": "Enhance testability"},
+                {"action": "update", "description": "Update variable relationships"},
+                {"action": "revise", "description": "Revise predictions"}
+            ],
+            output_spec={
+                "refined_hypothesis": "Improved hypothesis statement",
+                "refinement_rationale": "Justification for changes",
+                "improved_testability": "Assessment of enhanced testability",
+                "updated_variables": "Updated variable definitions",
+                "revised_predictions": "Revised empirical predictions"
+            }
+        )
+        
+        # Execute protocol
+        refinement_results = protocol.execute()
+        
+        # Create new refined hypothesis
+        refined_hypothesis_id = generate_id()
+        self.hypotheses[refined_hypothesis_id] = {
+            "hypothesis": refinement_results.get("refined_hypothesis", original_hypothesis["hypothesis"]),
+            "alternatives": original_hypothesis["alternatives"],
+            "testability": refinement_results.get("improved_testability", original_hypothesis["testability"]),
+            "variables": refinement_results.get("updated_variables", original_hypothesis["variables"]),
+            "predictions": refinement_results.get("revised_predictions", original_hypothesis["predictions"]),
+            "theoretical_grounding": original_hypothesis["theoretical_grounding"],
+            "research_question_id": original_hypothesis["research_question_id"],
+            "refined_from": hypothesis_id,
+            "refinement_rationale": refinement_results.get("refinement_rationale", ""),
+            "type": original_hypothesis["type"],
+            "state": "active",
+            "timestamp": get_current_timestamp()
+        }
+        
+        # Update original hypothesis state
+        self.hypotheses[hypothesis_id]["state"] = "refined"
+        self.hypotheses[hypothesis_id]["refined_to"] = refined_hypothesis_id
+        
+        # Update the research question to point to the new hypothesis
+        research_question_id = original_hypothesis["research_question_id"]
+        if research_question_id in self.research_questions:
+            if "hypotheses" in self.research_questions[research_question_id]:
+                # Replace the old hypothesis with the new one in the list
+                hypotheses = self.research_questions[research_question_id]["hypotheses"]
+                if hypothesis_id in hypotheses:
+                    index = hypotheses.index(hypothesis_id)
+                    hypotheses[index] = refined_hypothesis_id
+        
+        # Record trajectory
+        self.inquiry_trajectories.append({
+            "type": "hypothesis_refinement",
+            "original": hypothesis_id,
+            "refined": refined_hypothesis_id,
+            "timestamp": get_current_timestamp()
+        })
+        
+        return {
+            "hypothesis_id": refined_hypothesis_id,
+            "hypothesis": self.hypotheses[refined_hypothesis_id],
+            "refinement": {
+                "original_id": hypothesis_id,
+                "changes": refinement_results
+            }
+        }
+
+class ResearchSynthesisModel:
+    """Implementation of research synthesis capabilities."""
+    
+    def __init__(self):
+        """Initialize the research synthesis model."""
+        self.evidence_collection = {}
+        self.syntheses = {}
+        self.theory_models = {}
+        self.contradictions = []
+        self.synthesis_trajectories = []
+    
+    def synthesize_findings(self, knowledge_field: ResearchKnowledgeField, evidence: List[Dict[str, Any]],
+                          research_question_id: str = None, synthesis_type: str = "narrative") -> Dict[str, Any]:
+        """
+        Synthesize research findings into coherent understanding.
+        
+        Args:
+            knowledge_field: Research knowledge field
+            evidence: Collection of research findings
+            research_question_id: Optional focus research question
+            synthesis_type: Type of synthesis to perform
+            
+        Returns:
+            dict: Research synthesis
+        """
+        # Protocol shell for synthesis
+        protocol = ProtocolShell(
+            intent="Synthesize research findings into coherent understanding",
+            input_params={
+                "knowledge_field": "field_state",
+                "evidence": evidence,
+                "research_question": research_question_id,
+                "synthesis_type": synthesis_type
+            },
+            process_steps=[
+                {"action": "organize", "description": "Structure evidence by themes and relationships"},
+                {"action": "evaluate", "description": "Assess evidence quality and consistency"},
+                {"action": "identify", "description": "Detect patterns and contradictions"},
+                {"action": "integrate", "description": "Develop coherent understanding"},
+                {"action": "contextualize", "description": "Position within broader knowledge"}
+            ],
+            output_spec={
+                "synthesis": "Integrated understanding of findings",
+                "evidence_evaluation": "Assessment of evidence quality",
+                "patterns": "Identified patterns and relationships",
+                "contradictions": "Unresolved contradictions",
+                "gaps": "Remaining knowledge gaps",
+                "implications": "Theoretical and practical implications"
+            }
+        )
+        
+        # Execute protocol
+        synthesis_results = protocol.execute()
+        
+        # Store the synthesis
+        synthesis_id = generate_id()
+        self.syntheses[synthesis_id] = {
+            "synthesis": synthesis_results.get("synthesis", "Synthesis of findings"),
+            "evidence_evaluation": synthesis_results.get("evidence_evaluation", {}),
+            "patterns": synthesis_results.get("patterns", []),
+            "contradictions": synthesis_results.get("contradictions", []),
+            "gaps": synthesis_results.get("gaps", []),
+            "implications": synthesis_results.get("implications", []),
+            "research_question_id": research_question_id,
+            "evidence_ids": [e.get("id", "unknown") for e in evidence],
+            "type": synthesis_type,
+            "timestamp": get_current_timestamp()
+        }
+        
+        # Update synthesis trajectories
+        self.synthesis_trajectories.append({
+            "synthesis_id": synthesis_id,
+            "timestamp": get_current_timestamp(),
+            "action": "creation",
+            "type": synthesis_type
+        })
+        
+        # Process contradictions
+        if "contradictions" in synthesis_results and isinstance(synthesis_results["contradictions"], list):
+            for contradiction in synthesis_results["contradictions"]:
+                if contradiction not in self.contradictions:
+                    self.contradictions.append(contradiction)
+        
+        return {
+            "synthesis_id": synthesis_id,
+            "synthesis": self.syntheses[synthesis_id]
+        }
+    
+    def develop_theoretical_model(self, knowledge_field: ResearchKnowledgeField, 
+                               synthesis_ids: List[str], model_type: str = "explanatory") -> Dict[str, Any]:
+        """
+        Develop theoretical model from research syntheses.
+        
+        Args:
+            knowledge_field: Research knowledge field
+            synthesis_ids: IDs of syntheses to incorporate
+            model_type: Type of theoretical model
+            
+        Returns:
+            dict: Theoretical model
+        """
+        # Retrieve syntheses
+        syntheses = []
+        for synthesis_id in synthesis_ids:
+            if synthesis_id in self.syntheses:
+                syntheses.append(self.syntheses[synthesis_id])
+        
+        if not syntheses:
+            raise ValueError("No valid synthesis IDs provided")
+        
+        # Protocol shell for theoretical model development
+        protocol = ProtocolShell(
+            intent="Develop theoretical model from research syntheses",
+            input_params={
+                "knowledge_field": "field_state",
+                "syntheses": syntheses,
+                "model_type": model_type
+            },
+            process_steps=[
+                {"action": "identify", "description": "Extract core concepts and relationships"},
+                {"action": "structure", "description": "Organize into coherent theoretical framework"},
+                {"action": "evaluate", "description": "Assess explanatory power and consistency"},
+                {"action": "contextualize", "description": "Position within existing theory"},
+                {"action": "extend", "description": "Generate novel implications and predictions"}
+            ],
+            output_spec={
+                "theoretical_model": "Structured theoretical framework",
+                "core_concepts": "Fundamental concepts and definitions",
+                "relationships": "Proposed causal or structural relationships",
+                "explanatory_power": "Assessment of explanatory scope",
+                "falsifiability": "Potential ways to test the theory",
+                "novelty": "Unique contributions to theoretical understanding",
+                "implications": "Theoretical and practical implications"
+            }
+        )
+        
+        # Execute protocol
+        model_results = protocol.execute()
+        
+        # Store the theoretical model
+       
