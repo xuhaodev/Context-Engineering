@@ -41,7 +41,6 @@ v
 |
 v
 +------------------------------+
-
 | Workflow                         |
 | -------------------------------- |
 | clarify\_context                 |
@@ -63,9 +62,6 @@ v
 v
 \[Final Output & Audit Log]
 
-````
-
----
 ## [context_schema]
 ### 1. Context Schema Specification (JSON)
 ```json
