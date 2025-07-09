@@ -12,6 +12,8 @@ This library is based on extensive research into human-AI interactions, designed
 
 ```
 PROMPTS/
+├── agentic
+│
 ├── everyday/                          # Templates for common everyday needs
 │   ├── expert_guides.md               # Getting expert advice on any topic
 │   ├── step_by_step.md                # Breaking down any process into clear steps
