@@ -706,4 +706,534 @@ Protocol:
 
 | Metric | Description | Target |
 |--------|-------------|--------|
-| Integration Quality | Meaningful connections across domains | Coherent rather than
+| Integration Quality | Meaningful connections across domains | Coherent rather than forced integration |
+| Framework Utility | Practical value of synthesis | Actionable implications and applications |
+| Explanatory Power | Ability to account for diverse phenomena | Comprehensive explanation of key mechanisms |
+| Innovation Value | Novel insights from integration | New perspectives not visible in single domains |
+
+## 7. The Expert Consultation Protocol
+
+**When to use this protocol:**
+Need to extract and structure specialized knowledge from domain experts? This protocol guides you through systematic knowledge elicitation—perfect for expert interviews, specialized knowledge documentation, best practice collection, or wisdom capture.
+
+```
+Prompt: I need to conduct an expert consultation to document best practices in cybersecurity incident response for financial institutions. I'm preparing for a structured interview with our organization's Chief Information Security Officer and want to ensure I capture their expertise comprehensively, especially regarding the initial detection and containment phases of incidents involving potential data breaches.
+
+Protocol:
+/research.expert{
+    intent="Extract and structure specialized knowledge from domain expertise",
+    input={
+        domain="Cybersecurity incident response for financial institutions",
+        expertise_focus="Best practices for detection and containment of potential data breaches",
+        expert_context="Chief Information Security Officer with 15+ years experience",
+        knowledge_goals=[
+            "Critical first-response procedures and decision points",
+            "Common pitfalls and their prevention",
+            "Effective containment strategies and their situational application",
+            "Communication protocols during breach investigation",
+            "Evaluation frameworks for incident severity and scope"
+        ],
+        knowledge_structure="Procedural framework with decision criteria and contextual factors"
+    },
+    process=[
+        /prepare{
+            action="Develop knowledge extraction strategy",
+            elements=[
+                "domain map and terminology",
+                "hierarchical question framework",
+                "critical incident technique preparation",
+                "knowledge validation approach"
+            ]
+        },
+        /extract{
+            action="Systematically elicit expert knowledge",
+            techniques=[
+                "scenario-based exploration",
+                "process tracing and think-aloud protocols",
+                "comparative case analysis",
+                "tacit knowledge surfacing",
+                "decision criteria elicitation"
+            ]
+        },
+        /clarify{
+            action="Ensure precise understanding of expert input",
+            approaches=[
+                "terminology and concept verification",
+                "boundary condition exploration",
+                "exception and edge case identification",
+                "confidence level assessment"
+            ]
+        },
+        /structure{
+            action="Organize extracted knowledge into coherent framework",
+            elements=[
+                "procedural sequences and workflows",
+                "decision frameworks and criteria",
+                "contextual factors and considerations",
+                "causal relationships and dependencies"
+            ]
+        },
+        /validate{
+            action="Verify knowledge accuracy and completeness",
+            methods=[
+                "expert review and correction",
+                "scenario-based testing",
+                "internal consistency checking",
+                "comprehensiveness assessment"
+            ]
+        }
+    ],
+    output={
+        knowledge_framework="Structured representation of expert knowledge",
+        best_practices="Documented procedures and approaches",
+        decision_guidance="Criteria and considerations for key decisions",
+        application_contexts="Situational factors affecting implementation"
+    }
+}
+```
+
+### Implementation Guide
+
+1. **Domain Specification**:
+   - Clearly define knowledge area and boundaries
+   - Focus on specific aspects rather than entire domains
+   - Consider both breadth and depth requirements
+
+2. **Expertise Focus Definition**:
+   - Articulate specific knowledge to be extracted
+   - Prioritize areas of greatest value or urgency
+   - Consider both explicit and tacit knowledge
+
+3. **Expert Context Documentation**:
+   - Note relevant background and experience
+   - Include specific roles or responsibilities
+   - Consider unique perspective or specialization
+
+4. **Knowledge Goal Setting**:
+   - Define specific outcomes desired
+   - Include both factual and procedural knowledge
+   - Consider decision-making and contextual understanding
+
+### Performance Metrics
+
+| Metric | Description | Target |
+|--------|-------------|--------|
+| Knowledge Depth | Expertise level captured | Beyond surface to deep expertise |
+| Knowledge Structure | Organization and accessibility | Clear, logical knowledge framework |
+| Tacit Capture | Extraction of implicit knowledge | Articulation of "know-how" not just "know-what" |
+| Contextual Understanding | Situational application factors | Clear guidance on when and how to apply knowledge |
+
+## 8. The Research Design Protocol
+
+**When to use this protocol:**
+Need to develop a systematic approach to answer research questions? This protocol guides you through research methodology development—perfect for study design, investigation planning, methodology selection, or research proposal development.
+
+```
+Prompt: I'm planning a research study to understand how gamification elements impact user engagement and retention in health and wellness apps. I need to design a comprehensive methodology that will provide reliable insights into which game mechanics most effectively drive sustained engagement across different user demographics and health goals.
+
+Protocol:
+/research.design{
+    intent="Develop systematic methodology to answer research questions",
+    input={
+        research_questions=[
+            "Which gamification elements most effectively increase engagement in health apps?",
+            "How do demographic factors moderate gamification effectiveness?",
+            "What is the relationship between specific game mechanics and long-term retention?",
+            "How do different health goals affect optimal gamification approaches?"
+        ],
+        research_context="Understanding engagement drivers in health and wellness mobile applications",
+        methodological_constraints=[
+            "Must be implementable within 4-month timeframe",
+            "Access to existing app users for testing and data collection",
+            "Mixed methods approach preferred",
+            "Ethical considerations for health-related behavioral research"
+        ],
+        desired_outcomes="Actionable insights to guide gamification feature development priorities"
+    },
+    process=[
+        /frame{
+            action="Refine research questions and approach",
+            elements=[
+                "question specificity and testability",
+                "conceptual framework development",
+                "variable identification and operationalization",
+                "hypothesis formulation"
+            ]
+        },
+        /design{
+            action="Develop research methodology",
+            components=[
+                "research approach selection (qualitative, quantitative, mixed)",
+                "study design specification",
+                "sampling strategy and participant selection",
+                "data collection methods and instruments",
+                "analytical approach planning"
+            ]
+        },
+        /validate{
+            action="Evaluate methodological quality and appropriateness",
+            criteria=[
+                "validity and reliability assessment",
+                "bias identification and mitigation",
+                "ethical consideration review",
+                "feasibility and resource alignment",
+                "limitations acknowledgment"
+            ]
+        },
+        /plan{
+            action="Create detailed implementation framework",
+            elements=[
+                "phased research timeline",
+                "resource allocation and requirements",
+                "research instruments and protocols",
+                "data management and analysis plan",
+                "contingency and adaptation strategies"
+            ]
+        },
+        /communicate{
+            action="Develop research documentation",
+            components=[
+                "methodology justification and rationale",
+                "detailed procedure descriptions",
+                "anticipated outcomes and applications",
+                "limitations and constraints acknowledgment",
+                "ethical and quality assurance measures"
+            ]
+        }
+    ],
+    output={
+        research_design="Comprehensive methodology with rationale",
+        implementation_plan="Detailed framework for execution",
+        measurement_approach="Data collection and analysis methods",
+        research_limitations="Acknowledged constraints and mitigations"
+    }
+}
+```
+
+### Implementation Guide
+
+1. **Research Question Formulation**:
+   - Develop clear, specific, answerable questions
+   - Ensure appropriate scope and focus
+   - Consider both theoretical and practical dimensions
+
+2. **Research Context Description**:
+   - Provide relevant background and setting
+   - Note existing knowledge and gaps
+   - Consider stakeholder interests and needs
+
+3. **Constraint Identification**:
+   - List practical limitations and boundaries
+   - Include timeframe, resources, and access
+   - Note ethical or regulatory considerations
+
+4. **Outcome Definition**:
+   - Clarify expected research deliverables
+   - Define how results will be used
+   - Consider both academic and applied outcomes
+
+### Performance Metrics
+
+| Metric | Description | Target |
+|--------|-------------|--------|
+| Methodological Alignment | Match between questions and methods | Direct path from methods to answers |
+| Design Rigor | Scientific quality of approach | Meets disciplinary standards |
+| Feasibility | Practicality of implementation | Executable within constraints |
+| Expected Validity | Likely trustworthiness of findings | Strong internal and external validity |
+
+## Advanced Protocol Integration
+
+### Combining Research Protocols for Complex Projects
+
+For sophisticated research needs, protocols can be combined sequentially or nested:
+
+```
+Prompt: I'm leading a major research initiative to understand the future of remote work and its implications for organizational design, technology infrastructure, and employee well-being. We need to analyze current trends, anticipate future developments, synthesize cross-disciplinary insights, and develop strategic recommendations for organizations adapting to distributed work models.
+
+Protocol:
+/research.integrated{
+    components=[
+        /research.literature{
+            intent="Establish current state of knowledge on remote work",
+            input={
+                research_topic="Remote work impacts across organizational, technological, and human dimensions",
+                key_questions=[
+                    "What are the established impacts of remote work on productivity, collaboration, and innovation?",
+                    "How have organizations successfully adapted structures and processes for distributed work?",
+                    "What technologies have proven most effective for supporting remote work?"
+                ],
+                scope_boundaries={
+                    timeframe: "Focus on last 5 years with acceleration during pandemic",
+                    inclusion: "Academic research, industry studies, organizational case studies",
+                    exclusion: "Speculative or non-evidence-based commentary"
+                }
+            }
+            // Process and output details
+        },
+        /research.foresight{
+            intent="Anticipate future remote work developments",
+            input={
+                domain="Future of work with focus on remote/hybrid models",
+                time_horizon="5-10 years (2025-2035)",
+                focal_areas=[
+                    "Technology evolution and adoption",
+                    "Organizational structure and process transformation",
+                    "Workforce expectations and needs",
+                    "Regulatory and policy environment"
+                ],
+                key_uncertainties=[
+                    "Extent of remote work normalization across industries",
+                    "Impact of emerging technologies on virtual collaboration",
+                    "Evolution of management and leadership approaches",
+                    "Geographic redistribution of talent"
+                ]
+            }
+            // Process and output details
+        },
+        /research.synthesize{
+            intent="Integrate insights across disciplines",
+            input={
+                synthesis_goal="Develop comprehensive framework for remote work adaptation",
+                knowledge_domains=[
+                    {domain: "Organizational Psychology", elements: ["Team dynamics", "Culture formation", "Well-being factors"]},
+                    {domain: "Management Science", elements: ["Coordination mechanisms", "Performance management", "Organizational design"]},
+                    {domain: "Technology Studies", elements: ["Collaboration tools", "Digital infrastructure", "Human-computer interaction"]},
+                    {domain: "Workplace Strategy", elements: ["Physical-digital integration", "Space utilization", "Experience design"]}
+                ]
+            }
+            // Process and output details
+        }
+    ],
+    integration_framework={
+        sequence="Literature review → Foresight analysis → Cross-disciplinary synthesis",
+        connection_points="Each phase builds on previous findings with explicit linkages",
+        knowledge_building="Progressive development from current state to future possibilities to integrated framework"
+    }
+}
+```
+
+### Protocol Adaptation Guidelines
+
+1. **Add Specialized Process Steps**:
+   ```
+   /research.analyze{
+       ...
+       process=[
+           ...,
+           /specialized{action="Industry-specific analytical techniques"}
+       ]
+   }
+   ```
+
+2. **Extend Input Parameters**:
+   ```
+   /research.literature{
+       ...
+       input={
+           ...,
+           methodological_filter="Focus on empirical studies with n>100"
+       }
+   }
+   ```
+
+3. **Enhance Output Specifications**:
+   ```
+   /research.expert{
+       ...
+       output={
+           ...,
+           training_framework="Knowledge structured for educational transfer"
+       }
+   }
+   ```
+
+## Field Dynamics in Research Protocols
+
+For advanced research processes, incorporate field dynamics to shape the knowledge space:
+
+```
+Prompt: I'm conducting research into emerging business models for decentralized autonomous organizations (DAOs) and want to ensure I explore both conventional and radical perspectives while maintaining analytical rigor. I'd like to use field dynamics to create a research space that balances established business theory with innovative concepts from the web3 ecosystem.
+
+Protocol:
+/research.literature{
+    ...
+    field_dynamics={
+        attractors: [
+            "business model innovation", 
+            "governance mechanisms", 
+            "value creation and capture"
+        ],
+        boundaries: {
+            firm: ["unsubstantiated claims", "purely ideological arguments"],
+            permeable: ["emerging concepts without extensive validation", "cross-disciplinary frameworks"]
+        },
+        resonance: ["organizational adaptation", "distributed decision-making"],
+        residue: {
+            target: "tension between centralized efficiency and decentralized resilience",
+            persistence: "HIGH"
+        }
+    },
+    ...
+}
+```
+
+## Research Protocol Library Management
+
+As you develop your research protocol collection, organizing them becomes essential for reuse and refinement.
+
+### Organization Framework
+
+Create a personal research protocol library:
+
+```markdown
+# Research Protocol Library
+
+## By Research Phase
+- [Literature Review v2.1](#literature-review)
+- [Research Design v1.3](#research-design)
+- [Expert Consultation v2.0](#expert-consultation)
+
+## By Research Approach
+- [Quantitative Research](#quantitative-research)
+- [Qualitative Research](#qualitative-research)
+- [Mixed Methods](#mixed-methods)
+
+## Protocol Definitions
+
+### Literature Review
+```
+/research.literature.v2.1{
+    // Full protocol definition
+}
+```
+
+### Research Design
+```
+/research.design.v1.3{
+    // Full protocol definition
+}
+```
+```
+
+## The Research Protocol Development Process
+
+Creating your own research protocols follows this development path:
+
+```
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│       RESEARCH PROTOCOL DEVELOPMENT CYCLE           │
+│                                                     │
+│  1. IDENTIFY NEED                                   │
+│     • Recognize recurring research pattern          │
+│     • Identify friction points in research process  │
+│     • Define methodological requirements            │
+│                                                     │
+│  2. DESIGN STRUCTURE                                │
+│     • Define research process components            │
+│     • Outline key methodological stages             │
+│     • Determine required input parameters           │
+│                                                     │
+│  3. PROTOTYPE & TEST                                │
+│     • Create minimal viable protocol                │
+│     • Test with realistic research questions        │
+│     • Document effectiveness and limitations        │
+│                                                     │
+│  4. REFINE & OPTIMIZE                               │
+│     • Enhance based on test results                 │
+│     • Optimize for research quality and efficiency  │
+│     • Improve adaptability across contexts          │
+│                                                     │
+│  5. SHARE & ITERATE                                 │
+│     • Create usage guidelines                       │
+│     • Define quality metrics                        │
+│     • Evolve based on diverse applications          │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
+
+## Balancing Rigor and Creativity
+
+Research protocols provide structure without stifling discovery. Consider these balancing principles:
+
+1. **Method with Openness**: Establish methodological rigor while remaining open to unexpected findings
+2. **Structure with Exploration**: Create structured processes that include divergent investigation
+3. **Precision with Adaptability**: Develop precise approaches that can adapt to emerging insights
+4. **Efficiency with Thoroughness**: Build efficient workflows that maintain comprehensive coverage
+
+Successful research protocols create frameworks that ensure quality while enabling discovery.
+
+## Conclusion: The Evolution of Knowledge Discovery
+
+Research protocols transform the often chaotic process of investigation into structured, reliable pathways to insight without sacrificing the essential elements of discovery and creativity. By providing explicit architecture for research processes, they enable more systematic, efficient, and high-quality knowledge development.
+
+As you build your research protocol library, remember these principles:
+
+1. **Start with Key Questions**: Focus on research challenges that would benefit most from structure
+2. **Balance Rigor and Discovery**: Create enough methodological structure without constraining exploration
+3. **Iterate Based on Results**: Refine protocols based on research outcomes
+4. **Adapt to Context**: Modify protocols for specific domains and questions
+5. **Build in Quality**: Incorporate validation and critical assessment at multiple stages
+
+With these principles and the research protocols in this guide, you're well-equipped to transform unpredictable research processes into reliable, rigorous investigations that consistently produce valuable insights.
+
+**Reflective Question**: How might these research protocols change not just your investigation processes, but your understanding of what constitutes quality in knowledge discovery?
+
+---
+
+> *"Research is not just about finding answers, but about asking better questions in better ways."*
+
+---
+
+## Appendix: Quick Reference
+
+### Protocol Basic Structure
+
+```
+/research.type{
+    intent="Clear statement of purpose",
+    input={...},
+    process=[...],
+    output={...}
+}
+```
+
+### Common Process Actions
+
+- `/analyze`: Examine information systematically
+- `/synthesize`: Integrate information into coherent whole
+- `/evaluate`: Assess against specific criteria
+- `/map`: Create structured representation of domain
+- `/explore`: Investigate possibilities or factors
+- `/validate`: Verify quality, accuracy, or appropriateness
+- `/contextualize`: Consider relevant context or situation
+
+### Field Dynamics Quick Setup
+
+```
+field_dynamics={
+    attractors: ["knowledge focus", "methodological approach"],
+    boundaries: {
+        firm: ["excluded approaches", "out-of-scope elements"],
+        permeable: ["adjacent considerations", "emerging concepts"]
+    },
+    resonance: ["conceptual frameworks", "explanatory models"],
+    residue: {
+        target: "key tension or insight",
+        persistence: "MEDIUM"
+    }
+}
+```
+
+### Research Protocol Selection Guide
+
+| Need | Recommended Protocol |
+|------|----------------------|
+| Understand existing knowledge | `/research.literature` |
+| Extract insights from information | `/research.analyze` |
+| Explore future developments | `/research.foresight` |
+| Understand complex problems | `/research.problem` |
+| Compare multiple options | `/research.compare` |
+| Integrate diverse knowledge | `/research.synthesize` |
+| Extract expert knowledge | `/research.expert` |
+| Develop research methodology | `/research.design` |
