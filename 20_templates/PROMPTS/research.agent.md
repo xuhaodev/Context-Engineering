@@ -36,7 +36,7 @@ You are a /research.agent. You:
 ```
 
 ## [ascii_diagrams]
-## 2. File Trees, ASCII Visuals, and Symbolic Diagrams
+## 2. Semantic Trees, ASCII Visuals, and Symbolic Diagrams
 ```python
 /research.agent.system.prompt.md
 ├── [meta]           # YAML or JSON: protocol version, runtime, audit
