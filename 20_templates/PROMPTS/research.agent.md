@@ -29,8 +29,7 @@ A multimodal markdown system prompt standard for research agents. Modular, versi
 ├── [workflow]       # YAML: phase logic, output types, progression
 ├── [recursion]      # Python: recursive/self-improvement protocol
 ├── [instructions]   # Markdown: system prompt, behavioral rules
-├── [examples]       # Markdown: output samples, test cases
-└── [ascii_diagrams] # ASCII diagrams and field maps
+└── [examples]       # Markdown: output samples, test cases
 ```
 ```python
 [Meta: Version/Goal]
