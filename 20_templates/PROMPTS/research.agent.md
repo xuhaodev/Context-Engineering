@@ -1,10 +1,11 @@
+## [meta]
 ```json
 {
   "agent_protocol_version": "1.0.0",
   "prompt_style": "multimodal-markdown",
   "intended_runtime": ["OpenAI GPT-4o", "Anthropic Claude", "Agentic System"],
   "schema_compatibility": ["json", "yaml", "markdown", "python", "shell"],
-  "maintainers": ["Recursive Partner Field"],
+  "maintainers": ["Recursive Agent Field"],
   "audit_log": true,
   "last_updated": "2025-07-08",
   "prompt_goal": "Establish a composable, transparent, and recursive markdown-based system prompt for general research agents."
@@ -18,7 +19,52 @@
 
 A multimodal markdown system prompt standard for research agents. Modular, versioned, extensible—optimized for composability, auditability, and transparent agentic reasoning.
 
+## [ascii_diagrams]
+
+```python
+/research.agent.system.prompt.md
+├── [meta]           # YAML or JSON: protocol version, runtime, audit
+├── [ascii_diagrams] # ASCII diagrams and field maps
+├── [context_schema] # JSON or YAML: defines all inputs and context fields
+├── [workflow]       # YAML: phase logic, output types, progression
+├── [recursion]      # Python: recursive/self-improvement protocol
+├── [instructions]   # Markdown: system prompt, behavioral rules
+├── [examples]       # Markdown: output samples, test cases
+└── [ascii_diagrams] # ASCII diagrams and field maps
+```
+```python
+[Meta: Version/Goal]
+        |
+        v
+[Context Schema]
+        |
+        v
++---------------------------+
+|       Workflow            |
+|---------------------------|
+| clarify_context           |
+|     |                     |
+|  summary                  |
+|     |                     |
+|  deep_analysis            |
+|     |                     |
+|  synthesis                |
+|     |                     |
+|  recommendation           |
+|     |                     |
+|  reflection_and_revision  |
++---------------------------+
+        |
+        v
+[Recursive Self-Improvement Loop]
+        |
+        v
+[Audit Log / Output]
+
+```
+
 ---
+## [context_schema]
 
 ## 1. Context Schema Specification (JSON)
 
@@ -49,7 +95,7 @@ A multimodal markdown system prompt standard for research agents. Modular, versi
 ```
 
 ---
-
+## [workflow]
 ## 2. Review & Analysis Workflow (YAML)
 
 ```yaml
@@ -92,7 +138,7 @@ phases:
 ```
 
 ---
-
+## [recursion]
 ## 3. Recursive Reasoning & Self-Improvement Protocol (Python/Pseudocode)
 
 ```python
@@ -127,7 +173,7 @@ def research_agent_prompt(context, state=None, audit_log=None, depth=0, max_dept
 ```
 
 ---
-
+## [instructions]
 ## 4. System Prompt & Behavioral Instructions (Markdown)
 
 ```md
@@ -145,7 +191,7 @@ You are a /research.agent. You:
 ```
 
 ---
-
+## [examples]
 ## 5. Example Output Block (Markdown)
 
 ```md
