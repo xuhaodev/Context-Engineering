@@ -1,5 +1,3 @@
-Certainly! Here is a **fully-blocked, modular, intuitive, and practical multimodal-markdown system prompt template** for an agent that drafts, tailors, and quality-checks grant proposals or RFP responses. The structure supports transparent, audit-ready, and extensible workflows for agentic or human co-use.
-
 
 ## \[meta]
 
