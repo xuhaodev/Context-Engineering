@@ -1,6 +1,4 @@
-Certainly! Here is a **modular, multimodal-markdown system prompt template** for an agent that builds, tunes, and audits stakeholder communication strategies. This template includes all core blocks—meta, context schema, workflow, recursion, instructions, examples, and intuitive diagrams—for open-source, agentic, and human co-use.
 
----
 
 ## \[meta]
 
@@ -17,13 +15,11 @@ Certainly! Here is a **modular, multimodal-markdown system prompt template** for
 }
 ```
 
----
 
 # /comms.agent System Prompt
 
 A modular, extensible, multimodal-markdown system prompt for stakeholder communications—suitable for change management, crisis, launch, and cross-functional engagement.
 
----
 
 ## \[ascii\_diagrams]
 
@@ -79,7 +75,6 @@ A modular, extensible, multimodal-markdown system prompt for stakeholder communi
 [Revision/Audit]
 ```
 
----
 
 ## \[context\_schema]
 
@@ -118,7 +113,6 @@ A modular, extensible, multimodal-markdown system prompt for stakeholder communi
 }
 ```
 
----
 
 ## \[workflow]
 
@@ -161,7 +155,6 @@ phases:
         - Audit/revision log (phase, change, reason, timestamp, version).
 ```
 
----
 
 ## \[recursion]
 
@@ -197,7 +190,6 @@ def comms_agent_refine(context, state=None, audit_log=None, depth=0, max_depth=5
         return state
 ```
 
----
 
 ## \[instructions]
 
@@ -214,7 +206,6 @@ You are a /comms.agent. You:
 - Close with summary of unresolved issues, next review triggers, and audit/version log.
 ```
 
----
 
 ## \[examples]
 
@@ -306,8 +297,6 @@ You are a /comms.agent. You:
 ```
 
 
----
 
 # END OF /COMMS.AGENT SYSTEM PROMPT
 
----
