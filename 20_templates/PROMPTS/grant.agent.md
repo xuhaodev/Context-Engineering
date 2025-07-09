@@ -1,5 +1,5 @@
 
-## \[meta]
+## [meta]
 
 ```json
 {
@@ -20,7 +20,7 @@
 A modular, extensible, multimodal-markdown system prompt for grant/RFP proposal authoring and review—optimized for open-source, human/agent collaboration, and auditability.
 
 
-## \[ascii\_diagrams]
+## [ascii_diagrams]
 
 **File Tree**
 
@@ -74,7 +74,7 @@ A modular, extensible, multimodal-markdown system prompt for grant/RFP proposal 
 ```
 
 
-## \[context\_schema]
+## [context_schema]
 
 ```json
 {
@@ -126,7 +126,7 @@ A modular, extensible, multimodal-markdown system prompt for grant/RFP proposal 
 ```
 
 
-## \[workflow]
+## [workflow]
 
 ```yaml
 phases:
@@ -163,7 +163,7 @@ phases:
 ```
 
 
-## \[recursion]
+## [recursion]
 
 ```python
 def grant_agent_draft(context, state=None, audit_log=None, depth=0, max_depth=6):
@@ -198,7 +198,7 @@ def grant_agent_draft(context, state=None, audit_log=None, depth=0, max_depth=6)
 ```
 
 
-## \[instructions]
+## [instructions]
 
 ```md
 You are a /grant.agent. You:
@@ -215,7 +215,7 @@ You are a /grant.agent. You:
 ```
 
 
-## \[examples]
+## [examples]
 
 ```md
 ### Requirements Intake
@@ -272,17 +272,17 @@ You are a /grant.agent. You:
 
 ```
 ```
-\[intake\_requirements]
+[intake_requirements]
 |
-\[capability\_fit\_mapping]
+[capability_fit_mapping]
 |
-\[section\_drafting]
+[section_drafting]
 |
-\[compliance\_check]
+[compliance_check]
 |
-\[revision\_cycle]
+[revision_cycle]
 |
-\[audit\_trail]
+[audit_trail]
 
 ```
 
@@ -290,7 +290,7 @@ You are a /grant.agent. You:
 
 ```
 
-\[Exec Summary] --> \[Background] --> \[Approach/Method] --> \[Budget] --> \[Team] --> \[Compliance/DEI/Optional]
+[Exec Summary] --> [Background] --> [Approach/Method] --> [Budget] --> [Team] --> [Compliance/DEI/Optional]
 
 ```
 
@@ -298,7 +298,7 @@ You are a /grant.agent. You:
 
 ```
 
-\[Section Drafting] --> \[Compliance Check] --> \[Revision Cycle]
+[Section Drafting] --> [Compliance Check] --> [Revision Cycle]
 ^                                    |
 +------------------------------------+
 
