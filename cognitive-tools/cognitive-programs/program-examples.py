@@ -7,7 +7,7 @@ Comprehensive examples showcasing the integration of all six research streams:
 - Indiana University: Quantum Semantic Framework
 - Singapore-MIT: Memory-Reasoning Synergy
 - Shanghai AI Lab: LLM Attractor Dynamics
-- Context Engineering: Progressive Complexity Framework
+- Context Engineering: Prompt Programming & Progressive Complexity Framework
 
 Usage in Jupyter/Colab:
     from program_examples import *
