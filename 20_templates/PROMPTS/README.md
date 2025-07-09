@@ -29,7 +29,7 @@ Once you've found your goal category, select the specific template that matches 
 
 ### Customize and Use
 
-Each template includes:
+Templates are diverse and include:
 - Clear instructions on when to use it
 - The template itself with placeholders
 - Step-by-step guidance for customization
@@ -38,72 +38,6 @@ Each template includes:
 - Variations for different scenarios
 
 Simply copy the template, replace the placeholders with your specific information, and use it with your preferred AI system.
-
-## Library Structure
-
-```
-PROMPTS/
-├── everyday/                          # Templates for common everyday needs
-│   ├── expert_guides.md               # Getting expert advice on any topic
-│   ├── step_by_step.md                # Breaking down any process into clear steps
-│   ├── content_creation.md            # Creating various types of content
-│   ├── idea_generation.md             # Brainstorming creative ideas and solutions
-│   ├── decision_helper.md             # Making better decisions with structure
-│   └── feedback_coach.md              # Getting helpful feedback and suggestions
-│
-├── creating/                          # Templates for creating content
-│   ├── writing_articles.md            # Creating blog posts and long-form content
-│   ├── marketing_copy.md              # Creating ads, emails, and promotional content
-│   ├── creative_writing.md            # Fiction, stories, and creative pieces
-│   ├── professional_docs.md           # Reports, proposals, and business documents
-│   └── visual_content.md              # Guidance for visuals and presentations
-│
-├── building/                          # Templates for building and making
-│   ├── coding_help.md                 # Programming assistance and code generation
-│   ├── project_planning.md            # Planning and structuring projects
-│   ├── system_design.md               # Designing systems and architectures
-│   └── product_development.md         # Creating and improving products
-│
-├── thinking/                          # Templates for better thinking
-│   ├── analysis_frameworks.md         # Structured approaches to analysis
-│   ├── research_assistant.md          # Help with research and investigation
-│   ├── mental_models.md               # Applying powerful thinking tools
-│   ├── critical_thinking.md           # Evaluating ideas and avoiding biases
-│   └── data_insights.md               # Making sense of information and data
-│
-├── improving/                         # Templates for making things better
-│   ├── content_editing.md             # Improving written content
-│   ├── code_refinement.md             # Refactoring and optimizing code
-│   ├── process_optimization.md        # Making workflows more efficient
-│   ├── feedback_systems.md            # Getting and giving better feedback
-│   └── iteration_cycles.md            # Structured approach to improvement
-│
-├── solving/                           # Templates for solving problems
-│   ├── troubleshooting.md             # Diagnosing and fixing issues
-│   ├── creative_solutions.md          # Finding innovative approaches
-│   ├── decision_frameworks.md         # Making complex decisions
-│   ├── tradeoff_analysis.md           # Balancing competing priorities
-│   └── risk_assessment.md             # Identifying and mitigating risks
-│
-├── teaching/                          # Templates for education and learning
-│   ├── explaining_concepts.md         # Making complex ideas understandable
-│   ├── course_creation.md             # Designing educational experiences
-│   ├── learning_materials.md          # Creating helpful learning resources
-│   └── simplifying_complexity.md      # Breaking down difficult topics
-│
-├── collaborating/                     # Templates for working with others
-│   ├── meeting_facilitation.md        # Running more effective meetings
-│   ├── team_coordination.md           # Improving team communication
-│   ├── conflict_resolution.md         # Addressing disagreements constructively
-│   └── feedback_sessions.md           # Structured feedback conversations
-│
-└── specialized/                       # Templates for specific advanced uses
-    ├── ai_research.md                 # Templates for AI researchers
-    ├── prompt_engineering.md          # Advanced prompt design techniques
-    ├── safety_alignment.md            # Working with AI safety considerations
-    ├── template_creation.md           # Creating your own custom templates
-    └── template_combinations.md       # Combining templates effectively
-```
 
 ## Featured Templates
 
