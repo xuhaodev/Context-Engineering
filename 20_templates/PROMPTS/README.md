@@ -4,7 +4,7 @@
 
 ## Overview
 
-Welcome to **PROMPTS**, a library of carefully designed to help you accomplish your goals through strategically effective templates and multimodal agentic system prompts and programs. Unlike traditional prompt collections, these templates are organized around what you're trying to achieve and brings entire agents to life through multimodal prompts.
+Welcome to **PROMPTS**, a library of carefully designed programs to help you accomplish your goals through strategically effective templates and multimodal agentic system prompts. Unlike traditional prompt collections, these templates are organized around what you're trying to achieve and brings entire agents to life through multimodal prompts.
 
 This library is based on extensive research into human-AI interactions, designed to bridge the gap between frontier AI capabilities and practical everyday use. Each template embodies principles from context engineering while remaining accessible and immediately useful.
 
