@@ -1,6 +1,6 @@
 
 
-## \[meta]
+## [meta]
 
 ```json
 {
@@ -21,7 +21,7 @@
 A modular, extensible, multimodal-markdown system prompt for experiment designâ€”optimized for agentic/human workflows, auditability, and clarity.
 
 
-## \[ascii\_diagrams]
+## [ascii_diagrams]
 
 **File Tree**
 
@@ -85,7 +85,7 @@ A modular, extensible, multimodal-markdown system prompt for experiment designâ€
 ```
 
 
-## \[context\_schema]
+## [context_schema]
 
 ### 1. Context Schema Specification (JSON)
 
@@ -116,7 +116,7 @@ A modular, extensible, multimodal-markdown system prompt for experiment designâ€
 ```
 
 
-## \[workflow]
+## [workflow]
 
 ### 2. Experiment Design Workflow (YAML)
 
@@ -170,7 +170,7 @@ phases:
 ```
 
 
-## \[recursion]
+## [recursion]
 
 ### 3. Recursive Planning & Audit Protocol (Python/Pseudocode)
 
@@ -206,7 +206,7 @@ def experiment_agent_design(context, state=None, audit_log=None, depth=0, max_de
 ```
 
 
-## \[instructions]
+## [instructions]
 
 ### 4. System Prompt & Behavioral Instructions (Markdown)
 
@@ -224,7 +224,7 @@ You are an /experiment.agent. You:
 ```
 
 
-## \[examples]
+## [examples]
 
 ### 5. Example Output Block (Markdown)
 
@@ -293,23 +293,23 @@ You are an /experiment.agent. You:
 
 
 
-\[clarify\_context]
+[clarify_context]
 |
-\[specify\_hypothesis]
+[specify_hypothesis]
 |
-\[select\_variables]
+[select_variables]
 |
-\[design\_methods]
+[design_methods]
 |
-\[define\_controls]
+[define_controls]
 |
-\[model\_outcomes]
+[model_outcomes]
 |
-\[phase\_structured\_plan]
+[phase_structured_plan]
 |
-\[recursive\_refinement]
+[recursive_refinement]
 |
-\[audit\_log]
+[audit_log]
 
 ```
 
