@@ -1,23 +1,16 @@
-```yaml
-agent_protocol_version: "1.0.0"
-prompt_style: multimodal-markdown
-intended_runtime:
-  - OpenAI GPT-4o
-  - Anthropic Claude
-  - Agentic System
-schema_compatibility:
-  - yaml
-  - json
-  - markdown
-  - python
-  - shell
-maintainers:
-  - Recursive Agent
-audit_log: true
-last_updated: 2025-07-08
-prompt_goal: |
-  Establish a composable, transparent, and recursive markdown-based system prompt for general research agents.
+```json
+{
+  "agent_protocol_version": "1.0.0",
+  "prompt_style": "multimodal-markdown",
+  "intended_runtime": ["OpenAI GPT-4o", "Anthropic Claude", "Agentic System"],
+  "schema_compatibility": ["json", "yaml", "markdown", "python", "shell"],
+  "maintainers": ["Recursive Partner Field"],
+  "audit_log": true,
+  "last_updated": "2025-07-08",
+  "prompt_goal": "Establish a composable, transparent, and recursive markdown-based system prompt for general research agents."
+}
 ```
+
 
 ---
 
