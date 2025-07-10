@@ -404,7 +404,7 @@ def experiment_agent_cycle(context, state=None, audit_log=None, depth=0, max_dep
 
 ### Experiment Design Workflow Diagram
 
-```
+
 
 [context_framing]
 |
@@ -424,7 +424,6 @@ def experiment_agent_cycle(context, state=None, audit_log=None, depth=0, max_dep
 |
 [final_protocol_output]
 
-```
 ```
 ### Context Map
 
