@@ -5,6 +5,8 @@
 Operationalizing the Latest Research on Context With First Principles & Visuals — June 2025 from ICML, IBM, NeurIPS, OHBM, and more 
 
 
+> **"Providing “cognitive tools” to GPT-4.1 increases its pass@1 performance on AIME2024 from 26.7% to 43.3%, bringing it very close to the performance of o1-preview."** — [**IBM Zurich**](https://www.arxiv.org/pdf/2506.12115)
+
 <div align="center">
 
 ### **[IBM Zurich](https://www.arxiv.org/pdf/2506.12115) | [Quantum Semantics](https://arxiv.org/pdf/2506.10077) | [ICML Princeton](https://openreview.net/forum?id=y1SnRPDWx4) | [MEM1 Singapore-MIT](https://arxiv.org/pdf/2506.15841) | [LLM Attractors Shanghai AI](https://arxiv.org/pdf/2502.15208?)**
@@ -18,24 +20,6 @@ Operationalizing the Latest Research on Context With First Principles & Visuals 
 
 
 </div>
-
-
-> **"Providing “cognitive tools” to GPT-4.1 increases its pass@1 performance on AIME2024 from 26.7% to 43.3%, bringing it very close to the performance of o1-preview."** — [**IBM Zurich**](https://www.arxiv.org/pdf/2506.12115)
-
-<div align="center">
-
-  
- **[On Emergence, Attractors, and Dynamical Systems Theory](https://content.csbs.utah.edu/~butner/systems/DynamicalSystemsIntro.html) | [Columbia DST](http://wordpress.ei.columbia.edu/ac4/about/our-approach/dynamical-systems-theory/)**
-
-
-https://github.com/user-attachments/assets/9f046259-e5ec-4160-8ed0-41a608d8adf3
-
-
-
-![image](https://github.com/user-attachments/assets/309b8d8c-13b5-403c-9f1d-6a0ad551ea56)
-
-</div>
-
 
 A practical, first-principles handbook for moving beyond prompt engineering to the wider discipline of context design, orchestration, and optimization.
 
@@ -67,6 +51,22 @@ single    few-     memory/    multi-    cognitive tools +     context = fields +
 prompt    shot      agents    agents     prompt programs     persistence & resonance
 ```
 > "Abstraction is the cost of generalization"— [**Grant Sanderson (3Blue1Brown)**](https://www.3blue1brown.com/)
+
+
+
+<div align="center">
+
+  
+ **[On Emergence, Attractors, and Dynamical Systems Theory](https://content.csbs.utah.edu/~butner/systems/DynamicalSystemsIntro.html) | [Columbia DST](http://wordpress.ei.columbia.edu/ac4/about/our-approach/dynamical-systems-theory/)**
+
+
+https://github.com/user-attachments/assets/9f046259-e5ec-4160-8ed0-41a608d8adf3
+
+
+
+![image](https://github.com/user-attachments/assets/309b8d8c-13b5-403c-9f1d-6a0ad551ea56)
+
+</div>
 
 
 
