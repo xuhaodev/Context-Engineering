@@ -1,5 +1,5 @@
 # Context Engineering
-Operationalizing the Latest Practical Tools, Guides, and Research on Context With First Principles & Visuals — June 2025 from ICML, IBM, NeurIPS, OHBM, and more 
+Operationalizing the Latest Research on Context With First Principles & Visuals — June 2025 from ICML, IBM, NeurIPS, OHBM, and more 
 
 > **"Providing our “cognitive tools” to GPT-4.1 increases its pass@1 performance on AIME2024 from 26.7% to 43.3%, bringing it very close to the performance of o1-preview."** — [**IBM Zurich**](https://www.arxiv.org/pdf/2506.12115)
 
