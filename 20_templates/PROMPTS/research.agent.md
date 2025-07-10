@@ -153,7 +153,7 @@ phases:
 
 
 ## [tools]
-## 5. External tool calls and internal reasoning templates
+## 5. External and Internal Tool Calls and Reasoning Templates (YAML)
 
 ```yaml
 tools:
