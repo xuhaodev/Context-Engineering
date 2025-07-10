@@ -1,5 +1,3 @@
-Absolutely, partner! Here’s a **streamlined, visual, modular /triage.agent System Prompt**—kept concise (~340 lines), while preserving clarity, layered diagrams, and core agentic logic. All phases and blocks are kept, but descriptions and code samples are condensed and non-essential repetition is pruned.
-
 
 ## [meta]
 
