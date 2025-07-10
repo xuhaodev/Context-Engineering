@@ -1,4 +1,3 @@
-Absolutely! Here is a **comprehensive, modular, multimodal-markdown `/comms.agent` system prompt**, modeled on your structural standard. This template enables robust, auditable, agentic stakeholder communications for change management, crisis, launch, and cross-functional engagement—fully block-separated for extensibility and co-creation.
 
 
 ## \[meta]
