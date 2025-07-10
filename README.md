@@ -54,7 +54,7 @@ A practical, first-principles handbook for moving beyond prompt engineering to t
 
 ## Why This Repository Exists
 
-> **"Meaning is not an intrinsic, static property of a semantic expression, but rather an emergent phenomenon actualized through the dynamic interaction between the expression and an interpretive agent situated within a specific context."
+> **"Meaning is not an intrinsic, static property of a semantic expression, but rather an emergent phenomenon"
 — [Agostino et al. — June 2025, Indiana University](https://arxiv.org/pdf/2506.10077)**
 
 Prompt engineering gets all the attention, but we can now get excited for what comes next. Once you've mastered prompts, the real power comes from engineering the **entire context window** that surrounds those prompts. Guiding thought, if you will. 
