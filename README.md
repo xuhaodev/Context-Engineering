@@ -40,7 +40,7 @@ A practical, first-principles handbook for moving beyond prompt engineering to t
 > **"Meaning is not an intrinsic, static property of a semantic expression, but rather an emergent phenomenon"
 — [Agostino et al. — June 2025, Indiana University](https://arxiv.org/pdf/2506.10077)**
 
-Prompt engineering receives all the attention, but we can now get excited for what comes next. Once you've mastered prompts, the real power comes from engineering the **entire context window** that surrounds those prompts. Guiding thought, if you will. 
+Prompt engineering received all the attention, but we can now get excited for what comes next. Once you've mastered prompts, the real power comes from engineering the **entire context window** that surrounds those prompts. Guiding thought, if you will. 
 
 This repository provides a progressive, first-principles approach to context engineering, built around a biological metaphor:
 
