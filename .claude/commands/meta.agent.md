@@ -138,12 +138,14 @@ phases:
 tools:
   - id: agent_registry
     type: internal
-    description: Register/query available agents, capabilities, contracts.
+    description: Register/query available agents, capabilities, and interface contracts.
     input_schema: { agents: list, context: string }
     output_schema: { registry: dict, status: dict }
     call: { protocol: /agent.registry{ agents=<agents>, context=<context> } }
     phases: [agent_registration]
-    examples: [{ input: {agents: ["deploy","test"], context: "ci"}, output: {registry: {...}, status: {...}} }]
+    examples:
+      - input: { agents: ["deploy", "test"], context: "ci" }
+        output: { registry: {...}, status: {...} }
 
   - id: dependency_builder
     type: internal
@@ -152,7 +154,9 @@ tools:
     output_schema: { graph: dict, orphans: list }
     call: { protocol: /dep.graph{ workflow=<workflow>, agents=<agents> } }
     phases: [dependency_graphing]
-    examples: [{ input: {workflow: "A->B->C", agents: ["A","B","C"]}, output: {graph: {...}, orphans: []} }]
+    examples:
+      - input: { workflow: "A->B->C", agents: ["A", "B", "C"] }
+        output: { graph: {...}, orphans: [] }
 
   - id: comm_enforcer
     type: internal
@@ -161,7 +165,9 @@ tools:
     output_schema: { log: list, errors: list }
     call: { protocol: /comm.enforce{ agents=<agents>, protocols=<protocols> } }
     phases: [communication_protocol]
-    examples: [{ input: {agents: ["A","B"], protocols: ["ack","timeout"]}, output: {log: [...], errors: [...]} }]
+    examples:
+      - input: { agents: ["A", "B"], protocols: ["ack", "timeout"] }
+        output: { log: [...], errors: [...] }
 
   - id: scheduler
     type: internal
@@ -170,7 +176,9 @@ tools:
     output_schema: { run_log: list, retry_matrix: dict }
     call: { protocol: /schedule.run{ workflow=<workflow>, agents=<agents> } }
     phases: [execution_scheduling]
-    examples: [{ input: {workflow: "A->B->C", agents: ["A","B","C"]}, output: {run_log: [...], retry_matrix: {...}} }]
+    examples:
+      - input: { workflow: "A->B->C", agents: ["A", "B", "C"] }
+        output: { run_log: [...], retry_matrix: {...} }
 
   - id: error_handler
     type: internal
@@ -179,7 +187,9 @@ tools:
     output_schema: { recoveries: list, feedback: list }
     call: { protocol: /error.handle{ errors=<errors>, context=<context> } }
     phases: [error_feedback_handling]
-    examples: [{ input: {errors: ["timeout"], context: "B"}, output: {recoveries: [...], feedback: [...]} }]
+    examples:
+      - input: { errors: ["timeout"], context: "B" }
+        output: { recoveries: [...], feedback: [...] }
 
   - id: audit_logger
     type: internal
@@ -188,7 +198,35 @@ tools:
     output_schema: { audit_log: list, version: string }
     call: { protocol: /log.audit{ phase_logs=<phase_logs>, args=<args> } }
     phases: [audit_meta_logging]
-    examples: [{ input: {phase_logs: [...], args: {...}}, output: {audit_log: [...], version: "v2.2"} }]
+    examples:
+      - input: { phase_logs: [...], args: {...} }
+        output: { audit_log: [...], version: "v2.2" }
+
+  - id: slack_notify
+    type: external
+    description: Send notifications/messages to Slack channels for cross-agent events or meta-audit alerts.
+    input_schema: { channel: string, message: string }
+    output_schema: { status: string }
+    endpoint: "https://slack.com/api/chat.postMessage"
+    auth: "oauth_token"
+    call: { protocol: /call_api{ endpoint=<endpoint>, params={channel, message} } }
+    phases: [audit_meta_logging, error_feedback_handling]
+    examples:
+      - input: { channel: "#agent-meta", message: "All agents registered" }
+        output: { status: "ok" }
+
+  - id: github_issue
+    type: external
+    description: Create or update issues in a GitHub repo for agent workflow failures or meta-level tracking.
+    input_schema: { repo: string, title: string, body: string }
+    output_schema: { issue_url: string, status: string }
+    endpoint: "https://api.github.com/repos/{repo}/issues"
+    auth: "api_token"
+    call: { protocol: /call_api{ endpoint=<endpoint>, params={repo, title, body} } }
+    phases: [error_feedback_handling, audit_meta_logging]
+    examples:
+      - input: { repo: "team/agent-infra", title: "Meta-agent error", body: "Dependency loop detected" }
+        output: { issue_url: "https://github.com/team/agent-infra/issues/45", status: "created" }
 ```
 
 
