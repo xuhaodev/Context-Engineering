@@ -249,7 +249,7 @@ Pulsed electromagnetic field (PEMF) stimulation has demonstrated promising effec
 #### Revision Log
 
 - [2025-07-10 20:13Z] Added human trial gap, flagged Lee et al as unverified.
-````
+
 
 ### Audit Log
 
@@ -266,7 +266,7 @@ Pulsed electromagnetic field (PEMF) stimulation has demonstrated promising effec
       ▼
 [context]→[search/ingest]→[extract]→[review/synthesis]→[gaps]→[draft/revision]→[audit/log]
          ↑______________feedback/CI/recursive__________|
-```
+````
 
 
 
