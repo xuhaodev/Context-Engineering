@@ -197,10 +197,10 @@ def mem1_consolidation():
 
 ### 5. LLM Attractor Dynamics - Shanghai AI Lab (2025)
 
-**Citation**: Zhang, L., et al. (2025). *Attractor Dynamics and Field Theory in Large Language Models*. Shanghai AI Laboratory. [ArXiv:2502.15208](https://arxiv.org/pdf/2502.15208)
+**Citation**: Zhang, L., et al. (2025). *Unveiling Attractor Cycles in Large Language Models*. Shanghai AI Laboratory. [ArXiv:2502.15208](https://arxiv.org/pdf/2502.15208)
 
 #### Key Innovation
-Application of dynamical systems theory and field theory to understand emergent behaviors in large language models, revealing attractor dynamics that guide model behavior and enable field-based cognitive architectures.
+Application of dynamical systems theory to understand emergent behaviors in large language models, revealing attractor dynamics that guide model behavior and enable field-based cognitive architectures.
 
 #### Core Insight
 Field-theoretic approaches to modeling cognitive systems enable understanding of emergent properties, attractor dynamics, and persistent behaviors that arise from complex interactions between model components.
