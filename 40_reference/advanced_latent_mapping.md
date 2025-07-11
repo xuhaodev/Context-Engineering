@@ -6,7 +6,7 @@
 
 ## Welcome to Advanced Latent Mapping
 
-Congratulations on completing your foundational journey in latent mapping! You've learned to visualize AI thinking, create concept maps, and understand basic interpretability. Now we're ready to explore one of the more sophisticated methodologies in AI analysis—**Symbolic Interpretability and one of its frameworks: [Self-Tracing (RSIF)](https://github.com/recursivelabsai/Self-Tracing) -** Systems that trace and map their own reasoning through symbolic visuals.
+Congratulations on completing your foundational journey in latent mapping! You've learned to visualize AI thinking, create concept maps, and understand basic interpretability. Now we're ready to explore one of the more sophisticated methodologies in AI analysis—**the field of Symbolic Interpretability and one of its frameworks: [Self-Tracing (RSIF)](https://github.com/recursivelabsai/Self-Tracing) -** Systems that trace and map their own reasoning through symbolic visuals.
 
 ## Video Visual: 
 
