@@ -239,7 +239,7 @@ def literature_agent_cycle(context, state=None, audit_log=None, depth=0, max_dep
 
 ### Draft/Revision
 
-```md
+
 #### Abstract
 
 Pulsed electromagnetic field (PEMF) stimulation has demonstrated promising effects on synaptic plasticity in animal models. However, robust evidence in humans remains limited...
@@ -258,7 +258,7 @@ Pulsed electromagnetic field (PEMF) stimulation has demonstrated promising effec
 
 ### Literature Workflow
 
-```
+
 /literature Q="..." type="..." years=... context=@file ...
       │
       ▼
