@@ -1,41 +1,23 @@
 # Context Engineering
+> **"Context engineering is the delicate art and science of filling the context window with just the right information for the next step." — [**Andrej Karpathy**](https://x.com/karpathy/status/1937902205765607626)**
+
+
 Operationalizing the Latest Research on Context With First Principles & Visuals — June 2025 from ICML, IBM, NeurIPS, OHBM, and more 
 
-> **"Providing our “cognitive tools” to GPT-4.1 increases its pass@1 performance on AIME2024 from 26.7% to 43.3%, bringing it very close to the performance of o1-preview."** — [**IBM Zurich**](https://www.arxiv.org/pdf/2506.12115)
+
+> **"Providing “cognitive tools” to GPT-4.1 increases its pass@1 performance on AIME2024 from 26.7% to 43.3%, bringing it very close to the performance of o1-preview."** — [**IBM Zurich**](https://www.arxiv.org/pdf/2506.12115)
 
 <div align="center">
 
-### **[IBM Zurich](https://www.arxiv.org/pdf/2506.12115) | [Quantum Semantics](https://arxiv.org/pdf/2506.10077) | [ICML Princeton](https://openreview.net/forum?id=y1SnRPDWx4) | [MEM1 Singapore-MIT](https://arxiv.org/pdf/2506.15841) | [LLM Attractors Shanghai AI](https://arxiv.org/pdf/2502.15208?)**
+### **[IBM Zurich](https://www.arxiv.org/pdf/2506.12115) | [Quantum Semantics](https://arxiv.org/pdf/2506.10077) | [ICML Princeton](https://openreview.net/forum?id=y1SnRPDWx4) | [MEM1 Singapore-MIT](https://arxiv.org/pdf/2506.15841) | [LLM Attractors Shanghai AI](https://arxiv.org/pdf/2502.15208?)** | [MemOS Shanghai](https://github.com/MemTensor/MemOS)
 
 ## [Chat with NotebookLM + Podcast Deep Dive](https://notebooklm.google.com/notebook/0c6e4dc6-9c30-4f53-8e1a-05cc9ff3bc7e)
-
-## [DeepWiki Docs](https://deepwiki.com/davidkimai/Context-Engineering) 
 
 
 ## [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/davidkimai/Context-Engineering) 
 
 
-
-
-
 </div>
-
-> **"Context engineering is the delicate art and science of filling the context window with just the right information for the next step." — [**Andrej Karpathy**](https://x.com/karpathy/status/1937902205765607626)**
-
-<div align="center">
-
-  
- **[On Emergence, Attractors, and Dynamical Systems Theory](https://content.csbs.utah.edu/~butner/systems/DynamicalSystemsIntro.html) | [Columbia DST](http://wordpress.ei.columbia.edu/ac4/about/our-approach/dynamical-systems-theory/)**
-
-
-https://github.com/user-attachments/assets/9f046259-e5ec-4160-8ed0-41a608d8adf3
-
-
-
-![image](https://github.com/user-attachments/assets/309b8d8c-13b5-403c-9f1d-6a0ad551ea56)
-
-</div>
-
 
 A practical, first-principles handbook for moving beyond prompt engineering to the wider discipline of context design, orchestration, and optimization.
 
@@ -53,20 +35,36 @@ A practical, first-principles handbook for moving beyond prompt engineering to t
 
 ## Why This Repository Exists
 
-> **"Meaning is not an intrinsic, static property of a semantic expression, but rather an emergent phenomenon actualized through the dynamic interaction between the expression and an interpretive agent situated within a specific context."
+> **"Meaning is not an intrinsic, static property of a semantic expression, but rather an emergent phenomenon"
 — [Agostino et al. — June 2025, Indiana University](https://arxiv.org/pdf/2506.10077)**
 
-Prompt engineering gets all the attention, but we can now get excited for what comes next. Once you've mastered prompts, the real power comes from engineering the **entire context window** that surrounds those prompts. Guiding thought, if you will. 
+Prompt engineering received all the attention, but we can now get excited for what comes next. Once you've mastered prompts, the real power comes from engineering the **entire context window** that surrounds those prompts. Guiding thought, if you will. 
 
 This repository provides a progressive, first-principles approach to context engineering, built around a biological metaphor:
 
 ```
 atoms → molecules → cells → organs → neural systems → neural & semantic field theory 
   │        │         │         │             │                         │        
-single    few-     memory/    multi-    cognitive tools +     context = fields +
-prompt    shot      agents    agents     prompt programs     persistence & resonance
+single    few-     memory +   multi-   cognitive tools +     context = fields +
+prompt    shot     agents     agents   operating systems     persistence & resonance
 ```
 > "Abstraction is the cost of generalization"— [**Grant Sanderson (3Blue1Brown)**](https://www.3blue1brown.com/)
+
+
+
+<div align="center">
+
+  
+ **[On Emergence, Attractors, and Dynamical Systems Theory](https://content.csbs.utah.edu/~butner/systems/DynamicalSystemsIntro.html) | [Columbia DST](http://wordpress.ei.columbia.edu/ac4/about/our-approach/dynamical-systems-theory/)**
+
+
+https://github.com/user-attachments/assets/9f046259-e5ec-4160-8ed0-41a608d8adf3
+
+
+
+![image](https://github.com/user-attachments/assets/309b8d8c-13b5-403c-9f1d-6a0ad551ea56)
+
+</div>
 
 
 

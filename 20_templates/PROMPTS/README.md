@@ -1,4 +1,4 @@
-# PROMPTS: Goal-Oriented Templates for AI Interaction
+# PROMPTS: Agentic and Goal-Oriented Templates for AI Interaction
 
 > "The right prompt is not just a request—it's an architecture for thinking."
 
