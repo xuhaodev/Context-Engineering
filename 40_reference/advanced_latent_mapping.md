@@ -9,6 +9,10 @@
    
 <img width="777" height="388" alt="image" src="https://github.com/user-attachments/assets/4b0ecca8-fe1b-4b3c-893d-9194cad25de3" />
 
+*While CoT improves both interpretability and accuracy, its dependence on natural
+language reasoning limits the model’s expressive bandwidth. Latent reasoning tackles this
+bottleneck by performing multi-step inference entirely in the model’s continuous hidden state,
+eliminating token-level supervision.*
 </div>
 
 ## Welcome to Advanced Latent Mapping
