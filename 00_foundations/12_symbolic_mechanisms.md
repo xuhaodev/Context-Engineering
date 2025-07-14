@@ -2,8 +2,8 @@
 
 _Understanding and leveraging emergent symbolic processing in LLMs_
 
-> "These results suggest a resolution to the longstanding debate between symbolic and neural network approaches, illustrating how neural networks can learn to perform abstract reasoning via the development of emergent symbol processing mechanisms."
-> — Yang et al., 2025
+> *"These results suggest a resolution to the longstanding debate between symbolic and neural network approaches, illustrating how neural networks can learn to perform abstract reasoning via the development of emergent symbol processing mechanisms."*
+> — [**Yang et al., 2025**](https://openreview.net/forum?id=y1SnRPDWx4)
 
 ## 1. Introduction
 
