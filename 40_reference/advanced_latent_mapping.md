@@ -4,6 +4,13 @@
 >
 > **— Albert Einstein**
 ## [A Survey on Latent Reasoning](https://arxiv.org/pdf/2507.06203)
+
+<div align="center">
+   
+<img width="777" height="388" alt="image" src="https://github.com/user-attachments/assets/4b0ecca8-fe1b-4b3c-893d-9194cad25de3" />
+
+</div>
+
 ## Welcome to Advanced Latent Mapping
 
 Congratulations on completing your foundational journey in latent mapping! You've learned to visualize AI thinking, create concept maps, and understand basic interpretability. Now we're ready to explore one of the more sophisticated methodologies in AI analysis—**the field of Symbolic Interpretability and one of its frameworks: [Self-Tracing ](https://github.com/recursivelabsai/Self-Tracing) -** Systems that trace and map their own reasoning through symbolic visuals.
