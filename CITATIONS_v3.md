@@ -195,7 +195,7 @@ def mem1_consolidation():
 
 ---
 
-### 5. LLM Attractor Dynamics - Shanghai AI Lab (2025)
+### 5. Unveiling Attractor Cycles in Large Language Models - Shanghai AI Lab (2025)
 
 **Citation**: Zhang, L., et al. (2025). *Unveiling Attractor Cycles in Large Language Models*. Shanghai AI Laboratory. [ArXiv:2502.15208](https://arxiv.org/pdf/2502.15208)
 
