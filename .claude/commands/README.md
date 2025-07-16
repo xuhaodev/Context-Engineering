@@ -6,7 +6,7 @@
 
 ## Overview
 
-This directory contains a collection of modular, extensible agentic command harnesses designed for enhancing the capabilities of [Claude Code](https://www.anthropic.com/claude-code) and other compatible agentic systems, such as [OpenCode](https://github.com/sst/opencode), [Amp](https://sourcegraph.com/amp), [Kiro](https://kiro.dev/) or [Gemini CLI](https://github.com/google-gemini/gemini-cli). Each command implements a specialized agent protocol with consistent structure, enabling sophisticated context engineering across various domains.
+This directory contains a collection of modular, extensible agentic command harnesses designed for enhancing the capabilities of [Claude Code](https://www.anthropic.com/claude-code) and other frontier agentic systems, such as [OpenCode](https://github.com/sst/opencode), [Amp](https://sourcegraph.com/amp), [Kiro](https://kiro.dev/) or [Gemini CLI](https://github.com/google-gemini/gemini-cli). Each command implements a specialized agent protocol with consistent structure, enabling sophisticated context engineering across various domains.
 
 These harnesses serve as scaffolds for context-driven AI workflows, leveraging the latest research in cognitive tools, neural field theory, symbolic mechanisms, and quantum semantics to create more capable and predictable AI interactions.
 
