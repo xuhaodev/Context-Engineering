@@ -181,7 +181,7 @@ Execute bash commands and include their output using the `!` prefix:
 
 ## Theoretical Foundation
 
-These command harnesses operationalize several key concepts from the Context Engineering framework:
+This AgenticOS operationalize several key concepts from the Context Engineering framework:
 
 ### Progressive Complexity Paradigm
 
@@ -233,7 +233,7 @@ Key features:
 
 ## Creating Custom Commands
 
-To create your own command harness:
+To create your own command agent:
 
 1. **Copy an existing template** from this directory
 2. **Modify domain-specific sections** for your use case
@@ -315,7 +315,7 @@ def mem1_consolidation():
 
 ## Contributing
 
-When creating new command harnesses:
+When creating new command agents:
 
 1. Follow the established structural patterns
 2. Include comprehensive documentation and examples
@@ -326,7 +326,7 @@ When creating new command harnesses:
 ## Future Directions
 
 This directory will expand to include:
-- Additional domain-specific command harnesses
+- Additional domain-specific command agents
 - Enhanced integration with external tools and APIs
 - More sophisticated feedback and recursive improvement mechanisms
 - Cross-command coordination frameworks
