@@ -7,7 +7,7 @@
 > 
 > The concept that language influences thought, not the other way around
 >
-> This is especially relevant in cour circumstance of Context Engineering, where we are tasked with guiding agentic thought
+> This is especially relevant in our field of Context Engineering, where we are tasked with guiding and debugging agentic thought
 
 ## Overview
 
