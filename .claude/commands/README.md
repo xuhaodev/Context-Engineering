@@ -6,7 +6,7 @@
 ## [Anthropic Slash Commands Docs](https://docs.anthropic.com/en/docs/claude-code/slash-commands)
 ## Overview
 
-This directory contains a growing library of modular, customizable, and extendable agents and harnesses embedded as slash commands, forming an Agentic Operating System (AgenticOS) designed for enhancing the capabilities of [Claude Code](https://www.anthropic.com/claude-code) and other frontier systems, such as [OpenCode](https://opencode.ai/), [Amp](https://sourcegraph.com/amp), [Kiro](https://kiro.dev/) or even [Gemini CLI](https://github.com/google-gemini/gemini-cli). Each agent implements a standardized workflow with consistent structure, enabling sophisticated context engineering across various domains.
+This directory contains a growing library of modular, customizable, and extendable agents and harnesses embedded as slash commands, forming an Agentic Operating System (AgenticOS) designed for enhancing the capabilities of [Claude Code](https://www.anthropic.com/claude-code) and other frontier systems, such as [OpenCode](https://opencode.ai/), [Amp](https://sourcegraph.com/amp), [Kiro](https://kiro.dev/), [Codex](https://openai.com/codex/), [Gemini CLI](https://github.com/google-gemini/gemini-cli), and more. Each agent implements a standardized workflow with consistent structure, enabling sophisticated context engineering across various domains.
 
 The operating system provides a selection of agents that serve as scaffolds for context-driven AI workflows, leveraging the latest research in cognitive tools, neural field theory, symbolic mechanisms, and quantum semantics to create more capable, interpretable, and predictable AI interactions.
 
