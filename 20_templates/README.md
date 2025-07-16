@@ -1,6 +1,6 @@
 # Context Engineering Templates
 
-> "First principles is a physics way of looking at the world... you boil things down to the most fundamental truths and then reason up from there." — **Elon Musk**
+> "We have to cease to think if we refuse to do it in the prison house of language; for we cannot reach further than the doubt which asks whether the limit we see is really a limit." — **Friedrich Nietzsche**
 
 ## Overview
 
