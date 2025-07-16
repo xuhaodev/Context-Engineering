@@ -1,6 +1,6 @@
 # Context Engineering Templates
 
-> "We have to cease to think if we refuse to do it in the prison house of language; for we cannot reach further than the doubt which asks whether the limit we see is really a limit." — **Friedrich Nietzsche**
+> "We have to cease to think if we refuse to do it in the prison house of language." — **Friedrich Nietzsche**
 
 ## Overview
 
