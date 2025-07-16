@@ -22,24 +22,24 @@ These harnesses serve as scaffolds for context-driven AI workflows, leveraging t
 
 ## Command Harness Library (Under Construction)
 
-| Command | Purpose | Creation Date | Usage Example |
-|---------|---------|--------------|---------------|
-| [`alignment.agent.md`](./alignment.agent.md) | AI safety/alignment evaluation | 5 days ago | `/alignment Q="prompt injection" model="claude-3"` |
-| [`cli.agent.md`](./cli.agent.md) | Terminal workflow automation | 4 days ago | `/cli "find all .log files" alias=logscan` |
-| [`comms.agent.md`](./comms.agent.md) | Stakeholder communications | 5 days ago | `/comms Q="major outage" audience="internal" type="crisis"` |
-| [`data.agent.md`](./data.agent.md) | Data transformation and validation | 4 days ago | `/data input="data.csv" op="validate" schema=@schema.json` |
-| [`deploy.agent.md`](./deploy.agent.md) | Deployment automation | 4 days ago | `/deploy target="app" env="staging" version="1.2.0"` |
-| [`diligence.agent.md`](./diligence.agent.md) | Due diligence workflows | 5 days ago | `/diligence target="acquisition" scope="tech" depth="full"` |
-| [`doc.agent.md`](./doc.agent.md) | Documentation generation | 4 days ago | `/doc target="api" format="markdown" scope="public"` |
-| [`legal.agent.md`](./legal.agent.md) | Legal research and analysis | 4 days ago | `/legal Q="contract review" jurisdiction="US" type="SaaS"` |
-| [`lit.agent.md`](./lit.agent.md) | Literature review and writing | 4 days ago | `/literature Q="PEMF effect" type="review" years=3` |
-| [`marketing.agent.md`](./marketing.agent.md) | Marketing strategy and campaigns | 4 days ago | `/marketing goal="lead gen" channel="email" vertical="SaaS"` |
-| [`meta.agent.md`](./meta.agent.md) | Meta-level agent coordination | 4 days ago | `/meta agents="research,data" task="market analysis"` |
-| [`monitor.agent.md`](./monitor.agent.md) | System/service monitoring | 4 days ago | `/monitor service="api" period="24h" alert=true` |
-| [`optimize.agent.md`](./optimize.agent.md) | Code and process optimization | 5 days ago | `/optimize target="foo.py" area="speed" mode="aggressive"` |
-| [`research.agent.md`](./research.agent.md) | Research workflows | 5 days ago | `/research topic="quantum computing" depth="technical"` |
-| [`security.agent.md`](./security.agent.md) | Security analysis | 4 days ago | `/security target="app" scope="full" report="detailed"` |
-| [`test.agent.md`](./test.agent.md) | Test generation and execution | 4 days ago | `/test suite="integration" mutate=true report=summary"` |
+| Command | Purpose | Usage Example |
+|---------|---------|---------------|
+| [`alignment.agent.md`](./alignment.agent.md) | AI safety/alignment evaluation | `/alignment Q="prompt injection" model="claude-3"` |
+| [`cli.agent.md`](./cli.agent.md) | Terminal workflow automation | `/cli "find all .log files" alias=logscan` |
+| [`comms.agent.md`](./comms.agent.md) | Stakeholder communications | `/comms Q="major outage" audience="internal" type="crisis"` |
+| [`data.agent.md`](./data.agent.md) | Data transformation and validation | `/data input="data.csv" op="validate" schema=@schema.json` |
+| [`deploy.agent.md`](./deploy.agent.md) | Deployment automation | `/deploy target="app" env="staging" version="1.2.0"` |
+| [`diligence.agent.md`](./diligence.agent.md) | Due diligence workflows | `/diligence target="acquisition" scope="tech" depth="full"` |
+| [`doc.agent.md`](./doc.agent.md) | Documentation generation | `/doc target="api" format="markdown" scope="public"` |
+| [`legal.agent.md`](./legal.agent.md) | Legal research and analysis | `/legal Q="contract review" jurisdiction="US" type="SaaS"` |
+| [`lit.agent.md`](./lit.agent.md) | Literature review and writing | `/literature Q="PEMF effect" type="review" years=3` |
+| [`marketing.agent.md`](./marketing.agent.md) | Marketing strategy and campaigns | `/marketing goal="lead gen" channel="email" vertical="SaaS"` |
+| [`meta.agent.md`](./meta.agent.md) | Meta-level agent coordination | `/meta agents="research,data" task="market analysis"` |
+| [`monitor.agent.md`](./monitor.agent.md) | System/service monitoring | `/monitor service="api" period="24h" alert=true` |
+| [`optimize.agent.md`](./optimize.agent.md) | Code and process optimization | `/optimize target="foo.py" area="speed" mode="aggressive"` |
+| [`research.agent.md`](./research.agent.md) | Research workflows | `/research topic="quantum computing" depth="technical"` |
+| [`security.agent.md`](./security.agent.md) | Security analysis | `/security target="app" scope="full" report="detailed"` |
+| [`test.agent.md`](./test.agent.md) | Test generation and execution | `/test suite="integration" mutate=true report=summary"` |
 
 ## Command Structure
 
