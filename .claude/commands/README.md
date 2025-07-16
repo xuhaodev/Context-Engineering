@@ -1,6 +1,6 @@
 # Context Engineering Agentic Slash Command Harnesses
 
-> "Context engineering is the delicate art and science of filling the context window with just the right information for the next step." — [Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626)
+> "Language is the house of being. In its home man dwells." — [Martin Heidegger](https://www.goodreads.com/quotes/10151861-language-is-the-house-of-being-in-its-home-man)
 
 ## Overview
 
