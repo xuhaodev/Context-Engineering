@@ -10,7 +10,7 @@ Operationalizing the Latest Research on Context With First Principles & Visuals 
 <div align="center">
   
 ## [`Agentic Harnesses`](https://github.com/davidkimai/Context-Engineering/tree/main/.claude/commands)
-**Support for [Claude Code](https://www.anthropic.com/claude-code) | [OpenCode](https://github.com/sst/opencode) | [Amp](https://sourcegraph.com/amp) | [Gemini CLI](https://github.com/google-gemini/gemini-cli) | [Kiro](https://kiro.dev/)**
+**Support for [Claude Code](https://www.anthropic.com/claude-code) | [OpenCode](https://opencode.ai/) | [Amp](https://sourcegraph.com/amp) | [Gemini CLI](https://github.com/google-gemini/gemini-cli) | [Kiro](https://kiro.dev/)**
 
 ### **[IBM Zurich](https://www.arxiv.org/pdf/2506.12115) | [Quantum Semantics](https://arxiv.org/pdf/2506.10077) | [Emergent Symbolics ICML Princeton](https://openreview.net/forum?id=y1SnRPDWx4) | [MEM1 Singapore-MIT](https://arxiv.org/pdf/2506.15841) | [LLM Attractors Shanghai AI](https://arxiv.org/pdf/2502.15208?)** | [MemOS Shanghai](https://github.com/MemTensor/MemOS) | [Latent Reasoning](https://arxiv.org/pdf/2507.06203) | [Dynamic Recursive Depths](https://arxiv.org/pdf/2507.10524)
 
