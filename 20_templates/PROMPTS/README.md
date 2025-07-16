@@ -36,43 +36,73 @@ Each template follows a standardized format designed for reuse, adaptation, and 
 
 The prompt templates are organized into several categories based on their application domains and complexity:
 
+
 ```mermaid
-graph TD
-    classDef basic fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#01579b
-    classDef cognitive fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#2e7d32
-    classDef field fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100
-    classDef agent fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px,color:#6a1b9a
+graph LR
+    %% Main Categories
+    Root[Context Engineering Templates]
+    Root --> Foundation[Foundation Templates]
+    Root --> Field[Field-Theoretic Templates]
+    Root --> Meta[Meta-Recursive Templates]
     
-    A[Prompt Templates]
+    %% Foundation Templates
+    Foundation --> ContextStructure[Context Structure]
+    Foundation --> ControlFlow[Control Flow]
+    Foundation --> Evaluation[Evaluation]
     
-    A --> B[Task-Specific]
-    A --> C[Cognitive Tools]
-    A --> D[Field Operations]
-    A --> E[Agent Protocols]
+    %% Field-Theoretic Templates
+    Field --> FieldOps[Field Operations]
+    Field --> Measurement[Measurement]
+    Field --> Analysis[Analysis]
     
-    B --> B1[alignment.agent.md]
-    B --> B2[research.agent.md]
-    B --> B3[incident.agent.md]
-    B --> B4[lit.agent.md]
+    %% Meta-Recursive Templates
+    Meta --> Integration[Integration]
+    Meta --> Enhancement[Enhancement]
     
-    C --> C1[chain_of_thought.md]
-    C --> C2[verification_loop.md]
-    C --> C3[few_shot_learning.md]
-    C --> C4[attractor_design.md]
+    %% Specific Templates - Foundation
+    ContextStructure --> MinimalContext[minimal_context.yaml]
+    ContextStructure --> SchemaTemplate[schema_template.yaml]
     
-    D --> D1[protocol.agent.md]
-    D --> D2[self_organization.md]
-    D --> D3[memory.agent.md]
+    ControlFlow --> ControlLoop[control_loop.py]
+    ControlFlow --> PromptProgram[prompt_program_template.py]
+    ControlFlow --> RecursiveFramework[recursive_framework.py]
     
-    E --> E1[comms.agent.md]
-    E --> E2[diligence.agent.md]
-    E --> E3[ethics.agent.md]
-    E --> E4[triage.agent.md]
+    Evaluation --> ScoringFunctions[scoring_functions.py]
+    Evaluation --> ContextAudit[context_audit.py]
     
-    class A,B,B1,B2,B3,B4 basic
-    class C,C1,C2,C3,C4 cognitive
-    class D,D1,D2,D3 field
-    class E,E1,E2,E3,E4 agent
+    %% Specific Templates - Field-Theoretic
+    FieldOps --> ProtocolShells[field_protocol_shells.py]
+    FieldOps --> ShellRunner[shell_runner.py]
+    FieldOps --> ResidueTracker[symbolic_residue_tracker.py]
+    
+    Measurement --> ResonanceMeasure[resonance_measurement.py]
+    Measurement --> EmergenceMetrics[emergence_metrics.py]
+    Measurement --> QuantumMetrics[quantum_context_metrics.py]
+    
+    Analysis --> AttractorDetection[attractor_detection.py]
+    Analysis --> BoundaryDynamics[boundary_dynamics.py]
+    
+    %% Specific Templates - Meta-Recursive
+    Integration --> UnifiedEngine[unified_field_engine.py]
+    Integration --> CrossModal[cross_modal_context_bridge.py]
+    
+    Enhancement --> MetaPatterns[meta_recursive_patterns.py]
+    Enhancement --> Interpretability[interpretability_scaffolding.py]
+    Enhancement --> Collaborative[collaborative_evolution_framework.py]
+    
+    %% Styling
+    classDef category fill:#f9f9f9,stroke:#666,stroke-width:1px,color:#333,font-weight:bold
+    classDef foundation fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#01579b
+    classDef field fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#2e7d32
+    classDef meta fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100
+    classDef template fill:#ffffff,stroke:#999,stroke-width:1px,color:#333
+    
+    class Root,Foundation,Field,Meta,ContextStructure,ControlFlow,Evaluation,FieldOps,Measurement,Analysis,Integration,Enhancement category
+    class MinimalContext,SchemaTemplate,ControlLoop,PromptProgram,RecursiveFramework,ScoringFunctions,ContextAudit foundation
+    class ProtocolShells,ShellRunner,ResidueTracker,ResonanceMeasure,EmergenceMetrics,QuantumMetrics,AttractorDetection,BoundaryDynamics field
+    class UnifiedEngine,CrossModal,MetaPatterns,Interpretability,Collaborative meta
+
+
 ```
 
 ### Task-Specific Templates
