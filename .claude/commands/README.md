@@ -120,6 +120,18 @@ tools:
     call: { protocol: /tool.function{ param1=<param1>, param2=<param2> } }
     phases: [domain_specific_phase_1, domain_specific_phase_2]
     examples: [{ input: {...}, output: {...} }]
+  - id: github_issue
+    type: external
+    description: Create or update issues in a GitHub repo for agent workflow failures or meta-level tracking.
+    input_schema: { repo: string, title: string, body: string }
+    output_schema: { issue_url: string, status: string }
+    endpoint: "https://api.github.com/repos/{repo}/issues"
+    auth: "api_token"
+    call: { protocol: /call_api{ endpoint=<endpoint>, params={repo, title, body} } }
+    phases: [error_feedback_handling, audit_meta_logging]
+    examples:
+      - input: { repo: "team/agent-infra", title: "Meta-agent error", body: "Dependency loop detected" }
+        output: { issue_url: "https://github.com/team/agent-infra/issues/45", status: "created" }
 ```
 
 ### Recursion Loop
