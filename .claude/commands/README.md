@@ -1,8 +1,7 @@
 # Context Engineering AgenticOS
 
-> "Language is the house of being. In its home man dwells." — [Martin Heidegger](https://www.goodreads.com/quotes/10151861-language-is-the-house-of-being-in-its-home-man)
->
-> And now, so too do our agents
+> “We shape our tools and thereafter our tools shape us.” — [Marshall McLuhan](https://www.goodreads.com/quotes/350791-we-become-what-we-behold-we-shape-our-tools-and)
+
 
 ## [Anthropic Slash Commands Docs](https://docs.anthropic.com/en/docs/claude-code/slash-commands)
 ## Overview
