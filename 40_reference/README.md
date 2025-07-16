@@ -1,8 +1,13 @@
 # Context Engineering: Reference Documentation
 
-> "The limits of my language mean the limits of my world."
+> ""We dissect nature along lines laid down by our native language."
 >
-> **— Ludwig Wittgenstein**
+> [**— Benjamin Lee Whorf**](https://en.wikipedia.org/wiki/Benjamin_Lee_Whorf), proposer of the [**Sapir-Whorf Linguistic Relativity Hypothesis**](https://en.wikipedia.org/wiki/Linguistic_relativity)
+> 
+> 
+> The concept that language influences thought, not the other way around
+>
+> Especially relevant in our field of Context Engineering, guiding Agentic thought
 
 ## Overview
 
