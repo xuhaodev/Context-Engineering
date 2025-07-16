@@ -2,7 +2,7 @@
 
 > "We dissect nature along lines laid down by our native language."
 >
-> [**— Benjamin Lee Whorf**](https://en.wikipedia.org/wiki/Benjamin_Lee_Whorf), proposer of the [**Sapir-Whorf Linguistic Relativity Hypothesis**](https://en.wikipedia.org/wiki/Linguistic_relativity)
+> [**— Benjamin Lee Whorf**](https://en.wikipedia.org/wiki/Benjamin_Lee_Whorf), father of the [**Sapir-Whorf Linguistic Relativity Hypothesis**](https://en.wikipedia.org/wiki/Linguistic_relativity)
 > 
 > 
 > The concept that language influences thought, not the other way around
