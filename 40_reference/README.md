@@ -46,40 +46,53 @@ The reference documentation is organized into four main categories to support di
 For those new to context engineering, we recommend the following learning path:
 
 ```mermaid
+
 graph LR
+    %% Main Categories
+    Root[Context Engineering Reference]
+    Root --> Foundation[Foundational Concepts]
+    Root --> Patterns[Practical Patterns]
+    Root --> Phenomena[Emergent Phenomena] 
+    Root --> Integration[Integration Frameworks]
+    
+    %% Foundational Concepts
+    Foundation --> TokenBudget[token_budgeting.md]
+    Foundation --> RetrievalIndex[retrieval_indexing.md]
+    Foundation --> EvalChecklist[eval_checklist.md]
+    
+    %% Practical Patterns
+    Patterns --> GenPatterns[patterns.md]
+    Patterns --> CogPatterns[cognitive_patterns.md]
+    Patterns --> SchemaBook[schema_cookbook.md]
+    
+    %% Emergent Phenomena
+    Phenomena --> FieldMap[field_mapping.md]
+    Phenomena --> SymbolicResidue[symbolic_residue_types.md]
+    Phenomena --> AttractorDynamics[attractor_dynamics.md]
+    Phenomena --> EmergenceSignatures[emergence_signatures.md]
+    Phenomena --> BoundaryOps[boundary_operations.md]
+    
+    %% Integration Frameworks
+    Integration --> QuantumMetrics[quantum_semantic_metrics.md]
+    Integration --> UnifiedOps[unified_field_operations.md]
+    Integration --> MetaPatterns[meta_recursive_patterns.md]
+    Integration --> InterpretMetrics[interpretability_metrics.md]
+    Integration --> CollabEvolution[collaborative_evolution_guide.md]
+    Integration --> CrossModal[cross_modal_context_handbook.md]
+    
+    %% Styling
+    classDef category fill:#f9f9f9,stroke:#666,stroke-width:1px,color:#333,font-weight:bold
     classDef foundation fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#01579b
     classDef patterns fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#2e7d32
     classDef phenomena fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100
     classDef integration fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px,color:#6a1b9a
     
-    A[token_budgeting.md] --> B[patterns.md]
-    B --> C[cognitive_patterns.md]
-    B --> D[schema_cookbook.md]
-    
-    A --> E[retrieval_indexing.md]
-    E --> F[eval_checklist.md]
-    
-    B --> G[field_mapping.md]
-    G --> H[symbolic_residue_types.md]
-    G --> I[attractor_dynamics.md]
-    H --> J[emergence_signatures.md]
-    I --> J
-    
-    J --> K[boundary_operations.md]
-    J --> L[quantum_semantic_metrics.md]
-    K --> M[unified_field_operations.md]
-    L --> M
-    
-    M --> N[meta_recursive_patterns.md]
-    M --> O[interpretability_metrics.md]
-    N --> P[collaborative_evolution_guide.md]
-    O --> P
-    P --> Q[cross_modal_context_handbook.md]
-    
-    class A,E,F foundation
-    class B,C,D,G patterns
-    class H,I,J,K,L phenomena
-    class M,N,O,P,Q integration
+    class Root category
+    class Foundation,TokenBudget,RetrievalIndex,EvalChecklist foundation
+    class Patterns,GenPatterns,CogPatterns,SchemaBook patterns
+    class Phenomena,FieldMap,SymbolicResidue,AttractorDynamics,EmergenceSignatures,BoundaryOps phenomena
+    class Integration,QuantumMetrics,UnifiedOps,MetaPatterns,InterpretMetrics,CollabEvolution,CrossModal integration
+
 ```
 
 ## Directory Contents
