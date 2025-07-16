@@ -1,4 +1,4 @@
-# Context Engineering Agentic Slash Command Harnesses
+# Context Engineering AgenticOS
 
 > "Language is the house of being. In its home man dwells." — [Martin Heidegger](https://www.goodreads.com/quotes/10151861-language-is-the-house-of-being-in-its-home-man)
 >
@@ -7,9 +7,9 @@
 ## [Anthropic Slash Command Docs](https://docs.anthropic.com/en/docs/claude-code/slash-commands)
 ## Overview
 
-This directory contains a collection of modular, extensible agentic harnesses embedded as slash commands designed for enhancing the capabilities of [Claude Code](https://www.anthropic.com/claude-code) and other frontier agentic systems, such as [OpenCode](https://opencode.ai/), [Amp](https://sourcegraph.com/amp), [Kiro](https://kiro.dev/) or even [Gemini CLI](https://github.com/google-gemini/gemini-cli). Each command implements a specialized agent protocol with consistent structure, enabling sophisticated context engineering across various domains.
+This directory contains a collection of modular, customizable agentic harnesses embedded as slash commands, forming an Agentic Operating System designed for enhancing the capabilities of [Claude Code](https://www.anthropic.com/claude-code) and other frontier systems, such as [OpenCode](https://opencode.ai/), [Amp](https://sourcegraph.com/amp), [Kiro](https://kiro.dev/) or even [Gemini CLI](https://github.com/google-gemini/gemini-cli). Each agentic command implements a specialized agent protocol with consistent structure, enabling sophisticated context engineering across various domains.
 
-These harnesses serve as scaffolds for context-driven AI workflows, leveraging the latest research in cognitive tools, neural field theory, symbolic mechanisms, and quantum semantics to create more capable and predictable AI interactions.
+The operating system provides a selection of harnesses that serve as scaffolds for context-driven AI workflows, leveraging the latest research in cognitive tools, neural field theory, symbolic mechanisms, and quantum semantics to create more capable and predictable AI interactions.
 
 ```
 /command Q="query" param="value" context=@file.md ...
@@ -19,7 +19,7 @@ These harnesses serve as scaffolds for context-driven AI workflows, leveraging t
         ↑___________________feedback/CI___________________|
 ```
 
-## Agentic Harness Library (Under Construction)
+## AgenticOS Library (Under Construction)
 
 | Command | Purpose | Usage Example |
 |---------|---------|---------------|
