@@ -40,68 +40,101 @@ The prompt templates are organized into several categories based on their applic
 ```mermaid
 graph LR
     %% Main Categories
-    Root[Context Engineering Templates]
-    Root --> Foundation[Foundation Templates]
-    Root --> Field[Field-Theoretic Templates]
-    Root --> Meta[Meta-Recursive Templates]
+    Root[Prompt Templates]
+    Root --> Task[Task-Specific Templates]
+    Root --> Cognitive[Cognitive Tool Templates]
+    Root --> Field[Field Operation Templates]
+    Root --> Agent[Agent Protocol Templates]
     
-    %% Foundation Templates
-    Foundation --> ContextStructure[Context Structure]
-    Foundation --> ControlFlow[Control Flow]
-    Foundation --> Evaluation[Evaluation]
+    %% Task-Specific Templates
+    Task --> Research[Research & Analysis]
+    Task --> Evaluation[Evaluation & Assessment]
+    Task --> Content[Content Creation]
+    Task --> Technical[Technical Tasks]
     
-    %% Field-Theoretic Templates
-    Field --> FieldOps[Field Operations]
-    Field --> Measurement[Measurement]
-    Field --> Analysis[Analysis]
+    %% Research & Analysis Templates
+    Research --> ResearchAgent[research.agent.md]
+    Research --> LitAgent[lit.agent.md]
     
-    %% Meta-Recursive Templates
-    Meta --> Integration[Integration]
-    Meta --> Enhancement[Enhancement]
+    %% Evaluation & Assessment Templates
+    Evaluation --> AlignmentAgent[alignment.agent.md]
+    Evaluation --> IncidentAgent[incident.agent.md]
     
-    %% Specific Templates - Foundation
-    ContextStructure --> MinimalContext[minimal_context.yaml]
-    ContextStructure --> SchemaTemplate[schema_template.yaml]
+    %% Content Creation Templates
+    Content --> PortfolioAgent[portfolio.agent.md]
+    Content --> PolicyAgent[policyimpact.agent.md]
     
-    ControlFlow --> ControlLoop[control_loop.py]
-    ControlFlow --> PromptProgram[prompt_program_template.py]
-    ControlFlow --> RecursiveFramework[recursive_framework.py]
+    %% Technical Tasks Templates
+    Technical --> PipelineAgent[pipeline.agent.md]
+    Technical --> MemoryAgent[memory.agent.md]
     
-    Evaluation --> ScoringFunctions[scoring_functions.py]
-    Evaluation --> ContextAudit[context_audit.py]
+    %% Cognitive Tool Templates
+    Cognitive --> Reasoning[Reasoning Patterns]
+    Cognitive --> Verification[Verification Methods]
+    Cognitive --> Learning[Learning Techniques]
+    Cognitive --> Design[Design Approaches]
     
-    %% Specific Templates - Field-Theoretic
-    FieldOps --> ProtocolShells[field_protocol_shells.py]
-    FieldOps --> ShellRunner[shell_runner.py]
-    FieldOps --> ResidueTracker[symbolic_residue_tracker.py]
+    %% Reasoning Pattern Templates
+    Reasoning --> ChainOfThought[chain_of_thought.md]
+    Reasoning --> SelfOrg[self_organization.md]
     
-    Measurement --> ResonanceMeasure[resonance_measurement.py]
-    Measurement --> EmergenceMetrics[emergence_metrics.py]
-    Measurement --> QuantumMetrics[quantum_context_metrics.py]
+    %% Verification Method Templates
+    Verification --> VerificationLoop[verification_loop.md]
+    Verification --> DiligenceAgent[diligence.agent.md]
     
-    Analysis --> AttractorDetection[attractor_detection.py]
-    Analysis --> BoundaryDynamics[boundary_dynamics.py]
+    %% Learning Technique Templates
+    Learning --> FewShot[few_shot_learning.md]
+    Learning --> LearningRoadmap[learningroadmap.agent.md]
     
-    %% Specific Templates - Meta-Recursive
-    Integration --> UnifiedEngine[unified_field_engine.py]
-    Integration --> CrossModal[cross_modal_context_bridge.py]
+    %% Design Approach Templates
+    Design --> AttractorDesign[attractor_design.md]
+    Design --> ProtocolAgent[protocol.agent.md]
     
-    Enhancement --> MetaPatterns[meta_recursive_patterns.py]
-    Enhancement --> Interpretability[interpretability_scaffolding.py]
-    Enhancement --> Collaborative[collaborative_evolution_framework.py]
+    %% Field Operation Templates
+    Field --> Protocol[Protocol Implementation]
+    Field --> Management[Field Management]
+    Field --> Analysis[Field Analysis]
+    
+    %% Protocol Implementation Templates
+    Protocol --> ProtocolAgentMd[protocol.agent.md]
+    
+    %% Field Management Templates
+    Management --> SelfOrgMd[self_organization.md]
+    Management --> MemoryAgentMd[memory.agent.md]
+    
+    %% Field Analysis Templates
+    Analysis --> ExperimentAgent[experiment.agent.md]
+    
+    %% Agent Protocol Templates
+    Agent --> Communication[Communication]
+    Agent --> Ethics[Ethics & Governance]
+    Agent --> Workflow[Workflow Management]
+    
+    %% Communication Templates
+    Communication --> CommsAgent[comms.agent.md]
+    Communication --> GrantAgent[grant.agent.md]
+    
+    %% Ethics & Governance Templates
+    Ethics --> EthicsAgent[ethics.agent.md]
+    Ethics --> TriageAgent[triage.agent.md]
+    
+    %% Workflow Management Templates
+    Workflow --> IdeationAgent[ideation.agent.md]
+    Workflow --> ExpertGuides[expert_guides.md]
     
     %% Styling
     classDef category fill:#f9f9f9,stroke:#666,stroke-width:1px,color:#333,font-weight:bold
-    classDef foundation fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#01579b
-    classDef field fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#2e7d32
-    classDef meta fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100
+    classDef task fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#01579b
+    classDef cognitive fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#2e7d32
+    classDef field fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100
+    classDef agent fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px,color:#6a1b9a
     classDef template fill:#ffffff,stroke:#999,stroke-width:1px,color:#333
     
-    class Root,Foundation,Field,Meta,ContextStructure,ControlFlow,Evaluation,FieldOps,Measurement,Analysis,Integration,Enhancement category
-    class MinimalContext,SchemaTemplate,ControlLoop,PromptProgram,RecursiveFramework,ScoringFunctions,ContextAudit foundation
-    class ProtocolShells,ShellRunner,ResidueTracker,ResonanceMeasure,EmergenceMetrics,QuantumMetrics,AttractorDetection,BoundaryDynamics field
-    class UnifiedEngine,CrossModal,MetaPatterns,Interpretability,Collaborative meta
-
+    class Root,Task,Cognitive,Field,Agent,Research,Evaluation,Content,Technical,Reasoning,Verification,Learning,Design,Protocol,Management,Analysis,Communication,Ethics,Workflow category
+    class ResearchAgent,LitAgent,AlignmentAgent,IncidentAgent,PortfolioAgent,PolicyAgent,PipelineAgent,MemoryAgent task
+    class ChainOfThought,SelfOrg,VerificationLoop,DiligenceAgent,FewShot,LearningRoadmap,AttractorDesign,ProtocolAgent cognitive
+    class ProtocolAgentMd,SelfOrgMd,MemoryAgentMd,ExperimentAgent field
+    class CommsAgent,GrantAgent,EthicsAgent,TriageAgent,IdeationAgent,ExpertGuides agent
 
 ```
 
