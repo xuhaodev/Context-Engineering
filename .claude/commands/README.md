@@ -4,7 +4,7 @@
 >
 > And now, so do our agents
 
-## [Anthropic Slash Command Docs](https://docs.anthropic.com/en/docs/claude-code/slash-commands)
+## [Anthropic Slash Commands Docs](https://docs.anthropic.com/en/docs/claude-code/slash-commands)
 ## Overview
 
 This directory contains a growing suite of modular, customizable, and extendable agents embedded as slash commands, forming an Agentic Operating System designed for enhancing the capabilities of [Claude Code](https://www.anthropic.com/claude-code) and other frontier systems, such as [OpenCode](https://opencode.ai/), [Amp](https://sourcegraph.com/amp), [Kiro](https://kiro.dev/) or even [Gemini CLI](https://github.com/google-gemini/gemini-cli). Each agent implements a specialized agent protocol with consistent structure, enabling sophisticated context engineering across various domains.
