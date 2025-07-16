@@ -20,7 +20,7 @@ These harnesses serve as scaffolds for context-driven AI workflows, leveraging t
         ↑___________________feedback/CI___________________|
 ```
 
-## Command Harness Library (Under Construction)
+## Agentic Harness Library (Under Construction)
 
 | Command | Purpose | Usage Example |
 |---------|---------|---------------|
