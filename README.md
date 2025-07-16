@@ -19,7 +19,7 @@ Operationalizing the Latest Research on Context With First Principles & Visuals 
 
 </div>
 
-A practical, first-principles handbook for moving beyond prompt engineering to the wider discipline of context design, orchestration, and optimization.
+A frontier, first-principles handbook for moving beyond prompt engineering to the wider discipline of context design, orchestration, and optimization.
 
 
 ```
