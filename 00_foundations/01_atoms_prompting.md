@@ -76,7 +76,7 @@ print(f"Found {len(unique_symptoms)} unique symptoms across 5 identical prompts"
 # Typically outputs far more than just 5 unique symptoms
 ```
 
-The problem? Even with the same atomic prompt, we get different responses each time. Models struggle with consistency when given minimal context.
+The problem? Models struggle with consistency when given minimal context.
 
 ## The Single-Atom Baseline: Useful But Limited
 
