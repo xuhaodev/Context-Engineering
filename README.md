@@ -34,6 +34,11 @@ A frontier, first-principles handbook for moving beyond prompt engineering to th
 
 
 
+### [Definition of Context Engineering from A Survey of Context Engineering for Large Language Models](https://arxiv.org/pdf/2507.13334)
+
+<img width="927" height="374" alt="image" src="https://github.com/user-attachments/assets/6ed77d7b-c32b-4906-b593-0eeb9e56a702" />
+
+
 
 ## Why This Repository Exists
 
