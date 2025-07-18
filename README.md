@@ -56,7 +56,7 @@ prompt    shot     agents     agents   operating systems     persistence & reson
 
 <img width="931" height="854" alt="image" src="https://github.com/user-attachments/assets/580a9b1a-539f-41dc-abce-a5106b33350e" />
 
-*[A Survey of Context Engineering](https://arxiv.org/pdf/2507.13334)*
+*[A Survey of Context Engineering — 165 pages of ](https://arxiv.org/pdf/2507.13334)*
 
 
   
