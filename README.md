@@ -52,9 +52,12 @@ prompt    shot     agents     agents   operating systems     persistence & reson
 ```
 > "Abstraction is the cost of generalization"— [**Grant Sanderson (3Blue1Brown)**](https://www.3blue1brown.com/)
 
-
-
 <div align="center">
+
+<img width="931" height="854" alt="image" src="https://github.com/user-attachments/assets/580a9b1a-539f-41dc-abce-a5106b33350e" />
+
+*[A Survey of Context Engineering](https://arxiv.org/pdf/2507.13334)*
+
 
   
  **[On Emergence, Attractors, and Dynamical Systems Theory](https://content.csbs.utah.edu/~butner/systems/DynamicalSystemsIntro.html) | [Columbia DST](http://wordpress.ei.columbia.edu/ac4/about/our-approach/dynamical-systems-theory/)**
