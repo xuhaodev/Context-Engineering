@@ -14,8 +14,19 @@ The foundational retrieval optimization problem from the survey:
 \text{Retrieve}^* = \arg\max_{\text{Retrieve}} I(Y^*; c_{\text{know}}|c_{\text{query}})
 ```
 
-Where $I(Y^*; c_{\text{know}}|c_{\text{query}})$ represents conditional mutual information between the target output $Y^*$ and retrieved knowledge $c_{\text{know}}$ given the query $c_{\text{query}}$.
+Where 
+```math
+$I(Y^*; c_{\text{know}}|c_{\text{query}})$
+```
+represents conditional mutual information between the target output
+```math
+$Y^*$
+```
 
+and retrieved knowledge
+```math
+$c_{\text{know}}$ given the query $c_{\text{query}}$.
+```
 This principle extends beyond retrieval to all context engineering operations:
 
 ```math
