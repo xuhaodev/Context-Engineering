@@ -1,7 +1,7 @@
 # Context Engineering
 > **"Context engineering is the delicate art and science of filling the context window with just the right information for the next step." — [**Andrej Karpathy**](https://x.com/karpathy/status/1937902205765607626)**
 >
-> [**Software Is Changing (Again) Talk**](https://www.youtube.com/watch?v=LCEmiRjPEtQ)
+> [**Software Is Changing (Again) Talk @YC AI Startup School**](https://www.youtube.com/watch?v=LCEmiRjPEtQ)
 ## Comprehensive Course Under Construction
 ### [From A Systematic Analysis of Over 1400 Research Papers On Context Engineering](https://github.com/davidkimai/Context-Engineering/tree/main/00_COURSE)
 Operationalizing the Latest Research on Context With First Principles & Visuals — July 2025 from ICML, IBM, NeurIPS, OHBM, and more 
