@@ -2,7 +2,7 @@
 > **"Context engineering is the delicate art and science of filling the context window with just the right information for the next step." — [**Andrej Karpathy**](https://x.com/karpathy/status/1937902205765607626)**
 
 ## Comprehensive Course Under Construction
-## [From A Systematic Analysis of Over 1400 Research Papers On Context Engineering](https://github.com/davidkimai/Context-Engineering/tree/main/00_COURSE)
+### [From A Systematic Analysis of Over 1400 Research Papers On Context Engineering](https://github.com/davidkimai/Context-Engineering/tree/main/00_COURSE)
 Operationalizing the Latest Research on Context With First Principles & Visuals — July 2025 from ICML, IBM, NeurIPS, OHBM, and more 
 
 
