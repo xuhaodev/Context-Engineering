@@ -9,6 +9,14 @@ Traditional Paradigm:    C = prompt (static string)
 Context Engineering:     C = A(c₁, c₂, ..., cₙ) (dynamic assembly)
 ```
 
+<div align="center">
+    
+<img width="927" height="376" alt="image" src="https://github.com/user-attachments/assets/8dfc3670-eee8-407d-88f5-06e851ae1d48" />
+
+*[A Survey of Context Engineering - July 2025](https://arxiv.org/pdf/2507.13334)*
+
+</div>
+
 The revolution from prompt engineering to Context Engineering represents a fundamental mathematical reformulation of how we conceptualize information flow in large language models.
 
 ## Core Mathematical Framework
