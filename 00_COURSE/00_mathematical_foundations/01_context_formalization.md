@@ -122,7 +122,12 @@ c_{\text{tools}} \in \text{Function Space}
 c_{\text{tools}} = \{f_1, f_2, ..., f_n\}
 ```
 
-where $f_i = (\text{input\_schema}_i, \text{output\_schema}_i, \text{execution\_env}_i)$
+where 
+
+```math
+
+$f_i = (\text{input\_schema}_i, \text{output\_schema}_i, \text{execution\_env}_i)$
+```
 
 ### Component Type 4: Persistent Memory ($c_{\text{mem}}$)
 
