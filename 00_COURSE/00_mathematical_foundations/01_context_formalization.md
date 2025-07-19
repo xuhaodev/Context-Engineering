@@ -2,45 +2,37 @@
 
 *From Static Prompts to Dynamic Information Orchestration*
 
-```
-╭─────────────────────────────────────────────────────────────╮
-│           THE FUNDAMENTAL PARADIGM SHIFT                    │
-│                                                             │
-│  Traditional Paradigm:    C = prompt (static string)       │
-│                                                             │
-│  Context Engineering:     C = A(c₁, c₂, ..., cₙ)          │
-│                                                             │
-│  Where the transformation A orchestrates information        │
-│  components cᵢ into optimized contextual payloads          │
-╰─────────────────────────────────────────────────────────────╯
-```
-
-## The Mathematical Foundation: Beyond Prompt Engineering
-
-The revolution from prompt engineering to Context Engineering represents more than a methodological evolution—it embodies a fundamental mathematical reformulation of how we conceptualize information flow in large language models.
-
-### Core Mathematical Framework
-
-#### 1. The Autoregressive Foundation
-
-Every large language model operates on the fundamental autoregressive principle, where the model parameterized by θ generates output sequence Y = (y₁, y₂, ..., yₜ) by maximizing conditional probability:
+## The Fundamental Paradigm Shift
 
 ```
-P_θ(Y|C) = ∏ᵢ₌₁ᵀ P_θ(yᵢ|y₍<ᵢ₎, C)
+Traditional Paradigm:    C = prompt (static string)
+Context Engineering:     C = A(c₁, c₂, ..., cₙ) (dynamic assembly)
 ```
 
-**The Critical Insight**: While this mathematical foundation remains constant, the nature of context C has undergone radical transformation.
+The revolution from prompt engineering to Context Engineering represents a fundamental mathematical reformulation of how we conceptualize information flow in large language models.
 
-#### 2. The Context Engineering Reformulation
+## Core Mathematical Framework
 
-**Traditional View**: `C = prompt` (monolithic string)
+### 1. The Autoregressive Foundation
 
-**Context Engineering View**: `C = A(c₁, c₂, ..., cₙ)` (dynamic assembly)
+Every large language model operates on the fundamental autoregressive principle, where the model parameterized by θ generates output sequence $Y = (y_1, y_2, ..., y_T)$ by maximizing conditional probability:
+
+```math
+P_θ(Y|C) = \prod_{i=1}^{T} P_θ(y_i|y_{<i}, C)
+```
+
+**The Critical Insight**: While this mathematical foundation remains constant, the nature of context $C$ has undergone radical transformation.
+
+### 2. The Context Engineering Reformulation
+
+**Traditional View**: $C = \text{prompt}$ (monolithic string)
+
+**Context Engineering View**: $C = A(c_1, c_2, ..., c_n)$ (dynamic assembly)
 
 Where:
-- **C** is the final assembled context
-- **A** is the assembly function (Dynamic Context Orchestration)
-- **cᵢ** are information components sourced from different modalities and systems
+- $C$ is the final assembled context
+- $A$ is the assembly function (Dynamic Context Orchestration)
+- $c_i$ are information components sourced from different modalities and systems
 
 ```
 Assembly Function Visualization:
@@ -54,134 +46,178 @@ Assembly Function Visualization:
                                    Feedback Loop
 ```
 
-### The Six Fundamental Context Components
+## The Six Fundamental Context Components
 
 Based on the comprehensive survey analysis, modern context engineering operates on six fundamental component types:
 
-#### **c_instr**: System Instructions and Rules
-```
-Mathematical Property: c_instr ∈ Instruction_Space
-Optimization Target: Behavioral Alignment
+### Component Type 1: System Instructions ($c_{\text{instr}}$)
 
-Example Assembly:
-c_instr = {
-    "role": "expert_researcher",
-    "constraints": ["factual_accuracy", "citation_required"],
-    "style": "academic_rigor",
-    "format": "structured_analysis"
-}
+```math
+c_{\text{instr}} \in \text{Instruction Space}
 ```
 
-#### **c_know**: External Knowledge
-```
-Mathematical Property: c_know = Retrieve(query, knowledge_base)
-Optimization Target: I(Y*; c_know|c_query) → maximize
+**Optimization Target**: Behavioral Alignment
 
-Information-Theoretic Formulation:
-Retrieve* = arg max I(Y*; c_know|c_query)
-            Retrieve
+**Mathematical Property**: Instruction consistency across context variations
 
-Where I(·;·|·) is conditional mutual information
-```
-
-#### **c_tools**: Tool Definitions and Signatures
-```
-Mathematical Property: c_tools ∈ Function_Space
-Optimization Target: Action Success Rate
-
-Tool Integration Pattern:
-c_tools = {
-    f₁: (input_schema₁, output_schema₁, execution_env₁),
-    f₂: (input_schema₂, output_schema₂, execution_env₂),
-    ...
-    fₙ: (input_schemaₙ, output_schemaₙ, execution_envₙ)
-}
+```python
+# Implementation Framework
+class InstructionComponent:
+    def __init__(self, role: str, constraints: List[str], style: str):
+        self.role = role
+        self.constraints = constraints
+        self.style = style
+    
+    def generate(self, query: str) -> str:
+        return self._format_instructions(query)
+    
+    def optimize(self, feedback: float) -> None:
+        # Behavioral alignment optimization
+        self._update_instruction_weights(feedback)
 ```
 
-#### **c_mem**: Persistent Memory
-```
-Mathematical Property: c_mem = Memory_Hierarchy(episodic, semantic, procedural)
-Optimization Target: Temporal Coherence + Relevant Recall
+### Component Type 2: External Knowledge ($c_{\text{know}}$)
 
-Memory Dynamics:
-c_mem(t) = Update(c_mem(t-1), interaction_history, relevance_decay)
+```math
+c_{\text{know}} = \text{Retrieve}(\text{query}, \text{knowledge\_base})
 ```
 
-#### **c_state**: Dynamic System State
-```
-Mathematical Property: c_state ∈ State_Space(t)
-Optimization Target: System Coherence + Adaptive Response
+**Optimization Target**: $I(Y^*; c_{\text{know}}|c_{\text{query}}) \rightarrow \text{maximize}$
 
-State Evolution:
-c_state(t+1) = Transition(c_state(t), actions(t), environment(t))
+**Information-Theoretic Formulation**:
+
+```math
+\text{Retrieve}^* = \arg\max_{\text{Retrieve}} I(Y^*; c_{\text{know}}|c_{\text{query}})
 ```
 
-#### **c_query**: User Request
-```
-Mathematical Property: c_query ∈ Natural_Language ∪ Structured_Query
-Optimization Target: Intent Preservation + Clarification
+Where $I(\cdot;\cdot|\cdot)$ is conditional mutual information.
 
-Query Processing:
-c_query_processed = Parse(c_query_raw) + Intent_Analysis(c_query_raw)
+```python
+# Implementation Framework
+class KnowledgeComponent:
+    def __init__(self, knowledge_base: List[str], embedding_model):
+        self.kb = knowledge_base
+        self.embed = embedding_model
+    
+    def retrieve_optimal(self, query: str, k: int = 5) -> List[str]:
+        # Implement mutual information maximization
+        return self._mi_based_retrieval(query, k)
+    
+    def _mi_based_retrieval(self, query: str, k: int) -> List[str]:
+        # Information-theoretic retrieval implementation
+        pass
+```
+
+### Component Type 3: Tool Definitions ($c_{\text{tools}}$)
+
+```math
+c_{\text{tools}} \in \text{Function Space}
+```
+
+**Optimization Target**: Action Success Rate
+
+**Tool Integration Pattern**:
+
+```math
+c_{\text{tools}} = \{f_1, f_2, ..., f_n\}
+```
+
+where $f_i = (\text{input\_schema}_i, \text{output\_schema}_i, \text{execution\_env}_i)$
+
+### Component Type 4: Persistent Memory ($c_{\text{mem}}$)
+
+```math
+c_{\text{mem}} = \text{Memory\_Hierarchy}(\text{episodic}, \text{semantic}, \text{procedural})
+```
+
+**Optimization Target**: Temporal Coherence + Relevant Recall
+
+**Memory Dynamics**:
+
+```math
+c_{\text{mem}}(t) = \text{Update}(c_{\text{mem}}(t-1), \text{interaction\_history}, \text{relevance\_decay})
+```
+
+### Component Type 5: Dynamic System State ($c_{\text{state}}$)
+
+```math
+c_{\text{state}} \in \text{State Space}(t)
+```
+
+**State Evolution**:
+
+```math
+c_{\text{state}}(t+1) = \text{Transition}(c_{\text{state}}(t), \text{actions}(t), \text{environment}(t))
+```
+
+### Component Type 6: User Request ($c_{\text{query}}$)
+
+```math
+c_{\text{query}} \in \text{Natural Language} \cup \text{Structured Query}
+```
+
+**Query Processing**:
+
+```math
+c_{\text{query\_processed}} = \text{Parse}(c_{\text{query\_raw}}) + \text{Intent Analysis}(c_{\text{query\_raw}})
 ```
 
 ## The Optimization Problem: Context Engineering as Formal Discipline
 
 ### Primary Optimization Objective
 
-Context Engineering seeks to find the optimal set of context-generating functions F = {A, Retrieve, Select, Format, ...} that maximizes expected output quality:
+Context Engineering seeks to find the optimal set of context-generating functions $F = \{A, \text{Retrieve}, \text{Select}, \text{Format}, ...\}$ that maximizes expected output quality:
 
+```math
+F^* = \arg\max_F \mathbb{E}_{\tau \sim T} [\text{Reward}(P_θ(Y|C_F(\tau)), Y^*_τ)]
 ```
-F* = arg max E_τ~T [Reward(P_θ(Y|C_F(τ)), Y*_τ)]
-     F
 
-Subject to: |C| ≤ L_max (context length constraint)
-```
+**Subject to**: $|C| \leq L_{\max}$ (context length constraint)
 
 Where:
-- **τ** represents a task instance from distribution T
-- **C_F(τ)** is the context generated by functions F for task τ
-- **Y*_τ** is the ground-truth optimal output for task τ
-- **Reward(·,·)** measures output quality
+- $\tau$ represents a task instance from distribution $T$
+- $C_F(\tau)$ is the context generated by functions $F$ for task $\tau$
+- $Y^*_τ$ is the ground-truth optimal output for task $\tau$
+- $\text{Reward}(\cdot,\cdot)$ measures output quality
 
-### Mathematical Principles Underlying Context Assembly
+## Mathematical Principles Underlying Context Assembly
 
-#### 1. Dynamic Context Orchestration
+### 1. Dynamic Context Orchestration
 
-The assembly function A operates as a sophisticated pipeline:
+The assembly function $A$ operates as a sophisticated pipeline:
 
+```math
+A = \text{Concat} \circ (\text{Format}_1, \text{Format}_2, ..., \text{Format}_n)
 ```
-A = Concat ∘ (Format₁, Format₂, ..., Formatₙ)
 
-Where each Formatᵢ optimizes for:
+Where each $\text{Format}_i$ optimizes for:
 - Attention pattern compatibility
 - Information hierarchy preservation
 - Token efficiency maximization
 - Cross-component coherence
-```
 
-#### 2. Information-Theoretic Optimality
+### 2. Information-Theoretic Optimality
 
 Knowledge retrieval follows information-theoretic principles:
 
-```
-Retrieve* = arg max I(Y*; c_know|c_query)
-            Retrieve
-
-This ensures retrieved context maximizes mutual information
-with target output, not just semantic similarity.
+```math
+\text{Retrieve}^* = \arg\max_{\text{Retrieve}} I(Y^*; c_{\text{know}}|c_{\text{query}})
 ```
 
-#### 3. Bayesian Context Inference
+This ensures retrieved context maximizes mutual information with target output, not just semantic similarity.
+
+### 3. Bayesian Context Inference
 
 Rather than deterministic assembly, optimal context engineering employs Bayesian inference:
 
+```math
+P(C|c_{\text{query}}, \text{History}, \text{World}) \propto P(c_{\text{query}}|C) \cdot P(C|\text{History}, \text{World})
 ```
-P(C|c_query, History, World) ∝ P(c_query|C) · P(C|History, World)
 
-Decision-theoretic objective:
-C* = arg max ∫ P(Y|C, c_query) · Reward(Y, Y*) dY · P(C|c_query, ...)
-     C
+**Decision-theoretic objective**:
+
+```math
+C^* = \arg\max_C \int P(Y|C, c_{\text{query}}) \cdot \text{Reward}(Y, Y^*) \, dY \cdot P(C|c_{\text{query}}, ...)
 ```
 
 This framework enables:
@@ -346,7 +382,7 @@ class BayesianContextInference:
 
 ## Visualizing Context Assembly Dynamics
 
-### ASCII Art: Information Flow Architecture
+### Information Flow Architecture
 
 ```
 Context Engineering Information Flow:
@@ -406,11 +442,9 @@ Context Engineering Information Flow:
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### Mathematical Property Visualization
+### Component Interaction Matrix
 
 ```
-Component Interaction Matrix:
-
          c₁   c₂   c₃   c₄   c₅   c₆
       ┌─────────────────────────────┐
    c₁ │ ●    ○    ○    ○    ○    ● │  instr
@@ -431,40 +465,41 @@ c₆ (query) → c₂ (knowledge) → c₄ (memory) → c₃ (tools) → c₅ (s
 
 ### 1. Context Length Optimization
 
-Given constraint |C| ≤ L_max, we seek optimal token allocation:
+Given constraint $|C| \leq L_{\max}$, we seek optimal token allocation:
 
-```
-Optimization Problem:
-maximize   Σᵢ αᵢ · Information_Value(cᵢ)
-subject to Σᵢ |cᵢ| ≤ L_max
-           αᵢ ∈ [0,1] (component weights)
-           Σᵢ αᵢ = 1
+```math
+\begin{align}
+\text{maximize} \quad & \sum_i \alpha_i \cdot \text{Information\_Value}(c_i) \\
+\text{subject to} \quad & \sum_i |c_i| \leq L_{\max} \\
+& \alpha_i \in [0,1] \text{ (component weights)} \\
+& \sum_i \alpha_i = 1
+\end{align}
 ```
 
 **Solution**: Lagrangian optimization with information-theoretic value functions.
 
 ### 2. Attention Pattern Compatibility
 
-Assembly function A must optimize for transformer attention patterns:
+Assembly function $A$ must optimize for transformer attention patterns:
 
+```math
+\text{Attention\_Score}(\text{position}_i, \text{position}_j) = \text{softmax}\left(\frac{Q_i \cdot K_j^T}{\sqrt{d_k}}\right)
 ```
-Attention_Score(position_i, position_j) = 
-    softmax(Q_i · K_j^T / √d_k)
 
-Optimal Assembly: A* = arg max Σᵢ,ⱼ Attention_Score(i,j) · Relevance(i,j)
-                       A
+```math
+A^* = \arg\max_A \sum_{i,j} \text{Attention\_Score}(i,j) \cdot \text{Relevance}(i,j)
 ```
 
 ### 3. Multi-Step Reasoning Coherence
 
 For reasoning chains, context must maintain logical flow:
 
+```math
+\text{Coherence\_Metric} = \sum_t P(\text{reasoning\_step}_t | \text{context}, \text{previous\_steps})
 ```
-Coherence_Metric = Σₜ P(reasoning_step_t | context, previous_steps)
 
-Context Optimization:
-C* = arg max Coherence_Metric(C) · Task_Performance(C)
-     C
+```math
+C^* = \arg\max_C \text{Coherence\_Metric}(C) \cdot \text{Task\_Performance}(C)
 ```
 
 ## Practical Exercises: Mathematical Implementation
@@ -514,7 +549,7 @@ def implement_mi_retrieval():
     """
     Implement Retrieve* = arg max I(Y*; c_know|c_query)
     """
-    # Your implementation here
+    # Implementation exercise for students
     pass
 ```
 
@@ -527,24 +562,24 @@ def bayesian_context_optimizer():
     """
     Implement C* = arg max ∫ P(Y|C,query)·Reward(Y,Y*)dY·P(C|query,...)
     """
-    # Your implementation here
+    # Implementation exercise for students
     pass
 ```
 
 ## Next Steps: From Mathematical Foundation to System Implementation
 
-This mathematical framework provides the rigorous foundation for Context Engineering. In the next module, we'll explore how these mathematical principles translate into practical retrieval and generation systems, examining:
+This mathematical framework provides the rigorous foundation for Context Engineering. In the next module, we will explore how these mathematical principles translate into practical retrieval and generation systems, examining:
 
 1. **Prompt Engineering Evolution**: From heuristic to mathematically-grounded approaches
 2. **External Knowledge Integration**: RAG systems as information-theoretic optimizers  
 3. **Dynamic Context Assembly**: Real-time optimization of component composition
 
-The mathematical formalization C = A(c₁, c₂, ..., cₙ) isn't just notation—it's the key to unlocking systematic, scalable, and optimizable context engineering systems that surpass traditional prompt engineering limitations.
+The mathematical formalization $C = A(c_1, c_2, ..., c_n)$ represents the transformation of prompt design from art to science—enabling systematic, scalable, and optimizable context engineering systems.
 
 ---
 
-**Mathematical Truth**: Context Engineering transforms the art of prompt design into the science of information logistics and system optimization. Through rigorous mathematical formalization, we enable systematic advancement of AI system capabilities.
+**Mathematical Foundation**: Context Engineering transforms the art of prompt design into the science of information logistics and system optimization through rigorous mathematical formalization.
 
 **Implementation Principle**: Every mathematical concept in this module has corresponding practical implementations in subsequent course modules, ensuring theory directly enables practice.
 
-**Meta-Recursive Note**: This mathematical framework itself exemplifies context engineering—the concepts are assembled through optimal information organization, demonstrating the principles through their own presentation structure.
+**Meta-Recursive Architecture**: This mathematical framework itself exemplifies context engineering—the concepts are assembled through optimal information organization, demonstrating the principles through their own presentation structure.
