@@ -18,7 +18,7 @@ The revolution from prompt engineering to Context Engineering represents a funda
 Every large language model operates on the fundamental autoregressive principle, where the model parameterized by θ generates output sequence $Y = (y_1, y_2, ..., y_T)$ by maximizing conditional probability:
 
 ```math
-P_θ(Y|C) = \prod_{i=1}^{T} P_θ(y_i|y_{<i}, C)
+P_θ(Y|C) = ∏ᵢ₌₁ᵀ P_θ(yᵢ|y₍<ᵢ₎, C)
 ```
 
 **The Critical Insight**: While this mathematical foundation remains constant, the nature of context $C$ has undergone radical transformation.
