@@ -1,5 +1,6 @@
 # Context Engineering
 
+<img width="2400" height="480" alt="Context_Engineering_Banner_Extended" src="https://github.com/user-attachments/assets/aafb8a5d-4e63-4c89-a0d2-6ca9743c40d2" />
 
 > **"Context engineering is the delicate art and science of filling the context window with just the right information for the next step." — [**Andrej Karpathy**](https://x.com/karpathy/status/1937902205765607626)**
 >
