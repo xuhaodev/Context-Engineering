@@ -41,7 +41,8 @@ The fundamental insight driving this field is profound yet simple: **LLMs don't 
 ```
 Traditional Paradigm:     C = prompt (static string)
 Context Engineering:      C = A(c₁, c₂, ..., cₙ) (dynamic assembly)
-
+```
+```math
 Optimization Target:      F* = arg max_F E_τ~T [Reward(P_θ(Y|C_F(τ)), Y*_τ)]
 ```
 
@@ -101,8 +102,14 @@ Week 1: The Formalization
 ```
 
 **Information-Theoretic Principles:**
-- Maximizing mutual information: `I(Y*; c_know|c_query)`
-- Bayesian context inference: `P(C|c_query, History, World)`
+- Maximizing mutual information:
+  ```math
+  I(Y*; c_know|c_query)
+  ```
+- Bayesian context inference:
+  ```math
+  P(C|c_query, History, World)
+  ```
 - Dynamic context orchestration through attention patterns
 
 ### Phase II: Component Mastery (Weeks 3-4)
