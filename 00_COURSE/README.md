@@ -3,8 +3,7 @@
 
 ## Comprehensive Course Under Construction
 
-> **[Building on A Survey of Context Engineering for Large
-Language Models](https://arxiv.org/pdf/2507.13334)**
+> **[A Systematic Analysis of Over 1400 Research Papers — A Survey of Context Engineering for Large Language Models](https://arxiv.org/pdf/2507.13334)**
 >
 > Building from practical first principles
 
