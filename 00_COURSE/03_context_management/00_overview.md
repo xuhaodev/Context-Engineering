@@ -3,7 +3,7 @@
 ## The Paradigm Shift: From Code to Context
 > [**Software Is Changing (Again) Talk @YC AI Startup School—Andrej Karpathy**](https://www.youtube.com/watch?v=LCEmiRjPEtQ)
 
-We are witnessing the emergence of [**Software 3.0**](https://www.latent.space/p/s3) - a new era of innovation where structured prompting becomes programming, and context engineering becomes the new software architecture. This represents a fundamental shift in how we build intelligent systems.
+We are witnessing the emergence of [**Software 3.0**](https://x.com/karpathy/status/1935518272667217925) - a new era of innovation where structured prompting becomes programming, and context engineering becomes the new software architecture. This represents a fundamental shift in how we build intelligent systems.
 
 <img width="1917" height="360" alt="image" src="https://github.com/user-attachments/assets/91457d09-434c-4476-a0ed-2d78a19c4154" />
 
