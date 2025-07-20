@@ -6,10 +6,6 @@ We are witnessing the emergence of **Software 3.0** - a revolutionary approach w
 
 <img width="1917" height="360" alt="image" src="https://github.com/user-attachments/assets/91457d09-434c-4476-a0ed-2d78a19c4154" />
 
-<img width="1468" height="1154" alt="image" src="https://github.com/user-attachments/assets/d65b35a6-5fa4-49d5-b45b-3e6518159dd8" />
-
-
-
 
 ```
 SOFTWARE 1.0: Manual Programming
@@ -27,6 +23,10 @@ SOFTWARE 3.0: Context Engineering
 ├─ Protocols as reusable program modules
 └─ Dynamic, contextually-aware execution
 ```
+
+<img width="1468" height="1154" alt="image" src="https://github.com/user-attachments/assets/d65b35a6-5fa4-49d5-b45b-3e6518159dd8" />
+
+
 
 ## The Three Pillars: A Beginner's Guide
 
