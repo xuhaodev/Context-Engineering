@@ -13,8 +13,10 @@
 <img width="1917" height="360" alt="image" src="https://github.com/user-attachments/assets/0c20f697-d505-4d49-a829-fc4d319eb1d3" />
 
 
-## Comprehensive Course Under Construction
-### [From A Systematic Analysis of Over 1400 Research Papers On Context Engineering](https://github.com/davidkimai/Context-Engineering/tree/main/00_COURSE)
+## [Comprehensive Course Under Construction](https://github.com/davidkimai/Context-Engineering/tree/main/00_COURSE)
+
+### **[From A Systematic Analysis of Over 1400 Research Papers — A Survey of Context Engineering for Large Language Models](https://arxiv.org/pdf/2507.13334)**
+
 Operationalizing the Latest Research on Context With First Principles & Visuals — July 2025 from ICML, IBM, NeurIPS, OHBM, and more 
 
 
