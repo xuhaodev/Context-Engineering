@@ -1,5 +1,8 @@
 # Context Engineering Course: From Foundations to Frontier Systems
-
+> "Science is the organized skepticism in the reliability of expert opinion"
+>
+> 
+> — [Richard Feynman](https://www.goodreads.com/quotes/959195-science-is-the-organized-skepticism-in-the-reliability-of-expert)
 
 ## Comprehensive Course Under Construction
 
