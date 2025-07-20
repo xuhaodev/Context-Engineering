@@ -381,7 +381,7 @@ When you need to use a function, respond with a function call in this format:
         "param2": "value2"
     }
 }
-```
+
 
 Current task: {user_query}
 
