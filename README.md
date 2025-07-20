@@ -15,7 +15,7 @@
 
 ## [Comprehensive Course Under Construction](https://github.com/davidkimai/Context-Engineering/tree/main/00_COURSE)
 
-### **[From A Systematic Analysis of Over 1400 Research Papers — A Survey of Context Engineering for Large Language Models](https://arxiv.org/pdf/2507.13334)**
+> ### **[From A Systematic Analysis of Over 1400 Research Papers — A Survey of Context Engineering for Large Language Models](https://arxiv.org/pdf/2507.13334)**
 
 Operationalizing the Latest Research on Context With First Principles & Visuals — July 2025 from ICML, IBM, NeurIPS, OHBM, and more 
 
