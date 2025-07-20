@@ -1,4 +1,7 @@
 # Context Formalization: The Mathematical Heart of Context Engineering
+> "Language shapes the way we think, and determines what we can think about."
+>
+> — [Benjamin Lee Whorf](https://www.goodreads.com/quotes/573737-language-shapes-the-way-we-think-and-determines-what-we)
 
 *From Static Prompts to Dynamic Information Orchestration*
 
