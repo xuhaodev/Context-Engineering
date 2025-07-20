@@ -1,6 +1,7 @@
 # Context Management: The Software 3.0 Revolution
 
 ## The Paradigm Shift: From Code to Context
+> [**Software Is Changing (Again) Talk @YC AI Startup School—Andrej Karpathy**](https://www.youtube.com/watch?v=LCEmiRjPEtQ)
 
 We are witnessing the emergence of **Software 3.0** - a revolutionary approach where structured prompting becomes programming, and context engineering becomes the new software architecture. This represents a fundamental shift in how we build intelligent systems.
 
