@@ -1,5 +1,5 @@
 # Context Engineering Course: From Foundations to Frontier Systems
-> "If we spoke a different language, we would perceive a somewhat different world." — Ludwig Wittgenstein
+> "If we spoke a different language, we would perceive a somewhat different world."
 >
 > 
 > — [Ludwig Wittgenstein](https://www.goodreads.com/quotes/7405683-if-we-spoke-a-different-language-we-would-perceive-a)
