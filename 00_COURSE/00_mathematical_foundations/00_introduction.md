@@ -1,4 +1,7 @@
 # Context Engineering: From Mathematical Foundations to Meta-Recursive Systems
+> "The measure of intelligence is the ability to change."
+>
+> — [Albert Einstein](https://www.goodreads.com/quotes/85475-the-measure-of-intelligence-is-the-ability-to-change)
 
 *A Comprehensive Course in the Systematic Optimization of Information Payloads for Large Language Models*
 
