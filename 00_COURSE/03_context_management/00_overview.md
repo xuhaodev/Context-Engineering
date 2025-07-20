@@ -24,7 +24,6 @@ SOFTWARE 3.0: Context Engineering
 └─ Dynamic, contextually-aware execution
 ```
 
-<img width="1468" height="1154" alt="image" src="https://github.com/user-attachments/assets/d65b35a6-5fa4-49d5-b45b-3e6518159dd8" />
 
 
 
