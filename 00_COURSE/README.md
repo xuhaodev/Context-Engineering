@@ -1,8 +1,9 @@
 # Context Engineering Course: From Foundations to Frontier Systems
-> "If we spoke a different language, we would perceive a somewhat different world."
+> "Language is power, in ways more literal than most people think. When we speak, we exercise the power of language to transform reality."
 >
-> 
-> — [Ludwig Wittgenstein](https://www.goodreads.com/quotes/7405683-if-we-spoke-a-different-language-we-would-perceive-a)
+>
+>  — [Julia Penelope](https://www.apa.org/ed/precollege/psn/2022/09/inclusive-language)
+
 
 ## Comprehensive Course Under Construction
 
