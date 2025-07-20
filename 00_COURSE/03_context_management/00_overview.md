@@ -1,5 +1,9 @@
 # Context Management: The Software 3.0 Revolution
-
+> "It is the mark of an educated mind to be able to entertain a thought without accepting it."
+>
+>
+> — [Aristotle](https://www.goodreads.com/quotes/1629-it-is-the-mark-of-an-educated-mind-to-be)
+> 
 ## The Paradigm Shift: From Code to Context
 > [**Software Is Changing (Again) Talk @YC AI Startup School—Andrej Karpathy**](https://www.youtube.com/watch?v=LCEmiRjPEtQ)
 
