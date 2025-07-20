@@ -1,8 +1,8 @@
 # Context Engineering Course: From Foundations to Frontier Systems
-> "Science is the organized skepticism in the reliability of expert opinion"
+> "If we spoke a different language, we would perceive a somewhat different world." — Ludwig Wittgenstein
 >
 > 
-> — [Richard Feynman](https://www.goodreads.com/quotes/959195-science-is-the-organized-skepticism-in-the-reliability-of-expert)
+> — [Ludwig Wittgenstein](https://www.goodreads.com/quotes/7405683-if-we-spoke-a-different-language-we-would-perceive-a)
 
 ## Comprehensive Course Under Construction
 
