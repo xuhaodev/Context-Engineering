@@ -173,7 +173,9 @@ Consider the current field state, energy landscape, and dynamic tendencies.
 **Gradient Nudging**: Apply weak, consistent forces in desired direction
 ```
 Method: Introduce semantically related concepts at field boundaries
+
 Effect: Gradual shift without disrupting field coherence
+
 Example: "As we explore this idea, notice how it connects to..."
 ```
 
@@ -181,7 +183,9 @@ Example: "As we explore this idea, notice how it connects to..."
 **Pattern Injection**: Introduce seed patterns that can grow into attractors
 ```
 Method: Present compelling examples or frameworks
+
 Effect: New stable patterns emerge naturally
+
 Example: "Consider this framework as a lens for understanding..."
 ```
 
@@ -189,8 +193,8 @@ Example: "Consider this framework as a lens for understanding..."
 **Harmonic Enhancement**: Strengthen existing positive resonances
 ```
 Method: Echo and amplify coherent patterns
-Effect: Desired patterns become more stable and influential
-Example: "Yes, and this resonates beautifully with..."
+
+Effect: Desired patterns become more stable and influentialExample: "Yes, and this resonates beautifully with..."
 ```
 
 ### 4. Field Restructuring
