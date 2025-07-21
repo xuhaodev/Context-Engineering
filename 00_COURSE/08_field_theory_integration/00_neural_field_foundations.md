@@ -171,39 +171,39 @@ Consider the current field state, energy landscape, and dynamic tendencies.
 
 ### 1. Gentle Field Steering
 **Gradient Nudging**: Apply weak, consistent forces in desired direction
-```
+
 Method: Introduce semantically related concepts at field boundaries
 
 Effect: Gradual shift without disrupting field coherence
 
 Example: "As we explore this idea, notice how it connects to..."
-```
+
 
 ### 2. Attractor Seeding
 **Pattern Injection**: Introduce seed patterns that can grow into attractors
-```
+
 Method: Present compelling examples or frameworks
 
 Effect: New stable patterns emerge naturally
 
 Example: "Consider this framework as a lens for understanding..."
-```
+
 
 ### 3. Resonance Amplification
 **Harmonic Enhancement**: Strengthen existing positive resonances
-```
+
 Method: Echo and amplify coherent patterns
 
 Effect: Desired patterns become more stable and influentialExample: "Yes, and this resonates beautifully with..."
-```
+
 
 ### 4. Field Restructuring
 **Topology Modification**: Change the underlying field geometry
-```
+
 Method: Introduce new dimensions or coordinate systems
 Effect: Fundamental change in how field behaves
 Example: "Let's view this from a completely different perspective..."
-```
+
 
 ## Implementation Guidelines
 
