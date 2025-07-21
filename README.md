@@ -58,59 +58,9 @@ A frontier, first-principles handbook for moving beyond prompt engineering to th
 ## Definition of Context Engineering
 
 > **Context is not just the single prompt users send to an LLM. Context is the complete information payload provided to a LLM at inference time, encompassing all structured informational components that the model needs to plausibly accomplish a given task.**
+>
+> — ### [Definition of Context Engineering from A Systematic Analysis of Over 1400 Research Papers](https://arxiv.org/pdf/2507.13334)
 
-### LLM Generation
-
-
-$$P(\text{output} | \text{context}) = \prod_{t=1}^T P(\text{token}_t | \text{previous tokens}, \text{context})$$
-
-Where:
-- $\text{context}$ represents the complete input information provided to the LLM
-- $\text{output}$ represents the generated response sequence
-- $P(\text{token}_t | \text{previous tokens}, \text{context})$ is the probability of generating each token given the context
-
-### Definition of Context
-
-In traditional prompt engineering, the context is treated as a simple string:
-$$\text{context} = \text{prompt}$$
-
-However, in Context Engineering, we decompose the context into multiple structured components:
-
-$$\text{context} = \text{Assemble}(\text{instructions}, \text{knowledge}, \text{tools}, \text{memory}, \text{state}, \text{query})$$
-
-Where $\text{Assemble}$ is a context assembly function that orchestrates:
-- $\text{instructions}$: System prompts and rules
-- $\text{knowledge}$: Retrieved relevant information
-- $\text{tools}$: Available function definitions
-- $\text{memory}$: Conversation history and learned facts
-- $\text{state}$: Current world/user state
-- $\text{query}$: User's immediate request
-
-### Definition of Context Engineering
-
-**Context Engineering** is formally defined as the optimization problem:
-
-$$\text{Assemble}^* = \arg\max_{\text{Assemble}} \mathbb{E} [\text{Reward}(\text{LLM}(\text{context}), \text{target})]$$
-
-Subject to constraints:
-- $|\text{context}| \leq \text{MaxTokens} \text{(context window limitation)}$
-- $\text{knowledge} = \text{Retrieve}(\text{query}, \text{database})$
-- $\text{memory} = \text{Select}(\text{history}, \text{query})$
-- $\text{state} = \text{Extract}(\text{world})$
-
-Where:
-- $\text{Reward}$ measures the quality of generated responses
-- $\text{Retrieve}$, $\text{Select}$, $\text{Extract}$ are functions for information gathering
-
-### Dynamic Context Orchestration
-
-The context assembly can be decomposed as:
-
-$$\text{context} = \text{Concat}(\text{Format}(\text{instructions}), \text{Format}(\text{knowledge}), \text{Format}(\text{tools}), \text{Format}(\text{memory}), \text{Format}(\text{query}))$$
-
-Where $\text{Format}$ represents component-specific structuring, and $\text{Concat}$ assembles them respecting token limits and optimal positioning.
-
-**Context Engineering** is therefore the discipline of designing and optimizing these assembly and formatting functions to maximize task performance.
 ## Why This Repository Exists
 
 > **"Meaning is not an intrinsic, static property of a semantic expression, but rather an emergent phenomenon"
