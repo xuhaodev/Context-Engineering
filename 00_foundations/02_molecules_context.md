@@ -69,24 +69,24 @@ The molecular approach typically achieves:
 The structure of your molecular context matters greatly. Here are common patterns:
 
 ```
-┌───────────────────┐  ┌───────────────────┐  ┌───────────────────┐
-│ PREFIX-SUFFIX     │  │ INPUT-OUTPUT PAIRS │  │ CHAIN-OF-THOUGHT  │
-├───────────────────┤  ├───────────────────┤  ├───────────────────┤
-│ <instruction>     │  │ <instruction>     │  │ <instruction>     │
-│                   │  │                   │  │                   │
-│ Input: <example1> │  │ Input: <example1> │  │ Input: <example1> │
-│ Output: <result1> │  │ Output: <result1> │  │ Thinking: <step1> │
-│                   │  │                   │  │         <step2>   │
-│ Input: <example2> │  │ Input: <example2> │  │ Output: <result1> │
-│ Output: <result2> │  │ Output: <result2> │  │                   │
-│                   │  │                   │  │ Input: <example2> │
-│ Input: <new_input>│  │ Input: <new_input>│  │ Thinking: <step1> │
-│ Output:           │  │ Output:           │  │         <step2>   │
-└───────────────────┘  └───────────────────┘  │ Output: <result2> │
-                                              │                   │
-                                              │ Input: <new_input>│
-                                              │ Thinking:         │
-                                              └───────────────────┘
+┌─────────────────────────┐  ┌───────────────────┐  ┌───────────────────┐
+│ PREFIX-SUFFIX           │  │ INPUT-OUTPUT PAIRS│  │ CHAIN-OF-THOUGHT  │
+├─────────────────────────┤  ├───────────────────┤  ├───────────────────┤
+│ <instruction>           │  │ <instruction>     │  │ <instruction>     │
+│                         │  │                   │  │                   │
+│ <example1> → <result1>  │  │ Input: <example1> │  │ Input: <example1> │
+│                         │  │ Output: <result1> │  │ Thinking: <step1> │
+│ <example2> → <result2>  │  │                   │  │           <step2> │
+│                         │  │ Input: <example2> │  │ Output: <result1> │
+│ <new_input> →           │  │ Output: <result2> │  │                   │
+└─────────────────────────┘  │                   │  │ Input: <example2> │
+                             │ Input: <new_input>│  │ Thinking: <step1> │
+                             │ Output:           │  │           <step2> │
+                             └───────────────────┘  │ Output: <result2> │
+                                                    │                   │
+                                                    │ Input: <new_input>│
+                                                    │ Thinking:         │
+                                                    └───────────────────┘
 ```
 
 Each template has strengths for different tasks:
@@ -117,18 +117,18 @@ As context size grows, so does token count. Let's empirically measure the trade-
 ```
                    [Accuracy]
                        ▲
+                       │                                    ● 4-shot
+                       │                           ● 3-shot
+                       │                              
+                       │                   ● 2-shot 
+                       │              
+                       │           
+                       │           ● 1-shot 
+                       │      
                        │
-                       │                  ● 4-shot
-                       │
-                       │              ● 3-shot
-                       │
-                       │          ● 2-shot
-                       │
-                       │      ● 1-shot
-                       │
-                       │  ● 0-shot
-                       │
-                       └────────────────────────►
+                       │  
+                       │   ● 0-shot
+                       └─────────────────────────────────────────────────►
                                 [Tokens]
 ```
 

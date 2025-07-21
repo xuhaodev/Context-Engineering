@@ -1,200 +1,290 @@
-# PROMPTS: Agentic and Goal-Oriented Templates for AI Interaction
+# Context Engineering Prompt Templates
 
-> "The right prompt is not just a request—it's an architecture for thinking."
+> "The diversity of languages is not a diversity of signs and sounds but a diversity of views of the world." — **Wilhelm von Humboldt**
 
 ## Overview
 
-Welcome to **PROMPTS**, a library of carefully designed programs to help you accomplish your goals through strategically effective templates and multimodal agentic system prompts. Unlike traditional prompt collections, these templates are organized around what you're trying to achieve and brings entire agents to life through multimodal prompts.
+The `PROMPTS` directory contains specialized, ready-to-use prompt templates that implement context engineering principles for specific applications. These templates go beyond basic prompt engineering to incorporate structured context management, field theory concepts, and recursive improvement mechanisms.
 
-This library is based on extensive research into human-AI interactions, designed to bridge the gap between frontier AI capabilities and practical everyday use. Each template embodies principles from context engineering while remaining accessible and immediately useful.
+Each template follows a standardized format designed for reuse, adaptation, and composition with other context engineering components.
 
-## Library Structure (Under Construction)
-
-```
-PROMPTS/
-├── agentic
-│
-├── everyday/                          # Templates for common everyday needs
-│   ├── expert_guides.md               # Getting expert advice on any topic
-│   ├── step_by_step.md                # Breaking down any process into clear steps
-│   ├── content_creation.md            # Creating various types of content
-│   ├── idea_generation.md             # Brainstorming creative ideas and solutions
-│   ├── decision_helper.md             # Making better decisions with structure
-│   └── feedback_coach.md              # Getting helpful feedback and suggestions
-│
-├── creating/                          # Templates for creating content
-│   ├── writing_articles.md            # Creating blog posts and long-form content
-│   ├── marketing_copy.md              # Creating ads, emails, and promotional content
-│   ├── creative_writing.md            # Fiction, stories, and creative pieces
-│   ├── professional_docs.md           # Reports, proposals, and business documents
-│   └── visual_content.md              # Guidance for visuals and presentations
-│
-├── building/                          # Templates for building and making
-│   ├── coding_help.md                 # Programming assistance and code generation
-│   ├── project_planning.md            # Planning and structuring projects
-│   ├── system_design.md               # Designing systems and architectures
-│   └── product_development.md         # Creating and improving products
-│
-├── thinking/                          # Templates for better thinking
-│   ├── analysis_frameworks.md         # Structured approaches to analysis
-│   ├── research_assistant.md          # Help with research and investigation
-│   ├── mental_models.md               # Applying powerful thinking tools
-│   ├── critical_thinking.md           # Evaluating ideas and avoiding biases
-│   └── data_insights.md               # Making sense of information and data
-│
-├── improving/                         # Templates for making things better
-│   ├── content_editing.md             # Improving written content
-│   ├── code_refinement.md             # Refactoring and optimizing code
-│   ├── process_optimization.md        # Making workflows more efficient
-│   ├── feedback_systems.md            # Getting and giving better feedback
-│   └── iteration_cycles.md            # Structured approach to improvement
-│
-├── solving/                           # Templates for solving problems
-│   ├── troubleshooting.md             # Diagnosing and fixing issues
-│   ├── creative_solutions.md          # Finding innovative approaches
-│   ├── decision_frameworks.md         # Making complex decisions
-│   ├── tradeoff_analysis.md           # Balancing competing priorities
-│   └── risk_assessment.md             # Identifying and mitigating risks
-│
-├── teaching/                          # Templates for education and learning
-│   ├── explaining_concepts.md         # Making complex ideas understandable
-│   ├── course_creation.md             # Designing educational experiences
-│   ├── learning_materials.md          # Creating helpful learning resources
-│   └── simplifying_complexity.md      # Breaking down difficult topics
-│
-├── collaborating/                     # Templates for working with others
-│   ├── meeting_facilitation.md        # Running more effective meetings
-│   ├── team_coordination.md           # Improving team communication
-│   ├── conflict_resolution.md         # Addressing disagreements constructively
-│   └── feedback_sessions.md           # Structured feedback conversations
-│
-└── specialized/                       # Templates for specific advanced uses
-    ├── ai_research.md                 # Templates for AI researchers
-    ├── prompt_engineering.md          # Advanced prompt design techniques
-    ├── safety_alignment.md            # Working with AI safety considerations
-    ├── template_creation.md           # Creating your own custom templates
-    └── template_combinations.md       # Combining templates effectively
-```
-## How to Use This Library
-
-### Find Your Goal
-
-Start by identifying what you're trying to accomplish:
-
-- **Creating something?** → Explore the `creating/` directory
-- **Building or making?** → Check out the `building/` directory
-- **Thinking or analyzing?** → Visit the `thinking/` directory
-- **Improving something?** → Browse the `improving/` directory
-- **Solving a problem?** → Look through the `solving/` directory
-- **Teaching or explaining?** → See the `teaching/` directory
-- **Working with others?** → Explore the `collaborating/` directory
-- **Just need something quick?** → Start with `everyday/` templates
-
-### Choose a Template
-
-Once you've found your goal category, select the specific template that matches your needs. Each file contains multiple related templates with clear guidance on when and how to use them.
-
-### Customize and Use
-
-Templates are diverse and include:
-- Clear instructions on when to use it
-- The template itself with placeholders
-- Step-by-step guidance for customization
-- Real-world examples showing it in action
-- Tips for getting the best results
-- Variations for different scenarios
-
-Simply copy the template, replace the placeholders with your specific information, and use it with your preferred AI system.
-
-## Featured Templates
-
-Here are some of our most versatile templates to get you started:
-
-### Getting Expert Guidance
+## Prompt Template Structure
 
 ```
-# Expert Consultation: {{field_of_expertise}}
-
-## Expert Profile
-You are an experienced {{specific_expert_role}} with extensive knowledge of {{field_of_expertise}}. Your background includes {{relevant_experience}} and you're especially knowledgeable about {{specific_specialization}}.
-
-## My Question/Request
-{{your_specific_question_or_request}}
-
-## Additional Context
-{{any_relevant_background_information}}
-
-## What I'm Looking For
-- Depth of detail: {{how_detailed_you_want_the_response}}
-- Focus areas: {{specific_aspects_to_focus_on}}
-- Perspective: {{any_particular_viewpoint_you_want}}
-
-Please provide your expert guidance, including relevant examples, best practices, and any frameworks or approaches that would be helpful.
+┌──────────────────────────────────────────────────────────┐
+│                      META SECTION                        │
+│ Version, author, purpose, context requirements           │
+├──────────────────────────────────────────────────────────┤
+│                  STRUCTURE SECTION                       │
+│ Template structure, parameters, expected inputs/outputs  │
+├──────────────────────────────────────────────────────────┤
+│                   CONTEXT SECTION                        │
+│ Field setup, attractors, residue tracking, coherence     │
+├──────────────────────────────────────────────────────────┤
+│                    PROMPT SECTION                        │
+│ Actual prompt template with parameter placeholders       │
+├──────────────────────────────────────────────────────────┤
+│                  WORKFLOW SECTION                        │
+│ Multi-stage process flow, feedback loops                 │
+├──────────────────────────────────────────────────────────┤
+│                   EXAMPLES SECTION                       │
+│ Sample use cases, inputs/outputs, variations             │
+└──────────────────────────────────────────────────────────┘
 ```
 
-### Step-by-Step Process Guide
+## Prompt Categories
+
+The prompt templates are organized into several categories based on their application domains and complexity:
+
+
+```mermaid
+graph LR
+    %% Main Categories
+    Root[Prompt Templates]
+    Root --> Task[Task-Specific Templates]
+    Root --> Cognitive[Cognitive Tool Templates]
+    Root --> Field[Field Operation Templates]
+    Root --> Agent[Agent Protocol Templates]
+    
+    %% Task-Specific Templates
+    Task --> Research[Research & Analysis]
+    Task --> Evaluation[Evaluation & Assessment]
+    Task --> Content[Content Creation]
+    Task --> Technical[Technical Tasks]
+    
+    %% Research & Analysis Templates
+    Research --> ResearchAgent[research.agent.md]
+    Research --> LitAgent[lit.agent.md]
+    
+    %% Evaluation & Assessment Templates
+    Evaluation --> AlignmentAgent[alignment.agent.md]
+    Evaluation --> IncidentAgent[incident.agent.md]
+    
+    %% Content Creation Templates
+    Content --> PortfolioAgent[portfolio.agent.md]
+    Content --> PolicyAgent[policyimpact.agent.md]
+    
+    %% Technical Tasks Templates
+    Technical --> PipelineAgent[pipeline.agent.md]
+    Technical --> MemoryAgent[memory.agent.md]
+    
+    %% Cognitive Tool Templates
+    Cognitive --> Reasoning[Reasoning Patterns]
+    Cognitive --> Verification[Verification Methods]
+    Cognitive --> Learning[Learning Techniques]
+    Cognitive --> Design[Design Approaches]
+    
+    %% Reasoning Pattern Templates
+    Reasoning --> ChainOfThought[chain_of_thought.md]
+    Reasoning --> SelfOrg[self_organization.md]
+    
+    %% Verification Method Templates
+    Verification --> VerificationLoop[verification_loop.md]
+    Verification --> DiligenceAgent[diligence.agent.md]
+    
+    %% Learning Technique Templates
+    Learning --> FewShot[few_shot_learning.md]
+    Learning --> LearningRoadmap[learningroadmap.agent.md]
+    
+    %% Design Approach Templates
+    Design --> AttractorDesign[attractor_design.md]
+    Design --> ProtocolAgent[protocol.agent.md]
+    
+    %% Field Operation Templates
+    Field --> Protocol[Protocol Implementation]
+    Field --> Management[Field Management]
+    Field --> Analysis[Field Analysis]
+    
+    %% Protocol Implementation Templates
+    Protocol --> ProtocolAgentMd[protocol.agent.md]
+    
+    %% Field Management Templates
+    Management --> SelfOrgMd[self_organization.md]
+    Management --> MemoryAgentMd[memory.agent.md]
+    
+    %% Field Analysis Templates
+    Analysis --> ExperimentAgent[experiment.agent.md]
+    
+    %% Agent Protocol Templates
+    Agent --> Communication[Communication]
+    Agent --> Ethics[Ethics & Governance]
+    Agent --> Workflow[Workflow Management]
+    
+    %% Communication Templates
+    Communication --> CommsAgent[comms.agent.md]
+    Communication --> GrantAgent[grant.agent.md]
+    
+    %% Ethics & Governance Templates
+    Ethics --> EthicsAgent[ethics.agent.md]
+    Ethics --> TriageAgent[triage.agent.md]
+    
+    %% Workflow Management Templates
+    Workflow --> IdeationAgent[ideation.agent.md]
+    Workflow --> ExpertGuides[expert_guides.md]
+    
+    %% Styling
+    classDef category fill:#f9f9f9,stroke:#666,stroke-width:1px,color:#333,font-weight:bold
+    classDef task fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#01579b
+    classDef cognitive fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#2e7d32
+    classDef field fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100
+    classDef agent fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px,color:#6a1b9a
+    classDef template fill:#ffffff,stroke:#999,stroke-width:1px,color:#333
+    
+    class Root,Task,Cognitive,Field,Agent,Research,Evaluation,Content,Technical,Reasoning,Verification,Learning,Design,Protocol,Management,Analysis,Communication,Ethics,Workflow category
+    class ResearchAgent,LitAgent,AlignmentAgent,IncidentAgent,PortfolioAgent,PolicyAgent,PipelineAgent,MemoryAgent task
+    class ChainOfThought,SelfOrg,VerificationLoop,DiligenceAgent,FewShot,LearningRoadmap,AttractorDesign,ProtocolAgent cognitive
+    class ProtocolAgentMd,SelfOrgMd,MemoryAgentMd,ExperimentAgent field
+    class CommsAgent,GrantAgent,EthicsAgent,TriageAgent,IdeationAgent,ExpertGuides agent
 
 ```
-# Step-by-Step Guide: {{process_name}}
 
-## Goal
-Create a clear step-by-step guide for {{specific_goal}}.
+### Task-Specific Templates
 
-## Target Audience
-This guide is for {{audience_description}} who need to {{audience_need}}.
+Templates designed for specific applications and domains:
 
-## Guide Requirements
-- Expertise level: {{beginner_intermediate_advanced}}
-- Comprehensiveness: {{quick_overview_or_detailed_walkthrough}}
-- Style: {{instructional_tone}}
-- Include: {{special_elements_to_include}}
+| Template | Purpose | Key Features |
+|----------|---------|-------------|
+| [`alignment.agent.md`](./alignment.agent.md) | AI safety/alignment evaluation | Value tracking, artifact decomposition, bias detection |
+| [`research.agent.md`](./research.agent.md) | Literature review and synthesis | Citation tracking, claim validation, insight extraction |
+| [`incident.agent.md`](./incident.agent.md) | Post-incident analysis | Root cause identification, multi-factor analysis, bias mitigation |
+| [`lit.agent.md`](./lit.agent.md) | Literary analysis | Theme detection, character mapping, narrative pattern recognition |
 
-## Process Context
-{{background_information_about_the_process}}
+### Cognitive Tool Templates
 
-Please create a clear, well-structured step-by-step guide that helps the reader accomplish this goal successfully. Include any necessary warnings, tips, or common pitfalls.
+Templates that implement specific reasoning patterns:
+
+| Template | Purpose | Key Features |
+|----------|---------|-------------|
+| [`chain_of_thought.md`](./chain_of_thought.md) | Step-by-step reasoning | Transparent decision tracking, assumption flagging, branch management |
+| [`verification_loop.md`](./verification_loop.md) | Self-verification workflows | Error detection, assumption validation, counter-example generation |
+| [`few_shot_learning.md`](./few_shot_learning.md) | Learning from examples | Pattern abstraction, generalization mapping, edge case generation |
+| [`attractor_design.md`](./attractor_design.md) | Semantic attractor creation | Field stability, persistent theme development, resonance optimization |
+
+### Field Operation Templates
+
+Templates implementing neural field concepts:
+
+| Template | Purpose | Key Features |
+|----------|---------|-------------|
+| [`protocol.agent.md`](./protocol.agent.md) | Field protocol orchestration | Shell execution, operation sequencing, field measurement |
+| [`self_organization.md`](./self_organization.md) | Emergent pattern facilitation | Attractor formation, boundary dissolution, resonance amplification |
+| [`memory.agent.md`](./memory.agent.md) | Long-term memory management | Residue tracking, compression techniques, retrieval optimization |
+
+### Agent Protocol Templates
+
+Templates for autonomous agent implementations:
+
+| Template | Purpose | Key Features |
+|----------|---------|-------------|
+| [`comms.agent.md`](./comms.agent.md) | Communication management | Audience analysis, messaging strategy, tone calibration |
+| [`diligence.agent.md`](./diligence.agent.md) | Thorough investigation | Comprehensive analysis, source triangulation, assumption testing |
+| [`ethics.agent.md`](./ethics.agent.md) | Ethical decision making | Value frameworks, stakeholder analysis, principle application |
+| [`triage.agent.md`](./triage.agent.md) | Priority assessment | Impact evaluation, urgency assessment, resource allocation |
+
+## Usage Patterns
+
+### Basic Template Application
+
+To use a prompt template in its simplest form:
+
+```python
+import re
+
+# Load template
+with open('PROMPTS/research.agent.md', 'r') as f:
+    template = f.read()
+
+# Replace parameters
+filled_template = template.replace('{{RESEARCH_TOPIC}}', 'climate change mitigation')
+                         .replace('{{FOCUS_AREA}}', 'carbon capture technologies')
+                         .replace('{{TIME_FRAME}}', 'last 5 years')
+
+# Use with LLM
+response = llm.generate(filled_template)
 ```
 
-## Design Principles
+### Advanced Integration
 
-These templates are built on several core principles:
+For more sophisticated applications, integrate with other context engineering components:
 
-1. **Goal-oriented**: Organized by what you want to accomplish
-2. **Human-centered**: Designed from your perspective, not the AI's
-3. **Practical**: Ready to use with minimal customization
-4. **Versatile**: Adaptable across domains and AI systems
-5. **Progressive**: Simple core with optional complexity
-6. **Transparent**: Clear about what each part does and why
+```python
+from templates.prompt_program_template import PromptProgram
+from templates.field_protocol_shells import ProtocolShell
 
-## Contributing
+# Load prompt template
+with open('PROMPTS/protocol.agent.md', 'r') as f:
+    template = f.read()
+    
+# Extract context section
+context_section = re.search(r'## Context\s+```yaml\s+(.*?)\s+```', 
+                          template, re.DOTALL).group(1)
+                          
+# Parse context configuration
+context_config = yaml.safe_load(context_section)
 
-This library is designed for extension. To contribute:
+# Create field protocol
+protocol = ProtocolShell.from_dict(context_config.get('protocol', {}))
 
-1. **Add to existing files**: Add new templates to relevant existing files
-2. **Create new files**: If you have templates for a new subcategory, create a new file in the appropriate directory
-3. **Propose new directories**: If you have templates for an entirely new goal category, propose a new directory
+# Create prompt program with the template
+program = PromptProgram(
+    description=context_config.get('description', ''),
+    template=template
+)
 
-Ensure new templates follow the established format and design principles.
+# Execute integrated system
+result = program.execute_with_protocol(protocol, {'input': user_query})
+```
 
-## Origins and Future Direction
+### Template Customization
 
-The PROMPTS library emerges from the intersection of context engineering research and practical AI application. It represents our ongoing work to bridge theoretical frameworks with everyday utility.
+Templates can be customized for specific use cases:
 
-This resource will evolve alongside frontier AI capabilities, incorporating new interaction patterns and template structures as they emerge. We're committed to maintaining a library that remains both theoretically grounded and immediately practical.
+1. **Parameter Adjustment**: Modify placeholder values for your specific needs
+2. **Section Enhancement**: Add specialized sections for your domain
+3. **Context Integration**: Connect with your knowledge base or retrieval system
+4. **Workflow Modification**: Adapt the process flow for your specific task
+5. **Field Tuning**: Adjust attractor strengths and field parameters
 
-## Beyond Templates
+## Implementation Principles
 
-These templates are just the beginning. The true power comes from:
+All prompt templates in this directory follow these core principles:
 
-1. **Adaptation**: Modifying templates for your specific needs
-2. **Combination**: Merging templates for complex tasks
-3. **Iteration**: Refining templates based on results
-4. **Extension**: Creating your own templates using the principles demonstrated
+1. **Layered Structure**: Building from fundamental prompts to complex systems
+2. **Parameterization**: Clear parameter interfaces for customization
+3. **Context Awareness**: Explicit context management and field dynamics
+4. **Workflow Integration**: Defined process flows and interaction patterns
+5. **Example Provision**: Concrete examples demonstrating effective use
+6. **Documentation**: Comprehensive explanations of design and application
+7. **Modularity**: Ability to compose with other templates and components
 
-## Feedback and Evolution
+## Development Guidelines
 
-This library is a living resource designed to grow and adapt. Your feedback and contributions help shape its evolution.
+When creating new prompt templates, follow these guidelines:
+
+1. Use the standardized section structure
+2. Document all parameters with clear descriptions
+3. Include at least three example use cases
+4. Specify context requirements and field dynamics
+5. Implement appropriate workflow processes
+6. Test across different models and scenarios
+7. Follow naming convention: `[domain].[purpose].md`
+
+## Learning Path
+
+For those new to context engineering prompts, we recommend this progression:
+
+1. Start with basic task-specific templates
+2. Move to cognitive tool templates to learn reasoning patterns
+3. Explore field operation templates for advanced context dynamics
+4. Experiment with agent protocol templates for autonomous systems
+
+## Related Resources
+
+- See [`../minimal_context.yaml`](../minimal_context.yaml) for foundational context structure
+- See [`../prompt_program_template.py`](../prompt_program_template.py) for program structures
+- See [`../field_protocol_shells.py`](../field_protocol_shells.py) for field operations
+- See [`../../30_examples/`](../../30_examples/) for complete implementations
 
 ---
 
-> The templates in this library are AI-agnostic and designed to work with any capable AI system. They embody principles from context engineering while remaining accessible to everyone.
+*This directory is continuously expanded with new templates as context engineering techniques evolve. Contributions are welcome via pull requests.*
