@@ -56,7 +56,7 @@ The fundamental insight of prompt programming is treating cognitive operations a
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
 │ Traditional Prompt                │ Prompt Programming              │
-├──────────────────────────────────┼──────────────────────────────────┤
+├───────────────────────────────────┼─────────────────────────────────┤
 │ "Analyze the causes of World      │ analyze(                        │
 │  War I, considering political,    │   topic="causes of World War I",│
 │  economic, and social factors."   │   factors=["political",         │
@@ -65,7 +65,7 @@ The fundamental insight of prompt programming is treating cognitive operations a
 │                                   │   depth="comprehensive",        │
 │                                   │   format="structured"           │
 │                                   │ )                               │
-└──────────────────────────────────┴──────────────────────────────────┘
+└───────────────────────────────────┴─────────────────────────────────┘
 ```
 
 While both approaches can yield similar results, the prompt programming version:

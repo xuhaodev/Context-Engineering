@@ -38,12 +38,12 @@ Creating long-form, coherent content pushes the limits of context management. Le
 │  │  Planning       │     │  Generation     │     │  Integration    │      │
 │  │                 │     │                 │     │                 │      │
 │  └─────────────────┘     └─────────────────┘     └─────────────────┘      │
-│         │                       │                       │                  │
-│         ▼                       ▼                       ▼                  │
+│         │                       │                       │                 │
+│         ▼                       ▼                       ▼                 │
 │  ┌─────────────┐         ┌─────────────┐         ┌─────────────┐          │
 │  │             │         │             │         │             │          │
 │  │ Outline     │         │ Section     │         │ Coherence   │          │
-│  │ Schema      │         │ Templates   │         │ Verification │          │
+│  │ Schema      │         │ Templates   │         │ Verification│          │
 │  │             │         │             │         │             │          │
 │  └─────────────┘         └─────────────┘         └─────────────┘          │
 │                                                                           │
@@ -263,8 +263,8 @@ Complex reasoning often requires tracking state across multiple steps while reta
 │  │  Analysis       │     │  Generation     │     │  & Refinement   │      │
 │  │                 │     │                 │     │                 │      │
 │  └─────────────────┘     └─────────────────┘     └─────────────────┘      │
-│         │                       │                       │                  │
-│         ▼                       ▼                       ▼                  │
+│         │                       │                       │                 │
+│         ▼                       ▼                       ▼                 │
 │  ┌─────────────┐         ┌─────────────┐         ┌─────────────┐          │
 │  │             │         │             │         │             │          │
 │  │ Structured  │         │ Chain-of-   │         │ Self-       │          │
@@ -490,8 +490,8 @@ Synthesizing information from multiple sources requires sophisticated context ma
 │  │  Retrieval      │     │  Extraction     │     │  & Synthesis    │      │
 │  │                 │     │                 │     │                 │      │
 │  └─────────────────┘     └─────────────────┘     └─────────────────┘      │
-│         │                       │                       │                  │
-│         ▼                       ▼                       ▼                  │
+│         │                       │                       │                 │
+│         ▼                       ▼                       ▼                 │
 │  ┌─────────────┐         ┌─────────────┐         ┌─────────────┐          │
 │  │             │         │             │         │             │          │
 │  │ Retrieval   │         │ Knowledge   │         │ Comparison  │          │
@@ -827,14 +827,14 @@ Personalized learning requires tracking user knowledge state and adapting conten
 │  │  Modeling       │     │  Selection      │     │  & Feedback     │      │
 │  │                 │     │                 │     │                 │      │
 │  └─────────────────┘     └─────────────────┘     └─────────────────┘      │
-│         │                       │                       │                  │
-│         ▼                       ▼                       ▼                  │
-│  ┌─────────────┐         ┌─────────────┐         ┌─────────────┐          │
-│  │             │         │             │         │             │          │
-│  │ User Model  │         │ Adaptive    │         │ Misconception│          │
-│  │ Schema      │         │ Challenge   │         │ Detection    │          │
-│  │             │         │ Template    │         │              │          │
-│  └─────────────┘         └─────────────┘         └─────────────┘          │
+│         │                       │                       │                 │
+│         ▼                       ▼                       ▼                 │
+│  ┌─────────────┐         ┌─────────────┐         ┌───────────────┐        │
+│  │             │         │             │         │               │        │
+│  │ User Model  │         │ Adaptive    │         │ Misconception │        │
+│  │ Schema      │         │ Challenge   │         │ Detection     │        │
+│  │             │         │ Template    │         │               │        │
+│  └─────────────┘         └─────────────┘         └───────────────┘        │
 │                                                                           │
 └───────────────────────────────────────────────────────────────────────────┘
 ```
@@ -1248,9 +1248,9 @@ In the next section, we'll explore prompt programming—a powerful approach that
 Advanced applications require balancing several competing factors:
 
 ```
-┌───────────────────────────────────────────────────────────────────┐
-│ CONTEXT ENGINEERING TRADEOFFS                                     │
-├───────────────────────────────────────────────────────────────────┤
+┌──────────────────────────────────────────────────────────────────┐
+│ CONTEXT ENGINEERING TRADEOFFS                                    │
+├──────────────────────────────────────────────────────────────────┤
 │ ◆ Complexity vs. Maintainability                                 │
 │   More complex systems can be harder to debug and maintain       │
 │                                                                  │
@@ -1262,7 +1262,7 @@ Advanced applications require balancing several competing factors:
 │                                                                  │
 │ ◆ Rigid Structure vs. Flexibility                                │
 │   Structured schemas improve consistency but reduce adaptability │
-└───────────────────────────────────────────────────────────────────┘
+└──────────────────────────────────────────────────────────────────┘
 ```
 
 Finding the right balance for your specific application is a key part of advanced context engineering.

@@ -3,7 +3,7 @@
 > “We shape our tools and thereafter our tools shape us.” — [Marshall McLuhan](https://www.goodreads.com/quotes/350791-we-become-what-we-behold-we-shape-our-tools-and)
 
 
-## [Anthropic Slash Commands Docs](https://docs.anthropic.com/en/docs/claude-code/slash-commands)
+## [Anthropic Slash Commands](https://docs.anthropic.com/en/docs/claude-code/slash-commands) | [Subagents](https://docs.anthropic.com/en/docs/claude-code/sub-agents)
 ## Overview
 
 This directory contains a growing library of modular, customizable, and extendable agents and harnesses embedded as slash commands, forming an Agentic Operating System (AgenticOS) designed for enhancing the capabilities of [Claude Code](https://www.anthropic.com/claude-code) and other frontier systems, such as [OpenCode](https://opencode.ai/), [Amp](https://sourcegraph.com/amp), [Kiro](https://kiro.dev/), [Codex](https://openai.com/codex/), [Gemini CLI](https://github.com/google-gemini/gemini-cli), and more. Each agent implements a standardized workflow with consistent structure, enabling sophisticated context engineering across various domains.

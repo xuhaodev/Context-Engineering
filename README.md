@@ -4,18 +4,37 @@
 
 </div>
 
-<img width="2400" height="480" alt="Context_Engineering_Banner_Extended" src="https://github.com/user-attachments/assets/aafb8a5d-4e63-4c89-a0d2-6ca9743c40d2" />
+
+<img width="1600" height="400" alt="image" src="https://github.com/user-attachments/assets/f41f9664-b707-4291-98c8-5bab3054a572" />
 
 > **"Context engineering is the delicate art and science of filling the context window with just the right information for the next step." — [**Andrej Karpathy**](https://x.com/karpathy/status/1937902205765607626)**
 >
 > [**Software Is Changing (Again) Talk @YC AI Startup School**](https://www.youtube.com/watch?v=LCEmiRjPEtQ)
 
+<div align="center">
+  
+## [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/davidkimai/Context-Engineering)
+
 <img width="1917" height="360" alt="image" src="https://github.com/user-attachments/assets/0c20f697-d505-4d49-a829-fc4d319eb1d3" />
 
+</div>
+
+<div align="center">
+  
+ ## [DeepGraph](https://www.deepgraph.co/davidkimai/Context-Engineering)
+ 
+## [Chat with NotebookLM + Podcast Deep Dive](https://notebooklm.google.com/notebook/0c6e4dc6-9c30-4f53-8e1a-05cc9ff3bc7e)
+
+## [![Discord](https://img.shields.io/badge/Discord-join%20chat-7289DA.svg?logo=discord")](https://discord.gg/JeFENHNNNQ)
+
+
+</div>
 
 ## [Comprehensive Course Under Construction](https://github.com/davidkimai/Context-Engineering/tree/main/00_COURSE)
 
-> ### **[From A Systematic Analysis of Over 1400 Research Papers — A Survey of Context Engineering for Large Language Models](https://arxiv.org/pdf/2507.13334)**
+> ### **[Context Engineering Survey-Review of 1400 Research Papers](https://arxiv.org/pdf/2507.13334)**
+>
+> [**Awesome Context Engineering Repo**](https://github.com/Meirtz/Awesome-Context-Engineering)
 
 Operationalizing the Latest Research on Context With First Principles & Visuals — July 2025 from ICML, IBM, NeurIPS, OHBM, and more 
 
@@ -24,15 +43,11 @@ Operationalizing the Latest Research on Context With First Principles & Visuals 
 
 <div align="center">
   
-## [`AgenticOS`](https://github.com/davidkimai/Context-Engineering/tree/main/.claude/commands)
+## [`Agent Commands`](https://github.com/davidkimai/Context-Engineering/tree/main/.claude/commands)
 **Support for [Claude Code](https://www.anthropic.com/claude-code) | [OpenCode](https://opencode.ai/) | [Amp](https://sourcegraph.com/amp) | [Kiro](https://kiro.dev/) | [Codex](https://openai.com/codex/) | [Gemini CLI](https://github.com/google-gemini/gemini-cli)**
 
-### **[IBM Zurich](https://www.arxiv.org/pdf/2506.12115) | [Quantum Semantics](https://arxiv.org/pdf/2506.10077) | [Emergent Symbolics ICML Princeton](https://openreview.net/forum?id=y1SnRPDWx4) | [MEM1 Singapore-MIT](https://arxiv.org/pdf/2506.15841) | [LLM Attractors Shanghai AI](https://arxiv.org/pdf/2502.15208?) | [MemOS Shanghai](https://github.com/MemTensor/MemOS) | [Latent Reasoning](https://arxiv.org/pdf/2507.06203) | [Dynamic Recursive Depths](https://arxiv.org/pdf/2507.10524) | [A Systematic Analysis of Over 1400 Research Papers on Context Engineering](https://arxiv.org/pdf/2507.13334)**
+#### [Context Engineering Survey-Review of 1400 Research Papers](https://arxiv.org/pdf/2507.13334) | [Context Rot](https://research.trychroma.com/context-rot) | [IBM Zurich](https://www.arxiv.org/pdf/2506.12115) | [Quantum Semantics](https://arxiv.org/pdf/2506.10077) | [Emergent Symbolics ICML Princeton](https://openreview.net/forum?id=y1SnRPDWx4) | [MEM1 Singapore-MIT](https://arxiv.org/pdf/2506.15841) | [LLM Attractors Shanghai AI](https://arxiv.org/pdf/2502.15208?) | [MemOS Shanghai](https://github.com/MemTensor/MemOS) | [Latent Reasoning](https://arxiv.org/pdf/2507.06203) | [Dynamic Recursive Depths](https://arxiv.org/pdf/2507.10524)
 
-## [Chat with NotebookLM + Podcast Deep Dive](https://notebooklm.google.com/notebook/0c6e4dc6-9c30-4f53-8e1a-05cc9ff3bc7e)
-
-
-## [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/davidkimai/Context-Engineering)
 
 </div>
 
@@ -47,12 +62,37 @@ A frontier, first-principles handbook for moving beyond prompt engineering to th
                                         │     tools, state, control flow)
 ```
 
-
 ## Definition of Context Engineering
 
 > **Context is not just the single prompt users send to an LLM. Context is the complete information payload provided to a LLM at inference time, encompassing all structured informational components that the model needs to plausibly accomplish a given task.**
 >
 > — [**Definition of Context Engineering from A Systematic Analysis of Over 1400 Research Papers**](https://arxiv.org/pdf/2507.13334)
+
+```
+╭─────────────────────────────────────────────────────────────╮
+│              CONTEXT ENGINEERING MASTERY COURSE             │
+│                    From Zero to Frontier                    │
+╰─────────────────────────────────────────────────────────────╯
+                          ▲
+                          │
+                 Mathematical Foundations
+                  C = A(c₁, c₂, ..., cₙ)
+                          │
+                          ▼
+┌─────────────┬──────────────┬──────────────┬─────────────────┐
+│ FOUNDATIONS │ SYSTEM IMPL  │ INTEGRATION  │ FRONTIER        │
+│ (Weeks 1-4) │ (Weeks 5-8)  │ (Weeks 9-10) │ (Weeks 11-12)   │
+└─────┬───────┴──────┬───────┴──────┬───────┴─────────┬───────┘
+      │              │              │                 │
+      ▼              ▼              ▼                 ▼
+┌─────────────┐ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+│ Math Models │ │ RAG Systems  │ │ Multi-Agent  │ │ Meta-Recurs  │
+│ Components  │ │ Memory Arch  │ │ Orchestrat   │ │ Quantum Sem  │
+│ Processing  │ │ Tool Integr  │ │ Field Theory │ │ Self-Improv  │
+│ Management  │ │ Agent Systems│ │ Evaluation   │ │ Collaboration│
+└─────────────┘ └──────────────┘ └──────────────┘ └──────────────┘
+```
+
 
 ## Why This Repository Exists
 

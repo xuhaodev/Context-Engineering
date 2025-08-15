@@ -127,22 +127,22 @@ This implicit knowledge gives us a foundation, but it's unreliable and varies be
 For many tasks, we observe a power law relationship between context tokens and output quality:
 
 ```
-    Quality
+Quality
       ▲
-      │
+      │                        •
+      │                    •       •
+      │                •               •
+      │            •                       •
+      │        •                               •
       │    •
-      │        •
-      │            •
-      │                •
-      │                    •
-      │                        •         •         •
-      │                             
+      │•
       └───────────────────────────────────────────► Tokens
-                                      
-          [Maximum ROI Zone]       [Diminishing Returns]
+          [Poor Start]  [Maximum ROI]  [Diminishing Returns]
 ```
 
-The critical insight: there's a "maximum ROI zone" where adding just a few tokens yields dramatic quality improvements.
+The critical insight: there's a "maximum ROI zone" where adding just a few tokens yields dramatic quality improvements as well as "diminishing returns", where adding more tokens instead degrades performance.
+
+## [Read more on Context Rot](https://research.trychroma.com/context-rot)
 
 ## From Atoms to Molecules: The Need for More Context
 

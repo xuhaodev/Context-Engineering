@@ -16,16 +16,16 @@ Our journey through context engineering has followed a biological metaphor:
     ▼                ▼                ▼                ▼
 ┌──────────┐     ┌──────────┐     ┌──────────┐     ┌──────────┐
 │          │     │          │     │          │     │          │
-│  Prompts │     │ Few-shot │     │  Memory  │     │Multi-agent│
-│          │     │          │     │          │     │          │
+│  Prompts │     │ Few-shot │     │  Memory  │     │  Multi   │
+│          │     │          │     │          │     │  -agent  │
 └──────────┘     └──────────┘     └──────────┘     └──────────┘
 ```
 
 Now, we'll extend this framework by drawing parallels to human cognition. Just as human minds use cognitive tools to process information efficiently, we can create similar structures for LLMs:
 
 ```
-┌──────────────────────────────────────────────────────────────────────┐
-│                      COGNITIVE TOOLS EXTENSION                       │
+┌─────────────────────────────────────────────────────────────────────┐
+│                      COGNITIVE TOOLS EXTENSION                      │
 ├──────────┬───────────────────┬──────────────────────────────────────┤
 │          │                   │                                      │
 │ HUMAN    │ Heuristics        │ Mental shortcuts that simplify       │
@@ -38,8 +38,8 @@ Now, we'll extend this framework by drawing parallels to human cognition. Just a
 │          │                   │                                      │
 └──────────┴───────────────────┴──────────────────────────────────────┘
 
-┌──────────────────────────────────────────────────────────────────────┐
-│                                                                      │
+┌─────────────────────────────────────────────────────────────────────┐
+│                                                                     │
 ├──────────┬───────────────────┬──────────────────────────────────────┤
 │          │                   │                                      │
 │ HUMAN    │ Schemas           │ Organized knowledge structures       │
@@ -52,8 +52,8 @@ Now, we'll extend this framework by drawing parallels to human cognition. Just a
 │          │                   │                                      │
 └──────────┴───────────────────┴──────────────────────────────────────┘
 
-┌──────────────────────────────────────────────────────────────────────┐
-│                                                                      │
+┌─────────────────────────────────────────────────────────────────────┐
+│                                                                     │
 ├──────────┬───────────────────┬──────────────────────────────────────┤
 │          │                   │                                      │
 │ HUMAN    │ Priming           │ Activation of certain associations   │
@@ -126,7 +126,7 @@ Let's compare an ad-hoc prompt with a simple prompt program (reasoning tool call
 │             ${complexity} language.";                         │
 │                                                               │
 │   // Construct the complete prompt                            │
-│   return `${task}\n\nProcess:\n${process}\n\n                │
+│   return `${task}\n\nProcess:\n${process}\n\n                 │
 │           Format:\n${format}\n\nText to summarize:\n${text}`; │
 │ }                                                             │
 └───────────────────────────────────────────────────────────────┘

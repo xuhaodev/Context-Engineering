@@ -8,9 +8,11 @@
 ## Comprehensive Course Under Construction
 
 > **[A Systematic Analysis of Over 1400 Research Papers — A Survey of Context Engineering for Large Language Models](https://arxiv.org/pdf/2507.13334)**
+> 
 >
-> Building from practical, intuitive, and visual first principles
-
+> "You can't connect the dots looking forward; you can only connect them looking backwards."
+>
+> — [**Steve Jobs, 2005 Stanford Commencement Address**](https://www.youtube.com/watch?v=UF8uR6Z6KLc)
 
 ## Course Architecture Overview
 

@@ -6,6 +6,7 @@
 > Building on [Context Engineering Survey](https://arxiv.org/pdf/2507.13334) | Advancing Software 3.0 Paradigms
 
 ---
+> "The field is the sole governing agency of the particle." — Albert Einstein
 
 ## Learning Objectives
 

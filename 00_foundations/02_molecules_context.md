@@ -22,14 +22,14 @@ Few-shot learning is when we provide examples of the desired input-output patter
 
 ```
 ┌───────────────────────────────────────────────────────────────────────┐
-│ Input: "Paris"                                                         │
-│ Output: "Paris is the capital of France."                              │
-│                                                                        │
-│ Input: "Tokyo"                                                         │
-│ Output: "Tokyo is the capital of Japan."                               │
-│                                                                        │
-│ Input: "Ottawa"                                                        │
-│ Output: ?                                                              │
+│ Input: "Paris"                                                        │
+│ Output: "Paris is the capital of France."                             │
+│                                                                       │
+│ Input: "Tokyo"                                                        │
+│ Output: "Tokyo is the capital of Japan."                              │
+│                                                                       │
+│ Input: "Ottawa"                                                       │
+│ Output: ?                                                             │
 └───────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -40,9 +40,9 @@ The model recognizes the pattern and completes it: "Ottawa is the capital of Can
 Let's compare atomic vs. molecular approaches to the same task:
 
 ```
-┌───────────────────────────────────────┬─────────────────────────────────────┐
+┌───────────────────────────────────────┬──────────────────────────────────────┐
 │ ATOMIC APPROACH                       │ MOLECULAR APPROACH                   │
-├───────────────────────────────────────┼─────────────────────────────────────┤
+├───────────────────────────────────────┼──────────────────────────────────────┤
 │ "Classify this review as positive     │ "Classify the sentiment of reviews.  │
 │  or negative:                         │                                      │
 │                                       │ Review: 'The food was amazing!'      │
@@ -55,7 +55,7 @@ Let's compare atomic vs. molecular approaches to the same task:
 │                                       │ Review: 'The service was terrible    │
 │                                       │  and the food was cold.'"            │
 │                                       │ Sentiment:                           │
-└───────────────────────────────────────┴─────────────────────────────────────┘
+└───────────────────────────────────────┴──────────────────────────────────────┘
 ```
 
 The molecular approach typically achieves:

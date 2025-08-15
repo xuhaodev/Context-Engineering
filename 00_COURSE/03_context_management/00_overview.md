@@ -3,7 +3,7 @@
 >
 > — [Aristotle](https://www.goodreads.com/quotes/1629-it-is-the-mark-of-an-educated-mind-to-be)
 > 
-## The Paradigm Shift: From Code to Context
+## The Shift: From Code to Context
 > [**Software Is Changing (Again) Talk @YC AI Startup School—Andrej Karpathy**](https://www.youtube.com/watch?v=LCEmiRjPEtQ)
 
 We are witnessing the emergence of [**Software 3.0**](https://x.com/karpathy/status/1935518272667217925) - a new era of innovation where structured prompting becomes programming, and context engineering becomes the new software architecture. This represents a fundamental shift in how we build intelligent systems.
